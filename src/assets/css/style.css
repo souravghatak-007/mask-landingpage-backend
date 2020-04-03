@@ -257,8 +257,15 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 .login_wrapper .mat-form-field-subscript-wrapper .mat-error{margin-top: 5px;}
 
 
-#maincontent{background:url(../images/bodyBg.png) repeat #fff;margin-left:0;margin-right:0;margin-top:20px;padding:0 25px 25px;position:relative;min-height:490px;width:auto}
-
+#maincontent{background:url(../images/bodyBg.png) repeat #fff;margin-left:0;margin-right:0;margin-top:20px;padding:0 25px 25px;position:relative;min-height:465px;width:auto}
+#beadcamb {
+  width: 100%;
+  background: #49cced;
+  position: relative;
+  clear: both;
+  display: block;
+  padding: 2px;
+}
 
 @media screen and (max-width: 1666px) {
   .userimage {right: -56%;width: 430px;}
