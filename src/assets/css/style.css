@@ -532,10 +532,8 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 .login_wrapper .mat-form-field-appearance-legacy .mat-form-field-underline {height: 1px;display: none;}
 .signupfooter a{font-family: var(--main-font); font-size: var(--base-font-size);color:var(--c-t-bg-w);}
 
-
-
 @media screen and (max-width: 1666px) {
-.userimage {right: -54%;width: 463px;}
+.userimage {right: -54%;width: 462px;}
 }
 
 @media screen and (max-width: 700px) {
