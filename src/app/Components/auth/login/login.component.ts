@@ -8,7 +8,7 @@ import {HttpServiceService} from '../../../services/http-service.service';
 })
 export class LoginComponent implements OnInit {
   public logo: any = './assets/images/logo.png';
-  public fromTitle: any = "Login Form";    // This is a From Title
+  public fromTitle: any = "Login";    // This is a From Title
   public fullUrl: any = this.httpServiceService.baseUrl;  // server url
   public endpoint: any = "login";
   public buttonName:any= 'Login';
@@ -21,13 +21,13 @@ export class LoginComponent implements OnInit {
 
   public signUpRouteingUrl: any = {
     "path": "",
-    "buttonName": "Don't have an account yet? Contact us",
+    "buttonName": "Not registered? Request Sign Up Here",
     "customLink": "/contactus",
     "customURl": ""
   };
   public forgetRouteingUrl: any = {
     "path": "",
-    "buttonName": "Forget Password",
+    "buttonName": "Forgot your password?",
     "customLink": "/forget-password",
   };
 
