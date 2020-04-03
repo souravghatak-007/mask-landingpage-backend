@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   public forgetRouteingUrl: any = {
     "path": "",
     "buttonName": "Forget Password",
-    "customLink": "/forgot-password",
+    "customLink": "/forget-password",
   };
 
   public routerStatus: any;
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
       "data": [
         {
           "type": "admin",
-          "routerNav": "dashboard-admin"
+          "routerNav": "dashboard"
         }
       ]
     }
