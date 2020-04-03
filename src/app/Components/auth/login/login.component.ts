@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   };
   public forgetRouteingUrl: any = {
     "path": "",
-    "buttonName": "Forgot your password?",
+    "buttonName": "Forgot your password ?",
     "customLink": "/forget-password",
   };
 
