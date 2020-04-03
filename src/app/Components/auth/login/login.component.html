@@ -1,9 +1,12 @@
 <mat-card class="login_wrapper">
-
-  <mat-card-content class="login_lib_wrapper">  
+  <mat-card-content class="login_lib_wrapper"> 
 
     <lib-login [fromTitle]="fromTitle" [fullUrl]="fullUrl" [forgetRouteingUrl]="forgetRouteingUrl"  class="form"
-            [signUpRouteingUrl]='signUpRouteingUrl' [routerStatus]="routerStatus" [endpoint]="endpoint" [logo]="logo" [buttonName]="buttonName" [defaultLoginUrl]="defaultLoginUrl"></lib-login>
+            [signUpRouteingUrl]='signUpRouteingUrl' [routerStatus]="routerStatus" [endpoint]="endpoint" [buttonName]="buttonName" [defaultLoginUrl]="defaultLoginUrl"></lib-login>
+
+            <div class="userimage">
+              <img src="../../../../assets/images/loginimg-right.png">
+            </div>
   </mat-card-content>
 
 </mat-card>
