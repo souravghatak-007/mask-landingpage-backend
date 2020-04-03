@@ -1,109 +1,11 @@
-
-@font-face {
-  font-family: 'NunitoLight';
-  src: url('../fonts/Nunito-Light.eot');
-  src: url('../fonts/Nunito-Light.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/Nunito-Light.woff2') format('woff2'),
-      url('../fonts/Nunito-Light.woff') format('woff'),
-      url('../fonts/Nunito-Light.ttf') format('truetype'),
-      url('../fonts/Nunito-Light.svg#Nunito-Light') format('svg');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'NunitoBlack';
-  src: url('../fonts/Nunito-Black.eot');
-  src: url('../fonts/Nunito-Black.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/Nunito-Black.woff2') format('woff2'),
-      url('../fonts/Nunito-Black.woff') format('woff'),
-      url('../fonts/Nunito-Black.ttf') format('truetype'),
-      url('../fonts/Nunito-Black.svg#Nunito-Black') format('svg');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'NunitoBold';
-  src: url('../fonts/Nunito-Bold.eot');
-  src: url('../fonts/Nunito-Bold.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/Nunito-Bold.woff2') format('woff2'),
-      url('../fonts/Nunito-Bold.woff') format('woff'),
-      url('../fonts/Nunito-Bold.ttf') format('truetype'),
-      url('../fonts/Nunito-Bold.svg#Nunito-Bold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'NunitoRegular';
-  src: url('../fonts/Nunito-Regular.eot');
-  src: url('../fonts/Nunito-Regular.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/Nunito-Regular.woff2') format('woff2'),
-      url('../fonts/Nunito-Regular.woff') format('woff'),
-      url('../fonts/Nunito-Regular.ttf') format('truetype'),
-      url('../fonts/Nunito-Regular.svg#Nunito-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'NunitoExtraBold';
-  src: url('../fonts/Nunito-ExtraBold.eot');
-  src: url('../fonts/Nunito-ExtraBold.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/Nunito-ExtraBold.woff2') format('woff2'),
-      url('../fonts/Nunito-ExtraBold.woff') format('woff'),
-      url('../fonts/Nunito-ExtraBold.ttf') format('truetype'),
-      url('../fonts/Nunito-ExtraBold.svg#Nunito-ExtraBold') format('svg');
-  font-weight: 800;
-  font-style: normal;
-}
-
-:root {
-  --c-t-bg-w: #fff;
-  --c-t-bg-black: #0d0d0d;
-  --c-t-bg-zblack: var(--c-t-bg-zblack);
-  --c-t-bg: #dce5ea;
-  --c-t-bg-secondary: #a5e1cf;
-  --c-t-sub-primary: #48281b;
-  --c-t-primary: #d0531c;
-  --c-t-secondary: #0b5746;
-  --c-t-primary-btn_title: #48281b;
-  --c-t-paragraph: #797a7b;
-  --c-t-links: #005d40;
-  --c-t-alt-links: #ffdead;
-  --c-t-long-para: #002346;
-
-
-}
-
-* {  
-  /* Typography */
-  --font-family-base: 'NunitoRegular';
-  --main-font: 'NunitoRegular';
-  --main-bold-font: 'NunitoBold';
-  --main-extrabold-font: 'NunitoExtraBold';
-  --main-light-font: 'NunitoLight';
-  --main-black-font: 'NunitoBlack';
-  --base-font-size:18px;
-
-  /* Calculation */
-  /* --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 320px) / (1200 - 320)));  */
-}
-
-
-
-html,body{height:100%;}
-body { margin: 0; font-family: "NunitoRegular"; }  
-
 .login_wrapper{background:url(../images/background.jpg) no-repeat!important;background-position:center center!important;background-size:cover!important;height:100%;display:flex!important;align-items:center;justify-content:center;padding: 0 !important;}
 .userimage {
   bottom: 0;
-  right: -67%;
+  right: -58%;
   position: absolute;
   z-index: 98;
   height: auto;
-  width: 500px;
+  width: 440px;
   overflow: hidden;
 }
 .userimage img{height: auto;width: 100%;}
@@ -530,18 +432,58 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 .AddEditBlog lib-addedit-blogmanagement .button-group{width:100%!important}
 .formspan .example-container,.formspan,.formspan .mat-form-field{width:100%!important;box-sizing:border-box}
 
+.login_wrapper{overflow: hidden;}
 .login_wrapper .mat-form-field-flex {background: var(--c-t-bg-w);}
 .login_wrapper .mat-form-field-appearance-legacy .mat-form-field-underline {height: 1px;display: none;}
 .signupfooter a{font-family: var(--main-font); font-size: var(--base-font-size);color:var(--c-t-bg-w);}
 .login_wrapper .mat-form-field-appearance-legacy .mat-form-field-label span{color:var(--c-t-bg-zblack); font-family: var(--main-font); font-size: var(--base-font-size);padding-left: 10px;}
 .login_wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {height: 36px;}
 .login_wrapper .from {padding: 16px 42px;}
-.login_wrapper input.mat-input-element {padding-left: 10px;}
+.login_wrapper input.mat-input-element {padding-left: 20px;}
+.login_wrapper .mat-form-field-appearance-legacy .mat-form-field-wrapper {padding-bottom: 10px;padding-top: 10px;}
+.login_wrapper .mat-form-field-subscript-wrapper .mat-error{margin-top: 5px;}
+
+
+
+#maincontent {
+  background: url(../images/bodyBg.png) repeat #fff;
+  margin-left: 0px;
+  margin-right: 0;
+  margin-top: 80px;
+  padding-bottom: 25px;
+  position: relative;
+  min-height: 500px;
+  width: auto;
+}
+
+
 
 @media screen and (max-width: 1666px) {
-.userimage {right: -54%;width: 462px;}
+  .userimage {right: -56%;width: 430px;}
+}
+@media screen and (max-width: 1600px) {
+.userimage {right: -50%;width: 390px;}
+}
+@media screen and (max-width: 1360px) {
+.userimage {right: -40%;width: 328px;}
+}
+@media screen and (max-width: 1199px) {
+.userimage{display: none;}
+.login_wrapper .from{padding: 16px;}
 }
 
 @media screen and (max-width: 700px) {
 .col-1-2,.col-1-3,.col-1-4{width:100%;padding:0}
+.login_lib_wrapper {width: 94%;}
+.from a {padding-right: 0 !important;padding-top: 10px;}
+}
+@media screen and (max-width: 640px) {
+  .login_lib_wrapper .from h2 {font-size: 55px;}
+  .signupfooter {flex-wrap: wrap;}
+  .login_wrapper .from {padding: 16px;width: 90% !important;display: block;}
+  .login_lib_wrapper .example-container button {line-height: 24px;font-size: 22px;}
+}
+@media screen and (max-width: 480px) {
+  .signupfooter a {text-align: left;}
+  .login_lib_wrapper .from h2 {font-size: 32px;margin-bottom: 15px;}
 }

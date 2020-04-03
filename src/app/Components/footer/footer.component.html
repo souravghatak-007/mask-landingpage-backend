@@ -1,7 +1,12 @@
-<mat-toolbar class="footer_wrapper">
-  <mat-card-content class="privacy_wrapper">
-    <a>privacy policy</a>
-    <a>terms & conditions</a>
-  </mat-card-content>
-  <p>Copyright by MD Stock International 2019. All rights reserved.</p>
-</mat-toolbar>
+<!-- <mat-card class="footerblock" *ngIf="user_data.type == 'admin'"> -->
+  <!-- <mat-card class="footerblock" *ngIf="router.url =='/service-listing' || router.url =='/admin-dashboard'"> -->
+  <mat-card class="footerblock">
+    <p>&copy; 2019 Copyright by Mask Landing.</p>
+    <span class="scroll-to-top" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+        <a (click)="scrollToTop()">
+          <mat-icon aria-hidden="false">keyboard_arrow_up</mat-icon> 
+        </a>
+      </span>
+</mat-card>
+
+

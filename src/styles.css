@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'NunitoLight';
+    src: url('assets/fonts/Nunito-Light.eot');
+    src: url('assets/fonts/Nunito-Light.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nunito-Light.woff2') format('woff2'),
+        url('assets/fonts/Nunito-Light.woff') format('woff'),
+        url('assets/fonts/Nunito-Light.ttf') format('truetype'),
+        url('assets/fonts/Nunito-Light.svg#Nunito-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NunitoBlack';
+    src: url('assets/fonts/Nunito-Black.eot');
+    src: url('assets/fonts/Nunito-Black.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nunito-Black.woff2') format('woff2'),
+        url('assets/fonts/Nunito-Black.woff') format('woff'),
+        url('assets/fonts/Nunito-Black.ttf') format('truetype'),
+        url('assets/fonts/Nunito-Black.svg#Nunito-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NunitoBold';
+    src: url('assets/fonts/Nunito-Bold.eot');
+    src: url('assets/fonts/Nunito-Bold.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nunito-Bold.woff2') format('woff2'),
+        url('assets/fonts/Nunito-Bold.woff') format('woff'),
+        url('assets/fonts/Nunito-Bold.ttf') format('truetype'),
+        url('assets/fonts/Nunito-Bold.svg#Nunito-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NunitoRegular';
+    src: url('assets/fonts/Nunito-Regular.eot');
+    src: url('assets/fonts/Nunito-Regular.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nunito-Regular.woff2') format('woff2'),
+        url('assets/fonts/Nunito-Regular.woff') format('woff'),
+        url('assets/fonts/Nunito-Regular.ttf') format('truetype'),
+        url('assets/fonts/Nunito-Regular.svg#Nunito-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'NunitoExtraBold';
+    src: url('assets/fonts/Nunito-ExtraBold.eot');
+    src: url('assets/fonts/Nunito-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('assets/fonts/Nunito-ExtraBold.woff2') format('woff2'),
+        url('assets/fonts/Nunito-ExtraBold.woff') format('woff'),
+        url('assets/fonts/Nunito-ExtraBold.ttf') format('truetype'),
+        url('assets/fonts/Nunito-ExtraBold.svg#Nunito-ExtraBold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  :root {
+    --c-t-bg-w: #fff;
+    --c-t-bg-black: #0d0d0d;
+    --c-t-bg-zblack: var(--c-t-bg-zblack);
+    --c-t-bg: #dce5ea;
+    --c-t-bg-secondary: #a5e1cf;
+    --c-t-sub-primary: #48281b;
+    --c-t-primary: #d0531c;
+    --c-t-secondary: #0b5746;
+    --c-t-primary-btn_title: #48281b;
+    --c-t-paragraph: #797a7b;
+    --c-t-links: #005d40;
+    --c-t-alt-links: #ffdead;
+    --c-t-long-para: #002346;
+  
+  
+  }
+  
+  * {  
+    /* Typography */
+    --font-family-base: 'NunitoRegular';
+    --main-font: 'NunitoRegular';
+    --main-bold-font: 'NunitoBold';
+    --main-extrabold-font: 'NunitoExtraBold';
+    --main-light-font: 'NunitoLight';
+    --main-black-font: 'NunitoBlack';
+    --base-font-size:18px;
+  
+    /* Calculation */
+    /* --responsive: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 320px) / (1200 - 320)));  */
+  }
+  
+  
+  
+  html,body{height:100%;}
+  body { margin: 0; font-family: "NunitoRegular"; }  
+  
+
+
+
+.topmenulist .navigation-left .mat-list-item .mat-list-item-content{padding: 0 0!important;}
+
+.mat-card{box-shadow: none !important;}

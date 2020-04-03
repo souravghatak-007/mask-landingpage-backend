@@ -1,1 +1,49 @@
-<h4>Header</h4>
+<!-- <mat-toolbar *ngIf="userCookies.type == 'admin'" class="header fixed"> -->
+<mat-card class="admcls">
+  <mat-toolbar class="header">
+    <mat-toolbar-row class="toolbar-row">
+      <div class="logo">
+        <img src="assets/images/logo.png" alt="">
+      </div>      
+      <!-- <div style="margin: auto"></div> -->
+      <div class="topmenulist">
+        
+      
+        <mat-list class="navigation-left">
+          <mat-list-item class="nav-item">
+            <a mat-menu-item routerLinkActive="activemenu">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+            </a>
+          </mat-list-item>
+  
+          <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+            <a mat-menu-item routerLinkActive="activemenu">
+              Dashboard
+            </a>
+          </mat-list-item>          
+  
+          <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+            <a>Admin Management</a>
+          </mat-list-item>
+          <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+            <a>User Management</a>
+          </mat-list-item>
+          <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+            <a>Order Management</a>
+          </mat-list-item>
+          <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+            <a>My Account</a>
+          </mat-list-item>
+          <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+            <a>Logout</a>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <!-- <div style="margin: auto"></div> -->
+      
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+</mat-card>
+
+  
