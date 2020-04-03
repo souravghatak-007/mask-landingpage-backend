@@ -30,5 +30,5 @@
 .virus{color:#d7e01a}
 .barrier{color:#df5352}
 .medical{color:#5fc5df}
-.topmenulist .navigation-left a{display: flex; align-items: center;}
+.topmenulist .navigation-left a, .topmenulist .navigation-left a:hover{display: flex; align-items: center;}
 .topmenulist .navigation-left a span{margin-right: 5px;}
