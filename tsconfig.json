@@ -1,0 +1,73 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths" :{
+      // "login": [                   //login library
+      //   "dist/login"
+      // ],
+      // "login/*": [
+      //   "dist/login/*"
+      // ],
+      "lib-listing": [
+        "dist/listing"
+      ],
+      "listing/*": [
+        "dist/listing/*"
+      ],
+      "file-upload": [
+        "dist/file-upload"
+      ],
+      "file-upload/*": [
+        "dist/file-upload/*"
+      ],
+      "blog": [
+        "dist/blog"
+      ],
+      "blog/*": [
+        "dist/blog/*"
+      ],
+      "listing-library": [
+        "dist/listing-library"
+      ],
+      "listing-library/*": [
+        "dist/listing-library/*"
+      ],
+      "team": [
+        "dist/team"
+      ],
+      "team/*": [
+        "dist/team/*"
+      ],
+      "contactus": [
+        "dist/contactus"
+      ],
+      "contactus/*": [
+        "dist/contactus/*"
+      ]
+
+    }
+  },
+
+
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true
+  }
+}
