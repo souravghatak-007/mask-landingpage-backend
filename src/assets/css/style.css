@@ -62,6 +62,7 @@
 :root {
   --c-t-bg-w: #fff;
   --c-t-bg-black: #0d0d0d;
+  --c-t-bg-zblack: var(--c-t-bg-zblack);
   --c-t-bg: #dce5ea;
   --c-t-bg-secondary: #a5e1cf;
   --c-t-sub-primary: #48281b;
@@ -130,7 +131,7 @@ body { margin: 0; font-family: "NunitoRegular"; }
 .main_wrapper{padding:0!important;box-shadow:none!important}
 .bred_cram_wrapper{background:#dde2e5;display:flex!important;padding:8px}
 .bred_cram_wrapper a{background:#b5bdbf;background:#b5bdbf;display:flex!important;color:#252525;padding:8px 20px;text-decoration:none;margin:0;justify-content:stretch;font-size:18px;text-transform:capitalize;font-family:"HelveticaRegular"}
-.activebread{background:var(--c-t-bg-w)!important;color:#000!important;position:relative}
+.activebread{background:var(--c-t-bg-w)!important;color:var(--c-t-bg-zblack)!important;position:relative}
 .activebread::before{content:'';width:15px;height:100%;background:#b5bdbf;display:inline-block;position:absolute;top:0;left:0;clip-path:polygon(0 0,0% 100%,100% 50%)}
 .activebread::after{content:'';width:15px;height:100%;background:var(--c-t-bg-w);display:inline-block;position:absolute;right:-15px;top:0;clip-path:polygon(0 0,0% 100%,100% 54%)}
 tr.mat-header-row{background:var(--c-t-alt-links)}
@@ -275,7 +276,7 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 .blogaddeditwrapper .inputstyle .mat-form-field{background:none!important;width:100%!important;padding:0!important;margin-bottom:0!important}
 .blogaddeditwrapper .inputstyle .ck.ck-editor__main>.ck-editor__editable{border-color:var(--ck-color-base-border);min-height:160px;margin-bottom:20px}
 .blogaddeditwrapper .inputstyle .mat-toolbar.mat-primary h2{font-family:'AvenirLight';font-size:24px!important;padding-bottom:15px;width:100%;border-bottom:1px solid #566075;margin-bottom:25px!important;text-transform:capitalize}
-.blogaddeditwrapper .inputstyle .mat-toolbar.mat-primary{background:var(--c-t-bg-w);color:#000;padding:0}
+.blogaddeditwrapper .inputstyle .mat-toolbar.mat-primary{background:var(--c-t-bg-w);color:var(--c-t-bg-zblack);padding:0}
 .blogaddeditwrapper .inputstyle .formspan .example-container{display:flex;flex-direction:column;width:100%!important;padding:0!important;margin-bottom:0;background:none}
 .blogaddeditwrapper .inputstyle .formspan{background-color:var(--c-t-bg-w);width:100%;position:relative;margin:0;border:0;z-index:9}
 .blogaddeditwrapper .inputstyle .mat-checkbox{display:block}
@@ -532,9 +533,10 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 .login_wrapper .mat-form-field-flex {background: var(--c-t-bg-w);}
 .login_wrapper .mat-form-field-appearance-legacy .mat-form-field-underline {height: 1px;display: none;}
 .signupfooter a{font-family: var(--main-font); font-size: var(--base-font-size);color:var(--c-t-bg-w);}
-.login_wrapper .mat-form-field-appearance-legacy .mat-form-field-label span{color:#000; font-family: var(--main-font); font-size: var(--base-font-size);}
+.login_wrapper .mat-form-field-appearance-legacy .mat-form-field-label span{color:var(--c-t-bg-zblack); font-family: var(--main-font); font-size: var(--base-font-size);padding-left: 10px;}
 .login_wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {height: 36px;}
 .login_wrapper .from {padding: 16px 42px;}
+.login_wrapper input.mat-input-element {padding-left: 10px;}
 
 @media screen and (max-width: 1666px) {
 .userimage {right: -54%;width: 462px;}
