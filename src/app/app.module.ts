@@ -36,6 +36,8 @@ import {AdminheaderComponent} from './Components/header/adminheader.component';
 import {FooterComponent} from './Components/footer/footer.component';
 import {AddAdminComponent} from './Components/addadmin/addadmin.component'
 import { from } from 'rxjs';
+import { UserListingComponent } from './Components/user/user-listing/user-listing.component';
+import { UserAddEditComponent } from './Components/user/user-add-edit/user-add-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +54,9 @@ import { from } from 'rxjs';
     DashboardAdminComponent,
     AdminheaderComponent,
     FooterComponent,
-    AddAdminComponent
+    AddAdminComponent,
+    UserListingComponent,
+    UserAddEditComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

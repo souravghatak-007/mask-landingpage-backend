@@ -8,6 +8,8 @@ import { DashboardAdminComponent } from '../Components/dashboard-admin/dashboard
 import { AdminheaderComponent } from '../Components/header/adminheader.component';
 import { FooterComponent } from '../Components/footer/footer.component';
 import { AddAdminComponent } from '../Components/addadmin/addadmin.component';
+import {UserListingComponent} from '../Components/user/user-listing/user-listing.component';
+import {ResolveService} from '../services/resolve.service';
 
 
 
@@ -20,6 +22,21 @@ const routes: Routes = [
   {path:'forget-password',component:ForgotPasswordComponent},
   {path:'user-details',component:AdminDetailsComponent},
   {path:'dashboard',component:DashboardAdminComponent},
+  {
+    path: 'admin/user-management', 
+    component: UserListingComponent, 
+    // canActivate: [AuthguardService], 
+    resolve: { userManagementData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_masklandingpage',
+        condition: {
+          type:"user"
+        }
+      },
+      endpoint:"datalist"
+    },
+  },
   {path:'header',component:AdminheaderComponent},
   {path:'footer',component:FooterComponent},
   {path:'add-admin',component:AddAdminComponent}
