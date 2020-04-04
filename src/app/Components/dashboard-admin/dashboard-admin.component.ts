@@ -17,7 +17,7 @@ export class DashboardAdminComponent implements OnInit {
 
 
 
-  constructor(private router: Router, public cookieService: CookieService, private http: HttpServiceService){}
+  constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService){}
    
 
 
