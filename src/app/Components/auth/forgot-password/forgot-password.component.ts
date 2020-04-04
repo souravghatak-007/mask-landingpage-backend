@@ -29,7 +29,7 @@ export class ForgotPasswordComponent implements OnInit {
   };
   public buttonName: any = 'Reset Password';
 
-  public domainUrl: any = 'http://localhost:4200/reset-password';
+  public domainUrl: any = 'https://mask-landingpage-backend.influxiq.com/reset-password';
 
   constructor(public httpServiceService:HttpServiceService) {
        
