@@ -10,6 +10,7 @@ import { FooterComponent } from '../Components/footer/footer.component';
 import { AddAdminComponent } from '../Components/addadmin/addadmin.component';
 import {UserListingComponent} from '../Components/user/user-listing/user-listing.component';
 import {ResolveService} from '../services/resolve.service';
+import { UserAddEditComponent } from '../Components/user/user-add-edit/user-add-edit.component';
 
 
 
@@ -29,7 +30,7 @@ const routes: Routes = [
     resolve: { userManagementData: ResolveService },
     data: {
       requestcondition: {
-        source: 'data_masklandingpage',
+        source: 'users',
         condition: {
           type:"user"
         }
@@ -39,7 +40,9 @@ const routes: Routes = [
   },
   {path:'header',component:AdminheaderComponent},
   {path:'footer',component:FooterComponent},
-  {path:'add-admin',component:AddAdminComponent}
+  {path:'add-admin',component:AddAdminComponent},
+  {path:"user/add",component:UserAddEditComponent},
+  {path:"user/edit/:id",component:UserAddEditComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

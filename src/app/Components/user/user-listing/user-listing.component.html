@@ -1,3 +1,5 @@
+<app-adminheader></app-adminheader>
+<button [routerLink]="['/user/add']">ADD User</button>
 <lib-listing class="DataTable" *ngIf="userDataarray.length>0" [datasource]="userDataarray"
     [skip]="allUserData_skip" [detail_skip_array]="previewModal_skip"
     [modify_header_array]="allUserData_modify_header" [apiurl]="apiUrl" [sourcedata]="tableName" [editroute]="editUrl"
@@ -6,3 +8,4 @@
     [search_settings]="search_settings">
   </lib-listing>
   <h2 *ngIf="userDataarray.length == 0">No record found.</h2>
+  <app-footer></app-footer>

@@ -25,7 +25,7 @@ export class UserListingComponent implements OnInit {
     "updated_at",
     "zip"
   ];
-  public editUrl: any = "admin/role-management/edit";
+  public editUrl: any = "user/edit";
   public allUserData_modify_header: any = {
     "firstname": "First Name",
     "lastname": "Last Name",
