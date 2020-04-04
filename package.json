@@ -45,8 +45,13 @@
     "file-upload-lib-influxiq": "0.0.12",
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
+<<<<<<< HEAD
     "listing-angular7": "^0.1.5",
     "login-lib-influxiq": "0.0.16",
+=======
+    "listing-angular7": "^0.1.4",
+    "login-lib-influxiq": "0.0.18",
+>>>>>>> ac09b352fb1eab8eca092fd782f0028790f88546
     "moment": "^2.24.0",
     "ngx-ckeditor": "^8.0.0",
     "ngx-clipboard": "^12.3.0",
