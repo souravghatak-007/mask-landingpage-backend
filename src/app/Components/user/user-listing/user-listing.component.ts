@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { HttpServiceService } from '../../../services/http-service.service';
-import { Validators } from "@angular/forms";
-declare var moment:any;
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-user-listing',
@@ -93,7 +92,6 @@ export class UserListingComponent implements OnInit {
       "options":['email']
   };
 
-
   // this is a database collection or view name
   date_search_source: any='admin_blog_list';
   // datacollection
@@ -135,8 +133,10 @@ export class UserListingComponent implements OnInit {
   status_gretterthan_zero_skip: any= ['_id','username','phone','city','state','ethnicity','height','haircolor','eyecolor','weight','bust','waist','hips','slim','toned','tattoos','athletic','piercings','retail','voluptuous','promotions','sales','descriptionbox','facebooklink','twitterlink','instagramlink','modelmayhemlink','type','images','accesstoken'];
   status_gretterthan_zero_modify_header: any = { 'dateformat': 'Date','status':'Status','email':'Email', 'name':'Full Name', 'bodytype' : 'Bodytype', 'shatterblok agreement date': 'Shatterblok Agreement Date', 'audiodeadline agreement date': 'Audiodeadline Agreement Date' };
   status_gretterthan_zero_detail_skip:any=['_id','email','name','type','status','accesstoken'];
+  public user_cookie:any;
+  public apiUrl:any;
 
-  constructor(public router: Router, public route: ActivatedRoute, public _apiService: HttpServiceService) {
+  constructor(public router: Router, public route: ActivatedRoute, public _apiService: HttpServiceService,  public cookie: CookieService) {
       // console.log('custom_link');
       // console.log(this.custom_link);
       this.datasource = '';
@@ -154,7 +154,7 @@ export class UserListingComponent implements OnInit {
 
         }
         this._apiService.httpViaPost(endpointc, data).subscribe((res:any) => {
-            // console.log('in constructor');
+            console.log('in constructor');
             // console.log(result);
             this.date_search_source_count =res.count.date_search_source_count;
             console.warn('blogData c',res);
@@ -164,7 +164,7 @@ export class UserListingComponent implements OnInit {
         });
 
         this._apiService.httpViaPost(endpoint,data).subscribe((res:any) => {
-            // console.log('in constructor');
+            console.log('in constructor');
             // console.log(result);
             this.userDataarray =res.results.res;
             //console.warn('blogData',res);
@@ -172,8 +172,8 @@ export class UserListingComponent implements OnInit {
         }, error => {
             console.log('Oooops!');
         });
-
-
+      this.user_cookie = cookie.get('jwtToken');
+      this.apiUrl = _apiService.baseUrl;
     }
 
   ngOnInit() {
