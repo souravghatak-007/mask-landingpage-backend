@@ -61,7 +61,7 @@ export class HttpServiceService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        // 'Authorization': this.CookieService.get('jwtToken')
+        'Authorization': this.CookieService.get('jwtToken')
       })
     };
 

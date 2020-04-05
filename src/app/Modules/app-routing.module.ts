@@ -40,7 +40,34 @@ const routes: Routes = [
   },
   {path:'header',component:AdminheaderComponent},
   {path:'footer',component:FooterComponent},
-  {path:'add-admin',component:AddAdminComponent},
+
+  //-----------admin section route----------------//
+  {path:'admin/add',component:AddAdminComponent},
+
+  {path:'admin/edit/:_id',component:AddAdminComponent,
+  resolve: { admin_data: ResolveService },
+  data: {
+    requestcondition: {
+      source: 'users',
+      condition: {_id:"_id"}
+    },
+    endpoint: 'datalist'
+  },
+},
+
+  {path:'admin/list',component:AdminDetailsComponent,
+  resolve: { adminlist: ResolveService },
+  data: {
+    requestcondition: {
+      source: 'users',
+      condition: {type:"admin"}
+    },
+    endpoint: 'datalist'
+  },},
+
+
+
+
   {path:"user/add",component:UserAddEditComponent},
   {path:"user/edit/:id",component:UserAddEditComponent},
 ];

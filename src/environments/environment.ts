@@ -4,6 +4,7 @@
 
 export const environment = {
   API_URL:'https://v2xhu4uyed.execute-api.us-east-1.amazonaws.com/dev/api/',
+  
   // RESET_PASSWORD_URL:'https://dev.mdstockinternational.com/',
   // s3bucket: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/",
   // // apiBaseUrl: "http://127.0.0.1:8000/",
