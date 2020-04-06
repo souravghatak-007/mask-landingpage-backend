@@ -11,7 +11,7 @@ import { AddAdminComponent } from '../Components/addadmin/addadmin.component';
 import {UserListingComponent} from '../Components/user/user-listing/user-listing.component';
 import {ResolveService} from '../services/resolve.service';
 import { UserAddEditComponent } from '../Components/user/user-add-edit/user-add-edit.component';
-
+import {AuthService} from '../services/auth.service'
 
 
 
@@ -36,13 +36,13 @@ const routes: Routes = [
         }
       },
       endpoint:"datalist"
-    },
+    },canActivate: [AuthService],
   },
   {path:'header',component:AdminheaderComponent},
   {path:'footer',component:FooterComponent},
 
   //-----------admin section route----------------//
-  {path:'admin/add',component:AddAdminComponent},
+  {path:'admin/add',component:AddAdminComponent,canActivate: [AuthService]},
 
   {path:'admin/edit/:_id',component:AddAdminComponent,
   resolve: { admin_data: ResolveService },
@@ -52,7 +52,7 @@ const routes: Routes = [
       condition: {_id:"_id"}
     },
     endpoint: 'datalist'
-  },
+  },canActivate: [AuthService],
 },
 
   {path:'admin/list',component:AdminDetailsComponent,
@@ -63,13 +63,13 @@ const routes: Routes = [
       condition: {type:"admin"}
     },
     endpoint: 'datalist'
-  },},
+  },canActivate: [AuthService]},
 
 
 
 
-  {path:"user/add",component:UserAddEditComponent},
-  {path:"user/edit/:id",component:UserAddEditComponent},
+  {path:"user/add",component:UserAddEditComponent,canActivate: [AuthService]},
+  {path:"user/edit/:id",component:UserAddEditComponent,canActivate: [AuthService]},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

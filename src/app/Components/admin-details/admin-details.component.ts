@@ -16,10 +16,10 @@ export class AdminDetailsComponent implements OnInit {
 
 
    
-  public status: any = [{val: 1, name: 'Approve'}, {val: 4, name: 'Decline'}, {val: 3, name: 'Lock'}];
+  public status: any =  [{val: 1, name: 'Active'}, {val: 0, name: 'Inactive'}];
 
    // use for status search
-   statusarray: any = [{val: 1, name: 'Approve'}, {val: 4, name: 'Decline'}, {val: 3, name: 'Lock'}]; 
+   statusarray: any =  [{val: 1, name: 'Active'}, {val: 0, name: 'Inactive'}]; 
 
 
   //  Example like this
@@ -74,7 +74,10 @@ export class AdminDetailsComponent implements OnInit {
   // use for click to another page routing path
   click_to_add_ananother_page = '/adminlist';
 
+  custom_link:any;
 
+  adminDataList_detail_datatype:any;
+  adminDataList_detail_skip:any=['_id','password',"created_at"]
 
   // date_search_endpoint is use for date search endpoint
   date_search_endpoint: any='datalist';
