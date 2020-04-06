@@ -29,7 +29,7 @@ export class UserListingComponent implements OnInit {
   // use for edit any field Navigate that page And you should be import the app-routing.module.ts   ex:- {path: 'editroute/:id', component: < "Write the class name"> },
 
   //  Example like this
-  editroute: any = 'editroute';
+  editroute: any = 'user/edit';
 
 
   // use for Table Header modification 
