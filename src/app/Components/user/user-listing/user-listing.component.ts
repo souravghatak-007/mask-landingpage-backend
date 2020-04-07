@@ -178,6 +178,7 @@ export class UserListingComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.forEach((data) => {
+      //console.log(data);
       this.userDataarray = data.userManagementData.res;
     })
   }

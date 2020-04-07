@@ -30,10 +30,8 @@ const routes: Routes = [
     resolve: { userManagementData: ResolveService },
     data: {
       requestcondition: {
-        source: 'users',
-        condition: {
-          type:"user"
-        }
+        source: 'data_masklanding',
+        condition: {}
       },
       endpoint:"datalist"
     },canActivate: [AuthService],
