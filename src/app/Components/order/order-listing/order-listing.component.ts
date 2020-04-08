@@ -45,7 +45,7 @@ export class OrderListingComponent implements OnInit {
 
 
    // use for Table Detail Field Skip 
-orderDataList_skip: any = ['_id', 'name','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country'];
+orderDataList_skip: any = ['_id', 'name','userid','shipping_charge','sales_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country'];
 
  // updateendpoint is use for data update endpoint
  updateendpoint = 'addorupdatedata';
