@@ -11,7 +11,8 @@ import { AddAdminComponent } from '../Components/addadmin/addadmin.component';
 import {UserListingComponent} from '../Components/user/user-listing/user-listing.component';
 import {ResolveService} from '../services/resolve.service';
 import { UserAddEditComponent } from '../Components/user/user-add-edit/user-add-edit.component';
-import {AuthService} from '../services/auth.service'
+import {AuthService} from '../services/auth.service';
+import {OrderListingComponent} from '../Components/order/order-listing/order-listing.component';
 
 
 
@@ -63,6 +64,15 @@ const routes: Routes = [
     endpoint: 'datalist'
   },canActivate: [AuthService]},
 
+  {path:'order/list',component:OrderListingComponent,
+  resolve: { adminlist: ResolveService },
+  data: {
+    requestcondition: {
+      source: 'data_order',
+      condition: {}
+    },
+    endpoint: 'datalist'
+  },canActivate: [AuthService]},
 
 
 
