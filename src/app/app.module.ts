@@ -38,6 +38,7 @@ import {AddAdminComponent} from './Components/addadmin/addadmin.component'
 import { from } from 'rxjs';
 import { UserListingComponent } from './Components/user/user-listing/user-listing.component';
 import { UserAddEditComponent } from './Components/user/user-add-edit/user-add-edit.component';
+import { OrderListingComponent } from './Components/order/order-listing/order-listing.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,8 @@ import { UserAddEditComponent } from './Components/user/user-add-edit/user-add-e
     FooterComponent,
     AddAdminComponent,
     UserListingComponent,
-    UserAddEditComponent
+    UserAddEditComponent,
+    OrderListingComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
