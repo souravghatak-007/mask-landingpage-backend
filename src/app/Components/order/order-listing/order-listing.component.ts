@@ -77,9 +77,9 @@ orderDataList_skip: any = ['_id', 'name','type', 'password','created_at','update
 };
 // send basic sort data
 sortdata:any={
-   "type":'asc',
+   "type":'desc',
    "field":'shipping_name',
-   "options":['firstname','email','lastname','email','state','city']
+   "options":['shipping_name']
 };
 
  // this is a database collection or view name
@@ -96,7 +96,7 @@ sortdata:any={
 
      selectsearch:[{ label: 'Search By Status', field: 'status', values: this.status }], // this is use for  select search
 
-      textsearch:[{label:"Search By name",field:'firstname'},{label:"Search By Email",field:'email'}],  // this is use for  text search
+      textsearch:[{label:"Search By ShippingName",field:'shipping_name'}],  // this is use for  text search
 
       // this is use for  Autocomplete search
    //    search:[{label:"Search By status",field:this.status}]     
@@ -134,7 +134,7 @@ sortdata:any={
            "skip":0
        },
    sort:{
-       "type":'asc',
+       "type":'desc',
        "field":'shipping_name'
    }
 
