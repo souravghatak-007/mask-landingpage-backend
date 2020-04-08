@@ -41,8 +41,8 @@ export class LoginComponent implements OnInit {
           "routerNav": "dashboard"
         },
         {
-          "type": "rep",
-          "routerNav": "home"
+          "type": "user",
+          "routerNav": "dashboard"
         },
         {
           "type": "model",
