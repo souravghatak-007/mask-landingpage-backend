@@ -89,7 +89,7 @@ export class UserListingComponent implements OnInit {
   sortdata:any={
       "type":'desc',
       "field":'email',
-      "options":['email']
+      "options":['email','firstname']
   };
 
   // this is a database collection or view name
