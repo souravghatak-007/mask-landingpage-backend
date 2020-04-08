@@ -37,10 +37,8 @@ export class UserListingComponent implements OnInit {
   // Like Table head name is " firstname" => "First Name"
   modify_header_array: any = {
       'firstname': "First Name",
-      'email': 'Email Id',
+      'email': 'Email',
       'lastname': 'Last Name',
-      'name': "Full Name",
-      'blogtitle':"Blog Title"
   };
 
 
@@ -89,7 +87,7 @@ export class UserListingComponent implements OnInit {
   sortdata:any={
       "type":'desc',
       "field":'email',
-      "options":['email','firstname']
+      "options":['email','firstname','lastname','country']
   };
 
   // this is a database collection or view name
@@ -107,13 +105,14 @@ export class UserListingComponent implements OnInit {
       ];
   search_settings:any={
 
-      datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"created_at"}],   // this is use for  date search
+      // datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"created_at"}],   // this is use for  date search
 
-      selectsearch:[{ label: 'Search By Status', field: 'status', values: this.status }], // this is use for  select search
+      // selectsearch:[{ label: 'Search By Status', field: 'status', values: this.status }], // this is use for  select search
 
-       textsearch:[{label:"Search By Email",field:'email'},{label:"Search by auther",field:"author_search"}],  // this is use for  text search
+       textsearch:[{label:"Search By Firstname",field:'firstname'},{label:"Search by Email",field:"email"},
+       {label:"Search by Country",field:"country_search"}],  // this is use for  text search
 
-       search:[{label:"Search By Author",field:'author_search',values:this.authval}]     // this is use for  Autocomplete search
+      //  search:[{label:"Search By Author",field:'author_search',values:this.authval}]     // this is use for  Autocomplete search
   };
 
   // this is search block 
