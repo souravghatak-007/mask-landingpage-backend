@@ -262,7 +262,7 @@ export class ProductComponent implements OnInit {
        console.log("all success");
        this.Noloading=false;
 
-       this.router.navigateByUrl('success/'+res.order_id);
+       this.router.navigateByUrl('user/success/'+res.order_id);
      }
     
     });

@@ -8,12 +8,13 @@ import { DashboardAdminComponent } from '../Components/dashboard-admin/dashboard
 import { AdminheaderComponent } from '../Components/header/adminheader.component';
 import { FooterComponent } from '../Components/footer/footer.component';
 import { AddAdminComponent } from '../Components/addadmin/addadmin.component';
-import {UserListingComponent} from '../Components/user/user-listing/user-listing.component';
-import {ResolveService} from '../services/resolve.service';
+import { UserListingComponent } from '../Components/user/user-listing/user-listing.component';
+import { ResolveService } from '../services/resolve.service';
 import { UserAddEditComponent } from '../Components/user/user-add-edit/user-add-edit.component';
-import {AuthService} from '../services/auth.service';
-import {OrderListingComponent} from '../Components/order/order-listing/order-listing.component';
+import { AuthService } from '../services/auth.service';
+import { OrderListingComponent } from '../Components/order/order-listing/order-listing.component';
 import { ProductComponent } from '../Components/product/product.component';
+import { SuccessComponent } from '../Components/success/success.component';
 
 
 
@@ -21,65 +22,76 @@ const routes: Routes = [
 
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
-  {path:'reset-password/:token',component:ResetPasswordComponent},
-  {path:'forget-password',component:ForgotPasswordComponent},
-  {path:'user-details',component:AdminDetailsComponent},
-  {path:'dashboard',component:DashboardAdminComponent},
+  { path: 'reset-password/:token', component: ResetPasswordComponent },
+  { path: 'forget-password', component: ForgotPasswordComponent },
+  { path: 'user-details', component: AdminDetailsComponent },
+  { path: 'dashboard', component: DashboardAdminComponent },
   {
-    path: 'admin/user-management', 
-    component: UserListingComponent, 
+    path: 'admin/user-management',
+    component: UserListingComponent,
     // canActivate: [AuthguardService], 
     resolve: { userManagementData: ResolveService },
     data: {
       requestcondition: {
         source: 'users',
-        condition: {type:"user"}
+        condition: { type: "user" }
       },
-      endpoint:"datalist"
-    },canActivate: [AuthService],
+      endpoint: "datalist"
+    }, canActivate: [AuthService],
   },
-  {path:'header',component:AdminheaderComponent},
-  {path:'footer',component:FooterComponent},
+  { path: 'header', component: AdminheaderComponent },
+  { path: 'footer', component: FooterComponent },
 
   //-----------admin section route----------------//
-  {path:'admin/add',component:AddAdminComponent,canActivate: [AuthService]},
+  { path: 'admin/add', component: AddAdminComponent, canActivate: [AuthService] },
 
-  {path:'admin/edit/:_id',component:AddAdminComponent,
-  resolve: { admin_data: ResolveService },
-  data: {
-    requestcondition: {
-      source: 'users',
-      condition: {_id:"_id"}
-    },
-    endpoint: 'datalist'
-  },canActivate: [AuthService],
-},
+  {
+    path: 'admin/edit/:_id', component: AddAdminComponent,
+    resolve: { admin_data: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'users',
+        condition: { _id: "_id" }
+      },
+      endpoint: 'datalist'
+    }, canActivate: [AuthService],
+  },
 
-  {path:'admin/list',component:AdminDetailsComponent,
-  resolve: { adminlist: ResolveService },
-  data: {
-    requestcondition: {
-      source: 'users',
-      condition: {type:"admin"}
-    },
-    endpoint: 'datalist'
-  },canActivate: [AuthService]},
+  {
+    path: 'admin/list', component: AdminDetailsComponent,
+    resolve: { adminlist: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'users',
+        condition: { type: "admin" }
+      },
+      endpoint: 'datalist'
+    }, canActivate: [AuthService]
+  },
 
-  {path:'admin/order/list',component:OrderListingComponent,
-  resolve: { adminlist: ResolveService },
-  data: {
-    requestcondition: {
-      source: 'data_order',
-      condition: {}
-    },
-    endpoint: 'datalist'
-  },canActivate: [AuthService]},
+  {
+    path: 'admin/order/list', component: OrderListingComponent,
+    resolve: { adminlist: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_order',
+        condition: {}
+      },
+      endpoint: 'datalist'
+    }, canActivate: [AuthService]
+  },
 
-// buy product for user
-{path:'user/product',component:ProductComponent},
+  // buy product for user
+  { path: 'user/product', component: ProductComponent },
+  //success page for user
+  { path: 'user/success',component:SuccessComponent},
 
-  {path:"user/add",component:UserAddEditComponent,canActivate: [AuthService]},
-  {path:"user/edit/:id",component:UserAddEditComponent,canActivate: [AuthService]},
+  {
+    path: 'user/success/:_id', component: SuccessComponent, resolve: { success_data: ResolveService },
+    data: { requestcondition: { source: 'data_order', condition: { _id: "_id" } }, endpoint: 'datalist' },
+  },
+  { path: "user/add", component: UserAddEditComponent, canActivate: [AuthService] },
+  { path: "user/edit/:id", component: UserAddEditComponent, canActivate: [AuthService] },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -40,6 +40,7 @@ import { UserListingComponent } from './Components/user/user-listing/user-listin
 import { UserAddEditComponent } from './Components/user/user-add-edit/user-add-edit.component';
 import { OrderListingComponent } from './Components/order/order-listing/order-listing.component';
 import  {ProductComponent} from './Components/product/product.component';
+import {SuccessComponent} from './Components/success/success.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,8 @@ import  {ProductComponent} from './Components/product/product.component';
     UserListingComponent,
     UserAddEditComponent,
     OrderListingComponent,
-    ProductComponent
+    ProductComponent,
+    SuccessComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
