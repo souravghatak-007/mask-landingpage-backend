@@ -39,6 +39,7 @@ import { from } from 'rxjs';
 import { UserListingComponent } from './Components/user/user-listing/user-listing.component';
 import { UserAddEditComponent } from './Components/user/user-add-edit/user-add-edit.component';
 import { OrderListingComponent } from './Components/order/order-listing/order-listing.component';
+import  {ProductComponent} from './Components/product/product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,8 @@ import { OrderListingComponent } from './Components/order/order-listing/order-li
     AddAdminComponent,
     UserListingComponent,
     UserAddEditComponent,
-    OrderListingComponent
+    OrderListingComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

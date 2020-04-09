@@ -33,11 +33,12 @@ export class ProductComponent implements OnInit {
   public Noloading: boolean = false;
   public userid:any;
   public transection_Type =  environment["Tran_type"];
+  public cookieUserallData:any=JSON.parse(this.cookie.get('user_details'))
   constructor(public _snackBar: MatSnackBar,public router: Router, public meta: MetaService, public apiService:ApiService,public activatedRoute: ActivatedRoute,public cookie: CookieService,public formbuilder: FormBuilder) {    window.scrollTo(500, 0);
     this.genarateForn();
     this.Noloading=false;
-    console.warn(this.transection_Type);
-
+    // console.warn(this.transection_Type);
+    console.log('cookie',this.cookieUserallData.firstname);
     // this.meta.update({ name: 'description', content: 'Dynamic Hello Angular Lovers description!' });
     this.meta.setTag('og:description', 'FFP3 Standard medical face masks for best Protection Against COVID-19, filtering 98% germs, viruses and bacteria, and other hazardous particles. Best face masks in the market to prevent COVID-19 infection.');
     this.meta.setTag('twitter:description', 'FFP3 Standard medical face masks for best Protection Against COVID-19, filtering 98% germs, viruses and bacteria, and other hazardous particles. Best face masks in the market to prevent COVID-19 infection.');
@@ -55,27 +56,25 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activatedRoute.data.forEach((data:any) => {
-      ///console.log(data.admin_data.res);
-      this.userid=data.admin_data.res[0]._id
-      this.patchValue(data.admin_data.res);
+    // this.activatedRoute.data.forEach((data:any) => {
+    //   ///console.log(data.admin_data.res);
+    //   this.userid=data.admin_data.res[0]._id
+    //   this.patchValue(data.admin_data.res);
 
-    });
+    // });
     this.getCountryStateCityList();
   }
   genarateForn(){
     this.orderForm=this.formbuilder.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
-      email: ['', Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
-      phone: [''],
-      city: [''],
-      state: [''],
-      country: [''],
-      zip: [''],
-      companyname:['',Validators.required],
-      conpassword:['',Validators.required],
-      password:['',Validators.required],
+      firstname: [this.cookieUserallData.firstname, Validators.required],
+      lastname: [this.cookieUserallData.lastname, Validators.required],
+      email: [this.cookieUserallData.email, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
+      phone: [this.cookieUserallData.phone],
+      city: [this.cookieUserallData.city],
+      state: [this.cookieUserallData.state],
+      country: [this.cookieUserallData.country],
+      zip: [this.cookieUserallData.zip],
+      companyname:[this.cookieUserallData.companyname],
       billing_postal:['',Validators.required],
       billing_country:['',Validators.required],
       billing_state:['',Validators.required],
@@ -96,23 +95,9 @@ export class ProductComponent implements OnInit {
       card_cvv:['',Validators.required],
       card_cc:['',Validators.required],
       acceptform:[null,Validators.required]
-    },{validator: this.matchingPasswords('password', 'conpassword')
     });
   }
-  public matchingPasswords(passwordKey: string, confirmPasswordKey: string){
-    return (group: FormGroup): {[key: string]: any} => {
 
-      let password = group.controls[passwordKey];
-      let confirmPassword = group.controls[confirmPasswordKey];
-
-      if (password.value !== confirmPassword.value){
-        confirmPassword.setErrors({'incorrect': true});
-        return {
-          mismatchedPasswords: true
-        };
-      }
-    }
-  }
 
   checkqty(){
     if(this.product_qty<3) this.product_qty=3;
@@ -226,14 +211,14 @@ export class ProductComponent implements OnInit {
   patchValue(data:any){
     //console.log(data);
     this.orderForm.patchValue({
-      firstname:data[0].firstname,
-      lastname: data[0].lastname,
-      email:data[0].email,
-      phone: data[0].phone,
-      city: data[0].city,
-      state: data[0].state,
-      country: data[0].country,
-      zip: data[0].zip
+      firstname:this.cookieUserallData.firstname,
+      lastname: this.cookieUserallData.lastname,
+      email:this.cookieUserallData.email,
+      phone: this.cookieUserallData.phone,
+      city: this.cookieUserallData.city,
+      state: this.cookieUserallData.state,
+      country: this.cookieUserallData.country,
+      zip: this.cookieUserallData.zip
     });
   }
 
@@ -255,7 +240,7 @@ export class ProductComponent implements OnInit {
     dataset.autoship_data=this.autoship_data;
     dataset.has_autoship=this.has_autoship;
     dataset.order_status='Incomplete';
-    //console.log('dataset',dataset);
+    console.log('dataset',dataset);
   
     if(dataset.total==0){
      this._snackBar.open('please choose a product ','',{
@@ -269,11 +254,11 @@ export class ProductComponent implements OnInit {
        });
        return;
     }
+    return;
     // console.log(this.orderForm.value,'p',this.product,'dataset',dataset);
     if(this.orderForm.valid && this.orderForm.controls['acceptform'].value){
       this.Noloading=true;
       delete this.orderForm.value.acceptform;
-      delete this.orderForm.value.conpassword;
       //console.warn("sucess Submit",dataset);
       // api call
       let data:any={

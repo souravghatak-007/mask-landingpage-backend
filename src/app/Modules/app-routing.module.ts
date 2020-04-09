@@ -13,6 +13,7 @@ import {ResolveService} from '../services/resolve.service';
 import { UserAddEditComponent } from '../Components/user/user-add-edit/user-add-edit.component';
 import {AuthService} from '../services/auth.service';
 import {OrderListingComponent} from '../Components/order/order-listing/order-listing.component';
+import { ProductComponent } from '../Components/product/product.component';
 
 
 
@@ -74,7 +75,8 @@ const routes: Routes = [
     endpoint: 'datalist'
   },canActivate: [AuthService]},
 
-
+// buy product for user
+{path:'user/product',component:ProductComponent},
 
   {path:"user/add",component:UserAddEditComponent,canActivate: [AuthService]},
   {path:"user/edit/:id",component:UserAddEditComponent,canActivate: [AuthService]},
