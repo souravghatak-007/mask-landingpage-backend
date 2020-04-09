@@ -31,14 +31,14 @@ export class ProductComponent implements OnInit {
   public autoship_data:any='';
   public statelistarray2:any=[];
   public Noloading: boolean = false;
-  public userid:any;
   public transection_Type =  environment["Tran_type"];
   public cookieUserallData:any=JSON.parse(this.cookie.get('user_details'))
   constructor(public _snackBar: MatSnackBar,public router: Router, public meta: MetaService, public apiService:ApiService,public activatedRoute: ActivatedRoute,public cookie: CookieService,public formbuilder: FormBuilder) {    window.scrollTo(500, 0);
     this.genarateForn();
     this.Noloading=false;
     // console.warn(this.transection_Type);
-    console.log('cookie',this.cookieUserallData.firstname);
+    console.log('cookie',this.cookieUserallData);
+  
     // this.meta.update({ name: 'description', content: 'Dynamic Hello Angular Lovers description!' });
     this.meta.setTag('og:description', 'FFP3 Standard medical face masks for best Protection Against COVID-19, filtering 98% germs, viruses and bacteria, and other hazardous particles. Best face masks in the market to prevent COVID-19 infection.');
     this.meta.setTag('twitter:description', 'FFP3 Standard medical face masks for best Protection Against COVID-19, filtering 98% germs, viruses and bacteria, and other hazardous particles. Best face masks in the market to prevent COVID-19 infection.');
@@ -56,12 +56,6 @@ export class ProductComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.activatedRoute.data.forEach((data:any) => {
-    //   ///console.log(data.admin_data.res);
-    //   this.userid=data.admin_data.res[0]._id
-    //   this.patchValue(data.admin_data.res);
-
-    // });
     this.getCountryStateCityList();
   }
   genarateForn(){
@@ -208,19 +202,7 @@ export class ProductComponent implements OnInit {
       // }
     }
   }
-  patchValue(data:any){
-    //console.log(data);
-    this.orderForm.patchValue({
-      firstname:this.cookieUserallData.firstname,
-      lastname: this.cookieUserallData.lastname,
-      email:this.cookieUserallData.email,
-      phone: this.cookieUserallData.phone,
-      city: this.cookieUserallData.city,
-      state: this.cookieUserallData.state,
-      country: this.cookieUserallData.country,
-      zip: this.cookieUserallData.zip
-    });
-  }
+
 
   /**Submit submit */
   submit(){
@@ -263,7 +245,7 @@ export class ProductComponent implements OnInit {
       // api call
       let data:any={
         "data":dataset,
-        "userid":this.userid
+        "userid":this.cookieUserallData._id
         
       }
       this.apiService.addDataWithoutToken(data, 'masklanding-order').subscribe((res:any) => {

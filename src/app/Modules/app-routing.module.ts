@@ -65,7 +65,7 @@ const routes: Routes = [
     endpoint: 'datalist'
   },canActivate: [AuthService]},
 
-  {path:'order/list',component:OrderListingComponent,
+  {path:'admin/order/list',component:OrderListingComponent,
   resolve: { adminlist: ResolveService },
   data: {
     requestcondition: {
