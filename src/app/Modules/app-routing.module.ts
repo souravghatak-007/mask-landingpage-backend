@@ -15,6 +15,7 @@ import { AuthService } from '../services/auth.service';
 import { OrderListingComponent } from '../Components/order/order-listing/order-listing.component';
 import { ProductComponent } from '../Components/product/product.component';
 import { SuccessComponent } from '../Components/success/success.component';
+import {OrderEditComponent} from '../Components/order/order-edit/order-edit.component'
 
 
 
@@ -58,6 +59,18 @@ const routes: Routes = [
   },
 
   {
+    path: 'admin/order/edit/:_id', component: OrderEditComponent,
+    resolve: { orderData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_order',
+        condition: { _id: "_id" }
+      },
+      endpoint: 'datalist'
+    }, canActivate: [AuthService],
+  },
+
+  {
     path: 'admin/list', component: AdminDetailsComponent,
     resolve: { adminlist: ResolveService },
     data: {
@@ -75,7 +88,9 @@ const routes: Routes = [
     data: {
       requestcondition: {
         source: 'data_order',
-        condition: {}
+        condition: {
+          order_status:"Complete"
+        }
       },
       endpoint: 'datalist'
     }, canActivate: [AuthService]

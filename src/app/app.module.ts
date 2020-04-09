@@ -41,6 +41,7 @@ import { UserAddEditComponent } from './Components/user/user-add-edit/user-add-e
 import { OrderListingComponent } from './Components/order/order-listing/order-listing.component';
 import  {ProductComponent} from './Components/product/product.component';
 import {SuccessComponent} from './Components/success/success.component';
+import { OrderEditComponent } from './Components/order/order-edit/order-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +63,8 @@ import {SuccessComponent} from './Components/success/success.component';
     UserAddEditComponent,
     OrderListingComponent,
     ProductComponent,
-    SuccessComponent
+    SuccessComponent,
+    OrderEditComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

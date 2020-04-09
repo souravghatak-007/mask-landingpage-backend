@@ -19,7 +19,7 @@ export class OrderListingComponent implements OnInit {
 
 
  //  Example like this
- editroute: any = 'admin/edit';
+ editroute: any = 'admin/order/edit/';
 
  datasource: any; 
  orderDataList:any=[];
@@ -45,13 +45,13 @@ export class OrderListingComponent implements OnInit {
 
 
    // use for Table Detail Field Skip 
-orderDataList_skip: any = ['_id', 'name','userid','shipping_charge','sales_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country'];
+orderDataList_skip: any = ['_id', 'name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','transactionid'];
 
  // updateendpoint is use for data update endpoint
  updateendpoint = 'addorupdatedata';
 
  // deleteendpoint is use for data delete endpoint
- deleteendpoint = 'deletesingledata';
+ deleteendpoint = 'deletesingledaanta';
 
  // this is a database collection name
  tablename = 'data_order';
@@ -79,7 +79,7 @@ orderDataList_skip: any = ['_id', 'name','userid','shipping_charge','sales_tax',
 sortdata:any={
    "type":'desc',
    "field":'shipping_name',
-   "options":['shipping_name']
+   "options":['shipping_name','shipping_address','shipping_country','shipping_state','shipping_city']
 };
 
  // this is a database collection or view name
@@ -96,7 +96,7 @@ sortdata:any={
 
      selectsearch:[{ label: 'Search By Status', field: 'status', values: this.status }], // this is use for  select search
 
-      textsearch:[{label:"Search By ShippingName",field:'shipping_name'}],  // this is use for  text search
+      textsearch:[{label:"Search By ShippingName",field:'shipping_name'},{label:"Search By ShippingAddress",field:'shipping_address'},{label:"Search By ShippingCountry",field:'shipping_country'},{label:"Search By ShippingState",field:'shipping_state'},{label:"Search By ShippingCity",field:'shipping_city'}],  // this is use for  text search
 
       // this is use for  Autocomplete search
    //    search:[{label:"Search By status",field:this.status}]     
