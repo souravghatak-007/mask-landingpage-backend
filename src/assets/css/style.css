@@ -179,6 +179,38 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 .email_wrapper .mat-form-field-appearance-legacy .mat-form-field-underline{height:0}
 .email_wrapper form{padding:16px}
 
+.clear{ display: block!important; clear: both!important; overflow: hidden!important; margin: 0!important; padding: 0!important;}
+
+.productformcon .mat-select {
+  width: 95%;
+  margin: 0 auto; 
+  padding: 0 2%;
+  background: #fff;
+  border: solid 1px #bbbfc0;
+  margin: 0px auto;
+  height: 30px; line-height: 30px;
+  font-size: 13px;
+  color: #292929; outline: none;
+  display: block;  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.productformcon .mat-select-value {
+  display: table-cell;
+  max-width: 0;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 30px; line-height: 30px;
+}
+.productformcon .mat-select-placeholder {
+  color: #292929;
+  display: block;
+  height: 30px; line-height: 38px;
+}
+
+
 @media screen and (max-width: 1620px) {
 .listingnewstyle mat-toolbar-row.searchbar{justify-content:center!important;flex-wrap:wrap;height:auto}
 .listingnewstyle mat-toolbar-row.searchbar mat-form-field{margin:0 5px 5px 0}
@@ -250,17 +282,24 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 .login_wrapper .mat-form-field-appearance-legacy .mat-form-field-underline {height: 1px;display: none;}
 .signupfooter a{font-family: var(--main-font); font-size: var(--base-font-size);color:var(--c-t-bg-w);}
 .signupfooter a:last-child{padding-right: 0px !important;}
-.login_wrapper .mat-form-field-appearance-legacy .mat-form-field-label span{color:var(--c-t-bg-zblack); font-family: var(--main-font); font-size: var(--base-font-size);padding-left: 10px;}
+.login_wrapper .mat-form-field-appearance-legacy .mat-form-field-label span{color:var(--c-t-bg-zblack); font-family: var(--main-font); font-size: var(--base-font-size);     padding-left: 2%;}
 .login_wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {height: 36px;}
 .login_wrapper .from {padding: 16px 42px;}
-.login_wrapper input.mat-input-element {padding-left: 10px;width: 96%;}
+.login_wrapper input.mat-input-element {padding-left: 2%; width: 98%; height: 36px;}
 .login_wrapper .mat-form-field-appearance-legacy .mat-form-field-wrapper {padding-bottom: 10px;padding-top: 10px;}
 .login_wrapper .mat-form-field-subscript-wrapper .mat-error{margin-top: 5px;}
+.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill+.mat-form-field-label-wrapper .mat-form-field-label {
+  display: block;
+  transition: none;
+  padding-top: 5px;     color: #111;
+}
 
-
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  top: 1.5em;
+}
 #maincontent{background:url(../images/bodyBg.png) repeat #fff;margin-left:0;margin-right:0;margin-top:20px;padding:0 25px 25px;position:relative;min-height:465px;width:auto}
 #beadcamb {
-  width: 100%;
+   
   background: #49cced;
   position: relative;
   clear: both;
