@@ -20,10 +20,10 @@ export class LoginComponent implements OnInit {
 
 
   public signUpRouteingUrl: any = {
-    "path": "",
-    "buttonName": "Not registered? Request Sign Up Here",
-    "customLink": "/",
-    "customURl": ""
+    // "path": "",
+    // "buttonName": "Not registered? Request Sign Up Here",
+    // "customLink": "/",
+    // "customURl": ""
   };
   public forgetRouteingUrl: any = {
     "path": "",

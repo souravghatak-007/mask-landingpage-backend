@@ -4,7 +4,7 @@
 
 .product_left{ width: 1120px; display: block; float: left;}
 
-.product_right{ width: 400px; float: right; background: #cfd3d4; border: solid 1px #fff; border-radius: 10px; padding: 8px;}
+.product_right{ width: 435px; float: right; background: #cfd3d4; border: solid 1px #fff; border-radius: 10px; padding: 8px;}
 
 
 .product_right h2{ padding: 6px 15px 20px 15px; text-align: center;     border-radius: 10px 10px 0 0;
@@ -26,7 +26,7 @@
 
 .product_body h3{ text-align: center; margin: 0; padding: 0 0 15px 0; font-size: 22px;  font-weight: normal; text-transform: uppercase; color: #2a2929;  font-family: 'NunitoRegular';}
 
-.product_body h4{ display: block; border: solid 1px #ffa600; border-radius: 5px; padding: 4px; margin-bottom: 10px;     }
+.product_body h4{ display: block; border: solid 1px #ffa600; border-radius: 5px; padding: 4px; margin: 0px; margin-bottom: 10px;     }
 
 .product_body h4 span{ background:#ffa600 url(https://all-frontend-assets.s3.amazonaws.com/bvt-mask-affiliate/images/ad_lockicon.png) no-repeat  20px center;
 display: block; padding: 10px 0 16px 65px;     font-weight: normal;  font-family: 'NunitoRegular'; border-radius: 4px; font-size: 16px; color: #121212;
@@ -50,11 +50,13 @@ font-weight: normal; text-align:center; margin: 0px;
 .productformcon:last-child{ border-bottom: solid 1px #bbbfc0; border-radius: 0 0 10px 10px;}
 
 .productformcon .formgroup{ display: block;  margin: 10px 0;}
-.productformcon input { display: block; background: #fff;  border: solid 1px #bbbfc0; padding: 0 10px; outline: none;
-     height: 30px;  font-size: 13px; color: #292929;     width: 100%;  font-family: Arial, Helvetica, sans-serif;}
+.productformcon input { display: block; background: #fff;  border: solid 1px #bbbfc0; padding: 0 2%; outline: none;
+     height: 30px;  font-size: 13px; color: #292929;        width: 95%;
+     margin: 0 auto; font-family: Arial, Helvetica, sans-serif;}
 
-     .productformcon textarea{ display: block; background: #fff;  border: solid 1px #bbbfc0; padding:  10px; outline: none;
-        height: 50px;  width: 100%; font-family: Arial, Helvetica, sans-serif;  font-size: 13px; color: #292929; resize: none;}
+     .productformcon textarea{ display: block; background: #fff;  border: solid 1px #bbbfc0; padding:  10px 2%; outline: none;
+        height: 50px;  width: 95%;
+        margin: 0 auto;  font-family: Arial, Helvetica, sans-serif;  font-size: 13px; color: #292929; resize: none;}
 
         .productformcon .mat-select-placeholder {
             color: #292929;
@@ -73,15 +75,17 @@ font-weight: normal; text-align:center; margin: 0px;
             color: #f44336;
             font-size: 10px;
             line-height: 14px;
-    display: block;
+    display: block;     margin: 0 1%;
         }
 
-        .productformcon select{ display: block; background: #fff;  border: solid 1px #bbbfc0; padding: 0 10px; outline: none;
-            height: 30px;  width: 100%;   font-family: Arial, Helvetica, sans-serif;  font-size: 13px; color: #292929; resize: none;}
+        .productformcon select{ display: block; background: #fff;  border: solid 1px #bbbfc0; padding: 0 2%; outline: none;
+            height: 30px;  width: 99%;
+            margin: 0 auto;   font-family: Arial, Helvetica, sans-serif;  font-size: 13px; color: #292929; resize: none;}
 
-            .productformcon mat-select {
-                width: 100%;
-                padding: 0 10px;
+             .mat-select {
+                width: 95%;
+                margin: 0 auto; 
+                padding: 0 2%;
                 background: #fff;
                 border: solid 1px #bbbfc0;
                 margin: 0px auto;
@@ -91,7 +95,17 @@ font-weight: normal; text-align:center; margin: 0px;
                 display: block;  font-family: Arial, Helvetica, sans-serif;
               }
               
-              .productformcon .mat-select-placeholder {
+
+              .mat-select-value {
+                display: table-cell;
+                max-width: 0;
+                width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                height: 30px;
+            }
+             .mat-select-placeholder {
                 color: #292929;
                 display: block;
                 height: 30px; line-height: 38px;
@@ -111,9 +125,9 @@ font-weight: normal; text-align:center; margin: 0px;
            
               .formchakebox{ display: flex!important;}
 
-              .formchakebox input{ width: 14px; height: 14px; margin-top: 4px;}
+              .formchakebox input[type="checkbox"]{ width: 14px; height: 14px; margin: 0px; margin-top: 3px;}
 
-              .formchakebox p{ width: 75%; padding-left: 10px; font-size: 13px; color: #ea0142; font-weight: normal;  font-family: 'NunitoRegular';}
+              .formchakebox p{ width: 75%;  margin: 0px; padding: 0; padding-left: 10px; font-size: 13px; color: #ea0142; font-weight: normal;  font-family: 'NunitoRegular';}
 
 .label2{ display: block; font-size: 13px; color: #ea0142; font-weight: normal;  font-family: 'NunitoRegular'; padding: 10px 0;}
 
@@ -153,7 +167,7 @@ font-weight: normal; text-align:center; margin: 0px;
     background: -ms-linear-gradient(top, rgba(71,74,99,1) 0%, rgba(47,49,70,1) 100%);
     background: linear-gradient(to bottom, rgba(71,74,99,1) 0%, rgba(47,49,70,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474a63', endColorstr='#2f3146', GradientType=0 );
-padding: 12px 13px 14px 13px; position: relative;     margin: 0px;
+padding: 13px 13px 14px 13px; position: relative;     margin: 0px;
 
 }
 
@@ -210,7 +224,7 @@ padding: 12px 13px 14px 13px; position: relative;     margin: 0px;
 .selectproduct .QTYblock input { background: #fff;}
 
 .QTYblock p{ 
-    float: left;
+    float: left; margin: 0;
     padding: 4px 10px 0 0;
     font-size: 20px;
     font-weight: normal;
@@ -397,12 +411,12 @@ font-family: 'NunitoRegular';
 
 
     .product_con1_body  h2 {
-         padding:10px 13px 15px 13px;
+         padding:12px 13px 15px 13px;
         
     }
 
     .product_con1_body  h2  input[type=checkbox] {
-        margin: 10px 12px 0 0;
+        margin: 8px 12px 0 0;
         height: 20px;
         float: left;
         width: 20px;
@@ -468,12 +482,26 @@ font-family: 'NunitoRegular';
 
         .product_con1_body h2 span  { 
             display: block;
-            text-align: center; 
+            text-align: center;
+            width: 100%;
         }
 
         .QTYblock {
             display: block;
             float: none;  margin: 10px auto; width: 112px; margin-bottom: 5px;
+        }
+
+        .QTYblock  p  {
+            font-size: 16px;
+            display: block;
+            width: 100%;
+            margin: 0;
+            padding: 0 0 10px 0;
+        }
+
+        .QTYblock  input  {
+            display: block; 
+            margin: 0 auto;
         }
 }
 
