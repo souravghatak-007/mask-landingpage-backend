@@ -31,7 +31,7 @@ public successData:any=[];
     this.activatedRoute.data.forEach((data:any) => {
       // console.log(data);
       this.successData=data.success_data.res[0];
-     console.warn(this.successData);
+     //console.warn(this.successData);
 
 
     });

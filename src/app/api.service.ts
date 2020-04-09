@@ -466,7 +466,7 @@ postdata(requestdata: any) {
       })
     };
     console.log('endpoint');
-    console.log(endpoint);
+//console.log(endpoint);
     var result = this._http.post(this.serverUrl+endpoint, JSON.stringify(data), httpOptions).pipe(map(res => res));
     return result;
   }
