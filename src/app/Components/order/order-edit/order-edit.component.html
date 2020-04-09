@@ -2,7 +2,7 @@
     <span class="searchblockwrapper">
         <span>
 <mat-toolbar color="primary" style="justify-content: center; align-items: center;">
-    <h2 class="headerSpan">{{header_name}}</h2>
+    <h2 class="headerSpan"></h2>
 </mat-toolbar>
         </span>
     </span>
@@ -10,8 +10,7 @@
 <div>
     <form  class="example-full-width" novalidate [formGroup]="orderEditform" >
         <mat-form-field >
-            <input matInput placeholder="Order Id" [formControl]="orderEditform.controls['orderid']"  
-                (blur)="inputUntouch(orderEditform,'orderid')">
+            <input matInput placeholder="Order Id" [formControl]="orderEditform.controls['orderid']">
             <mat-error *ngIf="orderEditform.controls['orderid'].touched && !orderEditform.controls['firstname'].valid
                        && orderEditform.controls['orderid'].errors.required">
                        Order ID field can not be blank</mat-error>
