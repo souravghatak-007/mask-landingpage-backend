@@ -1,0 +1,532 @@
+<!-- loader -->
+   
+<span class="progressloderspan" *ngIf="Noloading==true"   mode="indeterminate">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</span>
+
+
+<mat-card class="productbody">
+    <span class="product_wrapper">
+
+        <span class="product_left">
+
+            <span  [ngClass]="product[0]==true? ' product_con1 selectproduct' :'product_con1 ' ">
+                <span class="product_con1_body">
+
+                    <h2><input type="checkbox" [(ngModel)]="product[0]" (click)="resetproduct()" > <span>BUY 1 Box - Pack of 10</span>  <span class="clear"></span> </h2>
+
+
+                    <span class="product_con1_prodetail">
+
+                        <span class="product_con1_prodetail_left">
+                            <img src="https://all-frontend-assets.s3.amazonaws.com/bvt-mask-affiliate/images/ad_pro1.png">
+                         </span>
+
+                         <span class="product_con1_prodetail_rigt">
+
+                            <h6>39.95
+                              <p>/each</p>
+
+                            </h6>
+
+                            <button *ngIf="product[0]==true">SELECTED</button>
+                            <button *ngIf="product[0]==false" (click)="setproduct(0)" >SELECT</button>
+
+                          </span>
+
+                    </span>
+
+
+                </span>
+
+                <span class="product_con1_footer">
+
+                    <label><input type="checkbox" [(ngModel)]="has_autoship"> <span>Autoship</span> </label>
+
+                  <span class="selectspan">
+                    <select [(ngModel)]="autoship_data" [disabled]="!has_autoship">
+                          <option value="">Choose your Auto-ship Package</option>
+                          <option value="14|1">BUY 1 Box - Pack of 10 | Every 2 Weeks</option>
+                          <option value="30|1">BUY 1 Box - Pack of 10 | Every 1 Month</option>
+                          <option value="14|2">BUY 2 Box - Pack of 10 | Every 2 Weeks</option>
+                          <option value="14|2">BUY 2 Box - Pack of 10 | Every 1 Month</option>
+                          <option value="14|3">BUY 3 Box - Pack of 10 | Every 2 Weeks</option>
+                          <option value="30|3">BUY 3 Box - Pack of 10 | Every 1 Month</option>
+
+                    </select>
+                </span>
+
+                    <span class="clear"></span>
+                    </span>
+
+            </span>
+
+            <span  [ngClass]="product[1]==true? ' product_con1 selectproduct' :'product_con1 ' ">
+                <span class="product_con1_body">
+
+                    <h2><input type="checkbox" [(ngModel)]="product[1]" (click)="resetproduct()" > <span>BUY 2 Boxes - Pack of 10 -<strong> GET 5% OFF</strong></span>  <span class="clear"></span> </h2>
+
+
+                    <span class="product_con1_prodetail">
+
+                        <span class="product_con1_prodetail_left">
+                            <img src="https://all-frontend-assets.s3.amazonaws.com/bvt-mask-affiliate/images/ad_pro2.png">
+                         </span>
+
+                         <span class="product_con1_prodetail_rigt">
+
+                            <h6>37.95
+                                <p>/each</p>
+
+                            </h6>
+                             <h4>Total Cost : $ 72.10</h4>
+                            <button *ngIf="product[1]==true">SELECTED</button>
+                            <button *ngIf="product[1]==false" (click)="setproduct(1)" >SELECT</button>
+
+                          </span>
+
+                    </span>
+
+
+                </span>
+
+               <span class="product_con1_footer">
+
+                    <label><input type="checkbox" [(ngModel)]="has_autoship"> <span>Autoship</span> </label>
+
+                  <span class="selectspan">
+                    <select [(ngModel)]="autoship_data" [disabled]="!has_autoship">
+                          <option value="">Choose your Auto-ship Package</option>
+                          <option value="14|1">BUY 1 Box - Pack of 10 | Every 2 Weeks</option>
+                          <option value="30|1">BUY 1 Box - Pack of 10 | Every 1 Month</option>
+                          <option value="14|2">BUY 2 Box - Pack of 10 | Every 2 Weeks</option>
+                          <option value="14|2">BUY 2 Box - Pack of 10 | Every 1 Month</option>
+                          <option value="14|3">BUY 3 Box - Pack of 10 | Every 2 Weeks</option>
+                          <option value="30|3">BUY 3 Box - Pack of 10 | Every 1 Month</option>
+
+                    </select>
+                </span>
+
+                    <span class="clear"></span>
+                    </span>
+
+            </span>
+
+
+            <span [ngClass]="product[2]==true? ' product_con1 selectproduct' :'product_con1 ' " >
+                <span class="product_con1_body">
+
+                    <h2><input type="checkbox" [(ngModel)]="product[2]" (click)="resetproduct()" >
+                        <span>BUY 3 Boxes or more - Pack of 10 -<strong> GET 10% OFF  </strong></span>
+                        <span class="QTYblock">
+                            <p>QTY: </p>
+                         <input type="number" [(ngModel)]="product_qty" (change)="checkqty()">
+
+
+
+                        </span>
+
+                        <span class="clear"></span> </h2>
+
+
+                    <span class="product_con1_prodetail">
+
+                        <span class="product_con1_prodetail_left">
+                            <img src="https://all-frontend-assets.s3.amazonaws.com/bvt-mask-affiliate/images/ad_pro2.png">
+                         </span>
+
+                         <span class="product_con1_prodetail_rigt">
+
+                            <h6>35.95
+                            <p>/each</p>
+
+
+                            </h6>
+                             <h4>Total Cost : $ {{(35.95*product_qty).toFixed(2)}}</h4>
+                            <button *ngIf="product[2]==true">SELECTED</button>
+                            <button *ngIf="product[2]==false" (click)="setproduct(2)" >SELECT</button>
+
+                          </span>
+
+                    </span>
+
+
+                </span>
+
+                <span class="product_con1_footer">
+
+                    <label><input type="checkbox" [(ngModel)]="has_autoship"> <span>Autoship</span> </label>
+
+                  <span class="selectspan">
+                    <select [(ngModel)]="autoship_data" [disabled]="!has_autoship">
+                          <option value="">Choose your Auto-ship Package</option>
+                          <option value="14|1">BUY 1 Box - Pack of 10 | Every 2 Weeks</option>
+                          <option value="30|1">BUY 1 Box - Pack of 10 | Every 1 Month</option>
+                          <option value="14|2">BUY 2 Box - Pack of 10 | Every 2 Weeks</option>
+                          <option value="14|2">BUY 2 Box - Pack of 10 | Every 1 Month</option>
+                          <option value="14|3">BUY 3 Box - Pack of 10 | Every 2 Weeks</option>
+                          <option value="30|3">BUY 3 Box - Pack of 10 | Every 1 Month</option>
+
+                    </select>
+                </span>
+
+                    <span class="clear"></span>
+                    </span>
+
+            </span>
+
+
+             <span class="product_con2">
+
+                <h4>Order Summary</h4>
+                   <table cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>Product:</td>
+                        <td *ngIf="product[0]==false && product[1]==false && product[2]==false">N/A</td>
+                        <td *ngIf="product[0]==true">1 Box - Pack of 10</td>
+                        <td *ngIf="product[1]==true">2 Box - Pack of 10</td>
+                        <td *ngIf="product[2]==true">3 Box OR MORE - Pack of 10 ({{product_qty}})</td>
+                    </tr>
+                    <tr>
+                        <td>Sub-total: </td>
+                        <td>$ {{subtotal}}</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping: </td>
+                        <td>$ {{shipping}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Sales Tax: </td>
+                        <td>$ {{saletax}}</td>
+                    </tr>
+
+                    <tr>
+                        <th>Total: </th>
+                        <th>$ {{total}}</th>
+                    </tr>
+
+                   </table>
+
+             </span>
+
+
+             <span class="product_con3">
+
+                <span class="product_con3_img">
+                    <img src="https://all-frontend-assets.s3.amazonaws.com/bvt-mask-affiliate/images/ad_gimg.png">
+                </span>
+
+                  <span class="product_con3_text">
+
+                     <strong>SATISFACTION GUARANTEED </strong>
+                     If anytime, within 30 days, you are unsatisfied for any reason, just contact us, and we will give you a lightning-quick round for any unopened box, no questions asked.
+                  </span>
+                 </span>
+
+
+        </span>
+
+
+
+
+
+
+        <span class="product_right">
+               <h2>
+                FINAL STEP
+                <span>PAYMENT INFO</span>
+
+               </h2>
+
+               <span class="product_body">
+                   <h3>Payment information</h3>
+                   <h4><span>Secure 128-bit SSL Connection</span></h4>
+
+                   <h5>USER INFORMATION</h5>
+
+                   <form [formGroup]="orderForm" (ngSubmit)="submit()">
+
+                   <span class="productformcon">
+
+                    <span class="formgroup">
+                        <input type="text" placeholder="First Name" formControlName="firstname" (blur)="inputUntouch(orderForm,'firstname')">
+                        <mat-error *ngIf="!orderForm.controls['firstname'].valid && orderForm.controls['firstname'].touched"
+                        class="errortext">First namefield can not be blank</mat-error>
+                   </span>
+
+                   <span class="formgroup">
+                    <input type="text" placeholder="Last Name" formControlName="lastname" (blur)="inputUntouch(orderForm,'lastname')">
+                    <mat-error *ngIf="!orderForm.controls['lastname'].valid && orderForm.controls['lastname'].touched"
+                    class="errortext">Last Name field can not be blank</mat-error>
+                   </span>
+
+                   <span class="formgroup">
+                    <input (blur)="inputUntouch(orderForm,'companyname')" type="text" placeholder="Company" formControlName="companyname">
+                    <mat-error *ngIf="!orderForm.controls['companyname'].valid && orderForm.controls['companyname'].touched"
+                    class="errortext">Company Name field can not be blank</mat-error>
+                   </span>
+
+                   <span class="formgroup">
+                    <input type="text" placeholder="Email" formControlName="email">
+                    <mat-error *ngIf="!orderForm.controls['email'].valid && orderForm.controls['email'].touched"
+                    class="errortext">Email field can not be blank</mat-error>
+                   </span>
+
+                   <span class="formgroup">
+                    <input (blur)="inputUntouch(orderForm,'password')" type="password" placeholder="Password" formControlName="password">
+                    <mat-error *ngIf="!orderForm.controls['password'].valid && orderForm.controls['password'].touched"
+                    class="errortext">Password field can not be blank</mat-error>
+                   </span>
+
+                   <span class="formgroup">
+                    <input type="password" (blur)="inputUntouch(orderForm,'conpassword')" placeholder="Confirm Password" formControlName="conpassword">
+                    <mat-error *ngIf="!orderForm.controls['conpassword'].valid && orderForm.controls['conpassword'].touched"
+                    class="errortext">Confirm Password field can not be blank</mat-error>
+                   </span>
+
+
+                   </span>
+
+
+                   <h5>BILLING INFORMATION</h5>
+
+                   <span class="productformcon">
+
+                    <span class="formgroup">
+                        <input type="text" placeholder="Billing Name" formControlName="billing_name" (blur)="inputUntouch(orderForm,'billing_name')">
+                        <mat-error *ngIf="!orderForm.controls['billing_name'].valid && orderForm.controls['billing_name'].touched"
+                    class="errortext">Billing Name field can not be blank</mat-error>
+                   </span>
+
+                   <span class="formgroup">
+                    <input type="text" placeholder="Phone" formControlName="billing_phone" (blur)="inputUntouch(orderForm,'billing_phone')">
+                    <mat-error *ngIf="!orderForm.controls['billing_phone'].valid && orderForm.controls['billing_phone'].touched"
+                    class="errortext">Phone Number field can not be blank</mat-error>
+                  </span>
+
+                  <span class="formgroup">
+                    <textarea placeholder="Address" formControlName="billing_address" (blur)="inputUntouch(orderForm,'billing_address')"></textarea>
+                    <mat-error *ngIf="!orderForm.controls['billing_address'].valid && orderForm.controls['billing_address'].touched"
+                    class="errortext">Address field can not be blank</mat-error>
+                  </span>
+
+
+                  <span class="formgroup">
+                    <mat-select formControlName="billing_country" placeholder="Country" (blur)="inputUntouch(orderForm,'billing_country')">
+        <mat-option *ngFor="let country of countrylistarray" [value]="country.country" (click)="setState(country.country);">{{country.country}}</mat-option>
+                        <!-- <option>Country</option>
+                        <option>Country</option> -->
+                    </mat-select>
+                    <mat-error *ngIf="!orderForm.controls['billing_country'].valid && orderForm.controls['billing_country'].touched"
+                    class="errortext">Country field can not be blank</mat-error>
+                   </span>
+
+                   <span class="formgroup">
+                    <mat-select formControlName="billing_state" placeholder="State" (blur)="inputUntouch(orderForm,'billing_state')">
+                        <mat-option *ngFor="let state of statelistarray" [value]="state"> {{state}}</mat-option>
+                        <!-- <option>State</option>
+                        <option>State</option> -->
+                    </mat-select>
+                    <mat-error *ngIf="!orderForm.controls['billing_state'].valid && orderForm.controls['billing_state'].touched"
+                    class="errortext">State field can not be blank</mat-error>
+                   </span>
+
+
+                   <span class="formgroup">
+                    <input type="text" placeholder="City" formControlName="billing_city" (blur)="inputUntouch(orderForm,'billing_city')">
+                    <mat-error *ngIf="!orderForm.controls['billing_city'].valid && orderForm.controls['billing_city'].touched"
+                    class="errortext">City field can not be blank</mat-error>
+                  </span>
+
+
+                   <span class="formgroup">
+                    <input type="text" placeholder="Postal Code" formControlName="billing_postal" (blur)="inputUntouch(orderForm,'billing_postal')">
+                    <mat-error *ngIf="!orderForm.controls['billing_postal'].valid && orderForm.controls['billing_postal'].touched"
+                    class="errortext">Postal Address field can not be blank</mat-error>
+                  </span>
+
+
+                  <span class="formgroup formchakebox">
+                    <input type="checkbox" id="piscine" name="piscine" (click)="handleSelected($event)">
+
+                         <p>Use my billing address as my ship-to address</p>
+
+                  </span>
+
+
+
+                   </span>
+
+
+                   <h5>Shipping Address</h5>
+
+                   <span class="productformcon">
+
+                    <span class="formgroup">
+                        <input type="text" placeholder="Name" formControlName="shipping_name" (blur)="inputUntouch(orderForm,'shipping_name')">
+                        <mat-error *ngIf="!orderForm.controls['shipping_name'].valid && orderForm.controls['shipping_name'].touched"
+                        class="errortext">Shipping Name field can not be blank</mat-error>
+                   </span>
+
+                   <span class="formgroup">
+                    <textarea placeholder="Address" formControlName="shipping_phone" (blur)="inputUntouch(orderForm,'shipping_phone')"></textarea>
+                    <mat-error *ngIf="!orderForm.controls['shipping_phone'].valid && orderForm.controls['shipping_phone'].touched"
+                    class="errortext">Shipping Phone field can not be blank</mat-error>
+                 </span>
+
+                   <span class="formgroup">
+                    <textarea placeholder="Address" formControlName="shipping_address" (blur)="inputUntouch(orderForm,'shipping_address')"></textarea>
+                    <mat-error *ngIf="!orderForm.controls['shipping_address'].valid && orderForm.controls['shipping_address'].touched"
+                    class="errortext">Shipping Address field can not be blank</mat-error>
+                 </span>
+
+                 
+
+                 <span class="formgroup">
+                    <input type="text" placeholder="City" formControlName="shipping_city" (blur)="inputUntouch(orderForm,'shipping_city')">
+                    <mat-error *ngIf="!orderForm.controls['shipping_city'].valid && orderForm.controls['shipping_city'].touched"
+                    class="errortext">Shipping City field can not be blank</mat-error>
+                  </span>
+
+
+
+                  <span class="formgroup" >
+                    <mat-select formControlName="shipping_country" placeholder="Country" (blur)="inputUntouch(orderForm,'shipping_country')">
+                        <mat-option *ngFor="let country of countrylistarray2" [value]="country.country" (click)="setStateShipping(country.country);">{{country.country}}</mat-option>
+                        <!-- <option>Country</option>
+                        <option>Country</option> -->
+                    </mat-select>
+                    <mat-error *ngIf="!orderForm.controls['shipping_country'].valid && orderForm.controls['shipping_country'].touched"
+                    class="errortext">Shipping Country field can not be blank</mat-error>
+                   </span>
+
+                   <span class="formgroup">
+                    <mat-select formControlName="shipping_state" placeholder="State" (blur)="inputUntouch(orderForm,'shipping_state')">
+                        <mat-option *ngFor="let state of statelistarray2" [value]="state">{{state}}</mat-option>
+                        <!-- <option>State</option>
+                        <option>State</option> -->
+                    </mat-select>
+                    <mat-error *ngIf="!orderForm.controls['shipping_state'].valid && orderForm.controls['shipping_state'].touched"
+                    class="errortext">Shipping State field can not be blank</mat-error>
+                   </span>
+
+                   <span class="formgroup">
+                    <input type="text" placeholder="Postal Code" formControlName="shipping_postalcode" (blur)="inputUntouch(orderForm,'shipping_postalcode')">
+                    <mat-error *ngIf="!orderForm.controls['shipping_postalcode'].valid && orderForm.controls['shipping_postalcode'].touched"
+                    class="errortext">Shipping Postal Code field can not be blank</mat-error>
+
+                </span>
+
+
+                <label class="label2">Pay with Credit or Debit Card   </label>
+                <label class="label3">We Accept:   </label>
+
+                <img src="https://all-frontend-assets.s3.amazonaws.com/bvt-mask-affiliate/images/ad_cardimg.png" class="ad_cardimg">
+
+                <span class="clear"></span>
+
+                <span class="formgroup">
+                    <select formControlName="card_type" (blur)="inputUntouch(orderForm,'card_type')">
+                        <option selected value=""> Select A Card Type</option>
+                        <option value="americanexpress">American Express Card</option>
+                        <option value="discover"> Discover Card</option>
+                        <option value="mastercard"> Master Card</option>
+                        <option value="visacard"> Visa Card</option>
+
+                    </select>
+                    <mat-error *ngIf="!orderForm.controls['card_type'].valid && orderForm.controls['card_type'].touched"
+                        class="errortext">Card Number field can not be blank</mat-error>
+                 </span>
+
+                 <span class="formgroup">
+
+                        <input type="text" placeholder="CC #" formControlName="card_cc" (blur)="inputUntouch(orderForm,'card_cc')">
+                        <mat-error *ngIf="!orderForm.controls['card_cc'].valid && orderForm.controls['card_cc'].touched"
+                        class="errortext">Card Number field can not be blank</mat-error>
+                 </span>
+
+                 <span class="formgroup formdate">
+                    <select formControlName="card_expyear" (blur)="inputUntouch(orderForm,'card_expyear')">
+                        <option value="">Exp Year*</option>
+                        <option value="20">2020</option>
+                        <option value="21">2021</option>
+                        <option value="22">2022</option>
+                        <option value="23">2023</option>
+                        <option value="24">2024</option>
+                        <option value="25">2025</option>
+                        <option value="26">2026</option>
+                        <option value="27">2027</option>
+                        <option value="28">2028</option>
+                        <option value="29">2029</option>
+                        <option value="30">2030</option>
+
+                    </select>
+                    <mat-error *ngIf="!orderForm.controls['card_expyear'].valid && orderForm.controls['card_expyear'].touched"
+                    class="errortext">Expire Year field can not be blank</mat-error>
+                </span>
+                    <span class="formgroup formmon">
+                    <select formControlName="card_expmonth" (blur)="inputUntouch(orderForm,'card_expmonth')">
+                        <option value="">Exp Month*</option>
+                        <option value="01">Jan</option>
+                        <option value="02">Feb</option>
+                        <option value="03">Mar</option>
+                        <option value="04">Apr</option>
+                        <option value="05">May</option>
+                        <option value="06">Jun</option>
+                        <option value="07">Jul</option>
+                        <option value="08">Aug</option>
+                        <option value="09">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+
+                    </select>
+                    <mat-error *ngIf="!orderForm.controls['card_expmonth'].valid && orderForm.controls['card_expmonth'].touched"
+                    class="errortext">Expire Month field can not be blank</mat-error>
+                 </span>
+
+                 <span class="clear"></span>
+
+
+
+                <span class="formgroup">
+                    <input type="text" placeholder="CVV*" formControlName="card_cvv" (blur)="inputUntouch(orderForm,'card_cvv')">
+                    <mat-error *ngIf="!orderForm.controls['card_cvv'].valid && orderForm.controls['card_cvv'].touched"
+                    class="errortext">CVV field can not be blank</mat-error>
+                  </span>
+
+
+
+                  <span class="formgroup formchakebox">
+                    <input type="checkbox" formControlName="acceptform" (blur)="inputUntouch(orderForm,'acceptform')">
+
+                         <p>I have read and agreed to the Terms &
+                            Conditions</p>
+
+
+                  </span>
+                     <mat-error *ngIf="!orderForm.controls['acceptform'].valid && orderForm.controls['acceptform'].touched"
+                                class="errortext">You need to accept terms and conditions </mat-error>
+
+                     <button class="subbtn">RUSH MY ORDER</button>
+                   </span>
+                     <!-- form end here -->
+                   </form>
+
+               </span>
+
+
+        </span>
+
+
+
+        <span class="clear"></span>
+
+
+    </span>
+
+
+</mat-card>
+
+<app-footer></app-footer>

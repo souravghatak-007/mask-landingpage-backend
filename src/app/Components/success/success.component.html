@@ -1,0 +1,131 @@
+<mat-card class="productbody">
+    <span class="product_wrapper">
+            
+        <span class="product_left">
+           
+            <span class="success_heading">Thank you for your purchase.</span>
+
+            <span class="success_heading2">
+                
+                <h5>DELIVERY DETAILS</h5>
+
+                <span class="success_heading2_right">
+                <label> Order number ID:&nbsp;&nbsp;<span>{{successData._id}} </span></label>
+                <button (click)="print()">Print</button>
+                </span>
+                <span class="clear"></span>
+            </span>
+
+
+
+
+            <span class="product_left_body">
+               <strong>Delivery for :</strong>
+                <p>{{successData.user_info.firstname}} {{successData.user_info.lastname}}<br/>
+                    Phone no: {{successData.user_info.phone}}<br/>
+                    Email id: {{successData.user_info.email}}</p>
+            </span>
+
+
+            <span class="product_left_body">
+                <strong>Delivery Address :</strong>
+                 <p>{{successData.shipping_name}}<br/>
+                    {{successData.shipping_phone}}<br/>
+                    {{successData.shipping_address}}<br/>
+                    {{successData.shipping_country}}<br/>
+                    {{successData.shipping_state}}<br/>
+                    {{successData.shipping_city}}<br/>
+                    {{successData.shipping_postal}}
+
+                 </p>
+             </span>
+ 
+
+             <span class="product_left_body">
+                <strong>Billing Address:</strong>
+                 <p>{{successData.billing_name}}<br/>
+                    {{successData.billing_phone}}<br/>
+                    {{successData.billing_address}}<br/>
+                    {{successData.billing_country}}<br/>
+                    {{successData.shipping_state}}<br/>
+                    {{successData.billing_city}}<br/>
+                    {{successData.billing_postal}}
+                    
+                </p>
+             </span>
+
+             <!-- <span class="product_left_body">
+                <strong>Delivery method :</strong>
+                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum is simply dummy </p>
+             </span> -->
+
+             <span class="product_left_body">
+                <strong>Transection Status :</strong>
+                 <p>{{successData.order_status}} </p>
+             </span>
+
+
+             <span class="product_left_body2">
+                 <h6>ORDER SUMMARY</h6>
+
+                 <table cellpadding="0" cellspacing="0">
+                     <tr>
+
+                        <td> <img src="https://all-frontend-assets.s3.amazonaws.com/bvt-mask-affiliate/images/productimg.png"></td>
+                        <td>{{successData.product_name}}</td>
+                        <td>{{successData.product_qty}}</td>
+                        <td> $ {{successData.product_price}}</td>
+                     </tr>
+                    
+                 </table>
+
+
+             </span>
+
+             <span class="product_left_body3">
+                Check your email for your Order Receipt and Login Deatails. You can check a<br/> detailed view of your orders <a href="javascript:void(0)">HERE.</a>
+                </span>
+
+        </span>
+
+        <span class="product_right">
+            <h6>ORDER SUMMARY</h6>
+
+
+            <table cellpadding="0" cellspacing="0">
+                 <tr>
+                <td>Product   : </td>                         
+                 <td>{{successData.product_name}}</td>
+                 </tr>
+
+                <tr>
+                    <td> Sub-total :  </td>                                            
+                     <td>  $ {{successData.product_subtotal}}</td>
+                </tr>
+
+                  <tr>
+                    <td> Shipping  : </td>                                                   
+                    <td> $ {{successData.shipping_charge}}</td>
+                </tr>
+
+                <tr>
+                    <td> Sales Tax  : </td>                                                  
+                     <td>  $ {{successData.sale_tax}}</td>
+               </tr>
+
+                <tr>
+                    <th> Total:</th>                                               
+                      <th>  $ {{successData.product_total}}</th>
+              </tr>
+            </table>
+ <label>Your order will be delivered soon. </label>
+
+        </span>
+
+        <span class="clear"></span>
+    </span>
+
+
+</mat-card>
+<app-footer></app-footer>
