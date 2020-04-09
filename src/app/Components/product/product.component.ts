@@ -34,7 +34,7 @@ export class ProductComponent implements OnInit {
   public transection_Type =  environment["Tran_type"];
   public cookieUserallData:any=JSON.parse(this.cookie.get('user_details'))
   constructor(public _snackBar: MatSnackBar,public router: Router, public meta: MetaService, public apiService:ApiService,public activatedRoute: ActivatedRoute,public cookie: CookieService,public formbuilder: FormBuilder) {    window.scrollTo(500, 0);
-    this.genarateForn();
+   
     this.Noloading=false;
     // console.warn(this.transection_Type);
     console.log('cookie',this.cookieUserallData);
@@ -51,24 +51,26 @@ export class ProductComponent implements OnInit {
     this.meta.setTag('og:type', 'website');
     this.meta.setTag('og:url','https://mask-landingpage.influxiq.com/');
     this.meta.setTag('og:image', 'https://all-frontend-assets.s3.amazonaws.com/bvt-mask-assetc/images/144-144.png');
-
-
+       //<<<---    using ()=> syntax
+      this.genarateForm();
+    
   }
 
   ngOnInit() {
     this.getCountryStateCityList();
+    this.patchValue();
   }
-  genarateForn(){
+  genarateForm(){
     this.orderForm=this.formbuilder.group({
-      firstname: [this.cookieUserallData.firstname, Validators.required],
-      lastname: [this.cookieUserallData.lastname, Validators.required],
-      email: [this.cookieUserallData.email, Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
-      phone: [this.cookieUserallData.phone],
-      city: [this.cookieUserallData.city],
-      state: [this.cookieUserallData.state],
-      country: [this.cookieUserallData.country],
-      zip: [this.cookieUserallData.zip],
-      companyname:[this.cookieUserallData.companyname],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.pattern(/^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/)])],
+      phone: [''],
+      city: [''],
+      state: [''],
+      country:[''],
+      zip: [''],
+      companyname:[''],
       billing_postal:['',Validators.required],
       billing_country:['',Validators.required],
       billing_state:['',Validators.required],
@@ -175,6 +177,22 @@ export class ProductComponent implements OnInit {
     }
   }
 
+  /**patch value form cookie */
+  patchValue(){
+
+    this.orderForm.patchValue({
+      firstname:this.cookieUserallData.firstname,
+      lastname:this.cookieUserallData.lastname,
+      email:this.cookieUserallData.email,
+      phone:this.cookieUserallData.phone,
+      city:this.cookieUserallData.city,
+      state:this.cookieUserallData.state,
+      country:this.cookieUserallData.country,
+      zip:this.cookieUserallData.zip,
+      companyname:this.cookieUserallData.companyname
+        });
+  }
+
   inputUntouch(form: any, val: any) {
     form.controls[val].markAsUntouched();
   }
@@ -236,7 +254,6 @@ export class ProductComponent implements OnInit {
        });
        return;
     }
-    return;
     // console.log(this.orderForm.value,'p',this.product,'dataset',dataset);
     if(this.orderForm.valid && this.orderForm.controls['acceptform'].value){
       this.Noloading=true;
