@@ -6,7 +6,32 @@
     <div id="maincontent">
       <div class="main-content-wrap">
         <mat-card class="generalcls" style="padding: 0 !important;">
-          <h2>Admin Dashboard</h2>
+          <mat-card>
+            <mat-card-title>Users</mat-card-title>
+            <mat-card-subtitle>{{adminCount.user_list}}</mat-card-subtitle>
+          </mat-card>
+
+          <mat-card>
+            <mat-card-title>Successfull Order</mat-card-title>
+            <mat-card-subtitle>{{adminCount.order_success_list}}</mat-card-subtitle>
+          </mat-card>
+
+          <mat-card>
+            <mat-card-title>Ordered failed</mat-card-title>
+            <mat-card-subtitle>{{adminCount.order_failed_list}}</mat-card-subtitle>
+          </mat-card>
+
+
+          <mat-card>
+            <mat-card-title>Ordered Autoship</mat-card-title>
+            <mat-card-subtitle>{{adminCount.order_autoship}}</mat-card-subtitle>
+          </mat-card>
+
+          <mat-card>
+            <mat-card-title>Transaction Test </mat-card-title>
+            <mat-card-subtitle>{{adminCount.transaction_type_test}}</mat-card-subtitle>
+          </mat-card>
+
         </mat-card>
       </div>
     </div>    

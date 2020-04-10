@@ -113,10 +113,9 @@ export class UserListingComponent implements OnInit {
 
       // datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"created_at"}],   // this is use for  date search
 
-       selectsearch:[{ label: 'Search By Status', field: 'status', values: this.status },
-      {label: 'Search By Status', field: 'country_search', values: this.countryValueForsearch}], // this is use for  select search
+       selectsearch:[{label: 'Search By Country', field: 'country', values: this.countryValueForsearch}], // this is use for  select search
 
-       textsearch:[{label:"Search By Firstname",field:'firstname'},{label:"Search by Email",field:"email"},{label:"Search by Country",field:"country_search"}
+       textsearch:[{label:"Search By Firstname",field:'firstname'},{label:"Search by Email",field:"email"},{label:"Search by State",field:"state_search"}
       ],  // this is use for  text search
 
       //search:[{label:"Search By Author",field:'country_search',values:this.countryValueForsearch}]     // this is use for  Autocomplete search
@@ -191,10 +190,10 @@ export class UserListingComponent implements OnInit {
    
     setTimeout(()=>{    
       for(let i in this.countrylistarray){
-       // console.log(this.countrylistarray[i].country);
-        this.countryValueForsearch.push({val: Object.values(this.countrylistarray[i].country)})
+        // console.log(this.countrylistarray[i].country);
+        this.countryValueForsearch.push({val: this.countrylistarray[i].country,'name': this.countrylistarray[i].country})
       }
-      console.log(this.countryValueForsearch);
+      //console.log(this.countryValueForsearch);
  }, 5000);
     
   }
