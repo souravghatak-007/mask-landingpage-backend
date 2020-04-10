@@ -1,3 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
 @font-face {
     font-family: 'NunitoLight';
     src: url('assets/fonts/Nunito-Light.eot');
@@ -59,19 +63,21 @@
   }
   
   :root {
-    --c-t-bg-w: #fff;
+    --c-t-bg-w: #fff;    
+    --c-t-bg-secondary: #F9594D;    
+    --c-t-alt-links: #03AAE0;
+    
+    --c-t-primary-btn_title: #0FA1D2;
     --c-t-bg-black: #0d0d0d;
     --c-t-bg-zblack: var(--c-t-bg-zblack);
     --c-t-bg: #dce5ea;
-    --c-t-bg-secondary: #a5e1cf;
-    --c-t-sub-primary: #48281b;
-    --c-t-primary: #d0531c;
+    --c-t-sub-primary: #fff;
+    --c-t-primary: #0C4E66;
     --c-t-secondary: #0b5746;
-    --c-t-primary-btn_title: #48281b;
     --c-t-paragraph: #797a7b;
     --c-t-links: #005d40;
-    --c-t-alt-links: #ffdead;
     --c-t-long-para: #002346;
+    --c-t-deepgray-bg: #222f3d;
   
   
   }
@@ -92,17 +98,43 @@
   
   
   
-  html,body{height:100%;}
-  body { margin: 0; font-family: "NunitoRegular"; }  
-  
-
-
-
+html,body{height:100%;}
+body { margin: 0; font-family: "NunitoRegular"; }  
 .topmenulist .navigation-left .mat-list-item .mat-list-item-content{padding: 0 0!important;}
+.topmenulist .activemenu, .topmenulist .navigation-left a:hover {color: #08b1e7;}
+.activemenu a {color: #08b1e7!important;}
+.mat-card{box-shadow: none !important;border-radius: 0 !important;}
+.listingnewstyle .tablewrapper tr th span{display: flex;align-items: center;}
+.generalcls.mat-card{background-color: transparent;}
 
-.mat-card{box-shadow: none !important;}
-<<<<<<< HEAD
-=======
+.mat-select{font-family: var(--main-font);}
+.mat-card {font-family: var(--main-font),sans-serif;}
+.mat-form-field {line-height: 20px !important;}
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-empty.mat-form-field-label {padding-left: 14px;}
 
->>>>>>> 7b17ffc94a0228e6f3087073a6a84bb0b748e654
+
+/* mat-table-column-width */
+
+.listingnewstyle mat-toolbar-row.searchbar .mat-form-field {min-width: 270px;}
+
+.mat-column-select{padding:5px 10px !important;}
+.mat-column-blogtitle{min-width: 200px !important;}
+.mat-column-blogtitle span{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:20px}
+.mat-column-blogcategory{min-width: 140px;}
+.mat-column-website{min-width: 130px !important;}
+.mat-column-date_added{min-width: 80px !important;}
+.mat-column-author{min-width: 150px !important;}
+.mat-cell {word-wrap: break-word !important;white-space: unset !important;overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;  -ms-hyphens: auto;-moz-hyphens: auto;-webkit-hyphens: auto;hyphens: auto;}
+.mat-column-description_html {min-width: 300px !important;}
+.mat-column-description_html span{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:20px}
+.mat-column-tags {min-width: 200px !important;}
+.mat-column-tags span{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:20px}
+  
+/*.mat-form-field-appearance-outline .mat-form-field-outline {color: white;}
+input.mat-input-element {color: white;}
+::ng-deep .mat-focused .mat-form-field-label {color: green !important;}
+::ng-deep.mat-form-field-underline {background-color: green !important;} 
+::ng-deep.mat-form-field-ripple {background-color: green !important;} */
+
+
 app-order-listing .mat-column-Actions span span.cursor:nth-child(2){display:none}

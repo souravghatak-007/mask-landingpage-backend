@@ -213,7 +213,7 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 
 
 /* form */
-.formspan{background-color:#e7e9ea;border:6px solid #fff;border-bottom:10px solid #fff;display:inline-block;width:100%;position:relative;z-index:9;box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.5);}
+/* .formspan{background-color:#e7e9ea;border:6px solid #fff;border-bottom:10px solid #fff;display:inline-block;width:100%;position:relative;z-index:9;box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.5);}
 .formspan .form-field-span,.formspan .mat-form-field{display:block;position:relative;text-align:left;width:98%!important;background:#fff;padding:1px 0!important;margin:0 auto 18px!important}
 .formspan .bottompart .mat-raised-button.mat-primary{position:relative!important;font-size:14px!important;text-transform:uppercase!important;border:none!important;padding:6px 10px 10px!important;line-height:18px!important;color:#fff!important;border-radius:0!important;margin:0 2px!important;font-family:'NunitoRegular',sans-serif;background-color:var(--c-t-primary-btn_title)!important;margin-bottom:1%!important;}
 .formspan .example-container{display:flex;flex-direction:column;width:98%;padding:14px;margin-bottom:0}
@@ -229,10 +229,10 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 
 .mat-form-field-appearance-legacy .mat-form-field-label.mat-form-field-empty {top: 0.7em !important;padding-left: 10px;}
 .AddEditBlog .formspan label.mat-form-field-label.mat-form-field-empty span {padding-left: 0px;}
-.AddEditBlog .formspan label span {padding-left: 10px;}
+.AddEditBlog .formspan label span {padding-left: 10px;} */
 
 /* AddEditBlog */
-
+/* 
 .AddEditBlog .mat_chip {display: block;padding: 0 !important;}
 .AddEditBlog .uploadfilecontainer {margin: 10px auto !important;}
 .AddEditBlog h1{font-family:'NunitoRegular';font-size:24px!important;margin-bottom:20px!important;background:linear-gradient(45deg,#363636,#08b1e7);text-align:center;padding:14px 18px 18px;color:var(--c-t-bg);text-transform:uppercase}
@@ -270,7 +270,7 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 
 .closecard {background: #f9594d !important;border: 1px solid #f9594d !important;}
 
-.AddEditBlog ck-editor {margin-bottom: 15px !important;display: block;}
+.AddEditBlog ck-editor {margin-bottom: 15px !important;display: block;} */
 
 
 table.mat-table {width: 100%;}
@@ -313,35 +313,6 @@ table.mat-table {width: 100%;}
     
 .headercls h1{text-align:center;}
 
-
-
-/* myaccount */
-.myaccount .myaccountwrapper{width: 550px; margin: 50px auto; display: block;box-shadow: 0 0 10px rgba(0,0,0,0.6);
-  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);-o-box-shadow: 0 0 10px rgba(0,0,0,0.6);}
-.myaccount .mat-tab-labels {display: flex;flex-wrap: wrap;flex-direction: column;}
-.myaccount .mat-tab-group {display: flex;flex-direction: row;}
-.myaccount .mat-tab-body-wrapper {margin-top: -29%;padding: 0 30px 30px;}
-.myaccount .mat-form-field {width: 99%;border: 1px solid #d9d9d9;margin-bottom: 10px;}
-.myaccount .mattabgroup .mat-tab-header {background-color: var(--c-t-alt-links);width: 180px;flex-wrap: wrap;}
-.profile-area-wrapper{background-color: var(--c-t-bg-w);display: block;}
-.profile-area-wrapper .mat-tab-body .buttonsetToolbar{margin-top:20px;}
-.profile-area {background-color: var(--c-t-deepgray-bg);width: 170px;height: auto;display: block;padding: 20px 5px 20px;}
-.profile-area .profileimg{width: 80px; height: 80px;display: block;margin: 0 auto; overflow: hidden; position: relative;background: #fff;border-radius: 50px;border: 2px solid #fff;    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-  -moz-box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);-webkit-box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);-o-box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);}
-  .profile-area .profileimg img{width: 100%; display: block;}
-.profile-area .profileinfo{text-align: center;margin-top: 10px;display: block;}
-.profile-area .profileinfo h2{margin: 0; padding: 0;text-transform: capitalize;color: var(--c-t-bg-w);font-size: var(--base-font-size); font-family: var(--main-font);margin-bottom: 10px;}
-.profile-area .profileinfo p{margin: 0; padding: 0;text-transform: capitalize;color: var(--c-t-bg-w); font-size: 12px; font-family: var(--main-light-font);margin-top: 5px;}
-.myaccount .mat-tab-list {margin-top: 15px;}
-.myaccount .mat-tab-label {height: auto !important;padding: 12px 5px !important;min-width: 160px !important;text-align: left !important;display: flex !important;justify-content: flex-start !important;align-items: center !important;white-space: nowrap !important;position: relative !important;max-width: 180px !important;flex-wrap: wrap !important;color: var(--c-t-bg-w);opacity: 1!important;}
-.myaccount .mat-tab-label .mat-tab-label-content {white-space: initial;font-family: var(--main-font);}
-.myaccount .mat-tab-label .mat-tab-label-content svg{margin-right: 5px;color: white;fill: currentColor;
-  vertical-align: middle;}
-.myaccount .mat-card-title {display: block;margin-bottom: 20px;}
-.myaccount .mat-tab-group .mat-form-field-appearance-legacy .mat-form-field-infix {line-height: 21px;}
-.myaccount .mat-form-field-prefix, .mat-form-field-suffix{white-space:nowrap;flex:none;position:relative;background-color:var(--c-t-bg-secondary);height:100%;line-height:45px;padding:0 10px;color:#fff;font-size:16px
-}
-.myaccount .mat-form-field-flex .mat-form-field-suffix {top: 0px;}
 
 
 
