@@ -33,8 +33,8 @@
           </mat-card>
 
         </mat-card>
-        <mat-card *ngIf="cookieUserallData.type=='admin'">
-          <h3 *ngIf="cookieUserallData.type=='admin'">Order Table </h3>
+        <mat-card class="headercls" *ngIf="cookieUserallData.type=='admin'">
+          <h1 class="header" *ngIf="cookieUserallData.type=='admin'">Order Table </h1>
 
           <lib-listing *ngIf="orderDataList!=null && orderDataList.length>0" 
             [datasource]="orderDataList"
