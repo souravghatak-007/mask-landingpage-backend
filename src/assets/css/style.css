@@ -213,7 +213,7 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 
 
 /* form */
-/* .formspan{background-color:#e7e9ea;border:6px solid #fff;border-bottom:10px solid #fff;display:inline-block;width:100%;position:relative;z-index:9;box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.5);}
+.formspan{background-color:#e7e9ea;border:6px solid #fff;border-bottom:10px solid #fff;display:inline-block;width:100%;position:relative;z-index:9;box-shadow: 0px -1px 5px rgba(0, 0, 0, 0.5);}
 .formspan .form-field-span,.formspan .mat-form-field{display:block;position:relative;text-align:left;width:98%!important;background:#fff;padding:1px 0!important;margin:0 auto 18px!important}
 .formspan .bottompart .mat-raised-button.mat-primary{position:relative!important;font-size:14px!important;text-transform:uppercase!important;border:none!important;padding:6px 10px 10px!important;line-height:18px!important;color:#fff!important;border-radius:0!important;margin:0 2px!important;font-family:'NunitoRegular',sans-serif;background-color:var(--c-t-primary-btn_title)!important;margin-bottom:1%!important;}
 .formspan .example-container{display:flex;flex-direction:column;width:98%;padding:14px;margin-bottom:0}
@@ -232,7 +232,7 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 .AddEditBlog .formspan label span {padding-left: 10px;} */
 
 /* AddEditBlog */
-/* 
+
 .AddEditBlog .mat_chip {display: block;padding: 0 !important;}
 .AddEditBlog .uploadfilecontainer {margin: 10px auto !important;}
 .AddEditBlog h1{font-family:'NunitoRegular';font-size:24px!important;margin-bottom:20px!important;background:linear-gradient(45deg,#363636,#08b1e7);text-align:center;padding:14px 18px 18px;color:var(--c-t-bg);text-transform:uppercase}
@@ -270,7 +270,7 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 
 .closecard {background: #f9594d !important;border: 1px solid #f9594d !important;}
 
-.AddEditBlog ck-editor {margin-bottom: 15px !important;display: block;} */
+.AddEditBlog ck-editor {margin-bottom: 15px !important;display: block;}
 
 
 table.mat-table {width: 100%;}
