@@ -16,7 +16,7 @@ import {environment} from '../../../environments/environment';
 })
 export class DashboardAdminComponent implements OnInit {
   public cookieUserallData:any=JSON.parse(this.cookieService.get('user_details'))
-  public adminCount:[];
+  public adminCount:any=[];
  public orderDataList:any=[];
  public date_search_source_count: any=0;
 

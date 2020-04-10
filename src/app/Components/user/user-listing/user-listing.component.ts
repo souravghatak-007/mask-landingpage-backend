@@ -4,6 +4,7 @@ import { HttpServiceService } from '../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
 import {ApiService} from './../../../api.service';
 import { Key } from 'protractor';
+import { MetaService } from '@ngx-meta/core';
 
 @Component({
   selector: 'app-user-listing',
@@ -141,7 +142,9 @@ export class UserListingComponent implements OnInit {
   public user_cookie:any;
   public apiUrl:any;
 
-  constructor(public apiService:ApiService,public router: Router, public route: ActivatedRoute, public _apiService: HttpServiceService,  public cookie: CookieService) {
+  constructor(public apiService:ApiService,public router: Router, public route: ActivatedRoute, public _apiService: HttpServiceService,  public cookie: CookieService,
+    public meta:MetaService) {
+      this.meta.setTitle('Admin User Management');
       // console.log('custom_link');
       // console.log(this.custom_link);
       this.datasource = '';
