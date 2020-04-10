@@ -371,8 +371,9 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
 .paymentstatus
 
 .paymentstatus .mat-list-item {display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:flex-start!important;width: 100%;height: auto;margin-bottom: 16px;}
-.paymentstatus .mat-list-item .mat-list-item-content{width: 100%;}
-.paymentstatus .mat-list-item .mat-list-item-content span{font-family:var(--main-bold-font)}
+.paymentstatus .mat-list-item .mat-list-item-content{width: 100%;padding: 0 !important;}
+.paymentstatus .mat-list-item .mat-list-item-content span{    font-family: var(--main-bold-font);
+    margin-right: 10px;font-size: 18px; width: 70px;}
 /* 
 .paymentstatus span{width: 40%;font-family:var(--main-bold-font)} */
 
