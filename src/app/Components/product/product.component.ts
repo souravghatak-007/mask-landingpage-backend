@@ -37,7 +37,7 @@ export class ProductComponent implements OnInit {
    
     this.Noloading=false;
     // console.warn(this.transection_Type);
-    console.log('cookie',this.cookieUserallData);
+    //console.log('cookie',this.cookieUserallData);
   
     // this.meta.update({ name: 'description', content: 'Dynamic Hello Angular Lovers description!' });
     this.meta.setTag('og:description', 'FFP3 Standard medical face masks for best Protection Against COVID-19, filtering 98% germs, viruses and bacteria, and other hazardous particles. Best face masks in the market to prevent COVID-19 infection.');
