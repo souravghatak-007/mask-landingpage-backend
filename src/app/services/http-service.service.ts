@@ -31,7 +31,7 @@ export class HttpServiceService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': this.CookieService.get('jwtToken')
+        // 'Authorization': this.CookieService.get('jwtToken')
       })
     };
 
@@ -55,8 +55,9 @@ export class HttpServiceService {
 
   /* Resolve service */
   ResolveViaPost(requestdata: any, endpoint: any): Observable<any> {
+    console.log(endpoint,requestdata);
     /* set common header */
-    
+    const returnedTarget = Object.assign(requestdata,{'secret':this.CookieService.get('secret')});
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',

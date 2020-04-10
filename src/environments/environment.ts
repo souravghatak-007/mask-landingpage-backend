@@ -3,10 +3,23 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
   API_URL:'https://v2xhu4uyed.execute-api.us-east-1.amazonaws.com/dev/api/',
-  RESET_PASSWORD_URL:'https://dev.mdstockinternational.com/',
+  
+  // RESET_PASSWORD_URL:'https://dev.mdstockinternational.com/',
+  // s3bucket: "https://s3.us-east-2.amazonaws.com/crmfiles.influxhostserver/",
+  // // apiBaseUrl: "http://127.0.0.1:8000/",
+  // // apiBaseUrl: "https://k5grb6fn3i.execute-api.us-east-1.amazonaws.com/dev/api/",
+  // // Main
+  // apiBaseUrl: "https://v2xhu4uyed.execute-api.us-east-1.amazonaws.com/dev/api/",
+  // // apiBaseUrl: "https://aws-lamda.influxiq.com/dev/api/",
+  // pagination: [20, 50, 100, 200, 500],
+  // logo: "https://v2xhu4uyed.execute-api.us-east-1.amazonaws.com/dev/api/",
+  // siteTitle: "Mask-Landingpage",
+  // footerText: "Mask-Landingpage Copyright 2020",
+  // production: true,
+  // floatPattern: "(^[0-9]{1,9})+(\.[0-9]{1,4})?$",
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

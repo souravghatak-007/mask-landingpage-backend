@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   public fullUrl: any = this.httpServiceService.baseUrl;  // server url
   public endpoint: any = "login";
   public buttonName:any= 'Login';
-  public defaultLoginUrl = '/login';
+  public defaultLoginUrl = '/';
 
   loading: boolean;
  
@@ -20,10 +20,10 @@ export class LoginComponent implements OnInit {
 
 
   public signUpRouteingUrl: any = {
-    "path": "",
-    "buttonName": "Not registered? Request Sign Up Here",
-    "customLink": "/",
-    "customURl": ""
+    // "path": "",
+    // "buttonName": "Not registered? Request Sign Up Here",
+    // "customLink": "/",
+    // "customURl": ""
   };
   public forgetRouteingUrl: any = {
     "path": "",
@@ -34,15 +34,22 @@ export class LoginComponent implements OnInit {
   public routerStatus: any;
 
   constructor(public httpServiceService:HttpServiceService,) {
-    this.routerStatus = {           // this is use for if login succcess then navigate which page
+    this.routerStatus = {           // this is use for if login succcess then navigate which page 
       "data": [
         {
           "type": "admin",
           "routerNav": "dashboard"
+        },
+        {
+          "type": "user",
+          "routerNav": "dashboard"
+        },
+        {
+          "type": "model",
+          "routerNav": "modelDashbord"
         }
       ]
     }
-
   }
 
   ngOnInit() {

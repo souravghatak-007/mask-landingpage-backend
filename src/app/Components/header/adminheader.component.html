@@ -19,15 +19,16 @@
               Dashboard
             </a>
           </mat-list-item>          
-  
+            <!-- this section nav menu for Admin  -->
+          <ng-container *ngIf="cookieUserallData.type=='admin'">
           <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
-            <a>Admin Management</a>
+            <a [routerLink]="['/admin/list']">Admin Management</a>
           </mat-list-item>
           <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
-            <a>User Management</a>
+            <a [routerLink]="['/admin/user-management']">User Management</a>
           </mat-list-item>
           <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
-            <a>Order Management</a>
+            <a [routerLink]="['/admin/order/list']">Order Management</a>
           </mat-list-item>
           <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
             <a><span class="material-icons">account_circle</span> My Account</a>
@@ -35,7 +36,27 @@
           <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
             <a (click)="logout()"><span class="material-icons">exit_to_app</span> Logout</a>
           </mat-list-item>
+        </ng-container>
+        <!-- this section nav menu for User  -->
+        <ng-container *ngIf="cookieUserallData.type=='user'">
+          <!-- <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+            <a [routerLink]="['/admin/list']">Admin Management</a>
+          </mat-list-item> -->
+           <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+            <a [routerLink]="['/user/product']">New Order</a>
+          </mat-list-item> 
+          <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+            <a [routerLink]="['user/order/list']">my Order</a>
+          </mat-list-item>
+          <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+            <a><span class="material-icons">account_circle</span> My Account</a>
+          </mat-list-item>
+          <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
+            <a (click)="logout()"><span class="material-icons">exit_to_app</span> Logout</a>
+          </mat-list-item>
+        </ng-container>
         </mat-list>
+      
       </div>      
     </mat-toolbar-row>
   </mat-toolbar>

@@ -10,6 +10,7 @@ import { WINDOW } from '@ng-toolkit/universal';
 })
 export class AdminheaderComponent implements OnInit {
 
+  public cookieUserallData:any=JSON.parse(this.cookieService.get('user_details'));
 
   constructor(public router: Router, private cookieService: CookieService) {
 

@@ -36,6 +36,12 @@ import {AdminheaderComponent} from './Components/header/adminheader.component';
 import {FooterComponent} from './Components/footer/footer.component';
 import {AddAdminComponent} from './Components/addadmin/addadmin.component'
 import { from } from 'rxjs';
+import { UserListingComponent } from './Components/user/user-listing/user-listing.component';
+import { UserAddEditComponent } from './Components/user/user-add-edit/user-add-edit.component';
+import { OrderListingComponent } from './Components/order/order-listing/order-listing.component';
+import  {ProductComponent} from './Components/product/product.component';
+import {SuccessComponent} from './Components/success/success.component';
+import { OrderEditComponent } from './Components/order/order-edit/order-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +58,13 @@ import { from } from 'rxjs';
     DashboardAdminComponent,
     AdminheaderComponent,
     FooterComponent,
-    AddAdminComponent
+    AddAdminComponent,
+    UserListingComponent,
+    UserAddEditComponent,
+    OrderListingComponent,
+    ProductComponent,
+    SuccessComponent,
+    OrderEditComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
