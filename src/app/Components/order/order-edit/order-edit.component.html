@@ -80,12 +80,12 @@
                         <th mat-header-cell *matHeaderCellDef> Unit Price </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
                         <td mat-cell *matCellDef="let element"> {{element.unitprice}} </td>
-                        <td mat-footer-cell *matFooterCellDef> subtotal </td>
+                        <td mat-footer-cell *matFooterCellDef> Total </td>
                     </ng-container>
 
                    
                     <ng-container matColumnDef="total">
-                        <th mat-header-cell *matHeaderCellDef> Total </th>
+                        <th mat-header-cell *matHeaderCellDef> Subtotal </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
                         <td mat-cell *matCellDef="let element"> {{element.total}} </td>
                          <td mat-footer-cell *matFooterCellDef> 200 </td>
@@ -95,7 +95,7 @@
                         <ng-container matColumnDef="subtotal">   
                          <td mat-footer-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>                     
                             <td mat-footer-cell *matFooterCellDef colspan="5">
-                                total
+                                subtotal
                             </td>                            
                         </ng-container>
 
