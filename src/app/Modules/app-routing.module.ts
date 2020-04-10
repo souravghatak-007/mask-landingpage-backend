@@ -15,7 +15,8 @@ import { AuthService } from '../services/auth.service';
 import { OrderListingComponent } from '../Components/order/order-listing/order-listing.component';
 import { ProductComponent } from '../Components/product/product.component';
 import { SuccessComponent } from '../Components/success/success.component';
-import {OrderEditComponent} from '../Components/order/order-edit/order-edit.component'
+import {OrderEditComponent} from '../Components/order/order-edit/order-edit.component';
+import {AccountSettingsComponent} from '../Components/account-settings/account-settings.component'
 
 
 
@@ -129,6 +130,9 @@ const routes: Routes = [
   },
   { path: "user/add", component: UserAddEditComponent, canActivate: [AuthService] },
   { path: "user/edit/:id", component: UserAddEditComponent, canActivate: [AuthService] },
+  {
+    path: 'account-settings',component : AccountSettingsComponent,canActivate: [AuthService]
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

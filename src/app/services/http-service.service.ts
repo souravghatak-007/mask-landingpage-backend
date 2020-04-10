@@ -87,6 +87,20 @@ export class HttpServiceService {
     return result;
   }
 
+  serviceViaPost(requestdata: any, endpoint: any): Observable<any> {
+    // console.log(endpoint,requestdata);
+     /* set common header */
+     const returnedTarget = Object.assign(requestdata,{'secret':this.CookieService.get('secret')});
+     const httpOptions = {
+       headers: new HttpHeaders({
+         'Content-Type': 'application/json',
+        //  'Authorization': this.cookieService.get('jwtToken'),
+         
+       })
+     };
+     return this.http.post(this.baseUrl + endpoint, JSON.stringify(requestdata),httpOptions).pipe(map(res => res));
+   }
+
 
 }
 
