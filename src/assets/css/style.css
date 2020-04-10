@@ -278,6 +278,16 @@ table.mat-table {width: 100%;}
 
 .AddEditBlog .formspan .formcls mat-label{line-height: 20px;font-size: 16px;text-transform:uppercase; font-family:var(--main-bold-font);}
 
+
+
+
+
+
+
+
+
+
+
 .countdiv{height:auto!important;display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important;}
 .countdiv .mat-card{
     flex: 1 1 16%!important;
@@ -316,22 +326,23 @@ table.mat-table {width: 100%;}
 
 
 
+
 .addressblock{height:auto!important;display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important;}
-.addressblock .addressingle{
-    flex: 1 1 23%!important;
+.addressblock .addressingle {
+    flex: 1 1 31%!important;
     display: flex!important;
-    flex-direction: row!important;
+    flex-direction: column!important;
     margin: 1%!important;
-    justify-content: center!important;
+    justify-content: space-between!important;
     border: 1px solid #c9c9c9!important;
     padding: 0px!important;
     flex-wrap: initial!important;
     margin-top: 0!important;
     background-color: #f4f1f1;
-    align-items: stretch;
+    align-items: flex-start;
 }
 .addressblock .addressingle mat-label{font-size:16px;font-family:'NunitoRegular';width:100%;padding:0 10px;box-sizing:border-box;color:var(--c-t-primary);text-transform:capitalize}
-.addressblock .addressingle mat-list {}
+.addressblock .addressingle mat-list {height: 100%;}
 .addressblock .addressingle mat-list .mat-list-item {display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:flex-start!important;}
 
 
