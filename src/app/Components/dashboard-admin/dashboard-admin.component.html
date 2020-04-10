@@ -6,8 +6,60 @@
     <div id="maincontent">
       <div class="main-content-wrap">
         <mat-card class="generalcls" style="padding: 0 !important;">
-          <h2>Admin Dashboard</h2>
+          <mat-card *ngIf="cookieUserallData.type=='admin'">
+            <mat-card-title>Users</mat-card-title>
+            <mat-card-subtitle>{{adminCount.user_list}}</mat-card-subtitle>
+          </mat-card>
+
+          <mat-card *ngIf="cookieUserallData.type=='admin'">
+            <mat-card-title>Successfull Order</mat-card-title>
+            <mat-card-subtitle>{{adminCount.order_success_list}}</mat-card-subtitle>
+          </mat-card>
+
+          <mat-card *ngIf="cookieUserallData.type=='admin'">
+            <mat-card-title>Ordered failed</mat-card-title>
+            <mat-card-subtitle>{{adminCount.order_failed_list}}</mat-card-subtitle>
+          </mat-card>
+
+
+          <mat-card *ngIf="cookieUserallData.type=='admin'">
+            <mat-card-title>Ordered Autoship</mat-card-title>
+            <mat-card-subtitle>{{adminCount.order_autoship}}</mat-card-subtitle>
+          </mat-card>
+
+          <mat-card *ngIf="cookieUserallData.type=='admin'">
+            <mat-card-title>Transaction Test </mat-card-title>
+            <mat-card-subtitle>{{adminCount.transaction_type_test}}</mat-card-subtitle>
+          </mat-card>
+
         </mat-card>
+        <mat-card *ngIf="cookieUserallData.type=='admin'">
+          <h3 *ngIf="cookieUserallData.type=='admin'">Order Table </h3>
+
+          <lib-listing *ngIf="orderDataList!=null && orderDataList.length>0" 
+            [datasource]="orderDataList"
+            [skip]="orderDataList_skip"
+            [modify_header_array]="modify_header_array"
+            [apiurl]="apiurl"
+            [updateendpoint]="updateendpoint"
+            [date_search_source]="date_search_source"
+            [date_search_endpoint]="date_search_endpoint"
+            [sourcedata]="tablename"
+            [detail_datatype]="orderDataList_detail_datatype"
+            [editroute]="editroute"
+            [statusarr]="statusarray"
+            [detail_skip_array]="orderDataList_detail_skip"
+            [url]="custom_link"
+            [jwttoken]="jwttoken"
+            [search_settings]="search_settings"
+            [searchendpoint]="searchendpoint"
+            [sortdata]="sortdata"
+            [datacollection]="datacollection"
+            [date_search_source_count]="date_search_source_count"
+            [limitcond]="limitcond"></lib-listing>
+          </mat-card>
+          <!-- user section html start here -->
+          <h3 *ngIf="cookieUserallData.type=='user'">Welcome User</h3>
       </div>
     </div>    
 </div>

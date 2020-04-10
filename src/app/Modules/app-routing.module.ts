@@ -69,6 +69,17 @@ const routes: Routes = [
       endpoint: 'datalist'
     }, canActivate: [AuthService],
   },
+  {
+    path: 'user/order/edit/:_id', component: OrderEditComponent,
+    resolve: { orderData: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_order',
+        condition: { _id: "_id" }
+      },
+      endpoint: 'datalist'
+    }, canActivate: [AuthService],
+  },
 
   {
     path: 'admin/list', component: AdminDetailsComponent,
@@ -89,7 +100,18 @@ const routes: Routes = [
       requestcondition: {
         source: 'data_order',
         condition: {
-          order_status:"Complete"
+        }
+      },
+      endpoint: 'datalist'
+    }, canActivate: [AuthService]
+  },
+  {
+    path: 'user/order/list', component: OrderListingComponent,
+    resolve: { orderlist: ResolveService },
+    data: {
+      requestcondition: {
+        source: 'data_order',
+        condition: {
         }
       },
       endpoint: 'datalist'
