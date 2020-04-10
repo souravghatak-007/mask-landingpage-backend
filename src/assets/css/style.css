@@ -278,6 +278,44 @@ table.mat-table {width: 100%;}
 
 
 
+.AddEditBlog .formspan .formcls mat-label{line-height: 20px;font-size: 16px;text-transform:uppercase; font-family:var(--main-bold-font);}
+
+
+
+.countdiv{height:auto!important;display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important;}
+.countdiv .mat-card{
+    flex: 1 1 16%!important;
+    display: flex!important;
+    flex-direction: row!important;
+    margin: 1%!important;
+    justify-content: center!important;
+    border: 1px solid #c9c9c9!important;
+    padding: 0px!important;
+    flex-wrap: initial!important;
+    margin-top: 0!important;
+    background-color: #f4f1f1;
+    align-items: stretch;
+}
+
+.countdiv .mat-card .mat-card-title{    margin-bottom: 0;
+    align-items: stretch;
+    background: #08b1e7 !important;
+    padding: 27px 10px!important;
+    width: 70%;
+    justify-content: center;
+    display: inherit;
+    color: #fff;
+    text-transform: capitalize;}
+.countdiv .mat-card .mat-card-subtitle{align-items: center; text-transform:uppercase; font-family:var(--main-bold-font);
+    padding: 10px!important;
+    width: 30%;
+    color:#f9594d;
+    display: inherit;
+    font-size:30px;
+    text-align: center;
+    justify-content: center;}
+
+
 @media screen and (max-width: 1620px) {
 .listingnewstyle mat-toolbar-row.searchbar{justify-content:center!important;flex-wrap:wrap;height:auto}
 .listingnewstyle mat-toolbar-row.searchbar mat-form-field{margin:0 5px 5px 0}
