@@ -12,7 +12,7 @@ import {environment} from '../../../../environments/environment';
 })
 export class OrderListingComponent implements OnInit {
 
-  public status: any =  [{val: 1, name: 'Active'}, {val: 0, name: 'Inactive'}];
+  public transaction: any =  [{val: "TEST", name: 'TEST'}, {val: 'LIVE', name: 'LIVE'}];
 
   // use for status search
   statusarray: any =  [{val: 1, name: 'Active'}, {val: 0, name: 'Inactive'}]; 
@@ -36,7 +36,8 @@ export class OrderListingComponent implements OnInit {
      'phone':"Phone Number",
      'state':'State',
      'city':'City',
-     'zip':"Zip Code"
+     'zip':"Zip Code",
+     '_id' :"OrderID"
  };
 
 //   api url from environment
@@ -45,13 +46,10 @@ export class OrderListingComponent implements OnInit {
 
 
    // use for Table Detail Field Skip 
-orderDataList_skip: any = ['_id', 'name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','transactionid'];
+orderDataList_skip: any = ['name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','transactionid','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip'];
 
  // updateendpoint is use for data update endpoint
  updateendpoint = 'addorupdatedata';
-
- // deleteendpoint is use for data delete endpoint
- deleteendpoint = 'deletesingledaanta';
 
  // this is a database collection name
  tablename = 'data_order';
@@ -79,7 +77,7 @@ orderDataList_skip: any = ['_id', 'name','userid','shipping_charge','sale_tax','
 sortdata:any={
    "type":'desc',
    "field":'shipping_name',
-   "options":['shipping_name','shipping_address','shipping_country','shipping_state','shipping_city']
+   "options":['shipping_name','shipping_address','billing_name','billing_address']
 };
 
  // this is a database collection or view name
@@ -92,11 +90,11 @@ sortdata:any={
 
  search_settings:any={
 
-     datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"created_at"}],   // this is use for  date search
+    //  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"created_at"}],   // this is use for  date search
 
-     selectsearch:[{ label: 'Search By Status', field: 'status', values: this.status }], // this is use for  select search
+     selectsearch:[{ label: 'Search By Transactiontype', field: 'transactiontype', values: this.transaction }], // this is use for  select search
 
-      textsearch:[{label:"Search By ShippingName",field:'shipping_name'},{label:"Search By ShippingAddress",field:'shipping_address'},{label:"Search By ShippingCountry",field:'shipping_country'},{label:"Search By ShippingState",field:'shipping_state'},{label:"Search By ShippingCity",field:'shipping_city'}],  // this is use for  text search
+      textsearch:[{label:"Search By ShippingName",field:'shipping_name'},{label:"Search By ShippingAddress",field:'shipping_address'}]  // this is use for  text search
 
       // this is use for  Autocomplete search
    //    search:[{label:"Search By status",field:this.status}]     
