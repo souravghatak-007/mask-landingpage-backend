@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { CookieService } from 'ngx-cookie-service';
+import {ApiService} from './../../../api.service';
+import { Key } from 'protractor';
 
 @Component({
   selector: 'app-user-listing',
@@ -14,6 +16,8 @@ export class UserListingComponent implements OnInit {
   status_gretterthan_zero: any;
   pendingapplication_view: any;
   joquuserlist: any;
+  public countrylistarray:any=[];
+  public countryValueForsearch:any=[];
   placeholder: any = ['placeholder'];
   type: any = ['text'];
   name: any = ['Username'];
@@ -103,16 +107,19 @@ export class UserListingComponent implements OnInit {
       { val: 'YmattZ', 'name': 'YmattZ A' },
       { val: 'Jessica', 'name': 'A Jessica' }
       ];
+
+
   search_settings:any={
 
       // datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"created_at"}],   // this is use for  date search
 
-      // selectsearch:[{ label: 'Search By Status', field: 'status', values: this.status }], // this is use for  select search
+       selectsearch:[{ label: 'Search By Status', field: 'status', values: this.status },
+      {label: 'Search By Status', field: 'country_search', values: this.countryValueForsearch}], // this is use for  select search
 
-       textsearch:[{label:"Search By Firstname",field:'firstname'},{label:"Search by Email",field:"email"},
-       {label:"Search by Country",field:"country_search"}],  // this is use for  text search
+       textsearch:[{label:"Search By Firstname",field:'firstname'},{label:"Search by Email",field:"email"},{label:"Search by Country",field:"country_search"}
+      ],  // this is use for  text search
 
-      //  search:[{label:"Search By Author",field:'author_search',values:this.authval}]     // this is use for  Autocomplete search
+      //search:[{label:"Search By Author",field:'country_search',values:this.countryValueForsearch}]     // this is use for  Autocomplete search
   };
 
   // this is search block 
@@ -135,7 +142,7 @@ export class UserListingComponent implements OnInit {
   public user_cookie:any;
   public apiUrl:any;
 
-  constructor(public router: Router, public route: ActivatedRoute, public _apiService: HttpServiceService,  public cookie: CookieService) {
+  constructor(public apiService:ApiService,public router: Router, public route: ActivatedRoute, public _apiService: HttpServiceService,  public cookie: CookieService) {
       // console.log('custom_link');
       // console.log(this.custom_link);
       this.datasource = '';
@@ -180,7 +187,25 @@ export class UserListingComponent implements OnInit {
       //console.log(data);
       this.userDataarray = data.userManagementData.res;
     })
+    this.getCountryStateCityList();
+   
+    setTimeout(()=>{    
+      for(let i in this.countrylistarray){
+       // console.log(this.countrylistarray[i].country);
+        this.countryValueForsearch.push({val: Object.keys(this.countrylistarray[i].country)})
+      }
+      console.log(this.countryValueForsearch);
+ }, 5000);
+    
   }
 
-
+  getCountryStateCityList() {
+    this.apiService.getJsonObject('assets/json/coun.json')     // json for english-speaking-country
+      .subscribe((res:any) => {
+        
+        this.countrylistarray = res.countries;
+       //console.log(this.countrylistarray);
+      });
+     
+  }
 }

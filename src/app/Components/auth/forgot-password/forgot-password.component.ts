@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpServiceService} from '../../../services/http-service.service';
+import { MetaService } from '@ngx-meta/core';
+
 @Component({
   selector: 'app-forgotpassword',
   templateUrl: './forgot-password.component.html',
@@ -22,17 +24,17 @@ export class ForgotPasswordComponent implements OnInit {
   };
   public signUpRouteingUrl: any = {
     // "path":"sign-up",
-    "path":"",
-    "buttonName":"Sign Up",
-    "customLink":"",
-    "customURl":""
+    // "path":"",
+    // "buttonName":"Sign Up",
+    // "customLink":"",
+    // "customURl":""
   };
   public buttonName: any = 'Reset Password';
 
   public domainUrl: any = 'https://mask-landingpage-backend.influxiq.com/reset-password';
 
-  constructor(public httpServiceService:HttpServiceService) {
-       
+  constructor(public meta: MetaService,public httpServiceService:HttpServiceService) {
+    this.meta.setTitle('Mask - Forget Password');
   }
 
   ngOnInit() {
