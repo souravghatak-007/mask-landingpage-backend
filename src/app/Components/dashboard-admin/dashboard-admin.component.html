@@ -35,7 +35,7 @@
         </mat-card>
         <mat-card class="headercls" *ngIf="cookieUserallData.type=='admin'">
           <h1 class="header" *ngIf="cookieUserallData.type=='admin'">Order Table </h1>
-
+        <div class="listingnewstyle">
           <lib-listing *ngIf="orderDataList!=null && orderDataList.length>0" 
             [datasource]="orderDataList"
             [skip]="orderDataList_skip"
@@ -57,6 +57,7 @@
             [datacollection]="datacollection"
             [date_search_source_count]="date_search_source_count"
             [limitcond]="limitcond"></lib-listing>
+            </div>
           </mat-card>
           <!-- user section html start here -->
           <h3 *ngIf="cookieUserallData.type=='user'">Welcome User</h3>
