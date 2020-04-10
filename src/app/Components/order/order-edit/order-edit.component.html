@@ -1,4 +1,326 @@
-<span class="searchblock">
+<div class="adminwrappercls">
+    <app-adminheader></app-adminheader>
+    <!-- <div id="beadcamb">
+
+    </div> -->
+    <div id="maincontent">
+      <div class="main-content-wrap">
+        <mat-card class="generalcls" style="padding: 0 !important;">
+        <span class="AddEditBlog">
+          <h1>{{header_text}} </h1>    
+          <span class="formspan">
+          <mat-card-content class="example-container">
+            <form class="formcls" novalidate [formGroup]="orderEditform">   
+            <!-- <mat-label>User </mat-label> -->
+            <mat-label>User</mat-label>
+            <mat-form-field >
+                <input matInput placeholder="User" [formControl]="orderEditform.controls['username']">
+                <mat-error *ngIf="orderEditform.controls['username'].touched && !orderEditform.controls['username'].valid && orderEditform.controls['username'].errors.required">User name field can not be blank</mat-error>
+            </mat-form-field>
+            <mat-label>Order Id</mat-label>
+            <mat-form-field >
+                <input matInput placeholder="Order Id" [formControl]="orderEditform.controls['orderid']">
+                <mat-error *ngIf="orderEditform.controls['orderid'].touched && !orderEditform.controls['orderid'].valid && orderEditform.controls['orderid'].errors.required">Order ID field can not be blank</mat-error>
+            </mat-form-field>
+
+            <mat-label>Order Status</mat-label>
+
+            <mat-form-field >
+                <input matInput placeholder="Order Status" [formControl]="orderEditform.controls['orderstatus']">
+                <mat-error *ngIf="orderEditform.controls['orderstatus'].touched && !orderEditform.controls['orderstatus'].valid && orderEditform.controls['orderstatus'].errors.required">Order status field can not be blank</mat-error>
+            </mat-form-field>
+
+            <mat-label>PAYMENT STATUS </mat-label>
+            <p>Authorized & Captured.</p>
+            <mat-list class="paymentstatus">
+                <mat-list-item> <span>Void</span> <button class="singleButton btnred" mat-raised-button>Void Order</button> </mat-list-item>
+                <mat-list-item> <span>Refund</span> <button class="singleButton btnblue" mat-raised-button>Refund Order</button> </mat-list-item>
+            </mat-list>            
+
+
+            <mat-label>Date Added </mat-label>
+            <mat-form-field >
+                <input matInput placeholder="Date Added" [formControl]="orderEditform.controls['dateadded']">
+                <mat-error *ngIf="orderEditform.controls['dateadded'].touched && !orderEditform.controls['dateadded'].valid && orderEditform.controls['dateadded'].errors.required">Date added field can not be blank</mat-error>
+            </mat-form-field>
+            <mat-label>Order Source </mat-label>
+            <mat-form-field >
+                <input matInput placeholder="Order Source" [formControl]="orderEditform.controls['ordersource']">
+                <mat-error *ngIf="orderEditform.controls['ordersource'].touched && !orderEditform.controls['ordersource'].valid && orderEditform.controls['ordersource'].errors.required">Order source field can not be blank</mat-error>
+            </mat-form-field>
+            
+            <mat-label>Contents </mat-label>
+            <span class="contentsblock"> 
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">  
+                    <ng-container matColumnDef="productcode">
+                        <th mat-header-cell *matHeaderCellDef> Product Code </th>
+                        <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
+                        <td mat-cell *matCellDef="let element"> {{element.productcode}} </td>
+                         <td mat-footer-cell *matFooterCellDef> </td>
+                    </ng-container>
+
+                   
+                    <ng-container matColumnDef="product">
+                        <th mat-header-cell *matHeaderCellDef> Product </th>
+                        <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
+                        <td mat-cell *matCellDef="let element"> {{element.product}} </td>
+                         <td mat-footer-cell *matFooterCellDef> </td>
+                    </ng-container>
+
+                    
+                    <ng-container matColumnDef="qty">
+                        <th mat-header-cell *matHeaderCellDef> QTY </th>
+                        <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
+                        <td mat-cell *matCellDef="let element"> {{element.qty}} </td>
+                        <td mat-footer-cell *matFooterCellDef> </td>
+                    </ng-container>
+
+                   
+                    <ng-container matColumnDef="unitprice">
+                        <th mat-header-cell *matHeaderCellDef> Unit Price </th>
+                        <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
+                        <td mat-cell *matCellDef="let element"> {{element.unitprice}} </td>
+                        <td mat-footer-cell *matFooterCellDef> subtotal </td>
+                    </ng-container>
+
+                   
+                    <ng-container matColumnDef="total">
+                        <th mat-header-cell *matHeaderCellDef> Total </th>
+                        <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
+                        <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+                         <td mat-footer-cell *matFooterCellDef> 200 </td>
+                    </ng-container>
+
+                        <!-- subtotal column -->
+                        <ng-container matColumnDef="subtotal">   
+                         <td mat-footer-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>                     
+                            <td mat-footer-cell *matFooterCellDef colspan="5">
+                                total
+                            </td>                            
+                        </ng-container>
+
+                        <!-- shippingandhandling column -->
+                        <ng-container matColumnDef="shippingandhandling">       
+                       <td mat-footer-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>                    
+                            <td mat-footer-cell *matFooterCellDef colspan="5">
+                                shipping and handling
+                            </td>                            
+                        </ng-container>
+                        <!-- tax column -->
+                        <ng-container matColumnDef="tax">     
+                        <td mat-footer-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>                      
+                            <td mat-footer-cell *matFooterCellDef colspan="5">
+                                tax
+                            </td>                            
+                        </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>              
+                    <tr mat-footer-row *matFooterRowDef="['subtotal']"></tr>  
+                    <tr mat-footer-row *matFooterRowDef="['shippingandhandling']"></tr>  
+                    <tr mat-footer-row *matFooterRowDef="['tax']"></tr>  
+                    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>                
+
+                </table>
+                <span class="refundselected"><button class="singleButton btnblue" mat-raised-button>Refund Selected</button></span>
+            </span>
+            <mat-label>Billing Profile </mat-label>
+            <mat-form-field >
+                <input matInput placeholder="Billing Profile" [formControl]="orderEditform.controls['billingprofile']">
+                <mat-error *ngIf="orderEditform.controls['billingprofile'].touched && !orderEditform.controls['billingprofile'].valid && orderEditform.controls['billingprofile'].errors.required">Billing profile field can not be blank</mat-error>
+            </mat-form-field>
+
+            <span class="addressblock"> 
+                <span class="addressingle">     
+                    <mat-label>Billing Address </mat-label>
+                    <mat-list>
+                        <mat-list-item> <span>First Name</span> Test </mat-list-item>
+                        <mat-list-item> <span>Last Name</span> Test </mat-list-item>
+                        <mat-list-item> <span>Company</span>  </mat-list-item>
+                        <mat-list-item> <span>Address Line 1</span>  </mat-list-item>
+                        <mat-list-item> <span>Address Line 2</span>  </mat-list-item>
+                        <mat-list-item> <span>City</span>  </mat-list-item>
+                        <mat-list-item> <span>Region</span>  </mat-list-item>
+                        <mat-list-item> <span>Country</span>  </mat-list-item>
+                        <mat-list-item> <span>Postal Code</span>  </mat-list-item>
+                        <mat-list-item> <span>Email</span>  </mat-list-item>
+                        <mat-list-item> <span>Phone</span>  </mat-list-item>
+                        <mat-list-item> <span>District</span>  </mat-list-item>
+                    </mat-list>
+                </span>
+                <span class="addressingle"> 
+                    <mat-label>Shipping Address </mat-label>
+                    <mat-list>
+                        <mat-list-item> <span>First Name</span> Test </mat-list-item>
+                        <mat-list-item> <span>Last Name</span> Test </mat-list-item>
+                        <mat-list-item> <span>Company</span>  </mat-list-item>
+                        <mat-list-item> <span>Address Line 1</span>  </mat-list-item>
+                        <mat-list-item> <span>Address Line 2</span>  </mat-list-item>
+                        <mat-list-item> <span>City</span>  </mat-list-item>
+                        <mat-list-item> <span>Region</span>  </mat-list-item>
+                        <mat-list-item> <span>Country</span>  </mat-list-item>
+                        <mat-list-item> <span>Postal Code</span>  </mat-list-item>
+                        <mat-list-item> <span>Address Key</span>  </mat-list-item>
+                        <mat-list-item> <span>Shipping Notes</span>  </mat-list-item>
+                        <mat-list-item> <span>Phone</span>  </mat-list-item>
+                        <mat-list-item> <span>District</span>  </mat-list-item>
+                    </mat-list>
+                </span>
+                <span class="addressingle"> 
+                    <mat-label>Card Information</mat-label>
+                    <mat-list>
+                        <mat-list-item> <span>Card Number</span> ************1111 </mat-list-item>
+                        <mat-list-item> <span>Card Exp Mo</span> 01/2021  </mat-list-item>
+                        <mat-list-item> <span>Card Type</span> amx </mat-list-item>
+                        <mat-list-item> <span>Card Name</span>  </mat-list-item>
+                        <mat-list-item> <span>Currency Code</span>  </mat-list-item>
+                        <mat-list-item> <span>Card Phone</span>  </mat-list-item>
+                        <mat-list-item> <span>Anxpro Username</span>  </mat-list-item>
+                        <mat-list-item> <span>Anxpro Password</span>  </mat-list-item>
+                    </mat-list>
+                </span>
+
+            </span>
+            
+            <mat-label>shipping instruction </mat-label>
+            <mat-form-field >
+                <input matInput placeholder="shipping instruction" [formControl]="orderEditform.controls['shippinginstruction']">
+                <mat-error *ngIf="orderEditform.controls['shippinginstruction'].touched && !orderEditform.controls['shippinginstruction'].valid && orderEditform.controls['shippinginstruction'].errors.required">shipping instruction field can not be blank</mat-error>
+            </mat-form-field>
+
+             <mat-form-field >
+                <input matInput placeholder="Fulfillment Notes" [formControl]="orderEditform.controls['fulfillmentnotes']">
+                <mat-error *ngIf="orderEditform.controls['fulfillmentnotes'].touched && !orderEditform.controls['fulfillmentnotes'].valid && orderEditform.controls['fulfillmentnotes'].errors.required">fulfillment notes field can not be blank</mat-error>
+            </mat-form-field>
+            <mat-label>User Comments </mat-label>
+             <mat-form-field >
+                <input matInput placeholder="User Comments" [formControl]="orderEditform.controls['usercomments']">
+                <mat-error *ngIf="orderEditform.controls['usercomments'].touched && !orderEditform.controls['usercomments'].valid && orderEditform.controls['usercomments'].errors.required">User Comments field can not be blank</mat-error>
+            </mat-form-field>
+            <mat-label>Admin Comments </mat-label>
+             <mat-form-field >
+                <input matInput placeholder="Admin Comments" [formControl]="orderEditform.controls['admincomments']">
+                <mat-error *ngIf="orderEditform.controls['admincomments'].touched && !orderEditform.controls['admincomments'].valid && orderEditform.controls['admincomments'].errors.required">Admin Comments field can not be blank</mat-error>
+            </mat-form-field>
+            <mat-label>System Log</mat-label>    
+             <mat-form-field >
+                <input matInput placeholder="System Log" [formControl]="orderEditform.controls['systemlog']">
+                <mat-error *ngIf="orderEditform.controls['systemlog'].touched && !orderEditform.controls['systemlog'].valid && orderEditform.controls['systemlog'].errors.required">system log field can not be blank</mat-error>
+            </mat-form-field>
+
+
+            <mat-label>TRANSACTIONS </mat-label>
+            <span class="contentsblock"> 
+                <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">                 
+
+                 
+                    <ng-container matColumnDef="trid">
+                        <th mat-header-cell *matHeaderCellDef> Txn ID </th>
+                         <td mat-cell *matCellDef="let element"> {{element.trid}} </td>
+                    </ng-container>
+
+                   
+                    <ng-container matColumnDef="marcntID">
+                        <th mat-header-cell *matHeaderCellDef> Merchant ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.marcntID}} </td>
+                    </ng-container>
+
+                    
+                    <ng-container matColumnDef="type">
+                        <th mat-header-cell *matHeaderCellDef> Type </th>
+                        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                    </ng-container>
+
+                   
+                    <ng-container matColumnDef="datetime">
+                        <th mat-header-cell *matHeaderCellDef> Date/Time </th>
+                        <td mat-cell *matCellDef="let element"> {{element.datetime}} </td>
+                    </ng-container>
+
+                   
+                    <ng-container matColumnDef="approval">
+                        <th mat-header-cell *matHeaderCellDef> Approval </th>
+                        <td mat-cell *matCellDef="let element"> {{element.approval}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="authorizationsode">
+                        <th mat-header-cell *matHeaderCellDef> Authorization Code </th>
+                        <td mat-cell *matCellDef="let element"> {{element.authorizationsode}} </td>
+                    </ng-container>
+
+                       
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>       
+
+                </table>
+            </span>
+
+
+            <mat-label>ORDER ASSOCIATED VOLUME </mat-label>
+            <span class="contentsblock"> 
+                <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">                 
+
+                 
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                         <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                    </ng-container>
+
+                   
+                    <ng-container matColumnDef="type">
+                        <th mat-header-cell *matHeaderCellDef> Type </th>
+                        <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                    </ng-container>
+
+                    
+                    <ng-container matColumnDef="userID">
+                        <th mat-header-cell *matHeaderCellDef> UserID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.userID}} </td>
+                    </ng-container>
+
+                   
+                    <ng-container matColumnDef="date">
+                        <th mat-header-cell *matHeaderCellDef> Date </th>
+                        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                    </ng-container>
+
+                   
+                    <ng-container matColumnDef="amount">
+                        <th mat-header-cell *matHeaderCellDef> Amount </th>
+                        <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="voided">
+                        <th mat-header-cell *matHeaderCellDef> Voided </th>
+                        <td mat-cell *matCellDef="let element"> {{element.voided}} </td>
+                    </ng-container>
+                     
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>       
+
+                </table>
+            </span>
+            </form>
+          </mat-card-content>
+          </span>
+          </span>
+        </mat-card>
+      </div>
+    </div>    
+</div>
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+<!-- <span class="searchblock">
     <span class="searchblockwrapper">
         <span>
 <mat-toolbar color="primary" style="justify-content: center; align-items: center;">
@@ -66,4 +388,4 @@
                        total field can not be blank</mat-error>
         </mat-form-field><br>
     </form>
-</div>
+</div> -->
