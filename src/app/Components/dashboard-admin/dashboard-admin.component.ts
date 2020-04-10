@@ -37,11 +37,11 @@ modify_header_array: any = {
     'state':'State',
     'city':'City',
     'zip':"Zip Code",
-    '_id' :"OrderID",
+    'order_id' :"Order ID",
     'transactiontype':"Transaction Type"
 };
   // use for Table Detail Field Skip 
-orderDataList_skip: any = ['product_subtotal','shipping_phone','billing_phone','_id','name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','transactionid','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip'];
+orderDataList_skip: any = ['accesscode','_id','product_subtotal','shipping_phone','billing_phone','name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','transactionid','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip'];
 // updateendpoint is use for data update endpoint
 updateendpoint = 'addorupdatedata';
 // this is a database collection name
@@ -77,9 +77,9 @@ datacollection: any='getorderlistdata';
 search_settings:any={
   //  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"created_at"}],   // this is use for  date search
 
-   //selectsearch:[{ label: 'Search By Transactiontype', field: 'transactiontype', values: this.transaction }], // this is use for  select search
+   selectsearch:[{ label: 'Search By Transactiontype', field: 'transactiontype', values: this.transaction }], // this is use for  select search
 
-  //  textsearch:[{label:"Search By ShippingName",field:'shipping_name'},{label:"Search By ShippingAddress",field:'shipping_address'}]  // this is use for  text search
+  textsearch:[{label:"Search By ShippingName",field:'shipping_name'},{label:"Search By ShippingAddress",field:'shipping_address'}]  // this is use for  text search
 
     // this is use for  Autocomplete search
  //    search:[{label:"Search By status",field:this.status}]     
@@ -125,7 +125,7 @@ search_settings:any={
     }
  
     }
-    setTimeout(()=>{    //<<<---    using ()=> syntax
+    // setTimeout(()=>{    //<<<---    using ()=> syntax
       this.http.httpViaPost(endpointc, dataa).subscribe((res:any) => {
         // console.log('in constructor');
         // console.log(result);
@@ -143,7 +143,7 @@ search_settings:any={
     }, error => {
         console.log('Oooops!');
     });
- }, 5000);
+//  }, 5000);
        
  
   }

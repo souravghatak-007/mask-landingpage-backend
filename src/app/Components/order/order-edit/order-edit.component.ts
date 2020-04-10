@@ -61,7 +61,7 @@ const OrdAssVolume_DATA: OrdAssVolumeElement[] = [
   styleUrls: ['./order-edit.component.css']
 })
 export class OrderEditComponent implements OnInit {
-
+  hideRequiredControl:any;
   displayedColumns = ['productcode', 'product', 'qty', 'unitprice', 'total'];
   dataSource = ELEMENT_DATA;
 
