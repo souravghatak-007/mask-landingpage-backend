@@ -299,7 +299,7 @@ table.mat-table {width: 100%;}
 
 .countdiv .mat-card .mat-card-title{    margin-bottom: 0;
     align-items: stretch;
-    background: #08b1e7 !important;
+    background: linear-gradient(45deg,#363636,#08b1e7);
     padding: 27px 10px!important;
     width: 70%;
     justify-content: center;
@@ -314,7 +314,7 @@ table.mat-table {width: 100%;}
     font-size:30px;
     text-align: center;
     justify-content: center;}
-
+.headercls h1{text-align:center;}
 
 @media screen and (max-width: 1620px) {
 .listingnewstyle mat-toolbar-row.searchbar{justify-content:center!important;flex-wrap:wrap;height:auto}
