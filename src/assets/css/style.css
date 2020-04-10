@@ -229,7 +229,7 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 
 .mat-form-field-appearance-legacy .mat-form-field-label.mat-form-field-empty {top: 0.7em !important;padding-left: 10px;}
 .AddEditBlog .formspan label.mat-form-field-label.mat-form-field-empty span {padding-left: 0px;}
-.AddEditBlog .formspan label span {padding-left: 10px;}
+.AddEditBlog .formspan label span {padding-left: 10px;} */
 
 /* AddEditBlog */
 
@@ -276,9 +276,15 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 table.mat-table {width: 100%;}
 .AddEditBlog table{margin-bottom:20px;}
 
-
-
 .AddEditBlog .formspan .formcls mat-label{line-height: 20px;font-size: 16px;text-transform:uppercase; font-family:var(--main-bold-font);}
+
+
+
+
+
+
+
+
 
 
 
@@ -314,7 +320,31 @@ table.mat-table {width: 100%;}
     font-size:30px;
     text-align: center;
     justify-content: center;}
+    
 .headercls h1{text-align:center;}
+
+
+
+
+
+.addressblock{height:auto!important;display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important;}
+.addressblock .addressingle {
+    flex: 1 1 31%!important;
+    display: flex!important;
+    flex-direction: column!important;
+    margin: 1%!important;
+    justify-content: space-between!important;
+    border: 1px solid #c9c9c9!important;
+    padding: 0px!important;
+    flex-wrap: initial!important;
+    margin-top: 0!important;
+    background-color: #f4f1f1;
+    align-items: flex-start;
+}
+.addressblock .addressingle mat-label{font-size:16px;font-family:'NunitoRegular';width:100%;padding:0 10px;box-sizing:border-box;color:var(--c-t-primary);text-transform:capitalize}
+.addressblock .addressingle mat-list {height: 100%;}
+.addressblock .addressingle mat-list .mat-list-item {display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:flex-start!important;}
+
 
 @media screen and (max-width: 1620px) {
 .listingnewstyle mat-toolbar-row.searchbar{justify-content:center!important;flex-wrap:wrap;height:auto}

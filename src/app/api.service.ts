@@ -511,6 +511,20 @@ postdata(requestdata: any) {
     var result = this._http.get("http://ipinfo.io/?format=json&token=9797c42b93078a").pipe(map(res => res));
     return result;
     }
+
+  serviceViaPost(requestdata: any, endpoint: any): Observable<any> {
+    // console.log(endpoint,requestdata);
+     /* set common header */
+     const returnedTarget = Object.assign(requestdata,{'secret':this.cookieService.get('secret')});
+     const httpOptions = {
+       headers: new HttpHeaders({
+         'Content-Type': 'application/json',
+        //  'Authorization': this.cookieService.get('jwtToken'),
+         
+       })
+     };
+     return this._http.post(this.serverUrl + endpoint, JSON.stringify(requestdata),httpOptions).pipe(map(res => res));
+   }
 }
 
 

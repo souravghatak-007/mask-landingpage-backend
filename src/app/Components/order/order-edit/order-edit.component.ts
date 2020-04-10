@@ -88,7 +88,6 @@ export class OrderEditComponent implements OnInit {
         this.condition = { id: params._id };
         this.activatedRoute.data.subscribe(resolveData => {
           this.orderData = resolveData.orderData.res[0];
-          console.log('++++++++++++++++',this.orderData.user_info.firstname);
         });
       }
     })
@@ -106,8 +105,6 @@ export class OrderEditComponent implements OnInit {
       usercomments: [null, Validators.required],
       admincomments: [null, Validators.required],
       systemlog: [null, Validators.required],
-
-
       productname: [null, Validators.required],
       productquantity: [null, Validators.required],
       productprice: [null, Validators.required],
@@ -117,10 +114,7 @@ export class OrderEditComponent implements OnInit {
       total:[null, Validators.required]
     })
     this.orderEditform.patchValue({
-      username:this.orderData.user_info.firstname,
       orderid:this.orderData._id,
-      
-
       productname:this.orderData.product_name,
       productquantity:this.orderData.product_qty,
       productprice:this.orderData.product_price,
