@@ -276,11 +276,7 @@ td.mat-cell{color:#465157;font-family:"AvenirLight"}
 table.mat-table {width: 100%;}
 .AddEditBlog table{margin-bottom:20px;}
 
-
-
 .AddEditBlog .formspan .formcls mat-label{line-height: 20px;font-size: 16px;text-transform:uppercase; font-family:var(--main-bold-font);}
-
-
 
 .countdiv{height:auto!important;display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important;}
 .countdiv .mat-card{
@@ -314,7 +310,59 @@ table.mat-table {width: 100%;}
     font-size:30px;
     text-align: center;
     justify-content: center;}
+    
 .headercls h1{text-align:center;}
+
+
+
+/* myaccount */
+.myaccount .myaccountwrapper{width: 550px; margin: 50px auto; display: block;box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);-o-box-shadow: 0 0 10px rgba(0,0,0,0.6);}
+.myaccount .mat-tab-labels {display: flex;flex-wrap: wrap;flex-direction: column;}
+.myaccount .mat-tab-group {display: flex;flex-direction: row;}
+.myaccount .mat-tab-body-wrapper {margin-top: -29%;padding: 0 30px 30px;}
+.myaccount .mat-form-field {width: 99%;border: 1px solid #d9d9d9;margin-bottom: 10px;}
+.myaccount .mattabgroup .mat-tab-header {background-color: var(--c-t-alt-links);width: 180px;flex-wrap: wrap;}
+.profile-area-wrapper{background-color: var(--c-t-bg-w);display: block;}
+.profile-area-wrapper .mat-tab-body .buttonsetToolbar{margin-top:20px;}
+.profile-area {background-color: var(--c-t-deepgray-bg);width: 170px;height: auto;display: block;padding: 20px 5px 20px;}
+.profile-area .profileimg{width: 80px; height: 80px;display: block;margin: 0 auto; overflow: hidden; position: relative;background: #fff;border-radius: 50px;border: 2px solid #fff;    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  -moz-box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);-webkit-box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);-o-box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);}
+  .profile-area .profileimg img{width: 100%; display: block;}
+.profile-area .profileinfo{text-align: center;margin-top: 10px;display: block;}
+.profile-area .profileinfo h2{margin: 0; padding: 0;text-transform: capitalize;color: var(--c-t-bg-w);font-size: var(--base-font-size); font-family: var(--main-font);margin-bottom: 10px;}
+.profile-area .profileinfo p{margin: 0; padding: 0;text-transform: capitalize;color: var(--c-t-bg-w); font-size: 12px; font-family: var(--main-light-font);margin-top: 5px;}
+.myaccount .mat-tab-list {margin-top: 15px;}
+.myaccount .mat-tab-label {height: auto !important;padding: 12px 5px !important;min-width: 160px !important;text-align: left !important;display: flex !important;justify-content: flex-start !important;align-items: center !important;white-space: nowrap !important;position: relative !important;max-width: 180px !important;flex-wrap: wrap !important;color: var(--c-t-bg-w);opacity: 1!important;}
+.myaccount .mat-tab-label .mat-tab-label-content {white-space: initial;font-family: var(--main-font);}
+.myaccount .mat-tab-label .mat-tab-label-content svg{margin-right: 5px;color: white;fill: currentColor;
+  vertical-align: middle;}
+.myaccount .mat-card-title {display: block;margin-bottom: 20px;}
+.myaccount .mat-tab-group .mat-form-field-appearance-legacy .mat-form-field-infix {line-height: 21px;}
+.myaccount .mat-form-field-prefix, .mat-form-field-suffix{white-space:nowrap;flex:none;position:relative;background-color:var(--c-t-bg-secondary);height:100%;line-height:45px;padding:0 10px;color:#fff;font-size:16px
+}
+.myaccount .mat-form-field-flex .mat-form-field-suffix {top: 0px;}
+
+
+
+.addressblock{height:auto!important;display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important;}
+.addressblock .addressingle{
+    flex: 1 1 23%!important;
+    display: flex!important;
+    flex-direction: row!important;
+    margin: 1%!important;
+    justify-content: center!important;
+    border: 1px solid #c9c9c9!important;
+    padding: 0px!important;
+    flex-wrap: initial!important;
+    margin-top: 0!important;
+    background-color: #f4f1f1;
+    align-items: stretch;
+}
+.addressblock .addressingle mat-label{font-size:16px;font-family:'NunitoRegular';width:100%;padding:0 10px;box-sizing:border-box;color:var(--c-t-primary);text-transform:capitalize}
+.addressblock .addressingle mat-list {}
+.addressblock .addressingle mat-list .mat-list-item {display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:flex-start!important;}
+
 
 @media screen and (max-width: 1620px) {
 .listingnewstyle mat-toolbar-row.searchbar{justify-content:center!important;flex-wrap:wrap;height:auto}
