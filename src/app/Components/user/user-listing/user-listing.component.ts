@@ -192,7 +192,7 @@ export class UserListingComponent implements OnInit {
     setTimeout(()=>{    
       for(let i in this.countrylistarray){
        // console.log(this.countrylistarray[i].country);
-        this.countryValueForsearch.push({val: Object.keys(this.countrylistarray[i].country)})
+        this.countryValueForsearch.push({val: Object.values(this.countrylistarray[i].country)})
       }
       console.log(this.countryValueForsearch);
  }, 5000);
