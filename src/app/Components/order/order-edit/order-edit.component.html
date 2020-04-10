@@ -187,7 +187,7 @@
                 <input matInput placeholder="shipping instruction" [formControl]="orderEditform.controls['shippinginstruction']">
                 <mat-error *ngIf="orderEditform.controls['shippinginstruction'].touched && !orderEditform.controls['shippinginstruction'].valid && orderEditform.controls['shippinginstruction'].errors.required">shipping instruction field can not be blank</mat-error>
             </mat-form-field>
-
+            <mat-label>Fulfillment Notes </mat-label>
              <mat-form-field >
                 <input matInput placeholder="Fulfillment Notes" [formControl]="orderEditform.controls['fulfillmentnotes']">
                 <mat-error *ngIf="orderEditform.controls['fulfillmentnotes'].touched && !orderEditform.controls['fulfillmentnotes'].valid && orderEditform.controls['fulfillmentnotes'].errors.required">fulfillment notes field can not be blank</mat-error>
