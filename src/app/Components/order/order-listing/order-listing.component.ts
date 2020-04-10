@@ -13,6 +13,7 @@ import {environment} from '../../../../environments/environment';
 export class OrderListingComponent implements OnInit {
 
   public transaction: any =  [{val: "TEST", name: 'TEST'}, {val: 'LIVE', name: 'LIVE'}];
+  public orderStatus:any = [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"}]
 
   // use for status search
   statusarray: any =  [{val: 1, name: 'Active'}, {val: 0, name: 'Inactive'}]; 
@@ -37,7 +38,7 @@ export class OrderListingComponent implements OnInit {
      'state':'State',
      'city':'City',
      'zip':"Zip Code",
-     '_id' :"OrderID"
+     'order_id':"OrderID"
  };
 
 //   api url from environment
@@ -46,7 +47,7 @@ export class OrderListingComponent implements OnInit {
 
 
    // use for Table Detail Field Skip 
-orderDataList_skip: any = ['name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','transactionid','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip'];
+orderDataList_skip: any = ['name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','transactionid','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip','ordered_on'];
 
  // updateendpoint is use for data update endpoint
  updateendpoint = 'addorupdatedata';
@@ -92,9 +93,10 @@ sortdata:any={
 
     //  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"created_at"}],   // this is use for  date search
 
-     selectsearch:[{ label: 'Search By Transactiontype', field: 'transactiontype', values: this.transaction }], // this is use for  select search
+     selectsearch:[{ label: 'Search By Transactiontype', field: 'transactiontype', values: this.transaction },{ label: 'Search By Transaction', field: 'order_status', values: this.orderStatus }], // this is use for  select search
 
-      textsearch:[{label:"Search By ShippingName",field:'shipping_name'},{label:"Search By ShippingAddress",field:'shipping_address'}]  // this is use for  text search
+      textsearch:[{label:"Search By ShippingName",field:'shipping_name'},{label:"Search By ShippingAddress",field:'shipping_address'},
+      {label:"Search By OrderId",field:'order_id'}]  // this is use for  text search
 
       // this is use for  Autocomplete search
    //    search:[{label:"Search By status",field:this.status}]     
