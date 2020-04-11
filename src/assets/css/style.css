@@ -381,7 +381,7 @@ table.mat-table {width: 100%;}
 .addressblock{height:auto!important;display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important}
 .addressblock .addressingle{flex:1 1 31%!important;display:flex!important;flex-direction:column!important;margin-right:1%!important;justify-content:space-between!important;border:1px solid #c9c9c9!important;padding:0!important;flex-wrap:initial!important;margin-top:0!important;background-color:#f4f1f1;align-items:flex-start}
 .addressblock .addressingle:last-child{margin-right:0!important}
-.addressblock .addressingle mat-label{font-size:16px;font-family:'NunitoRegular';width:100%;padding:0 10px;box-sizing:border-box;color:var(--c-t-primary);text-transform:capitalize}
+.addressblock .addressingle mat-label{font-size:16px;font-family:'NunitoRegular';width:100%;padding:0 10px;box-sizing:border-box;color:var(--c-t-bg-black);text-transform:capitalize}
 .addressblock .addressingle mat-list{height:100%;width:100%}
 .addressblock .addressingle mat-list .mat-list-item{display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:flex-start!important;width:100%;height:auto;margin-bottom:16px}
 .addressblock .addressingle mat-list .mat-list-item .mat-list-item-content{width:100%}
