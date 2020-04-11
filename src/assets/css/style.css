@@ -388,7 +388,7 @@ table.mat-table {width: 100%;}
 .addressblock .addressingle mat-list .mat-list-item .mat-list-item-content span{width:40%;font-family:var(--main-bold-font);font-size:14px}
 
 .contentsblock{margin-bottom: 16px;display: block;}
-
+.contentsblock td.mat-footer-cell .mobile-label, .contentsblock td.mat-footer-cell{font-size: 14px; color:var(--c-t-bg-black); text-transform: uppercase;font-family: var(--main-bold-font);}
 
 
 /* lib-preview-files */
