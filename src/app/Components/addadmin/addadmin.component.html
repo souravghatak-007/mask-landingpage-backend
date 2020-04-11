@@ -1,13 +1,17 @@
-<app-adminheader></app-adminheader>
-
-
-<div>
-    <span>
-        <h2><u>{{header_text}}</u> </h2>
-      </span>
-</div>
-
-<form [formGroup]="addAdminForm" class="formcls"> 
+<div class="adminwrappercls">
+ <app-adminheader></app-adminheader>
+  <!-- <div id="beadcamb">
+    
+  </div> -->
+  <div id="maincontent">
+    <div class="main-content-wrap">
+      <mat-card class="generalcls" style="padding: 0 !important;">
+        <div class="AddEditBlog">
+       
+     <h1>{{header_text}} </h1>             
+        <span class="formspan">
+          <mat-card-content class="example-container">
+            <form [formGroup]="addAdminForm" class="formcls"> 
 
     <mat-form-field>
       <input matInput type="text" placeholder="First Name" formControlName="firstname" (blur)="inputUntouched('firstname')">
@@ -93,6 +97,29 @@
            (click)="addAdminFormSubmit()">{{btn_text}}</button> 
       </span>
   </form>
-
-
+          </mat-card-content>
+        </span>      
+        </div>
+      </mat-card>
+    </div>
+  </div>    
+</div>
 <app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

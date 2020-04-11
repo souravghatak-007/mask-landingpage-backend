@@ -26,8 +26,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
 ];
 
 
-
-
 export interface TrElement { 
   trid: string;
   marcntID: string;
@@ -62,16 +60,18 @@ const OrdAssVolume_DATA: OrdAssVolumeElement[] = [
 })
 export class OrderEditComponent implements OnInit {
 
-  displayedColumns = ['productcode', 'product', 'qty', 'unitprice', 'total'];
-  dataSource = ELEMENT_DATA;
+  displayedcontentsColumns = ['productcode', 'product', 'qty', 'unitprice', 'total'];
+  contentsdataSource = ELEMENT_DATA;
 
+  transactiondisplayedColumns = ['trid', 'marcntID', 'type', 'datetime', 'approval', 'authorizationsode'];
+  transactiondataSource = TR_DATA;
 
-  displayedColumns1 = ['trid', 'marcntID', 'type', 'datetime', 'approval', 'authorizationsode'];
-  dataSource1 = TR_DATA;
+  orderassociateddisplayedColumns = ['id', 'type', 'userID', 'date', 'amount', 'voided']; 
+  orderassociateddataSource = OrdAssVolume_DATA;
 
-  displayedColumns2 = ['id', 'type', 'userID', 'date', 'amount', 'voided'];
- 
-   dataSource2 = OrdAssVolume_DATA;
+  displayedSubTotalColumns = ['emptyFooter', 'emptyFooter', 'emptyFooter', 'subtotalTitle', 'subtotalAmount'];
+  displayedShippingandHandlingColumns = ['emptyFooter', 'emptyFooter', 'emptyFooter', 'shippingandhandlingTitle', 'shippingandhandlingAmount'];
+  displayedTaxColumns = ['emptyFooter', 'emptyFooter', 'emptyFooter', 'taxTitle', 'taxAmount'];
 
 
   public orderEditform: FormGroup;
@@ -132,9 +132,6 @@ export class OrderEditComponent implements OnInit {
   
   }
 
-  // etTotalCost() {
-  //   return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
-  // }
-
+ 
 
 }

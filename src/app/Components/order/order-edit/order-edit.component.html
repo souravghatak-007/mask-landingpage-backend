@@ -11,7 +11,6 @@
           <span class="formspan">
           <mat-card-content class="example-container">
             <form class="formcls" novalidate [formGroup]="orderEditform">   
-            <!-- <mat-label>User </mat-label> -->
             <mat-label>User</mat-label>
             <mat-form-field >
                 <input matInput placeholder="User" [formControl]="orderEditform.controls['username']">
@@ -31,12 +30,13 @@
             </mat-form-field>
 
             <mat-label>PAYMENT STATUS </mat-label>
-            <p>Authorized & Captured.</p>
-            <mat-list class="paymentstatus">
-                <mat-list-item> <span>Void</span> <button class="singleButton btnred" mat-raised-button>Void Order</button> </mat-list-item>
-                <mat-list-item> <span>Refund</span> <button class="singleButton btnblue" mat-raised-button>Refund Order</button> </mat-list-item>
-            </mat-list>            
-
+            <span class="paymentstatuswrapper">
+                <p>Authorized & Captured.</p>
+                <mat-list class="paymentstatus">
+                    <mat-list-item> <span>Void</span> <button class="singleButton btnred" mat-raised-button>Void Order</button> </mat-list-item>
+                    <mat-list-item> <span>Refund</span> <button class="singleButton btnblue" mat-raised-button>Refund Order</button> </mat-list-item>
+                </mat-list>            
+            </span>
 
             <mat-label>Date Added </mat-label>
             <mat-form-field >
@@ -51,7 +51,8 @@
             
             <mat-label>Contents </mat-label>
             <span class="contentsblock"> 
-                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">  
+                <table mat-table [dataSource]="contentsdataSource" class="mat-elevation-z8">  
+                    <!-- Product Code column-->
                     <ng-container matColumnDef="productcode">
                         <th mat-header-cell *matHeaderCellDef> Product Code </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
@@ -59,7 +60,7 @@
                          <td mat-footer-cell *matFooterCellDef> </td>
                     </ng-container>
 
-                   
+                    <!-- Product column-->
                     <ng-container matColumnDef="product">
                         <th mat-header-cell *matHeaderCellDef> Product </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
@@ -67,7 +68,7 @@
                          <td mat-footer-cell *matFooterCellDef> </td>
                     </ng-container>
 
-                    
+                    <!-- QTY column-->
                     <ng-container matColumnDef="qty">
                         <th mat-header-cell *matHeaderCellDef> QTY </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
@@ -75,7 +76,7 @@
                         <td mat-footer-cell *matFooterCellDef> </td>
                     </ng-container>
 
-                   
+                   <!-- Unit Price column-->
                     <ng-container matColumnDef="unitprice">
                         <th mat-header-cell *matHeaderCellDef> Unit Price </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
@@ -83,43 +84,62 @@
                         <td mat-footer-cell *matFooterCellDef> Total </td>
                     </ng-container>
 
-                   
+                   <!-- total Amount column-->
                     <ng-container matColumnDef="total">
-                        <th mat-header-cell *matHeaderCellDef> Subtotal </th>
+                        <th mat-header-cell *matHeaderCellDef> Total </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
                         <td mat-cell *matCellDef="let element"> {{element.total}} </td>
                          <td mat-footer-cell *matFooterCellDef> 200 </td>
                     </ng-container>
+                    
+                    <!-- empty footer column-->
+                    <ng-container matColumnDef="emptyFooter">
+                        <td mat-footer-cell *matFooterCellDef class="mobile-hide"></td>
+                    </ng-container>
 
-                        <!-- subtotal column -->
-                        <ng-container matColumnDef="subtotal">   
-                         <td mat-footer-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>                     
-                            <td mat-footer-cell *matFooterCellDef colspan="5">
-                                subtotal
-                            </td>                            
-                        </ng-container>
+                    <!-- subtotal column -->
+                    <ng-container matColumnDef="subtotalTitle">  
+                        <td mat-footer-cell *matFooterCellDef>
+                            <span class="mobile-label">subtotal</span>
+                        </td>                            
+                    </ng-container>
+                    <ng-container matColumnDef="subtotalAmount">                           
+                        <td mat-footer-cell *matFooterCellDef>
+                            <span class="mobile-value">200</span>
+                        </td>                            
+                    </ng-container>
 
-                        <!-- shippingandhandling column -->
-                        <ng-container matColumnDef="shippingandhandling">       
-                       <td mat-footer-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox>                    
-                            <td mat-footer-cell *matFooterCellDef colspan="5">
-                                shipping and handling
-                            </td>                            
-                        </ng-container>
-                        <!-- tax column -->
-                        <ng-container matColumnDef="tax">     
-                        <td mat-footer-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>                      
-                            <td mat-footer-cell *matFooterCellDef colspan="5">
-                                tax
-                            </td>                            
-                        </ng-container>
+                    <!-- shippingandhandling column -->
+                    <ng-container matColumnDef="shippingandhandlingTitle">  
+                        <td mat-footer-cell *matFooterCellDef>
+                            <span class="mobile-label">shipping and handling</span>
+                        </td>                            
+                    </ng-container>
+                    <ng-container matColumnDef="shippingandhandlingAmount">                           
+                        <td mat-footer-cell *matFooterCellDef>
+                            <span class="mobile-value">0</span>
+                        </td>                            
+                    </ng-container>
 
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>              
-                    <tr mat-footer-row *matFooterRowDef="['subtotal']"></tr>  
-                    <tr mat-footer-row *matFooterRowDef="['shippingandhandling']"></tr>  
-                    <tr mat-footer-row *matFooterRowDef="['tax']"></tr>  
-                    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>                
+                    <!-- tax column -->
+                    <ng-container matColumnDef="taxTitle">  
+                        <td mat-footer-cell *matFooterCellDef>
+                            <span class="mobile-label">shipping and handling</span>
+                        </td>                            
+                    </ng-container>                    
+                    <ng-container matColumnDef="taxAmount">                           
+                        <td mat-footer-cell *matFooterCellDef>
+                            <span class="mobile-value">0</span>
+                        </td>                            
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedcontentsColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedcontentsColumns;"></tr>  
+                    <!-- MultiFooter column-->            
+                    <tr mat-footer-row *matFooterRowDef="displayedSubTotalColumns"></tr>  
+                    <tr mat-footer-row *matFooterRowDef="displayedShippingandHandlingColumns"></tr>  
+                    <tr mat-footer-row *matFooterRowDef="displayedTaxColumns"></tr>  
+                    <tr mat-footer-row *matFooterRowDef="displayedcontentsColumns"></tr>                
 
                 </table>
                 <span class="refundselected"><button class="singleButton btnblue" mat-raised-button>Refund Selected</button></span>
@@ -211,47 +231,43 @@
 
             <mat-label>TRANSACTIONS </mat-label>
             <span class="contentsblock"> 
-                <table mat-table [dataSource]="dataSource1" class="mat-elevation-z8">                 
+                <table mat-table [dataSource]="transactiondataSource" class="mat-elevation-z8">
 
-                 
+                    <!-- Txn ID column-->
                     <ng-container matColumnDef="trid">
                         <th mat-header-cell *matHeaderCellDef> Txn ID </th>
                          <td mat-cell *matCellDef="let element"> {{element.trid}} </td>
                     </ng-container>
 
-                   
+                    <!-- Merchant ID column-->
                     <ng-container matColumnDef="marcntID">
                         <th mat-header-cell *matHeaderCellDef> Merchant ID </th>
                         <td mat-cell *matCellDef="let element"> {{element.marcntID}} </td>
                     </ng-container>
 
-                    
+                    <!-- Type column-->
                     <ng-container matColumnDef="type">
                         <th mat-header-cell *matHeaderCellDef> Type </th>
                         <td mat-cell *matCellDef="let element"> {{element.type}} </td>
                     </ng-container>
-
-                   
+                    <!-- Date/Time column-->
                     <ng-container matColumnDef="datetime">
                         <th mat-header-cell *matHeaderCellDef> Date/Time </th>
                         <td mat-cell *matCellDef="let element"> {{element.datetime}} </td>
                     </ng-container>
-
-                   
+                    <!-- Approval column-->
                     <ng-container matColumnDef="approval">
                         <th mat-header-cell *matHeaderCellDef> Approval </th>
                         <td mat-cell *matCellDef="let element"> {{element.approval}} </td>
                     </ng-container>
-
+                    <!-- Authorization Code column-->
                     <ng-container matColumnDef="authorizationsode">
                         <th mat-header-cell *matHeaderCellDef> Authorization Code </th>
                         <td mat-cell *matCellDef="let element"> {{element.authorizationsode}} </td>
                     </ng-container>
 
-                       
-
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>       
+                    <tr mat-header-row *matHeaderRowDef="transactiondisplayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: transactiondisplayedColumns;"></tr>       
 
                 </table>
             </span>
@@ -259,32 +275,27 @@
 
             <mat-label>ORDER ASSOCIATED VOLUME </mat-label>
             <span class="contentsblock"> 
-                <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">                 
-
+                <table mat-table [dataSource]="orderassociateddataSource" class="mat-elevation-z8">                 
                  
                     <ng-container matColumnDef="id">
                         <th mat-header-cell *matHeaderCellDef> ID </th>
                          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
                     </ng-container>
-
                    
                     <ng-container matColumnDef="type">
                         <th mat-header-cell *matHeaderCellDef> Type </th>
                         <td mat-cell *matCellDef="let element"> {{element.type}} </td>
                     </ng-container>
-
                     
                     <ng-container matColumnDef="userID">
                         <th mat-header-cell *matHeaderCellDef> UserID </th>
                         <td mat-cell *matCellDef="let element"> {{element.userID}} </td>
                     </ng-container>
-
                    
                     <ng-container matColumnDef="date">
                         <th mat-header-cell *matHeaderCellDef> Date </th>
                         <td mat-cell *matCellDef="let element"> {{element.date}} </td>
                     </ng-container>
-
                    
                     <ng-container matColumnDef="amount">
                         <th mat-header-cell *matHeaderCellDef> Amount </th>
@@ -296,9 +307,8 @@
                         <td mat-cell *matCellDef="let element"> {{element.voided}} </td>
                     </ng-container>
                      
-
-                    <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
-                    <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>       
+                    <tr mat-header-row *matHeaderRowDef="orderassociateddisplayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: orderassociateddisplayedColumns;"></tr>       
 
                 </table>
             </span>
