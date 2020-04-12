@@ -95,16 +95,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'admin/order/list', component: OrderListingComponent,
-    resolve: { adminlist: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'data_order',
-        condition: {
-        }
-      },
-      endpoint: 'datalist'
-    }, canActivate: [AuthService]
+    path: 'admin/order/list', component: OrderListingComponent, canActivate: [AuthService]
   },
   {
     path: 'user/order/list', component: OrderListingComponent,

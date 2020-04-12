@@ -59,6 +59,11 @@
             </span>            
           </mat-card>
 
+          <mat-card *ngIf="cookieUserallData.type=='admin'">
+            <mat-card-title>Transaction Live </mat-card-title>
+            <mat-card-subtitle>{{adminCount.transaction_type_live}}</mat-card-subtitle>
+          </mat-card>
+
         </mat-card>
         <mat-card *ngIf="cookieUserallData.type=='admin'">
           <div class="content_header_wrapper">

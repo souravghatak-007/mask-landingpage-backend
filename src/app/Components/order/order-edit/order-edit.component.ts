@@ -77,6 +77,7 @@ export class OrderEditComponent implements OnInit {
   public orderEditform: FormGroup;
   public orderData:any;
   public condition:any;
+  public hideRequiredControl:any;
 
   public header_text:any="Add Order";
 
