@@ -32,6 +32,11 @@
             <mat-card-subtitle>{{adminCount.transaction_type_test}}</mat-card-subtitle>
           </mat-card>
 
+          <mat-card *ngIf="cookieUserallData.type=='admin'">
+            <mat-card-title>Transaction Live </mat-card-title>
+            <mat-card-subtitle>{{adminCount.transaction_type_live}}</mat-card-subtitle>
+          </mat-card>
+
         </mat-card>
         <mat-card class="headercls" *ngIf="cookieUserallData.type=='admin'">
           <h1 class="header" *ngIf="cookieUserallData.type=='admin'">Order Table </h1>

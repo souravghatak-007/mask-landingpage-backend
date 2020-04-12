@@ -15,16 +15,16 @@ import {environment} from '../../../environments/environment';
   styleUrls: ['./dashboard-admin.component.css']
 })
 export class DashboardAdminComponent implements OnInit {
-  public cookieUserallData:any=JSON.parse(this.cookieService.get('user_details'))
-  public adminCount:[];
+ public cookieUserallData:any=JSON.parse(this.cookieService.get('user_details'))
+ public adminCount:any=[];
  public orderDataList:any=[];
  public date_search_source_count: any=0;
 
  public transaction: any =  [{val: "TEST", name: 'TEST'}, {val: 'LIVE', name: 'LIVE'}];
+ public orderStatus:any = [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancel"}]
 
  // use for status search
- statusarray: any =  [{val: 1, name: 'Active'}, {val: 0, name: 'Inactive'}]; 
-//  Example like this
+ statusarray: any =  [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancel"}]; 
 editroute: any = 'admin/order/edit/';
 datasource: any; 
 // Like Table head name is " firstname" => "First Name"
@@ -75,14 +75,13 @@ datacollection: any='getorderlistdata';
  jwttoken:any;
  apiurl:any=environment.API_URL
 search_settings:any={
-  //  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"created_at"}],   // this is use for  date search
+  
+  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"ordered_on"}],   // this is use for  date search
 
-   //selectsearch:[{ label: 'Search By Transactiontype', field: 'transactiontype', values: this.transaction }], // this is use for  select search
+  selectsearch:[{ label: 'Search By Transactiontype', field: 'transactiontype', values: this.transaction },{ label: 'Search By Transaction', field: 'order_status', values: this.orderStatus }], // this is use for  select search
 
-  //  textsearch:[{label:"Search By ShippingName",field:'shipping_name'},{label:"Search By ShippingAddress",field:'shipping_address'}]  // this is use for  text search
-
-    // this is use for  Autocomplete search
- //    search:[{label:"Search By status",field:this.status}]     
+   textsearch:[{label:"Search By ShippingName",field:'shipping_name'},{label:"Search By ShippingAddress",field:'shipping_address'},
+   {label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
 
 };
   constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService,public apiService:ApiService,public meta:MetaService){
