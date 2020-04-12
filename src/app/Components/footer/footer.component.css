@@ -3,5 +3,5 @@
 .scroll-to-top:hover{background-color:#222224}
 .show-scrollTop{opacity:1;transition:all .2s ease-in-out}
 
-.footerblock.mat-card{text-align: center;color: #777;padding: 10px 0 16px !important;background: #2e363f;border-radius: 0 !important;}
+.footerblock.mat-card{text-align: center;color: #777;padding: 10px 0 16px !important;background: #2e363f !important;border-radius: 0 !important;}
 .footerblock.mat-card p{margin-bottom:0!important}

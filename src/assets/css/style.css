@@ -1,6 +1,7 @@
 /* general class */
 
-.mat-card{padding: 0 !important; margin: 0 !important;}
+.mat-card{padding: 0 !important; margin: 0 !important; background: transparent !important;}
+/* .mat-card.box-shadow{box-shadow:0 2px 10px rgba(0,0,0,0.2) !important;} */
 
 #maincontent{background:url(../images/bodyBg.png) repeat #fff;margin-left:0;margin-right:0;margin-top:0px;padding:25px 15px;position:relative;min-height:450px;width:auto}
 .main_wrapper{padding:0!important;box-shadow:none!important}
@@ -139,7 +140,7 @@ button.submitbtn.mat-raised-button.mat-primary{margin-right:5px!important;displa
 .listingnewstyle tr.mat-row:nth-child(even){background:var(--c-t-bg-w)}
 
 .listingnewstyle mat-toolbar-row.searchbar .mat-form-field-infix{background:var(--c-t-bg-w);border-radius:0;border-top:0;height: 24px;}
-.listingnewstyle mat-toolbar-row.searchbar{background: var(--c-t-primary);padding: 13px;justify-content: space-between;
+.listingnewstyle mat-toolbar-row.searchbar{background: var(--c-t-primary);padding: 13px;justify-content: flex-end;
 height: auto;display: flex;align-items: center;flex-wrap: wrap;}
 
 .listingnewstyle mat-toolbar-row.searchbar span{flex: 0;order: 1;direction: ltr;line-height: 21px;}
@@ -163,7 +164,10 @@ height: auto;display: flex;align-items: center;flex-wrap: wrap;}
 .listingnewstyle .mat-form-field-prefix,.mat-form-field-suffix{position:absolute!important;right:0;top:4px}
 .listingnewstyle .aslist_view .mat-form-field-flex .mat-datepicker-toggle{position:inherit;right:inherit;top:inherit}
 .mat-datepicker-content .mat-calendar-next-button, .mat-datepicker-content .mat-calendar-previous-button, .mat-datepicker-toggle {color: #fff !important;}
+.mat-datepicker-content .mat-datepicker-toggle button.mat-icon-button{height: 100%;}
+.mat-datepicker-content .mat-datepicker-toggle{height: 100%;}
 .mat-form-field-prefix .mat-icon-button, .mat-form-field-suffix .mat-icon-button {height: 100%;width: 100%;}
+.mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon{position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);}
 
 .listingnewstyle tr.mat-row:nth-child(even){background:var(--c-t-bg-w)}
 .listingnewstyle .mat-paginator .mat-select-value-text{color:var(--c-t-bg-w)}
@@ -202,7 +206,6 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
 
 .mat-form-field{font-family: var(--main-font) !important;}
 .mat-form-field-appearance-legacy .mat-form-field-label.mat-form-field-empty {top: 0.7em !important;}
-/* .mat-form-field-appearance-legacy .mat-form-field-label.ng-star-inserted {top: 1.28125em !important;} */
 
 /* myaccount */
 .myaccount .myaccountwrapper{width: 550px; margin: 50px auto; display: block;box-shadow: 0 0 10px rgba(0,0,0,0.6);
@@ -404,6 +407,7 @@ table.mat-table {width: 100%;}
 .multipledeleteandupdatebuttan .mat-raised-button:first-child{position:relative!important;font-size:14px!important;text-transform:uppercase!important;border:none!important;padding:5px 10px 10px!important;line-height:18px!important;color:#fff!important;border-radius:0!important;margin:2px;font-family:'NunitoRegular',sans-serif;background-color:var(--c-t-bg-secondary)}
 .multipledeleteandupdatebuttan .mat-raised-button:last-child{position:relative!important;font-size:14px!important;text-transform:uppercase!important;border:none!important;padding:5px 10px 10px!important;line-height:18px!important;color:#fff!important;border-radius:0!important;margin:2px;font-family:'NunitoRegular',sans-serif;background-color:var(--c-t-primary-btn_title);}
 .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {background-color: #f9594d !important;}
+.mat-form-field-appearance-legacy .mat-form-field-prefix .mat-datepicker-toggle-default-icon, .mat-form-field-appearance-legacy .mat-form-field-suffix .mat-datepicker-toggle-default-icon {width: 24px;}
 
 .uploadfilecontainer{box-sizing:border-box}
 .mat-dialog-container{padding:0!important}
@@ -417,11 +421,20 @@ table.mat-table {width: 100%;}
 
 /* count css dashboard */
 .countdiv{height:auto!important;display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important}
-.countdiv .mat-card{flex:1 1 16%!important;display:flex!important;flex-direction:row!important;margin:1%!important;justify-content:center!important;border:1px solid #c9c9c9!important;padding:0!important;flex-wrap:initial!important;margin-top:0!important;background-color:#f4f1f1;align-items:stretch}
-.countdiv .mat-card .mat-card-title{margin-bottom:0;align-items:stretch;background:linear-gradient(45deg,#363636,#08b1e7);padding:27px 10px!important;width:70%;justify-content:center;display:inherit;color:#fff;text-transform:capitalize}
-.countdiv .mat-card .mat-card-subtitle{align-items:center;text-transform:uppercase;font-family:var(--main-bold-font);padding:10px!important;width:30%;color:#f9594d;display:inherit;font-size:30px;text-align:center;justify-content:center}
+.countdiv .mat-card{width:24%;display:flex;justify-content:space-between;cursor:default;background-color:#fff;position:relative;overflow:hidden;margin:0 .5% 1%!important}
+.countdiv .mat-card .icon{display:inline-block;text-align:center;background-color:rgba(0,0,0,0.12);width:80px}
+.countdiv .mat-card .icon i{color:#fff;font-size:50px;line-height:80px}
+.countdiv .mat-card .content{display:inline-block;padding:7px 10px}
+.countdiv .mat-card .content .mat-card-title{font-size:14px;margin-top:11px;color:#fff;font-family:var(--main-font)}
+.countdiv .mat-card .content .mat-card-subtitle{color:#fff;font-weight:400;font-size:26px;margin-top:-4px;font-family:var(--main-bold-font)}
+.bg-pink{background-color:#E91E63!important;color:#fff}
+.bg-cyan{background-color:#00BCD4!important;color:#fff}
+.bg-light-green{background-color:#8BC34A!important;color:#fff}
+.bg-orange{background-color:#FF9800!important;color:#fff}
+.bg-deep-blue{background-color:#2255a4!important;color:#fff}
+.bg-deep-green{background-color:#28b779!important;color:#fff}
+.bg-red{background-color:#da542e!important;color:#fff}
 
-.headercls h1{text-align:center}
 
 
 /* .emailModal{width:700px}
