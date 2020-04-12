@@ -31,32 +31,23 @@
 .virus{color:#d7e01a}
 .barrier{color:#df5352}
 .medical{color:#5fc5df}
+.blog{color:#ffffff}
 .topmenulist .navigation-left a, .topmenulist .navigation-left a:hover{display: flex; align-items: center;}
 .topmenulist .navigation-left a span{margin-right: 5px;}
 
 
 @media screen and (max-width:991px) {
 .topmenulist{ position: initial;}
-
 .admcls .header .toolbar-row{ display: block;}
-
 .admcls .header .toolbar-row .logo{ display: block;}
 .admcls .header .toolbar-row .logo h2{ display: block; text-align: center;}
-
-.topmenulist .navigation-left a, .topmenulist .navigation-left a:hover{ display: block; text-align: center;     width: 100%;}
-
+.topmenulist .navigation-left a, .topmenulist .navigation-left a:hover{ display: block; text-align: center;width: 100%;}
 .topmenulist .mat-list-item-content{display: block; text-align: center;}
-
-.topmenulist .navigation-left a span{    float: left;
-    margin-top: -3px;}
+.topmenulist .navigation-left a span{float: left;margin-top: -3px;}
 }
 
 @media screen and (max-width:660px) {
-    .topmenulist .navigation-left{ display: block;}
-
-    .topmenulist .navigation-left .mat-list-item{    border-left: none;
-        border-bottom: solid 1px #fff; padding: 0px;}
-
-        .topmenulist .navigation-left a span{    float: none;
-            margin-top: 0px; display: block;}
+.topmenulist .navigation-left{ display: block;}
+.topmenulist .navigation-left .mat-list-item{border-left: none;border-bottom: solid 1px #fff; padding: 0px;}
+.topmenulist .navigation-left a span{float: none;margin-top: 0px; display: block;}
 }

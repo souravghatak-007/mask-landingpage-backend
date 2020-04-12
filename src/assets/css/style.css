@@ -7,7 +7,6 @@
 .main_wrapper{padding:0!important;box-shadow:none!important}
 
 .content_wrapper .example-container button{background:linear-gradient(45deg,#1f6dc1,#15538a)!important;font-size:20px;text-transform:uppercase;padding:5px}
-
 .generalcls .btnblue{background-color:var(--c-t-primary-btn_title)!important}
 .generalcls .btnred{background-color:var(--c-t-bg-secondary)!important}
 .generalcls .singleButton{position:relative!important;font-size:14px!important;text-transform:uppercase!important;border:none!important;padding:6px 10px 10px!important;line-height:18px!important;color:#fff!important;border-radius:0!important;margin:0 2px!important;font-family:'NunitoRegular',sans-serif}
@@ -40,7 +39,7 @@ background: -webkit-linear-gradient(270deg,rgba(25,198,254,1) 0%,rgba(2,168,222,
 .login_wrapper .mat-form-field-appearance-legacy .mat-form-field-underline {height: 1px;display: none;}
 .signupfooter a{font-family: var(--main-font); font-size: var(--base-font-size);color:var(--c-t-bg-w);}
 .signupfooter a:last-child{padding-right: 0px !important;}
-.login_wrapper .mat-form-field-appearance-legacy .mat-form-field-label span{color:var(--c-t-bg-zblack); font-family: var(--main-font); font-size: var(--base-font-size);padding-left: 10px;}
+.login_wrapper .mat-form-field-appearance-legacy .mat-form-field-label span{color:var(--c-t-bg-zblack); font-family: var(--main-font);}
 .login_wrapper .from {padding: 16px 42px;}
 .login_wrapper input.mat-input-element {width: 100%;line-height: 22px;margin: 0 auto;display: block;}
 .login_wrapper input.mat-input-element .mat-form-field-label-wrapper{line-height: 26px;}
@@ -49,7 +48,7 @@ background: -webkit-linear-gradient(270deg,rgba(25,198,254,1) 0%,rgba(2,168,222,
 
 
 /* bredcram css*/
-#beadcamb {width: 100%;background: #49cced;position: relative;clear: both;display: block;padding: 2px;}
+#beadcamb {width: 100%;background: #49cced;position: relative;clear: both;display: block;padding: 2px 0;}
 .bred_cram_wrapper{background:#dde2e5;display:flex!important;padding:8px}
 .bred_cram_wrapper a{background:#b5bdbf;background:#b5bdbf;display:flex!important;color:#252525;padding:8px 20px;text-decoration:none;margin:0;justify-content:stretch;font-size:18px;text-transform:capitalize;cursor:pointer;font-family:"HelveticaRegular"}
 .activebread{background:var(--c-t-bg-w)!important;color:var(--c-t-bg-zblack)!important;position:relative}
@@ -79,7 +78,7 @@ background: -webkit-linear-gradient(270deg,rgba(25,198,254,1) 0%,rgba(2,168,222,
 
 .from{width:auto!important;margin:0 auto}
 .from{width:100%!important;margin:0 auto;text-align:center}
-.from.mat-card{background-color:rgba(0,0,0,0.6)}
+.from.mat-card{background-color:rgba(0,0,0,0.6) !important;}
 
 .formmainwrapper .file_uploader .inner_wrapper .imageupload .uploadfilecontainer{height:100%;width:100%}
 .formmainwrapper .my_details_wrapper .mydetails_form_wrapper .forms .mat-form-field .mat-form-field-flex{background:none;padding:0!important}
@@ -180,7 +179,13 @@ height: auto;display: flex;align-items: center;flex-wrap: wrap;}
 .listingnewstyle .mat-sort-header-button,.listingnewstyle th.mat-header-cell:last-of-type{font-family:'NunitoRegular';font-size:14px}
 .listingnewstyle .mat-table{font-family:'NunitoLight';font-size:14px;color:#465157}
 .listingnewstyle td.mat-cell:last-of-type{padding-right:0;text-align:right}
-.listingnewstyle td.mat-cell:last-of-type > span{display: flex;}
+.listingnewstyle td.mat-column-Actions > span{display: flex;}
+.listingnewstyle td.mat-column-Actions > span span.cursor{margin: 2px;padding: 2px 3px;}
+.listingnewstyle td.mat-column-Actions > span span.cursor i{color: #fff;}
+.listingnewstyle td.mat-column-Actions > span span.cursor:nth-child(1){background-color: #00BCD4!important;}
+.listingnewstyle td.mat-column-Actions > span span.cursor:nth-child(2){background-color: #E91E63!important;}
+.listingnewstyle td.mat-column-Actions > span span.cursor:nth-child(3){background-color: #8BC34A!important;}
+.listingnewstyle td.mat-column-Actions > span span.cursor:nth-child(4){background-color: #FF9800!important;}
 
 .listingnewstyle .mat-form-field-appearance-legacy .mat-form-field-underline{height:0}
 .listingnewstyle .mat-form-field-appearance-legacy .mat-form-field-ripple{height:0; display: none;}
@@ -205,7 +210,7 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
 .logo_wrapper:focus{outline:none}
 
 .mat-form-field{font-family: var(--main-font) !important;}
-.mat-form-field-appearance-legacy .mat-form-field-label.mat-form-field-empty {top: 0.7em !important;}
+.mat-form-field-appearance-legacy .mat-form-field-label.mat-form-field-empty {top: 0.7em !important;font-size: 14px;}
 
 /* myaccount */
 .myaccount .myaccountwrapper{width: 550px; margin: 50px auto; display: block;box-shadow: 0 0 10px rgba(0,0,0,0.6);
@@ -557,8 +562,3 @@ table.mat-table {width: 100%;}
   .signupfooter a {text-align: left;}
   .login_lib_wrapper .from h2 {font-size: 32px;margin-bottom: 15px;}
 }
-
-
-
-
-
