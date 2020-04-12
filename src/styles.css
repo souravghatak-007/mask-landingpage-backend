@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~animate.css/animate.min";
 
 
 @font-face {
@@ -107,7 +108,7 @@ body { margin: 0; font-family: "NunitoRegular"; }
 
 .mat-select{font-family: var(--main-font);}
 .mat-card {font-family: var(--main-font),sans-serif;}
-.mat-form-field {line-height: 20px !important;}
+.mat-form-field {line-height: 18px !important;}
 .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-empty.mat-form-field-label {padding-left: 14px;}
 
 
@@ -173,25 +174,27 @@ input.mat-input-element {color: white;}
 ::ng-deep.mat-form-field-underline {background-color: green !important;} 
 ::ng-deep.mat-form-field-ripple {background-color: green !important;} */
 
-
 app-order-listing .mat-column-Actions span span.cursor:nth-child(2){display:none}
-
-
-
 
 /* media css */
 
-@media screen and (max-width: 991px) {
 
+@media screen and (max-width: 1199px) {
+  .listingnewstyle mat-toolbar-row.searchbar .mat-form-field {min-width: 257px;}
+  .listingnewstyle mat-toolbar-row.searchbar span {flex: 1 1 100%;flex-wrap: wrap;display: inline-flex;}
+}
+
+
+@media screen and (max-width: 991px) {
 .listingnewstyle th.mat-header-cell.mat-column-Actions{display: none;}
 .listingnewstyle td.mat-column-Actions{position: inherit;right: 0;background: #f2f2f2 !important;}
 .listingnewstyle tr:nth-child(even) td.mat-column-Actions{position: inherit;right: 0;background: var(--c-t-bg-w) !important;}
-
 .listingnewstyle th.mat-header-cell.mat-column-blogtitle{position: inherit;left: 36px; background: transparent;}
 .listingnewstyle td.mat-column-blogtitle{position: inherit;left: 36px;background: #f2f2f2 !important;}
 .listingnewstyle tr:nth-child(even) td.mat-column-blogtitle{position: inherit;right: 0;background: var(--c-t-bg-w) !important;}
-
 .listingnewstyle th.mat-header-cell.mat-column-select{display: none;}
 .listingnewstyle td.mat-column-select{position: inherit;left: 0;background: #f2f2f2 !important;}
 .listingnewstyle tr:nth-child(even) td.mat-column-select{position: inherit;left: 0;background:var(--c-t-bg-w) !important;}
+.topmenulist .navigation-left .mat-list-item .mat-list-item-content{justify-content: center;padding: 0 0!important;height: 100%;}
+.mat-column-select {padding: 5px 5px !important;}
 }

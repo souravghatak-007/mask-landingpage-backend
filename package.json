@@ -39,6 +39,7 @@
     "@nguniversal/module-map-ngfactory-loader": "v8.2.6",
     "@ngx-meta/core": "^8.0.2",
     "angular-moment": "^1.3.0",
+    "animate.css": "^3.7.2",
     "blog-lib-influxiq": "0.0.11",
     "domino": "^2.1.3",
     "express": "^4.15.2",

@@ -6,7 +6,7 @@
     <div id="maincontent">
       <div class="main-content-wrap">
         <mat-card class="generalcls countdiv" style="padding: 0 !important;">
-          <mat-card class="bg-cyan" *ngIf="cookieUserallData.type=='admin'">
+          <mat-card class="bg-cyan box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Users</mat-card-title>
               <mat-card-subtitle>{{adminCount.user_list}}</mat-card-subtitle>
@@ -17,7 +17,7 @@
             
           </mat-card>
 
-          <mat-card class="bg-light-green" *ngIf="cookieUserallData.type=='admin'">
+          <mat-card class="bg-light-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Successfull Order</mat-card-title>
               <mat-card-subtitle>{{adminCount.order_success_list}}</mat-card-subtitle>
@@ -27,7 +27,7 @@
             </span>
           </mat-card>
 
-          <mat-card class="bg-pink" *ngIf="cookieUserallData.type=='admin'">
+          <mat-card class="bg-pink box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Ordered failed</mat-card-title>
               <mat-card-subtitle>{{adminCount.order_failed_list}}</mat-card-subtitle>
@@ -38,7 +38,7 @@
           </mat-card>
 
 
-          <mat-card class="bg-orange" *ngIf="cookieUserallData.type=='admin'">
+          <mat-card class="bg-orange box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Ordered Autoship</mat-card-title>
             <mat-card-subtitle>{{adminCount.order_autoship}}</mat-card-subtitle>
@@ -49,7 +49,7 @@
 
           </mat-card>
 
-          <mat-card class="bg-deep-blue" *ngIf="cookieUserallData.type=='admin'">
+          <mat-card class="bg-deep-blue box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Transaction Test </mat-card-title>
               <mat-card-subtitle>{{adminCount.transaction_type_test}}</mat-card-subtitle>
@@ -59,9 +59,14 @@
             </span>            
           </mat-card>
 
-          <mat-card *ngIf="cookieUserallData.type=='admin'">
-            <mat-card-title>Transaction Live </mat-card-title>
+          <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
+              <mat-card-title>Transaction Live </mat-card-title>
             <mat-card-subtitle>{{adminCount.transaction_type_live}}</mat-card-subtitle>
+            </span>
+            <span class="icon">
+              <i class="material-icons">card_membership</i>
+            </span>            
           </mat-card>
 
         </mat-card>
@@ -71,7 +76,7 @@
         </div>
          
         <div class="listingnewstyle">
-          <lib-listing *ngIf="orderDataList!=null && orderDataList.length>0" 
+          <lib-listing class="animated" *ngIf="orderDataList!=null && orderDataList.length>0" 
             [datasource]="orderDataList"
             [skip]="orderDataList_skip"
             [modify_header_array]="modify_header_array"

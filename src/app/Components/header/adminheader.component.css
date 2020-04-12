@@ -38,16 +38,18 @@
 
 @media screen and (max-width:991px) {
 .topmenulist{ position: initial;}
-.admcls .header .toolbar-row{ display: block;}
-.admcls .header .toolbar-row .logo{ display: block;}
-.admcls .header .toolbar-row .logo h2{ display: block; text-align: center;}
-.topmenulist .navigation-left a, .topmenulist .navigation-left a:hover{ display: block; text-align: center;width: 100%;}
-.topmenulist .mat-list-item-content{display: block; text-align: center;}
-.topmenulist .navigation-left a span{float: left;margin-top: -3px;}
+.admcls .header .toolbar-row{padding:0!important;overflow:hidden;height:auto;flex-wrap:wrap}
+.admcls .header .toolbar-row .logo{width:150px;display:flex;flex:1 1 100%;justify-content:center;padding:10px}
+.topmenulist{margin-left:auto;display:flex;flex:1 1 100%;justify-content:center;flex-wrap:wrap;margin-top: 0px;}
+.topmenulist .navigation-left {flex-wrap: wrap;align-items: stretch;justify-content: center;width: 100%;}
+.topmenulist .navigation-left .mat-list-item {width: 22%;height: auto;padding: 8px 12px;border: 1px solid #363e48;margin-bottom: 0;}
+.topmenulist .navigation-left a, .topmenulist .navigation-left a:hover {padding: 0px;height: auto;}
 }
 
-@media screen and (max-width:660px) {
-.topmenulist .navigation-left{ display: block;}
-.topmenulist .navigation-left .mat-list-item{border-left: none;border-bottom: solid 1px #fff; padding: 0px;}
-.topmenulist .navigation-left a span{float: none;margin-top: 0px; display: block;}
+@media screen and (max-width:768px) {
+.topmenulist .navigation-left .mat-list-item {width: 26.33%;}
+}
+
+@media screen and (max-width:540px) {
+.topmenulist .navigation-left .mat-list-item {width: 42.33%;}
 }
