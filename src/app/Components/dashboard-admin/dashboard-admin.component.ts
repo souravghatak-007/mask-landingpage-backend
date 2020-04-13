@@ -22,10 +22,10 @@ export class DashboardAdminComponent implements OnInit {
 
  public transaction: any =  [{val: "TEST", name: 'TEST'}, {val: 'LIVE', name: 'LIVE'}];
  public autoShipSearch:any=[{val:"Yes",name:'Yes'},{val:"No",name:'No'},];
- public orderStatus:any = [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Canceled"}]
+ public orderStatus:any = [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancelled"}]
 
  // use for status search
- statusarray: any =  [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancel"}]; 
+ statusarray: any =  [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancelled"}]; 
 editroute: any = 'admin/order/edit/';
 datasource: any; 
 // Like Table head name is " firstname" => "First Name"
@@ -55,7 +55,7 @@ searchendpoint = 'datalist';
 click_to_add_ananother_page = '/adminlist';
 custom_link:any;
 orderDataList_detail_datatype:any;
-orderDataList_detail_skip:any=['_id','password',"created_at",'shipping_name_search','user_info','ordered_on','userid']
+orderDataList_detail_skip:any=['_id','password',"created_at",'shipping_name_search','user_info','ordered_on','userid','autoship_data']
 // date_search_endpoint is use for date search endpoint
 date_search_endpoint: any='datalist';
 // send basic limit data
