@@ -43,7 +43,7 @@ modify_header_array: any = {
     'transactiontype':"Transaction Type"
 };
   // use for Table Detail Field Skip 
-orderDataList_skip: any = ['accesscode','_id','product_subtotal','shipping_phone','billing_phone','name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip'];
+orderDataList_skip: any = ['accesscode','_id','product_subtotal','shipping_phone','billing_phone','name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip','shipping_name_search','ordered_on'];
 // updateendpoint is use for data update endpoint
 updateendpoint = 'addorupdatedata';
 // this is a database collection name
@@ -82,7 +82,7 @@ search_settings:any={
 
   selectsearch:[{ label: 'Search By Transaction Type', field: 'transactiontype', values: this.transaction },{ label: 'Search By Transaction', field: 'order_status', values: this.orderStatus },{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
 
-   textsearch:[{label:"Search By Shipping Name",field:'shipping_name'},{label:"Search By Shipping Address",field:'shipping_address'},
+   textsearch:[{label:"Search By Shipping Name",field:'shipping_name_search'},{label:"Search By Shipping Address",field:'shipping_address'},
    {label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
 
 };
