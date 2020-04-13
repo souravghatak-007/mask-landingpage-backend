@@ -60,10 +60,10 @@
               <button class="singleButton">View Detail</button>
             </span>
           </mat-card>
-
+          <!-- Test orders -->
           <mat-card class="bg-deep-blue box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
-              <mat-card-title>Transaction Test </mat-card-title>
+              <mat-card-title>Test Orders</mat-card-title>
               <mat-card-subtitle>{{adminCount.transaction_type_test}}</mat-card-subtitle>
             </span>
             <span class="icon">
@@ -73,11 +73,76 @@
               <button class="singleButton">View Detail</button>
             </span>       
           </mat-card>
-
+           <!-- Live orders -->
           <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
-              <mat-card-title>Transaction Live </mat-card-title>
+              <mat-card-title>Live Orders</mat-card-title>
             <mat-card-subtitle>{{adminCount.transaction_type_live}}</mat-card-subtitle>
+            </span>
+            <span class="icon">
+              <i class="material-icons">card_membership</i>
+            </span>    
+            <span class="detailbtn">
+              <button class="singleButton">View Detail</button>
+            </span>        
+          </mat-card>
+          <!-- incomplete_live_order -->
+          <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
+              <mat-card-title>Incomplete Live Order </mat-card-title>
+            <mat-card-subtitle>{{adminCount.incomplete_live_order}}</mat-card-subtitle>
+            </span>
+            <span class="icon">
+              <i class="material-icons">card_membership</i>
+            </span>    
+            <span class="detailbtn">
+              <button class="singleButton">View Detail</button>
+            </span>        
+          </mat-card>
+          <!-- transaction_live_withautoship -->
+          <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
+              <mat-card-title>Live Successful Orders With AutoShip </mat-card-title>
+            <mat-card-subtitle>{{adminCount.transaction_live_withautoship}}</mat-card-subtitle>
+            </span>
+            <span class="icon">
+              <i class="material-icons">card_membership</i>
+            </span>    
+            <span class="detailbtn">
+              <button class="singleButton">View Detail</button>
+            </span>        
+          </mat-card>
+          <!-- Test Successful Orders With AutoShip -->
+          <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
+              <mat-card-title>Test Successful Orders With AutoShip </mat-card-title>
+            <mat-card-subtitle>{{adminCount.transaction_test_withautoship}}</mat-card-subtitle>
+            </span>
+            <span class="icon">
+              <i class="material-icons">card_membership</i>
+            </span>    
+            <span class="detailbtn">
+              <button class="singleButton">View Detail</button>
+            </span>        
+          </mat-card>
+          <!-- Total Transaction Amount of Live Orders -->
+          <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
+              <mat-card-title>Total Transaction Amount of Live Orders </mat-card-title>
+            <mat-card-subtitle>0</mat-card-subtitle>
+            </span>
+            <span class="icon">
+              <i class="material-icons">card_membership</i>
+            </span>    
+            <span class="detailbtn">
+              <button class="singleButton">View Detail</button>
+            </span>        
+          </mat-card>
+          <!-- Total Transaction Amount of Test Orders -->
+          <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
+              <mat-card-title>Total Transaction Amount of Test Orders </mat-card-title>
+            <mat-card-subtitle>0</mat-card-subtitle>
             </span>
             <span class="icon">
               <i class="material-icons">card_membership</i>
