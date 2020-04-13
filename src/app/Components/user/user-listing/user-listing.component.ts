@@ -116,7 +116,7 @@ export class UserListingComponent implements OnInit {
 
        selectsearch:[{label: 'Search By Country', field: 'country', values: this.countryValueForsearch}], // this is use for  select search
 
-       textsearch:[{label:"Search By Firstname",field:'firstname'},{label:"Search by Email",field:"email"},{label:"Search by State",field:"state_search"}
+       textsearch:[{label:"Search By Firstname",field:'firstname_search'},{label:"Search by Email",field:"email"},{label:"Search by State",field:"state_search"}
       ],  // this is use for  text search
 
       //search:[{label:"Search By Author",field:'country_search',values:this.countryValueForsearch}]     // this is use for  Autocomplete search

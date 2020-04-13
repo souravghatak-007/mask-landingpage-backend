@@ -22,7 +22,7 @@ export class DashboardAdminComponent implements OnInit {
 
  public transaction: any =  [{val: "TEST", name: 'TEST'}, {val: 'LIVE', name: 'LIVE'}];
  public autoShipSearch:any=[{val:"Yes",name:'Yes'},{val:"No",name:'No'},];
- public orderStatus:any = [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancel"}]
+ public orderStatus:any = [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Canceled"}]
 
  // use for status search
  statusarray: any =  [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancel"}]; 
@@ -40,10 +40,11 @@ modify_header_array: any = {
     'city':'City',
     'zip':"Zip Code",
     'order_id' :"Order ID",
-    'transactiontype':"Transaction Type"
+    'transactiontype':"Transaction Type",
+    'ordered_date':"Order Date"
 };
   // use for Table Detail Field Skip 
-orderDataList_skip: any = ['accesscode','_id','product_subtotal','shipping_phone','billing_phone','name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip'];
+orderDataList_skip: any = ['accesscode','_id','product_subtotal','shipping_phone','billing_phone','name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip','shipping_name_search','ordered_on','product_price','autoship_data'];
 // updateendpoint is use for data update endpoint
 updateendpoint = 'addorupdatedata';
 // this is a database collection name
@@ -54,7 +55,7 @@ searchendpoint = 'datalist';
 click_to_add_ananother_page = '/adminlist';
 custom_link:any;
 orderDataList_detail_datatype:any;
-orderDataList_detail_skip:any=['_id','password',"created_at"]
+orderDataList_detail_skip:any=['_id','password',"created_at",'shipping_name_search','user_info','ordered_on','userid']
 // date_search_endpoint is use for date search endpoint
 date_search_endpoint: any='datalist';
 // send basic limit data
@@ -67,7 +68,7 @@ limitcond:any={
 sortdata:any={
   "type":'desc',
   "field":'shipping_name',
-  "options":['shipping_name','shipping_address','billing_name','billing_address','order_id']
+  "options":['shipping_name','shipping_address','billing_name','billing_address','order_id','product_total']
 };
 // ths is a database collection or view name
 date_search_source: any='admin_blog_list';
@@ -80,9 +81,9 @@ search_settings:any={
   
   datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"ordered_on"}],   // this is use for  date search
 
-  selectsearch:[{ label: 'Search By Transaction Type', field: 'transactiontype', values: this.transaction },{ label: 'Search By Transaction', field: 'order_status', values: this.orderStatus },{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
+  selectsearch:[{ label: 'Search By Transaction Type', field: 'transactiontype', values: this.transaction },{ label: 'Search By Order Status', field: 'order_status', values: this.orderStatus },{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
 
-   textsearch:[{label:"Search By Shipping Name",field:'shipping_name'},{label:"Search By Shipping Address",field:'shipping_address'},
+   textsearch:[{label:"Search By Shipping Name",field:'shipping_name_search'},{label:"Search By Shipping Address",field:'shipping_address'},
    {label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
 
 };
@@ -122,7 +123,7 @@ search_settings:any={
         },
     sort:{
         "type":'desc',
-        "field":'shipping_name'
+        "field":'order_id'
     }
  
     }
