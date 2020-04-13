@@ -1,4 +1,25 @@
-<app-adminheader></app-adminheader>
+<div class="adminwrappercls">
+  <app-adminheader></app-adminheader>
+  <!-- <div id="beadcamb">
+    
+  </div> -->
+  <div id="maincontent">
+    <div class="main-content-wrap">
+      <mat-card class="generalcls" style="padding: 0 !important;">
+        <div class="AddEditBlog">       
+        <!-- <h1>{{header_text}} </h1>   -->
+
+        <span class="formspan">
+          <mat-card-content class="example-container">
+
+
+
+
+
+
+
+
+<!-- <app-adminheader></app-adminheader> -->
 <form [formGroup]="myForm" (ngSubmit)="submit()">
 
     <span class="frorgroup">
@@ -95,4 +116,11 @@
         <button>submit</button>
     </span>
 </form>
+</mat-card-content>
+        </span>      
+        </div>
+      </mat-card>
+    </div>
+  </div>    
+</div>
 <app-footer></app-footer>

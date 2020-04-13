@@ -1,27 +1,47 @@
-<app-adminheader></app-adminheader>
-<br>
-<lib-listing class="orderlistbtnhide" *ngIf="orderDataList!=null && orderDataList.length>0" 
-    [datasource]="orderDataList"
-    [skip]="orderDataList_skip"
-    [modify_header_array]="modify_header_array"
-    [apiurl]="apiurl"
-    [updateendpoint]="updateendpoint"
-    [date_search_source]="date_search_source"
-    [date_search_endpoint]="date_search_endpoint"
-    [sourcedata]="tablename"
-    [detail_datatype]="orderDataList_detail_datatype"
-    [editroute]="editroute"
-    [statusarr]="statusarray"
-    [detail_skip_array]="orderDataList_detail_skip"
-    [url]="custom_link"
-    [jwttoken]="jwttoken"
-    [search_settings]="search_settings"
-    [searchendpoint]="searchendpoint"
-    [sortdata]="sortdata"
-    [datacollection]="datacollection"
-    [date_search_source_count]="date_search_source_count"
-    [limitcond]="limitcond"></lib-listing>
+<div class="adminwrappercls">
+    <app-adminheader></app-adminheader>
+    <!-- <div id="beadcamb">
+      
+    </div> -->
+    <div id="maincontent">
+      <div class="main-content-wrap">
+        <mat-card class="generalcls" style="padding: 0 !important;">
+          <!-- <div class="content_header_wrapper">
+              <h2 class="headerSpan">Admin List</h2>
+              <div class="buttonsetToolbar">
+                  <button class="singleButton btnblue" mat-raised-button color="primary" [routerLink]="['/admin/add']">Add Admin</button>
+              </div>            
+          </div> -->
+            
+            <div class="listingnewstyle">
+                <lib-listing class="orderlistbtnhide" *ngIf="orderDataList!=null && orderDataList.length>0" 
+                    [datasource]="orderDataList"
+                    [skip]="orderDataList_skip"
+                    [modify_header_array]="modify_header_array"
+                    [apiurl]="apiurl"
+                    [updateendpoint]="updateendpoint"
+                    [date_search_source]="date_search_source"
+                    [date_search_endpoint]="date_search_endpoint"
+                    [sourcedata]="tablename"
+                    [detail_datatype]="orderDataList_detail_datatype"
+                    [editroute]="editroute"
+                    [statusarr]="statusarray"
+                    [detail_skip_array]="orderDataList_detail_skip"
+                    [url]="custom_link"
+                    [jwttoken]="jwttoken"
+                    [search_settings]="search_settings"
+                    [searchendpoint]="searchendpoint"
+                    [sortdata]="sortdata"
+                    [datacollection]="datacollection"
+                    [date_search_source_count]="date_search_source_count"
+                    [limitcond]="limitcond">
+                </lib-listing>
+            </div>
 
-
-
+        </mat-card>
+      </div>
+    </div>    
+</div>
 <app-footer></app-footer>
+
+

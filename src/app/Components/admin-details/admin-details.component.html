@@ -1,10 +1,21 @@
-<app-adminheader></app-adminheader>
-<div>
-    <button  mat-raised-button color="accent"  [routerLink]="['/admin/add']">Add Admin</button>
-
-</div>
-<br>
-<lib-listing *ngIf="adminDataList!=null && adminDataList.length>0" 
+<div class="adminwrappercls">
+    <app-adminheader></app-adminheader>
+    <!-- <div id="beadcamb">
+      
+    </div> -->
+    <div id="maincontent">
+      <div class="main-content-wrap">
+        <mat-card class="generalcls" style="padding: 0 !important;">
+          <div class="content_header_wrapper">
+              <h2 class="headerSpan">Admin List</h2>
+              <div class="buttonsetToolbar">
+                  <button class="singleButton btnblue" mat-raised-button color="primary" [routerLink]="['/admin/add']">Add Admin</button>
+                </div>
+            
+          </div>
+            
+            <div class="listingnewstyle">
+                <lib-listing *ngIf="adminDataList!=null && adminDataList.length>0" 
     [datasource]="adminDataList"
     [skip]="adminDataList_skip"
     [modify_header_array]="modify_header_array"
@@ -26,7 +37,12 @@
     [datacollection]="datacollection"
     [date_search_source_count]="date_search_source_count"
     [limitcond]="limitcond"></lib-listing>
+            
+            </div>
 
-
-
+        </mat-card>
+      </div>
+    </div>    
+</div>
 <app-footer></app-footer>
+
