@@ -18,12 +18,13 @@ export class DashboardAdminComponent implements OnInit {
  public cookieUserallData:any=JSON.parse(this.cookieService.get('user_details'))
  public adminCount:any=[];
  public orderDataList:any=[];
+ public UpcomingAutolist:any=[];
  public date_search_source_count: any=0;
+ public upcoming_search_source_count: any=0;
 
  public transaction: any =  [{val: "TEST", name: 'TEST'}, {val: 'LIVE', name: 'LIVE'}];
  public autoShipSearch:any=[{val:"Yes",name:'Yes'},{val:"No",name:'No'},];
  public orderStatus:any = [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancelled"}]
-
  // use for status search
  statusarray: any =  [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancelled"}]; 
 editroute: any = 'admin/order/edit/';
@@ -87,6 +88,30 @@ search_settings:any={
    {label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
 
 };
+//upcoming autoship list
+upcomig_modify_header_array:any={};
+upcoming_sortdata:any={
+  "type":'desc',
+  "field":'shipping_name',
+  "options":['shipping_name']
+};
+upcoming_limitcond:any={
+  "limit":10,
+  "skip":0,
+  "pagecount":1
+};
+upcoming_date_search_endpoint: any='datalist';
+upcoming_UpcomingAutolist_detail_skip:any=['_id','billing_date_timestamp']
+upcoming_search_settings:any={
+  
+  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"billing_date_timestamp"}],   // this is use for  date search
+
+  // selectsearch:[{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
+
+  //  textsearch:[{label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
+
+};
+upcoming_UpcomingAutolist_skip: any = ['accesscode','_id']
   constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService,public apiService:ApiService,public meta:MetaService){
     if(this.cookieUserallData.type=='admin')
     {
@@ -147,6 +172,37 @@ search_settings:any={
     });
 //  }, 5000);
        
+ /**upcoming autoship list */
+ let upcoming_endpoint='getautoshiplistdata';
+ let upcoming_endpointc='getautoshiplistdata-count';
+
+ let upcoming_data:any={
+     "condition":{
+         "limit":8,
+         "skip":0
+     },
+ sort:{
+     "type":'desc',
+     "field":'billing_name'
+ }
+
+ }
  
+   this.http.httpViaPost(upcoming_endpointc, upcoming_data).subscribe((res:any) => {
+    
+     console.warn('upcoming autoship data count',res);
+     this.upcoming_search_source_count=res.count;
+
+ }, error => {
+     console.log('Oooops!');
+ });
+
+ this.http.httpViaPost(upcoming_endpoint,upcoming_data).subscribe((res:any) => {
+    this.UpcomingAutolist=res.results.res;
+     console.log('upcoming autoship data',res);
+ }, error => {
+     console.log('Oooops!');
+ });
+
   }
 }
