@@ -263,6 +263,7 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
   opacity: 1!important;
   font-size: 25px;
   margin-right: 15px;
+  text-transform: uppercase;
 }
 .myaccount .mat-tab-header {
   display: flex;
