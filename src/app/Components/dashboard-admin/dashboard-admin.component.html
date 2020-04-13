@@ -6,7 +6,6 @@
     <div id="maincontent">
       <div class="main-content-wrap generalcls dashboardcountersection">
         <mat-card class="countdiv" style="padding: 0 !important;">
-
           
           <span class="genclscount Userscls">
             <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Order Report</mat-card-title>
@@ -217,7 +216,7 @@
             <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Order List</h2>                     
           </div>
          
-        <div class="listingnewstyle">
+        <div class="listingnewstyle orderlistdashboard">
           <lib-listing class="animated" *ngIf="orderDataList!=null && orderDataList.length>0" 
             [datasource]="orderDataList"
             [skip]="orderDataList_skip"
