@@ -92,14 +92,16 @@ search_settings:any={
 upcomig_modify_header_array:any={};
 upcoming_sortdata:any={
   "type":'desc',
-  "field":'shipping_name',
-  "options":['shipping_name']
+  "field":'billing_date',
+  "options":['billing_date']
 };
 upcoming_limitcond:any={
   "limit":10,
   "skip":0,
   "pagecount":1
 };
+upcoming_datacollection: any='getautoshiplistdata';
+
 upcoming_date_search_endpoint: any='datalist';
 upcoming_UpcomingAutolist_detail_skip:any=['_id','billing_date_timestamp']
 upcoming_search_settings:any={
@@ -183,7 +185,7 @@ upcoming_UpcomingAutolist_skip: any = ['accesscode','_id']
      },
  sort:{
      "type":'desc',
-     "field":'billing_name'
+     "field":'billing_date'
  }
 
  }
