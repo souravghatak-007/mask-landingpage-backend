@@ -164,7 +164,7 @@ height: auto;display: flex;align-items: center;flex-wrap: wrap;}
 
 .listingnewstyle .mat-form-field-prefix,.mat-form-field-suffix{position:absolute!important;right:0;top:4px}
 .listingnewstyle .aslist_view .mat-form-field-flex .mat-datepicker-toggle{position:inherit;right:inherit;top:inherit}
-.mat-datepicker-content .mat-calendar-next-button, .mat-datepicker-content .mat-calendar-previous-button, .mat-datepicker-toggle {color: var(--c-t-bg-w) !important;}
+.mat-datepicker-content .mat-calendar-next-button, .mat-datepicker-content .mat-calendar-previous-button, .mat-datepicker-toggle {color: var(--c-t-bg-black) !important;}
 .mat-datepicker-content .mat-datepicker-toggle button.mat-icon-button{height: 100%;}
 .mat-datepicker-content .mat-datepicker-toggle{height: 100%;}
 .mat-form-field-prefix .mat-icon-button, .mat-form-field-suffix .mat-icon-button {height: 100%;width: 100%;}
