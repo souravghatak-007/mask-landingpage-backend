@@ -21,6 +21,7 @@ export class DashboardAdminComponent implements OnInit {
  public date_search_source_count: any=0;
 
  public transaction: any =  [{val: "TEST", name: 'TEST'}, {val: 'LIVE', name: 'LIVE'}];
+ public autoShipSearch:any=[{val:"Yes",name:'Yes'},{val:"No",name:'No'},];
  public orderStatus:any = [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancel"}]
 
  // use for status search
@@ -79,9 +80,9 @@ search_settings:any={
   
   datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"ordered_on"}],   // this is use for  date search
 
-  selectsearch:[{ label: 'Search By Transactiontype', field: 'transactiontype', values: this.transaction },{ label: 'Search By Transaction', field: 'order_status', values: this.orderStatus }], // this is use for  select search
+  selectsearch:[{ label: 'Search By Transaction Type', field: 'transactiontype', values: this.transaction },{ label: 'Search By Transaction', field: 'order_status', values: this.orderStatus },{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
 
-   textsearch:[{label:"Search By ShippingName",field:'shipping_name'},{label:"Search By ShippingAddress",field:'shipping_address'},
+   textsearch:[{label:"Search By Shipping Name",field:'shipping_name'},{label:"Search By Shipping Address",field:'shipping_address'},
    {label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
 
 };
