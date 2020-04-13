@@ -8,7 +8,7 @@
         <mat-card class="countdiv" style="padding: 0 !important;">
 
           <!-- <mat-card-title class="dashboardcounterheader">Users</mat-card-title> -->
-
+          <span class="genclscount Userscls">
           <mat-card class="bg-cyan box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Users</mat-card-title>
@@ -23,9 +23,6 @@
             </span>
             
           </mat-card>
-
-          <!-- <mat-card-title class="dashboardcounterheader">Order Report</mat-card-title> -->
-
 
           <mat-card class="bg-light-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
@@ -53,80 +50,89 @@
             </span>
           </mat-card>
 
+        </span>
 
+        <span class="genclscount autoship">
           <mat-card-title class="dashboardcounterheader">Orders With AutoShip</mat-card-title>
 
          <!-- Test Successful Orders With AutoShip -->
-          <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
+          <mat-card class="bg-deep-green box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
+              <mat-card-subtitle>{{adminCount.transaction_test_withautoship}}</mat-card-subtitle>
               <mat-card-title>Test Successful Orders With AutoShip </mat-card-title>
-            <mat-card-subtitle>{{adminCount.transaction_test_withautoship}}</mat-card-subtitle>
+              <span class="detailbtn">
+                <button class="singleButton">View Detail</button>
+              </span>
             </span>
             <span class="icon">
               <i class="material-icons">card_membership</i>
             </span>    
-            <span class="detailbtn">
-              <button class="singleButton">View Detail</button>
-            </span>        
+                    
           </mat-card>          
           <!-- transaction_live_withautoship -->
-          <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
+          <mat-card class="bg-deep-green box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
+              <mat-card-subtitle>{{adminCount.transaction_live_withautoship}}</mat-card-subtitle>
               <mat-card-title>Live Successful Orders With AutoShip </mat-card-title>
-            <mat-card-subtitle>{{adminCount.transaction_live_withautoship}}</mat-card-subtitle>
+              <span class="detailbtn">
+                <button class="singleButton">View Detail</button>
+              </span>   
             </span>
             <span class="icon">
               <i class="material-icons">card_membership</i>
             </span>    
-            <span class="detailbtn">
-              <button class="singleButton">View Detail</button>
-            </span>        
+                 
           </mat-card>
 
-          <mat-card class="bg-orange box-shadow" *ngIf="cookieUserallData.type=='admin'">
-            <span class="content">
+          <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">              
+              <mat-card-subtitle>{{adminCount.order_autoship}}</mat-card-subtitle>
               <mat-card-title>Autoship Ordered</mat-card-title>
-            <mat-card-subtitle>{{adminCount.order_autoship}}</mat-card-subtitle>
+              <span class="detailbtn">
+                <button class="singleButton">View Detail</button>
+              </span>
             </span>
             <span class="icon">
               <i class="material-icons">add_shopping_cart</i>
             </span>     
-            <span class="detailbtn">
-              <button class="singleButton">View Detail</button>
-            </span>
+            
           </mat-card>
+        </span>
 
+        <span class="genclscount testcls">
           <mat-card-title class="dashboardcounterheader">Test orders</mat-card-title>
 
           <!-- Test orders -->
-          <mat-card class="bg-deep-blue box-shadow" *ngIf="cookieUserallData.type=='admin'">
+          <mat-card class="bg-deep-blue box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
-              <mat-card-title>Test Orders</mat-card-title>
               <mat-card-subtitle>{{adminCount.transaction_type_test}}</mat-card-subtitle>
+              <mat-card-title>Test Orders</mat-card-title>
+              <span class="detailbtn">
+                <button class="singleButton">View Detail</button>
+              </span>  
             </span>
             <span class="icon">
               <i class="material-icons">credit_card</i>
             </span>     
-            <span class="detailbtn">
-              <button class="singleButton">View Detail</button>
-            </span>       
+                 
           </mat-card>
 
            <!-- Total Transaction Amount of Test Orders -->
-           <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
-            <span class="content">
+           <mat-card class="box-shadow oas cdmember" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">              
+              <mat-card-subtitle>0</mat-card-subtitle>
               <mat-card-title>Total Transaction Amount of Test Orders </mat-card-title>
-            <mat-card-subtitle>0</mat-card-subtitle>
+              <span class="detailbtn">
+                <button class="singleButton">View Detail</button>
+              </span> 
             </span>
             <span class="icon">
               <i class="material-icons">card_membership</i>
             </span>    
-            <span class="detailbtn">
-              <button class="singleButton">View Detail</button>
-            </span>        
+                  
           </mat-card>
-
-
+        </span>
+        <span class="genclscount livecls">
           <mat-card-title class="dashboardcounterheader">Live orders</mat-card-title>
 
 
@@ -171,7 +177,7 @@
               <button class="singleButton">View Detail</button>
             </span>        
           </mat-card>
-         
+         </span>
 
         </mat-card>
         <mat-card *ngIf="cookieUserallData.type=='admin'">
