@@ -444,7 +444,9 @@ table.mat-table {width: 100%;}
 .countdiv .mat-card{width:24%;display:flex;justify-content:space-between;cursor:default;background-color:var(--c-t-bg-w);position:relative;overflow:hidden;margin:0 .5% 1%!important;    align-items: stretch;}
 .countdiv .mat-card .icon{display: flex;text-align: center;background-color: rgba(0,0,0,0.12);width: 80px;order: 1;justify-content: center;}
 .countdiv .mat-card .icon i{color: var(--c-t-bg-w);font-size: 50px;align-items: center;justify-content: center;display: flex;justify-content: center;}
-.countdiv .mat-card .content{display:inline-block;padding:15px 10px;width: 76%;order:2;}
+.countdiv .mat-card .content{display:inline-block;padding:15px 10px;width: 50%;order:2;}
+.countdiv .mat-card .detailbtn{display: flex;text-align: center;background-color: rgba(0,0,0,0.12);width: 80px;order: 3;justify-content: center;}
+.countdiv .mat-card .detailbtn .singleButton{color: #fff!important;background-color: rgba(0, 0, 0, 0.5);cursor: pointer;}
 .countdiv .mat-card .content .mat-card-title{font-size:22px;margin-top:11px;color:var(--c-t-bg-w);font-family:var(--main-font)}
 .countdiv .mat-card .content .mat-card-subtitle{color:var(--c-t-bg-w);font-weight:400;font-size:44px;margin-top:-4px;font-family:var(--main-bold-font)}
 .bg-pink{background-color:#E91E63!important;color:var(--c-t-bg-w)}
