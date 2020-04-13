@@ -13,7 +13,7 @@
 .generalcls .singleButton{position:relative!important;font-size:14px!important;text-transform:uppercase!important;border:none!important;padding:6px 10px 10px!important;line-height:18px!important;color:var(--c-t-bg-w)!important;border-radius:0!important;margin:0 2px!important;font-family:'NunitoRegular',sans-serif}
 .generalcls .content_header_wrapper{display:flex;justify-content:space-between;align-items:center}
 .generalcls .myaccountwrapper .content_header_wrapper{display:flex;justify-content:flex-end;align-items:center}
-.generalcls .content_header_wrapper .headerSpan{font-family:'NunitoLight';font-size:24px!important;text-transform:capitalize;color:#535353;margin:0;line-height:32px;margin-bottom:10px}
+.generalcls .content_header_wrapper .headerSpan{font-family:'NunitoLight';font-size:24px!important;text-transform:uppercase;color:#535353;margin:0;line-height:32px;margin-bottom:10px}
 .generalcls .content_header_wrapper .buttonsetToolbar{width:auto;padding:0;margin-bottom:10px;height:auto!important}
 .generalcls .content_header_wrapper .buttonsetToolbar .mat-raised-button.mat-primary:first-child{margin-left:0}
 .generalcls .content_header_wrapper .buttonsetToolbar .mat-raised-button.mat-primary:last-child{margin-right:0!important}
@@ -44,7 +44,7 @@ background: -webkit-linear-gradient(270deg,rgba(25,198,254,1) 0%,rgba(2,168,222,
 .login_wrapper .from {padding: 16px 42px;}
 .login_wrapper input.mat-input-element {width: 100%;line-height: 22px;margin: 0 auto;display: block;}
 .login_wrapper input.mat-input-element .mat-form-field-label-wrapper{line-height: 26px;}
-.login_wrapper .mat-form-field-appearance-legacy .mat-form-field-wrapper {padding-bottom: 10px;padding-top: 16px;}
+.login_wrapper .mat-form-field-appearance-legacy .mat-form-field-wrapper {padding-bottom: 10px;padding-top: 21px;}
 .login_wrapper .mat-form-field-subscript-wrapper .mat-error{margin-top: 0;}
 
 
@@ -161,6 +161,7 @@ height: auto;display: flex;align-items: center;flex-wrap: wrap;}
 .listingnewstyle mat-toolbar-row.searchbar .mat-form-field-prefix .filterForTexticon{height: 100%;display: block;position: relative}
 .listingnewstyle mat-toolbar-row.searchbar .mat-form-field-prefix .filterForTexticon .material-icons{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
 .listingnewstyle .content_header_wrapper .singleButton{min-width:102px;color:var(--c-t-bg-w);text-transform:uppercase;font-size:18px;font-family:'NunitoRegular'!important;text-align:center;text-shadow:0 2px 0 rgba(0,0,0,.30);background:var(--c-t-primary-btn_title)}
+
 .listingnewstyle .mat-form-field-prefix,.mat-form-field-suffix{position:absolute!important;right:0;top:4px}
 .listingnewstyle .aslist_view .mat-form-field-flex .mat-datepicker-toggle{position:inherit;right:inherit;top:inherit}
 .mat-datepicker-content .mat-calendar-next-button, .mat-datepicker-content .mat-calendar-previous-button, .mat-datepicker-toggle {color: var(--c-t-bg-w) !important;}
@@ -334,7 +335,7 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
 .mat-form-field-appearance-legacy .mat-form-field-underline {height: 1px;}
 .mat-form-field-appearance-legacy .mat-form-field-underline {background-color: rgba(0,0,0,.42);}
 .mat-form-field-appearance-legacy .mat-form-field-underline {bottom: 0 !important;}
-.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {margin-top: 15px !important;}
+.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {margin-top:22px !important;font-size: 90%;}
 .mat-form-field-appearance-legacy .mat-form-field-infix {padding: .4375em 10px !important;}
 .cke_chrome {margin-bottom: 20px !important;}
 
@@ -434,8 +435,8 @@ table.mat-table {width: 100%;}
 .countdiv .mat-card .icon{display: flex;text-align: center;background-color: rgba(0,0,0,0.12);width: 80px;order: 1;justify-content: center;}
 .countdiv .mat-card .icon i{color: var(--c-t-bg-w);font-size: 50px;align-items: center;justify-content: center;display: flex;justify-content: center;}
 .countdiv .mat-card .content{display:inline-block;padding:15px 10px;width: 76%;order:2;}
-.countdiv .mat-card .content .mat-card-title{font-size:24px;margin-top:11px;color:var(--c-t-bg-w);font-family:var(--main-font)}
-.countdiv .mat-card .content .mat-card-subtitle{color:var(--c-t-bg-w);font-weight:400;font-size:36px;margin-top:-4px;font-family:var(--main-bold-font)}
+.countdiv .mat-card .content .mat-card-title{font-size:22px;margin-top:11px;color:var(--c-t-bg-w);font-family:var(--main-font)}
+.countdiv .mat-card .content .mat-card-subtitle{color:var(--c-t-bg-w);font-weight:400;font-size:44px;margin-top:-4px;font-family:var(--main-bold-font)}
 .bg-pink{background-color:#E91E63!important;color:var(--c-t-bg-w)}
 .bg-cyan{background-color:#00BCD4!important;color:var(--c-t-bg-w)}
 .bg-light-green{background-color:#8BC34A!important;color:var(--c-t-bg-w)}
