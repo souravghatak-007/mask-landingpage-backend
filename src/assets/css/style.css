@@ -292,6 +292,7 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
 
 
 .myaccount .singleButton {font-size: 26px!important;line-height: 40px!important;    padding: 6px 30px 10px!important;}
+.myaccount .mat-tab-group.mat-primary .mat-ink-bar, .myaccount .mat-tab-nav-bar.mat-primary .mat-ink-bar {background-color: #56adc9;}
 
 /* modal css */
 
