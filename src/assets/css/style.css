@@ -553,7 +553,8 @@ table.mat-table {width: 100%;}
 .listingnewstyle mat-toolbar-row.searchbar .mat-form-field.mat-form-field-type-mat-select {min-width: 13%;}
 }
 @media screen and (max-width: 1460px) {
-.listingnewstyle mat-toolbar-row.searchbar .mat-form-field.mat-form-field-type-mat-select {min-width: 20%;}
+  .myaccount .myaccountwrapper {width: 64%;}
+  .listingnewstyle mat-toolbar-row.searchbar .mat-form-field.mat-form-field-type-mat-select {min-width: 20%;}
 }
 
 @media screen and (max-width: 1360px) {
