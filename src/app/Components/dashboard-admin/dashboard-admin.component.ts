@@ -18,13 +18,15 @@ export class DashboardAdminComponent implements OnInit {
  public cookieUserallData:any=JSON.parse(this.cookieService.get('user_details'))
  public adminCount:any=[];
  public orderDataList:any=[];
+ public UpcomingAutolist:any=[];
  public date_search_source_count: any=0;
+ public upcoming_search_source_count: any=0;
 
  public transaction: any =  [{val: "TEST", name: 'TEST'}, {val: 'LIVE', name: 'LIVE'}];
- public orderStatus:any = [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancel"}]
-
+ public autoShipSearch:any=[{val:"Yes",name:'Yes'},{val:"No",name:'No'},];
+ public orderStatus:any = [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancelled"}]
  // use for status search
- statusarray: any =  [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancel"}]; 
+ statusarray: any =  [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancelled"}]; 
 editroute: any = 'admin/order/edit/';
 datasource: any; 
 // Like Table head name is " firstname" => "First Name"
@@ -39,10 +41,11 @@ modify_header_array: any = {
     'city':'City',
     'zip':"Zip Code",
     'order_id' :"Order ID",
-    'transactiontype':"Transaction Type"
+    'transactiontype':"Transaction Type",
+    'ordered_date':"Order Date"
 };
   // use for Table Detail Field Skip 
-orderDataList_skip: any = ['accesscode','_id','product_subtotal','shipping_phone','billing_phone','name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip'];
+orderDataList_skip: any = ['accesscode','_id','product_subtotal','shipping_phone','billing_phone','name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip','shipping_name_search','ordered_on','product_price','autoship_data'];
 // updateendpoint is use for data update endpoint
 updateendpoint = 'addorupdatedata';
 // this is a database collection name
@@ -53,7 +56,7 @@ searchendpoint = 'datalist';
 click_to_add_ananother_page = '/adminlist';
 custom_link:any;
 orderDataList_detail_datatype:any;
-orderDataList_detail_skip:any=['_id','password',"created_at"]
+orderDataList_detail_skip:any=['_id','password',"created_at",'shipping_name_search','user_info','ordered_on','userid','autoship_data']
 // date_search_endpoint is use for date search endpoint
 date_search_endpoint: any='datalist';
 // send basic limit data
@@ -66,7 +69,7 @@ limitcond:any={
 sortdata:any={
   "type":'desc',
   "field":'shipping_name',
-  "options":['shipping_name','shipping_address','billing_name','billing_address']
+  "options":['shipping_name','shipping_address','billing_name','billing_address','order_id','product_total']
 };
 // ths is a database collection or view name
 date_search_source: any='admin_blog_list';
@@ -79,18 +82,47 @@ search_settings:any={
   
   datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"ordered_on"}],   // this is use for  date search
 
-  selectsearch:[{ label: 'Search By Transactiontype', field: 'transactiontype', values: this.transaction },{ label: 'Search By Transaction', field: 'order_status', values: this.orderStatus }], // this is use for  select search
+  selectsearch:[{ label: 'Search By Transaction Type', field: 'transactiontype', values: this.transaction },{ label: 'Search By Order Status', field: 'order_status', values: this.orderStatus },{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
 
-   textsearch:[{label:"Search By ShippingName",field:'shipping_name'},{label:"Search By ShippingAddress",field:'shipping_address'},
+   textsearch:[{label:"Search By Shipping Name",field:'shipping_name_search'},{label:"Search By Shipping Address",field:'shipping_address'},
    {label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
 
 };
+//upcoming autoship list
+upcomig_modify_header_array:any={};
+upcoming_sortdata:any={
+  "type":'desc',
+  "field":'billing_date',
+  "options":['billing_date']
+};
+upcoming_limitcond:any={
+  "limit":10,
+  "skip":0,
+  "pagecount":1
+};
+upcoming_datacollection: any='getautoshiplistdata';
+
+upcoming_date_search_endpoint: any='datalist';
+upcoming_UpcomingAutolist_detail_skip:any=['_id','billing_date_timestamp']
+upcoming_search_settings:any={
+  
+  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"billing_date_timestamp"}],   // this is use for  date search
+
+  // selectsearch:[{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
+
+  //  textsearch:[{label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
+
+};
+upcoming_UpcomingAutolist_skip: any = ['_id','transactiontype','card_cc','transactionid','shipping_address','billing_address','billing_date_timestamp']
   constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService,public apiService:ApiService,public meta:MetaService){
     if(this.cookieUserallData.type=='admin')
     {
       this.jwttoken=this.cookieService.get('jwtToken');
       this.meta.setTitle('Admin Dashboard');
       this.fetchAdminDashboardData();
+    }else{
+      this.meta.setTitle('Dashboard');
+      this.fetchUserDashboardData();
     }
   }
    
@@ -121,7 +153,7 @@ search_settings:any={
         },
     sort:{
         "type":'desc',
-        "field":'shipping_name'
+        "field":'order_id'
     }
  
     }
@@ -145,6 +177,41 @@ search_settings:any={
     });
 //  }, 5000);
        
+ /**upcoming autoship list */
+ let upcoming_endpoint='getautoshiplistdata';
+ let upcoming_endpointc='getautoshiplistdata-count';
+
+ let upcoming_data:any={
+     "condition":{
+         "limit":8,
+         "skip":0
+     },
+ sort:{
+     "type":'desc',
+     "field":'billing_date'
+ }
+
+ }
  
+   this.http.httpViaPost(upcoming_endpointc, upcoming_data).subscribe((res:any) => {
+    
+     console.warn('upcoming autoship data count',res);
+     this.upcoming_search_source_count=res.count;
+
+ }, error => {
+     console.log('Oooops!');
+ });
+
+ this.http.httpViaPost(upcoming_endpoint,upcoming_data).subscribe((res:any) => {
+    this.UpcomingAutolist=res.results.res;
+     console.log('upcoming autoship data',res);
+ }, error => {
+     console.log('Oooops!');
+ });
+
+  }
+  // user Data section
+  fetchUserDashboardData(){
+    
   }
 }

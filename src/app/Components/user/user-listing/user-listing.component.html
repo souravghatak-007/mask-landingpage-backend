@@ -9,14 +9,14 @@
         
         <!-- <button [routerLink]="['/user/add']">ADD User</button> -->
 
-          <!-- <div class="content_header_wrapper">
+          <div class="content_header_wrapper">
               <h2 class="headerSpan">User List</h2>
-              <div class="buttonsetToolbar">              
-                  <button class="singleButton btnblue" mat-raised-button color="primary" [routerLink]="['/admin/add']">Add User</button>
-                </div>            
-          </div> -->
+              <!-- <div class="buttonsetToolbar">              
+                  <button class="singleButton btnblue" mat-raised-button color="primary" [routerLink]="['/user/add']">Add User</button>
+              </div>             -->
+          </div>
             
-            <div class="listingnewstyle">
+            <div class="listingnewstyle userlist">
                 <lib-listing *ngIf="userDataarray!=null && userDataarray.length>0" 
   [datasource]="userDataarray"
   [skip]="pendingmodelapplicationarray_skip" 
