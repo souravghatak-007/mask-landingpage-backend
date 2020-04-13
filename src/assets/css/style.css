@@ -250,7 +250,6 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
 .myaccount .mat-tab-group.mat-primary .mat-ink-bar, .myaccount .mat-tab-nav-bar.mat-primary .mat-ink-bar {background-color: #56adc9;}
 
 /* modal css */
-
 .success-modal{min-width:450px;max-width:96%;margin:0 auto;width:600px!important}
 .cdk-overlay-pane.commonVideoDialogCls .mat-dialog-container{min-width:450px;max-width:96%;margin:0 auto;width:900px!important}
 .cdk-overlay-pane .mat-dialog-container{min-width:450px;max-width:96%;margin:0 auto;width:600px!important}
