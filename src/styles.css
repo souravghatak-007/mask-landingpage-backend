@@ -153,6 +153,7 @@ body { margin: 0; font-family: "NunitoRegular"; }
 .mat-column-autoship_data{min-width: 118px !important;}
 .mat-column-has_autoship{min-width: 118px !important;}
 .mat-column-order_status{min-width: 118px !important;}
+.mat-column-ordered_date{min-width: 108px !important;}
 .mat-column-transactionid {min-width:146px !important;}
 .mat-column-transactiontype{min-width: 138px !important;}
 .mat-column-ordered_on{min-width: 110px !important;}
