@@ -8,7 +8,7 @@
         <mat-card class="countdiv" style="padding: 0 !important;">
           
           <span class="genclscount Userscls">
-            <mat-card-title class="dashboardcounterheader">Order Report</mat-card-title>
+            <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Order Report</mat-card-title>
           <mat-card class="bg-cyan box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Users</mat-card-title>
@@ -53,7 +53,7 @@
         </span>
 
         <span class="genclscount autoship">
-          <mat-card-title class="dashboardcounterheader">Orders With AutoShip</mat-card-title>
+          <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Orders With AutoShip</mat-card-title>
 
          <!-- Test Successful Orders With AutoShip -->
           <mat-card class="bg-deep-green box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
@@ -115,13 +115,13 @@
         </span>
 
         <span class="genclscount testcls">
-          <mat-card-title class="dashboardcounterheader">Test orders</mat-card-title>
+          <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Test orders</mat-card-title>
 
           <!-- Test orders -->
           <mat-card class="bg-deep-blue box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-subtitle>{{adminCount.transaction_type_test}}</mat-card-subtitle>
-              <mat-card-title>Test Orders</mat-card-title>
+              <mat-card-title *ngIf="cookieUserallData.type=='admin'">Test Orders</mat-card-title>
               <span class="detailbtn">
                 <button class="singleButton">View Detail</button>
               </span>  
@@ -163,7 +163,7 @@
           </mat-card>
         </span>
         <span class="genclscount livecls">
-          <mat-card-title class="dashboardcounterheader">Live orders</mat-card-title>
+          <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Live orders</mat-card-title>
 
 
            <!-- Live orders -->
@@ -240,10 +240,41 @@
             [date_search_source_count]="date_search_source_count"
             [limitcond]="limitcond"></lib-listing>
             </div>
+            <!-- upcoming autoship list -->
+            <div class="content_header_wrapper">
+              <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Upcoming AutoShip List</h2>                     
+            </div>
+
+            <div class="listingnewstyle">
+              <lib-listing class="animated" *ngIf="UpcomingAutolist!=null && UpcomingAutolist.length>0" 
+                [datasource]="UpcomingAutolist"
+                [skip]="upcoming_UpcomingAutolist_detail_skip"
+                [modify_header_array]="modify_header_array"
+                [apiurl]="apiurl"
+                [updateendpoint]="updateendpoint"
+                [deleteendpoint]="deleteEndpoint"
+                [date_search_source]="date_search_source"
+                [date_search_endpoint]="date_search_endpoint"
+                [sourcedata]="tablename"
+                [detail_datatype]="orderDataList_detail_datatype"
+                [editroute]="editroute"
+                [statusarr]="statusarray"
+                [detail_skip_array]="upcoming_UpcomingAutolist_detail_skip"
+                [url]="custom_link"
+                [jwttoken]="jwttoken"
+                [search_settings]="upcoming_search_settings"
+                [searchendpoint]="searchendpoint"
+                [sortdata]="upcoming_sortdata"
+                [datacollection]="datacollection"
+                [date_search_source_count]="upcoming_search_source_count"
+                [limitcond]="upcoming_limitcond"></lib-listing>
+                </div>
+
           </mat-card>
           <!-- user section html start here -->
           <h3 *ngIf="cookieUserallData.type=='user'">Welcome User</h3>
       </div>
     </div>    
 </div>
+
 <app-footer></app-footer>

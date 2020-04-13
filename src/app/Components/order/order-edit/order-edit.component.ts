@@ -89,6 +89,7 @@ export class OrderEditComponent implements OnInit {
         this.condition = { id: params._id };
         this.activatedRoute.data.subscribe(resolveData => {
           this.orderData = resolveData.orderData.res[0];
+          //console.log(this.orderData);
         });
       }
     })
