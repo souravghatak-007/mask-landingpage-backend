@@ -40,7 +40,8 @@ modify_header_array: any = {
     'city':'City',
     'zip':"Zip Code",
     'order_id' :"Order ID",
-    'transactiontype':"Transaction Type"
+    'transactiontype':"Transaction Type",
+    'ordered_date':"Order Date"
 };
   // use for Table Detail Field Skip 
 orderDataList_skip: any = ['accesscode','_id','product_subtotal','shipping_phone','billing_phone','name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip','shipping_name_search','ordered_on'];
