@@ -123,7 +123,8 @@ const routes: Routes = [
   { path: "user/edit/:id", component: UserAddEditComponent, canActivate: [AuthService] },
   {
     path: 'account-settings',component : AccountSettingsComponent,canActivate: [AuthService]
-  }
+  },
+  {path:'**',component:LoginComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
