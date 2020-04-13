@@ -244,7 +244,7 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
   vertical-align: middle;}
 .myaccount .mat-card-title {display: block;margin-bottom: 20px;}
 .myaccount .mat-tab-group .mat-form-field-appearance-legacy .mat-form-field-infix {line-height: 21px;}
-.myaccount .mat-form-field-prefix, .mat-form-field-suffix{white-space:nowrap;flex:none;position:relative;background-color:var(--c-t-bg-w);height:100%;line-height:45px;padding:0 10px;color:#222f3d;font-size:16px;top: 0;}
+.myaccount .mat-form-field-prefix, .mat-form-field-suffix{white-space:nowrap;flex:none;position:relative;background-color:var(--c-t-bg-w);height:100%;line-height:45px;padding: 0 6px;color: #222f3d;font-size: 16px;top: 0;border-left: 1px solid #c1bebe;}
 .myaccount .mat-form-field-flex .mat-form-field-suffix {top: 0px;}
 
 
