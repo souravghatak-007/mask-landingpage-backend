@@ -28,6 +28,7 @@ export class DashboardAdminComponent implements OnInit {
 editroute: any = 'admin/order/edit/';
 datasource: any; 
 // Like Table head name is " firstname" => "First Name"
+deleteEndpoint: any = "deletesingledata";
 modify_header_array: any = {
     'firstname': "First Name",
     'email': 'Email Id',

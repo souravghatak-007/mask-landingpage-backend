@@ -72,7 +72,7 @@
         </mat-card>
         <mat-card *ngIf="cookieUserallData.type=='admin'">
           <div class="content_header_wrapper">
-            <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Order Details</h2>                     
+            <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Ordered</h2>                     
           </div>
          
         <div class="listingnewstyle">
@@ -82,6 +82,7 @@
             [modify_header_array]="modify_header_array"
             [apiurl]="apiurl"
             [updateendpoint]="updateendpoint"
+            [deleteendpoint]="deleteEndpoint"
             [date_search_source]="date_search_source"
             [date_search_endpoint]="date_search_endpoint"
             [sourcedata]="tablename"
