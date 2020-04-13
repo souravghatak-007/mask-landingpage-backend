@@ -145,7 +145,7 @@ height: auto;display: flex;align-items: center;flex-wrap: wrap;}
 
 .listingnewstyle mat-toolbar-row.searchbar span{flex: 0;order: 1;direction: ltr;line-height: 21px;}
 .listingnewstyle mat-toolbar-row.searchbar .mat-form-field {flex: 1;order: 1;}
-.listingnewstyle mat-toolbar-row.searchbar .material-icons.cursor{order: 4;color: #00bfff;}
+.listingnewstyle mat-toolbar-row.searchbar .material-icons.cursor{order: 4;color: #ffffff;background: #8bc34a;border-radius: 50%;padding: 2px;}
 .listingnewstyle mat-toolbar-row.searchbar .mat-raised-button.mat-primary{order: 3;}
 
 .listingnewstyle mat-toolbar-row.searchbar .mat-raised-button.mat-primary{margin: 0!important;border-radius: 0;background-color: var(--c-t-primary-btn_title);text-transform: uppercase;font-family: 'NunitoRegular'!important;padding: 6px 10px 10px;line-height: 24px;margin: 0 5px 0 0 !important;}
@@ -433,9 +433,9 @@ table.mat-table {width: 100%;}
 .countdiv .mat-card{width:24%;display:flex;justify-content:space-between;cursor:default;background-color:var(--c-t-bg-w);position:relative;overflow:hidden;margin:0 .5% 1%!important;    align-items: stretch;}
 .countdiv .mat-card .icon{display: flex;text-align: center;background-color: rgba(0,0,0,0.12);width: 80px;order: 1;justify-content: center;}
 .countdiv .mat-card .icon i{color: var(--c-t-bg-w);font-size: 50px;align-items: center;justify-content: center;display: flex;justify-content: center;}
-.countdiv .mat-card .content{display:inline-block;padding:7px 10px;width: 76%;order:2;}
-.countdiv .mat-card .content .mat-card-title{font-size:16px;margin-top:11px;color:var(--c-t-bg-w);font-family:var(--main-font)}
-.countdiv .mat-card .content .mat-card-subtitle{color:var(--c-t-bg-w);font-weight:400;font-size:26px;margin-top:-4px;font-family:var(--main-bold-font)}
+.countdiv .mat-card .content{display:inline-block;padding:15px 10px;width: 76%;order:2;}
+.countdiv .mat-card .content .mat-card-title{font-size:24px;margin-top:11px;color:var(--c-t-bg-w);font-family:var(--main-font)}
+.countdiv .mat-card .content .mat-card-subtitle{color:var(--c-t-bg-w);font-weight:400;font-size:36px;margin-top:-4px;font-family:var(--main-bold-font)}
 .bg-pink{background-color:#E91E63!important;color:var(--c-t-bg-w)}
 .bg-cyan{background-color:#00BCD4!important;color:var(--c-t-bg-w)}
 .bg-light-green{background-color:#8BC34A!important;color:var(--c-t-bg-w)}
