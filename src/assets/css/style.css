@@ -487,7 +487,7 @@ table.mat-table {width: 100%;}
 
 /* count css dashboard */
 .countdiv{height:auto!important;display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important}
-.countdiv .mat-card{width:24%;display:flex;justify-content:space-between;cursor:default;background-color:var(--c-t-bg-w);position:relative;overflow:hidden;margin:0 .5% 1%!important;    align-items: stretch;}
+.countdiv .mat-card{width:24%;display:flex;justify-content:space-between;cursor:default;background-color:var(--c-t-bg-w);position:relative;overflow:hidden;margin:.5%!important;    align-items: stretch;}
 .countdiv .mat-card .icon{display: flex;text-align: center;background-color: rgba(0,0,0,0.12);width: 80px;order: 1;justify-content: center;}
 .countdiv .mat-card .icon i{color: var(--c-t-bg-w);font-size: 50px;align-items: center;justify-content: center;display: flex;justify-content: center;}
 .countdiv .mat-card .content{display:inline-block;padding:15px 10px;width: 50%;order:2;}
@@ -502,6 +502,19 @@ table.mat-table {width: 100%;}
 .bg-deep-blue{background-color:#2255a4!important;color:var(--c-t-bg-w)}
 .bg-deep-green{background-color:#28b779!important;color:var(--c-t-bg-w)}
 .bg-red{background-color:#da542e!important;color:var(--c-t-bg-w)}
+
+
+
+
+.dashboardcountersection .dashboardcounterheader {
+  font-size: 24px;
+  font-family:var(--main-bold-font);
+  color: #535353;
+  text-transform: uppercase;
+  border-bottom: 1px solid #9c9c9c;
+  padding-bottom: 6px;
+  flex: 1 1 100%;
+}
 
 
 
@@ -535,6 +548,9 @@ table.mat-table {width: 100%;}
 
 /* media css */
 
+@media screen and (max-width: 1800px) {
+.myaccount .myaccountwrapper {width: 64%;}
+}
 @media screen and (max-width: 1666px) {
   .userimage {right: -56%;width: 430px;}
 }
@@ -553,7 +569,7 @@ table.mat-table {width: 100%;}
 .listingnewstyle mat-toolbar-row.searchbar .mat-form-field.mat-form-field-type-mat-select {min-width: 13%;}
 }
 @media screen and (max-width: 1460px) {
-  .myaccount .myaccountwrapper {width: 64%;}
+ 
   .listingnewstyle mat-toolbar-row.searchbar .mat-form-field.mat-form-field-type-mat-select {min-width: 20%;}
 }
 
