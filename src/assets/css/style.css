@@ -44,7 +44,7 @@ background: -webkit-linear-gradient(270deg,rgba(25,198,254,1) 0%,rgba(2,168,222,
 .login_wrapper .from {padding: 16px 42px;}
 .login_wrapper input.mat-input-element {width: 100%;line-height: 22px;margin: 0 auto;display: block;}
 .login_wrapper input.mat-input-element .mat-form-field-label-wrapper{line-height: 26px;}
-.login_wrapper .mat-form-field-appearance-legacy .mat-form-field-wrapper {padding-bottom: 10px;padding-top: 16px;}
+.login_wrapper .mat-form-field-appearance-legacy .mat-form-field-wrapper {padding-bottom: 10px;padding-top: 21px;}
 .login_wrapper .mat-form-field-subscript-wrapper .mat-error{margin-top: 0;}
 
 
@@ -335,7 +335,7 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
 .mat-form-field-appearance-legacy .mat-form-field-underline {height: 1px;}
 .mat-form-field-appearance-legacy .mat-form-field-underline {background-color: rgba(0,0,0,.42);}
 .mat-form-field-appearance-legacy .mat-form-field-underline {bottom: 0 !important;}
-.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {margin-top: 15px !important;}
+.mat-form-field-appearance-legacy .mat-form-field-subscript-wrapper {margin-top:22px !important;font-size: 90%;}
 .mat-form-field-appearance-legacy .mat-form-field-infix {padding: .4375em 10px !important;}
 .cke_chrome {margin-bottom: 20px !important;}
 
