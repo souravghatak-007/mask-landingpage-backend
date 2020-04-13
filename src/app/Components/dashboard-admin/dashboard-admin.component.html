@@ -4,8 +4,8 @@
 
     </div>
     <div id="maincontent">
-      <div class="main-content-wrap">
-        <mat-card class="generalcls countdiv" style="padding: 0 !important;">
+      <div class="main-content-wrap generalcls">
+        <mat-card class="countdiv" style="padding: 0 !important;">
           <mat-card class="bg-cyan box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Users</mat-card-title>
@@ -73,7 +73,7 @@
         <mat-card *ngIf="cookieUserallData.type=='admin'">
           <div class="content_header_wrapper">
             <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Order Details</h2>                     
-        </div>
+          </div>
          
         <div class="listingnewstyle">
           <lib-listing class="animated" *ngIf="orderDataList!=null && orderDataList.length>0" 
