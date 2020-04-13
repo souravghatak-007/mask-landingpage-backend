@@ -196,7 +196,7 @@ height: auto;display: flex;align-items: center;flex-wrap: wrap;}
 
 .listingnewstyle{box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;-moz-box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;-webkit-box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;
   -o-box-shadow: 0 2px 10px rgba(0,0,0,0.2) !important;}
-.listingnewstyle .mat-card .mat-card{padding: 16px !important;text-align: center;border-left: 0 !important;color: #e91e63;text-transform: uppercase;border-right: 0 !important;font-family: var(--main-bold-font);}
+.listingnewstyle .mat-card .mat-card{padding: 10px 16px 16px !important;text-align: center;border-left: 0 !important;color: #e91e63;text-transform: uppercase;border-right: 0 !important;font-family: var(--main-bold-font);line-height: 24px;}
 
 /* table css extra */
 
