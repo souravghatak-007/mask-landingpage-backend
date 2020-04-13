@@ -65,8 +65,7 @@
               </span>
             </span>
             <span class="icon">
-              <i class="material-icons">playlist_add_check</i>
-              <!-- <i class="material-icons">card_membership</i> -->
+              <i class="material-icons">card_membership</i>
             </span>    
                     
           </mat-card>          
@@ -80,8 +79,7 @@
               </span>   
             </span>
             <span class="icon">
-              <!-- <i class="material-icons">card_membership</i> -->
-              <i class="material-icons">playlist_add_check</i>
+              <i class="material-icons">card_membership</i>
             </span>    
                  
           </mat-card>
@@ -129,7 +127,7 @@
               </span> 
             </span>
             <span class="icon">
-              <i class="material-icons">credit_card</i>
+              <i class="material-icons">card_membership</i>
             </span>    
                   
           </mat-card>
@@ -158,7 +156,7 @@
             <mat-card-subtitle>{{adminCount.incomplete_live_order}}</mat-card-subtitle>
             </span>
             <span class="icon">
-              <i class="material-icons">eject</i>
+              <i class="material-icons">card_membership</i>
             </span>    
             <span class="detailbtn">
               <button class="singleButton">View Detail</button>
@@ -179,6 +177,21 @@
               <button class="singleButton">View Detail</button>
             </span>        
           </mat-card>
+
+           <!-- Total Transaction Amount of Test Orders -->
+           <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
+              <mat-card-title>Total Transaction Amount of Test Orders </mat-card-title>
+            <mat-card-subtitle>0</mat-card-subtitle>
+            </span>
+            <span class="icon">
+              <i class="material-icons">card_membership</i>
+            </span>    
+            <span class="detailbtn">
+              <button class="singleButton">View Detail</button>
+            </span>        
+          </mat-card>
+
          </span>
 
         </mat-card>
