@@ -113,7 +113,7 @@ upcoming_search_settings:any={
   //  textsearch:[{label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
 
 };
-upcoming_UpcomingAutolist_skip: any = ['accesscode','_id']
+upcoming_UpcomingAutolist_skip: any = ['_id','transactiontype','card_cc','transactionid','shipping_address','billing_address','billing_date_timestamp']
   constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService,public apiService:ApiService,public meta:MetaService){
     if(this.cookieUserallData.type=='admin')
     {
