@@ -120,6 +120,9 @@ upcoming_UpcomingAutolist_skip: any = ['_id','transactiontype','card_cc','transa
       this.jwttoken=this.cookieService.get('jwtToken');
       this.meta.setTitle('Admin Dashboard');
       this.fetchAdminDashboardData();
+    }else{
+      this.meta.setTitle('Dashboard');
+      this.fetchUserDashboardData();
     }
   }
    
@@ -206,5 +209,9 @@ upcoming_UpcomingAutolist_skip: any = ['_id','transactiontype','card_cc','transa
      console.log('Oooops!');
  });
 
+  }
+  // user Data section
+  fetchUserDashboardData(){
+    
   }
 }
