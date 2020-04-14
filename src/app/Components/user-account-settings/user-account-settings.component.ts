@@ -177,4 +177,10 @@ export class UserAccountSettingsComponent implements OnInit {
       });
     }
   }
+  ResetUpdateForm(){
+    this.UpdateForm.reset();
+  }
+  ChangePasswordReset(){
+    this.changePasswordFormGroup.reset();
+  }
 }
