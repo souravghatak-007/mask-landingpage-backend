@@ -90,6 +90,7 @@ search_settings:any={
 };
 //upcoming autoship list
 upcomig_modify_header_array:any={};
+upcoming_orderStatus:any = [{val:0,name: "Processing"},{val:1,name:"Completed"}]
 upcoming_sortdata:any={
   "type":'desc',
   "field":'billing_date',
