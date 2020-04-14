@@ -19,8 +19,10 @@ export class DashboardAdminComponent implements OnInit {
  public adminCount:any=[];
  public orderDataList:any=[];
  public UpcomingAutolist:any=[];
+ public userMyorder:any=[];
  public date_search_source_count: any=0;
  public upcoming_search_source_count: any=0;
+ public myorder_search_source_count: any=0;
 
  public transaction: any =  [{val: "TEST", name: 'TEST'}, {val: 'LIVE', name: 'LIVE'}];
  public autoShipSearch:any=[{val:"Yes",name:'Yes'},{val:"No",name:'No'},];
@@ -115,6 +117,33 @@ upcoming_search_settings:any={
 
 };
 upcoming_UpcomingAutolist_skip: any = ['_id','transactiontype','card_cc','transactionid','shipping_address','billing_address','billing_date_timestamp']
+//user My order
+myorder_modify_header_array:any={};
+myorder_orderStatus:any = [{val:0,name: "Processing"},{val:1,name:"Completed"}]
+myorder_sortdata:any={
+  "type":'desc',
+  "field":'order_id',
+  "options":['order_id']
+};
+my_limitcond:any={
+  "limit":10,
+  "skip":0,
+  "pagecount":1
+};
+my_datacollection: any='getautoshiplistdata';
+
+myorder_date_search_endpoint: any='datalist';
+myorder_UpcomingAutolist_detail_skip:any=['_id','user_info','shipping_name_search','ordered_on','autoship_data']
+myorder_search_settings:any={
+  
+  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"billing_date_timestamp"}],   // this is use for  date search
+
+  // selectsearch:[{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
+
+  //  textsearch:[{label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
+
+};
+myorder_UpcomingAutolist_skip: any = ['_id','userid','user_info','shipping_name_search','ordered_on','autoship_data']
   constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService,public apiService:ApiService,public meta:MetaService){
 
     this.meta.setTitle('Virus Medical Face Mask backend | Admin Dashboard');
@@ -248,17 +277,17 @@ upcoming_UpcomingAutolist_skip: any = ['_id','transactiontype','card_cc','transa
       this.http.httpViaPost(endpointc, dataa).subscribe((res:any) => {
         // console.log('in constructor');
         // console.log(result);
-       // this.date_search_source_count =res.count;
-        console.warn('user order data',res);
-
+        //console.warn('user order data',res);
+        this.myorder_search_source_count=res.count;
     }, error => {
         console.log('Oooops!');
     });
 
     this.http.httpViaPost(endpoint,dataa).subscribe((res:any) => {
        
-        //this.orderDataList =res.results.res;
+    
         console.log('user order data count',res);
+        this.userMyorder=res.results.res;
     }, error => {
         console.log('Oooops!');
     });
