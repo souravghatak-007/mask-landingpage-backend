@@ -7,10 +7,10 @@
       <div class="main-content-wrap">
         <mat-card class="generalcls" style="padding: 0 !important;">
         <span class="AddEditBlog">
-          <h1>{{header_text}} </h1>    
+          <!-- <h1>{{header_text}} </h1>     -->
           <span class="formspan">
           <mat-card-content class="example-container">
-            <form class="formcls" novalidate [formGroup]="orderEditform">   
+            <!-- <form class="formcls" novalidate [formGroup]="orderEditform">    -->
             <mat-label>Name</mat-label>
             {{orderData[0].user_info.firstname}}{{orderData[0].user_info.lastname}}
             <!-- <mat-form-field >
@@ -41,7 +41,7 @@
                 </mat-list>            
             </span>
 
-            <mat-label>Date Added </mat-label>
+            <!-- <mat-label>Date Added </mat-label>
             <mat-form-field >
                 <input matInput placeholder="Date Added" [formControl]="orderEditform.controls['dateadded']">
                 <mat-error *ngIf="orderEditform.controls['dateadded'].touched && !orderEditform.controls['dateadded'].valid && orderEditform.controls['dateadded'].errors.required">Date added field can not be blank</mat-error>
@@ -50,7 +50,7 @@
             <mat-form-field >
                 <input matInput placeholder="Order Source" [formControl]="orderEditform.controls['ordersource']">
                 <mat-error *ngIf="orderEditform.controls['ordersource'].touched && !orderEditform.controls['ordersource'].valid && orderEditform.controls['ordersource'].errors.required">Order source field can not be blank</mat-error>
-            </mat-form-field>
+            </mat-form-field> -->
             
             <mat-label>Contents </mat-label>
             <span class="contentsblock"> 
@@ -205,7 +205,7 @@
 
             </span>
             
-            <mat-label>shipping instruction </mat-label>
+            <!-- <mat-label>shipping instruction </mat-label>
             <mat-form-field >
                 <input matInput placeholder="shipping instruction" [formControl]="orderEditform.controls['shippinginstruction']">
                 <mat-error *ngIf="orderEditform.controls['shippinginstruction'].touched && !orderEditform.controls['shippinginstruction'].valid && orderEditform.controls['shippinginstruction'].errors.required">shipping instruction field can not be blank</mat-error>
@@ -229,7 +229,7 @@
              <mat-form-field >
                 <input matInput placeholder="System Log" [formControl]="orderEditform.controls['systemlog']">
                 <mat-error *ngIf="orderEditform.controls['systemlog'].touched && !orderEditform.controls['systemlog'].valid && orderEditform.controls['systemlog'].errors.required">system log field can not be blank</mat-error>
-            </mat-form-field>
+            </mat-form-field> -->
 
 
             <mat-label>TRANSACTIONS </mat-label>
@@ -315,7 +315,7 @@
 
                 </table>
             </span>
-            </form>
+            <!-- </form> -->
           </mat-card-content>
           </span>
           </span>

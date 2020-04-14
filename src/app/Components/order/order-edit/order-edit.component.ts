@@ -108,38 +108,28 @@ export class OrderEditComponent implements OnInit {
         });
       }
     })
-    this.orderEditform = this.fb.group({
-      id:null,
-      username: [null, Validators.required],      
-      orderid: [null, Validators.required],
-      orderstatus: [null, Validators.required],
-      paymentstatus: [null, Validators.required],
-      dateadded: [null, Validators.required],
-      ordersource: [null, Validators.required],
-      billingprofile: [null, Validators.required],
-      shippinginstruction: [null, Validators.required],
-      fulfillmentnotes: [null, Validators.required],
-      usercomments: [null, Validators.required],
-      admincomments: [null, Validators.required],
-      systemlog: [null, Validators.required],
-      productname: [null, Validators.required],
-      productquantity: [null, Validators.required],
-      productprice: [null, Validators.required],
-      subtotal: [null, Validators.required],
-      shipping:[null, Validators.required],
-      tax:[null, Validators.required],
-      total:[null, Validators.required]
-    })
-    this.orderEditform.patchValue({
-      orderid:this.orderData[0]._id,
-      productname:this.orderData[0].product_name,
-      productquantity:this.orderData[0].product_qty,
-      productprice:this.orderData[0].product_price,
-      subtotal:this.orderData[0].product_subtotal,
-      shipping:this.orderData[0].shipping_charge,
-      tax:this.orderData[0].sale_tax,
-      total:this.orderData[0].product_total
-})
+    // this.orderEditform = this.fb.group({
+    //   id:null,
+    //   username: [null, Validators.required],      
+    //   orderid: [null, Validators.required],
+    //   orderstatus: [null, Validators.required],
+    //   paymentstatus: [null, Validators.required],
+    //   dateadded: [null, Validators.required],
+    //   ordersource: [null, Validators.required],
+    //   billingprofile: [null, Validators.required],
+    //   shippinginstruction: [null, Validators.required],
+    //   fulfillmentnotes: [null, Validators.required],
+    //   usercomments: [null, Validators.required],
+    //   admincomments: [null, Validators.required],
+    //   systemlog: [null, Validators.required],
+    //   productname: [null, Validators.required],
+    //   productquantity: [null, Validators.required],
+    //   productprice: [null, Validators.required],
+    //   subtotal: [null, Validators.required],
+    //   shipping:[null, Validators.required],
+    //   tax:[null, Validators.required],
+    //   total:[null, Validators.required]
+    // });
   }
 
 
