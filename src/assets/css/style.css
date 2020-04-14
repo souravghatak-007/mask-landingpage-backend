@@ -407,6 +407,8 @@ table.mat-table {width: 100%;}
 .contentsblock td.mat-footer-cell .mobile-label, .contentsblock td.mat-footer-cell{font-size: 14px; color:var(--c-t-bg-black); text-transform: uppercase;font-family: var(--main-bold-font);}
 
 
+.formspan .mat-form-field.spanpadding{padding: 10px !important;line-height: 21px !important;border: 1px solid #d9d9d9;}
+
 /* lib-preview-files */
 .cdk-overlay-pane lib-preview-files{display:block;background:#f9f9f9;position:relative;z-index:20;border-radius:0;color:#000;box-shadow:none;position:relative;padding:15px;-moz-box-shadow:inset 0 0 10px #000;-webkit-box-shadow:inset 0 0 5px #000;box-shadow:inset 0 0 5px #000;border:3px solid var(--c-t-bg-w)}
 .cdk-overlay-pane lib-preview-files h2.mat-dialog-title{font-family: var(--main-bold-font);font-size: 29px;text-transform: uppercase;color: var(--c-t-primary-btn_title);text-align: center;border-bottom: 2px solid var(--c-t-bg);padding-bottom: 18px;}
@@ -545,6 +547,13 @@ table.mat-table {width: 100%;}
 .listingnewstyle tr.mat-header-row {height: 3px;}
 .countdiv .column4 .mat-card {width: 49%;}
 .countdiv .mat-card {width: 49%;}
+.contentsblock .mat-table .mat-cell, .contentsblock .mat-table .mat-footer-cell{width: 96%;padding: 7px 10px !important;margin: 0 auto;}
+.contentsblock .mat-table .mat-cell:first-child, .contentsblock .mat-table .mat-footer-cell:first-child{width: 96%;padding: 7px 10px !important;margin: 0 auto !important;}
+.contentsblock .mat-table .mat-footer-cell::before{content:attr(data-label)!important;float:left!important;text-transform:uppercase!important;font-weight:400!important;font-size:.85em!important;text-align:left!important;width:48%!important}
+.contentsblock .mat-cell::before{content:attr(data-label)!important;float:left!important;text-transform:uppercase!important;font-weight:400!important;font-size:.85em!important;text-align:left!important;width:48%!important}
+.mat-column-emptyFooter,.mat-column-subtotalTitle,.mat-column-shippingandhandlingTitle,.mat-column-taxTitle,.mat-column-unitprice{display:none!important}
+.mat-footer-cell.mat-column-qty,.mat-footer-cell.mat-column-product,.mat-footer-cell.mat-column-productcode{display:none!important}
+
 }
 
 
