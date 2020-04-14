@@ -9,7 +9,7 @@ import { MetaService } from '@ngx-meta/core';
   styleUrls: ['./reset-password.component.css']
 })
 export class ResetPasswordComponent implements OnInit {
-  public fromTitleName: any = 'Reset From';
+  public fromTitleName: any = 'Reset Password';
   public logo: any = './assets/images/logo.png';
   public serverUrl: any = this.httpServiceService.baseUrl;
   public addEndpoint: any = {
