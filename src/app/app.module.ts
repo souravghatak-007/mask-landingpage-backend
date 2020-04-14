@@ -43,6 +43,7 @@ import  {ProductComponent} from './Components/product/product.component';
 import {SuccessComponent} from './Components/success/success.component';
 import { OrderEditComponent } from './Components/order/order-edit/order-edit.component';
 import { AccountSettingsComponent } from './Components/account-settings/account-settings.component';
+import { UserAccountSettingsComponent } from './Components/user-account-settings/user-account-settings.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { AccountSettingsComponent } from './Components/account-settings/account-
     ProductComponent,
     SuccessComponent,
     OrderEditComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    UserAccountSettingsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
