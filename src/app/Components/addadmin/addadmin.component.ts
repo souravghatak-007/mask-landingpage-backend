@@ -34,9 +34,26 @@ export class AddAdminComponent implements OnInit {
 
   constructor(public fb: FormBuilder, public httpService: HttpServiceService,
     public cookieService: CookieService, public router: Router,
-    public activatedRoute: ActivatedRoute,public snackBar:MatSnackBar) {
+    public activatedRoute: ActivatedRoute,public snackBar:MatSnackBar,public meta:MetaService) {
 
-
+      this.meta.setTitle('Virus Medical Face Mask backend | Add Admin');
+      // this.meta.setTag('og:description', 'FFP3 Standard medical face masks for best Protection Against COVID-19, filtering 98% germs, viruses and bacteria, and other hazardous particles. Best face masks in the market to prevent COVID-19 infection.');
+      // this.meta.setTag('twitter:description', 'FFP3 Standard medical face masks for best Protection Against COVID-19, filtering 98% germs, viruses and bacteria, and other hazardous particles. Best face masks in the market to prevent COVID-19 infection.');
+  
+      // this.meta.setTag('og:keyword', 'Protection Against COVID-19, COVID-19 Protection Masks, Face Masks for COVID-19');
+      // this.meta.setTag('twitter:keyword', 'Protection Against COVID-19, COVID-19 Protection Masks, Face Masks for COVID-19');
+      this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+      this.meta.setTag('twitter:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+  
+      this.meta.setTag('og:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+      this.meta.setTag('twitter:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+  
+      this.meta.setTag('og:title', 'Virus Medical Face Mask backend | Add Admin');
+      this.meta.setTag('twitter:title', 'Virus Medical Face Mask backend | Add Admin');
+      this.meta.setTag('og:type', 'website');
+      this.meta.setTag('og:url','https://mask-landingpage-backend.influxiq.com/');    
+      this.meta.setTag('og:image', '../../assets/images/logo-fb.jpg');
+      this.meta.setTag('twitter:image', '../../assets/images/logo-twitter.jpg');
 
     this.activatedRoute.params.subscribe(params => {
       if (params['_id'] != null) {

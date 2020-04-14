@@ -10,20 +10,20 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class SuccessComponent implements OnInit {
 public successData:any=[];
   constructor(public meta: MetaService,public activatedRoute:ActivatedRoute) {  window.scrollTo(500, 0); 
-    this.meta.setTitle('Mask landing Page');
-    // this.meta.update({ name: 'description', content: 'Dynamic Hello Angular Lovers description!' });
-    this.meta.setTag('og:description', 'Virus Barrier Medical Face Mask to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
-    this.meta.setTag('twitter:description', 'Virus Barrier Medical Face Mask to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
 
-    this.meta.setTag('og:keyword', 'Virus Barrier Medical Face Mask, Medical Face Mask, Medical Face Mask for Virus');
-    this.meta.setTag('twitter:keyword', 'Virus Barrier Medical Face Mask, Medical Face Mask, Medical Face Mask for Virus');
+    this.meta.setTitle('Virus Medical Face Mask backend | Success');
+    this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+    this.meta.setTag('twitter:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
 
-    this.meta.setTag('og:title', 'Virus Barrier Medical Face Mask');
-    this.meta.setTag('twitter:title', 'Virus Barrier Medical Face Mask');
+    this.meta.setTag('og:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+    this.meta.setTag('twitter:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+
+    this.meta.setTag('og:title', 'Virus Medical Face Mask backend | Success');
+    this.meta.setTag('twitter:title', 'Virus Medical Face Mask backend | Success');
     this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:url','https://virusmedicalmask.com');
-      this.meta.setTag('og:image', 'https://all-frontend-assets.s3.amazonaws.com/bvt-mask-assetc/images/144-144.png');
-
+    this.meta.setTag('og:url','https://mask-landingpage-backend.influxiq.com/');    
+    this.meta.setTag('og:image', '../../assets/images/logo-fb.jpg');
+    this.meta.setTag('twitter:image', '../../assets/images/logo-twitter.jpg');
 
   }
 

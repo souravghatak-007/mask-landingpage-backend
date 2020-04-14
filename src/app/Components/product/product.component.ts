@@ -33,25 +33,28 @@ export class ProductComponent implements OnInit {
   public Noloading: boolean = false;
   public transection_Type =  environment["Tran_type"];
   public cookieUserallData:any=JSON.parse(this.cookie.get('user_details'))
-  constructor(public _snackBar: MatSnackBar,public router: Router, public meta: MetaService, public apiService:ApiService,public activatedRoute: ActivatedRoute,public cookie: CookieService,public formbuilder: FormBuilder) {    window.scrollTo(500, 0);
+  constructor(public _snackBar: MatSnackBar,public router: Router, public meta: MetaService, public apiService:ApiService,public activatedRoute: ActivatedRoute,public cookie: CookieService,public formbuilder: FormBuilder) {    
+    
+    this.meta.setTitle('Virus Medical Face Mask backend | Product');
+    this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+    this.meta.setTag('twitter:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+
+    this.meta.setTag('og:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+    this.meta.setTag('twitter:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+
+    this.meta.setTag('og:title', 'Virus Medical Face Mask backend | Product');
+    this.meta.setTag('twitter:title', 'Virus Medical Face Mask backend | Product');
+    this.meta.setTag('og:type', 'website');
+    this.meta.setTag('og:url','https://mask-landingpage-backend.influxiq.com/');    
+    this.meta.setTag('og:image', '../../assets/images/logo-fb.jpg');
+    this.meta.setTag('twitter:image', '../../assets/images/logo-twitter.jpg');
+    
+    window.scrollTo(500, 0);
    
     this.Noloading=false;
     // console.warn(this.transection_Type);
     //console.log('cookie',this.cookieUserallData);
-  
-    // this.meta.update({ name: 'description', content: 'Dynamic Hello Angular Lovers description!' });
-    this.meta.setTag('og:description', 'FFP3 Standard medical face masks for best Protection Against COVID-19, filtering 98% germs, viruses and bacteria, and other hazardous particles. Best face masks in the market to prevent COVID-19 infection.');
-    this.meta.setTag('twitter:description', 'FFP3 Standard medical face masks for best Protection Against COVID-19, filtering 98% germs, viruses and bacteria, and other hazardous particles. Best face masks in the market to prevent COVID-19 infection.');
-
-    this.meta.setTag('og:keyword', 'Protection Against COVID-19, COVID-19 Protection Masks, Face Masks for COVID-19');
-    this.meta.setTag('twitter:keyword', 'Protection Against COVID-19, COVID-19 Protection Masks, Face Masks for COVID-19');
-
-    this.meta.setTag('og:title', 'Virus Barrier Medical Face Mask');
-    this.meta.setTag('twitter:title', 'Virus Barrier Medical Face Mask');
-    this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:url','https://mask-landingpage.influxiq.com/');
-    this.meta.setTag('og:image', 'https://all-frontend-assets.s3.amazonaws.com/bvt-mask-assetc/images/144-144.png');
-       //<<<---    using ()=> syntax
+    //<<<---    using ()=> syntax
       this.genarateForm();
     
   }

@@ -2,6 +2,7 @@ import { Component, OnInit,ViewChild} from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import { HttpServiceService } from '../../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MetaService } from '@ngx-meta/core';
 
 @Component({
   selector: 'app-user-add-edit',
@@ -12,7 +13,23 @@ export class UserAddEditComponent implements OnInit {
   @ViewChild(FormGroupDirective, {static: false}) formDirective: FormGroupDirective;
   public myForm: FormGroup;
 
-  constructor(public formbuilder: FormBuilder,public _apiService: HttpServiceService,public router:Router,public ActivatedRoute:ActivatedRoute) { 
+  constructor(public formbuilder: FormBuilder,public _apiService: HttpServiceService,public router:Router,public ActivatedRoute:ActivatedRoute,public meta:MetaService) { 
+
+    this.meta.setTitle('Virus Medical Face Mask backend | Add Edit Admin User Management');
+    this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+    this.meta.setTag('twitter:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+
+    this.meta.setTag('og:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+    this.meta.setTag('twitter:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+
+    this.meta.setTag('og:title', 'Virus Medical Face Mask backend | Add Edit Admin User Management');
+    this.meta.setTag('twitter:title', 'Virus Medical Face Mask backend | Add Edit Admin User Management');
+    this.meta.setTag('og:type', 'website');
+    this.meta.setTag('og:url','https://mask-landingpage-backend.influxiq.com/');    
+    this.meta.setTag('og:image', '../../assets/images/logo-fb.jpg');
+    this.meta.setTag('twitter:image', '../../assets/images/logo-twitter.jpg');
+
+
     //console.log(this.ActivatedRoute.snapshot.params.id);
     if(this.ActivatedRoute.snapshot.params.id){
       let data:any={
