@@ -51,12 +51,12 @@
             
             <mat-label>Contents </mat-label>
             <span class="contentsblock"> 
-                <table mat-table [dataSource]="contentsdataSource" class="mat-elevation-z8">  
+                <table mat-table [dataSource]="orderData" class="mat-elevation-z8">  
                     <!-- Product Code column-->
                     <ng-container matColumnDef="productcode">
-                        <th mat-header-cell *matHeaderCellDef> Product Code </th>
+                        <th mat-header-cell *matHeaderCellDef> Transaction Type </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
-                        <td mat-cell *matCellDef="let element"> {{element.productcode}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.transactiontype}} </td>
                          <td mat-footer-cell *matFooterCellDef> </td>
                     </ng-container>
 
@@ -64,7 +64,7 @@
                     <ng-container matColumnDef="product">
                         <th mat-header-cell *matHeaderCellDef> Product </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
-                        <td mat-cell *matCellDef="let element"> {{element.product}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.product_name}} </td>
                          <td mat-footer-cell *matFooterCellDef> </td>
                     </ng-container>
 
@@ -72,15 +72,15 @@
                     <ng-container matColumnDef="qty">
                         <th mat-header-cell *matHeaderCellDef> QTY </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
-                        <td mat-cell *matCellDef="let element"> {{element.qty}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.product_qty}} </td>
                         <td mat-footer-cell *matFooterCellDef> </td>
                     </ng-container>
 
                    <!-- Unit Price column-->
                     <ng-container matColumnDef="unitprice">
-                        <th mat-header-cell *matHeaderCellDef> Unit Price </th>
+                        <th mat-header-cell *matHeaderCellDef> Price </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
-                        <td mat-cell *matCellDef="let element"> {{element.unitprice}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.product_price}} </td>
                         <td mat-footer-cell *matFooterCellDef> Total </td>
                     </ng-container>
 
@@ -88,8 +88,8 @@
                     <ng-container matColumnDef="total">
                         <th mat-header-cell *matHeaderCellDef> Total </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
-                        <td mat-cell *matCellDef="let element"> {{element.total}} </td>
-                         <td mat-footer-cell *matFooterCellDef> 200 </td>
+                        <td mat-cell *matCellDef="let element"> {{element.product_total}} </td>
+                         <td mat-footer-cell *matFooterCellDef>{{orderData[0].product_total}} </td>
                     </ng-container>
                     
                     <!-- empty footer column-->
@@ -105,7 +105,7 @@
                     </ng-container>
                     <ng-container matColumnDef="subtotalAmount">                           
                         <td mat-footer-cell *matFooterCellDef>
-                            <span class="mobile-value">200</span>
+                            <span class="mobile-value">{{orderData[0].product_subtotal}}</span>
                         </td>                            
                     </ng-container>
 
@@ -117,19 +117,19 @@
                     </ng-container>
                     <ng-container matColumnDef="shippingandhandlingAmount">                           
                         <td mat-footer-cell *matFooterCellDef>
-                            <span class="mobile-value">0</span>
+                            <span class="mobile-value">{{orderData[0].shipping_charge}}</span>
                         </td>                            
                     </ng-container>
 
                     <!-- tax column -->
                     <ng-container matColumnDef="taxTitle">  
                         <td mat-footer-cell *matFooterCellDef>
-                            <span class="mobile-label">shipping and handling</span>
+                            <span class="mobile-label">Tax</span>
                         </td>                            
                     </ng-container>                    
                     <ng-container matColumnDef="taxAmount">                           
                         <td mat-footer-cell *matFooterCellDef>
-                            <span class="mobile-value">0</span>
+                            <span class="mobile-value">{{orderData[0].sale_tax}}</span>
                         </td>                            
                     </ng-container>
 
@@ -144,59 +144,59 @@
                 </table>
                 <span class="refundselected"><button class="singleButton btnblue" mat-raised-button>Refund Selected</button></span>
             </span>
-            <mat-label>Billing Profile </mat-label>
+            <!-- <mat-label>Billing Profile </mat-label>
             <mat-form-field >
                 <input matInput placeholder="Billing Profile" [formControl]="orderEditform.controls['billingprofile']">
                 <mat-error *ngIf="orderEditform.controls['billingprofile'].touched && !orderEditform.controls['billingprofile'].valid && orderEditform.controls['billingprofile'].errors.required">Billing profile field can not be blank</mat-error>
-            </mat-form-field>
+            </mat-form-field> -->
 
             <span class="addressblock"> 
                 <span class="addressingle">     
                     <mat-label>Billing Address </mat-label>
                     <mat-list>
-                        <mat-list-item> <span>First Name</span> Test </mat-list-item>
-                        <mat-list-item> <span>Last Name</span> Test </mat-list-item>
-                        <mat-list-item> <span>Company</span>  </mat-list-item>
-                        <mat-list-item> <span>Address Line 1</span>  </mat-list-item>
-                        <mat-list-item> <span>Address Line 2</span>  </mat-list-item>
-                        <mat-list-item> <span>City</span>  </mat-list-item>
-                        <mat-list-item> <span>Region</span>  </mat-list-item>
-                        <mat-list-item> <span>Country</span>  </mat-list-item>
-                        <mat-list-item> <span>Postal Code</span>  </mat-list-item>
-                        <mat-list-item> <span>Email</span>  </mat-list-item>
-                        <mat-list-item> <span>Phone</span>  </mat-list-item>
-                        <mat-list-item> <span>District</span>  </mat-list-item>
+                        <mat-list-item> <span>Billing Name</span>{{orderData[0].billing_name}} </mat-list-item>
+                        <!-- <mat-list-item> <span>Last Name</span> Test </mat-list-item> -->
+                        <!-- <mat-list-item> <span>Company</span>  </mat-list-item> -->
+                        <mat-list-item>Address<span></span>  {{orderData[0].billing_address}}</mat-list-item>
+                        <!-- <mat-list-item> <span>Address Line 2</span>  </mat-list-item> -->
+                        <mat-list-item> <span>City</span> {{orderData[0].billing_city}} </mat-list-item>
+                        <mat-list-item> <span>State</span> {{orderData[0].billing_state}} </mat-list-item>
+                        <mat-list-item> <span>Country</span> {{orderData[0].billing_country}} </mat-list-item>
+                        <mat-list-item> <span>Postal Code</span>  {{orderData[0].billing_postal}}</mat-list-item>
+                        <!-- <mat-list-item> <span>Email</span></mat-list-item> -->
+                        <mat-list-item> <span>Phone</span> {{orderData[0].billing_phone}} </mat-list-item>
+                        <!-- <mat-list-item> <span>District</span>  </mat-list-item> -->
                     </mat-list>
                 </span>
                 <span class="addressingle"> 
                     <mat-label>Shipping Address </mat-label>
                     <mat-list>
-                        <mat-list-item> <span>First Name</span> Test </mat-list-item>
-                        <mat-list-item> <span>Last Name</span> Test </mat-list-item>
-                        <mat-list-item> <span>Company</span>  </mat-list-item>
-                        <mat-list-item> <span>Address Line 1</span>  </mat-list-item>
-                        <mat-list-item> <span>Address Line 2</span>  </mat-list-item>
-                        <mat-list-item> <span>City</span>  </mat-list-item>
-                        <mat-list-item> <span>Region</span>  </mat-list-item>
-                        <mat-list-item> <span>Country</span>  </mat-list-item>
-                        <mat-list-item> <span>Postal Code</span>  </mat-list-item>
-                        <mat-list-item> <span>Address Key</span>  </mat-list-item>
-                        <mat-list-item> <span>Shipping Notes</span>  </mat-list-item>
-                        <mat-list-item> <span>Phone</span>  </mat-list-item>
-                        <mat-list-item> <span>District</span>  </mat-list-item>
+                        <mat-list-item> <span>Shipping Name</span>{{orderData[0].shipping_name}} </mat-list-item>
+                        <!-- <mat-list-item> <span>Last Name</span> Test </mat-list-item> -->
+                        <!-- <mat-list-item> <span>Company</span>  </mat-list-item> -->
+                        <mat-list-item> <span>Address</span>  {{orderData[0].shipping_address}}</mat-list-item>
+                        <!-- <mat-list-item> <span>Address Line 2</span>  </mat-list-item> -->
+                        <mat-list-item> <span>City</span>{{orderData[0].shipping_city}}  </mat-list-item>
+                        <mat-list-item> <span>State</span> {{orderData[0].shipping_state}} </mat-list-item>
+                        <mat-list-item> <span>Country</span>{{orderData[0].shipping_country}}  </mat-list-item>
+                        <mat-list-item> <span>Postal Code</span> {{orderData[0].shipping_postal}} </mat-list-item>
+                        <!-- <mat-list-item> <span>Address Key</span>  </mat-list-item> -->
+                        <!-- <mat-list-item> <span>Shipping Notes</span>  </mat-list-item> -->
+                        <mat-list-item> <span>Phone</span>  {{orderData[0].shipping_phone}}</mat-list-item>
+                        <!-- <mat-list-item> <span>District</span>  </mat-list-item> -->
                     </mat-list>
                 </span>
                 <span class="addressingle"> 
                     <mat-label>Card Information</mat-label>
                     <mat-list>
-                        <mat-list-item> <span>Card Number</span> ************1111 </mat-list-item>
-                        <mat-list-item> <span>Card Exp Mo</span> 01/2021  </mat-list-item>
-                        <mat-list-item> <span>Card Type</span> amx </mat-list-item>
-                        <mat-list-item> <span>Card Name</span>  </mat-list-item>
+                        <mat-list-item> <span>Card Number</span> ************{{orderData[0].card_cc}} </mat-list-item>
+                        <!-- <mat-list-item> <span>Card Exp Mo</span> 01/2021  </mat-list-item> -->
+                        <mat-list-item> <span>Card Type</span> {{orderData[0].card_type}} </mat-list-item>
+                        <!-- <mat-list-item> <span>Card Name</span>  </mat-list-item>
                         <mat-list-item> <span>Currency Code</span>  </mat-list-item>
                         <mat-list-item> <span>Card Phone</span>  </mat-list-item>
                         <mat-list-item> <span>Anxpro Username</span>  </mat-list-item>
-                        <mat-list-item> <span>Anxpro Password</span>  </mat-list-item>
+                        <mat-list-item> <span>Anxpro Password</span>  </mat-list-item> -->
                     </mat-list>
                 </span>
 

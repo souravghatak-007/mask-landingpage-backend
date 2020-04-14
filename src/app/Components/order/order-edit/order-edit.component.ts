@@ -60,7 +60,7 @@ const OrdAssVolume_DATA: OrdAssVolumeElement[] = [
 })
 export class OrderEditComponent implements OnInit {
 
-  displayedcontentsColumns = ['productcode', 'product', 'qty', 'unitprice', 'total'];
+  displayedcontentsColumns = ['productcode','product', 'qty', 'unitprice', 'total'];
   contentsdataSource = ELEMENT_DATA;
 
   transactiondisplayedColumns = ['trid', 'marcntID', 'type', 'datetime', 'approval', 'authorizationsode'];
@@ -75,7 +75,7 @@ export class OrderEditComponent implements OnInit {
 
 
   public orderEditform: FormGroup;
-  public orderData:any;
+  public orderData:any=[];
   public condition:any;
   public hideRequiredControl:any;
 
@@ -103,8 +103,8 @@ export class OrderEditComponent implements OnInit {
       if (params['_id'] != null) {
         this.condition = { id: params._id };
         this.activatedRoute.data.subscribe(resolveData => {
-          this.orderData = resolveData.orderData.res[0];
-          //console.log(this.orderData);
+          this.orderData = resolveData.orderData.res;
+          console.log(this.orderData);
         });
       }
     })
