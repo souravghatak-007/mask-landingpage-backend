@@ -229,6 +229,38 @@ upcoming_UpcomingAutolist_skip: any = ['_id','transactiontype','card_cc','transa
   }
   // user Data section
   fetchUserDashboardData(){
-    
+    let endpoint='getorderlistdata';
+    let endpointc='getorderlistdata-count';
+
+    let dataa:any={
+        "condition":{
+            "limit":8,
+            "skip":0
+        },
+    sort:{
+        "type":'desc',
+        "field":'order_id'
+    },
+    "userid":this.cookieUserallData._id
+ 
+    }
+   
+      this.http.httpViaPost(endpointc, dataa).subscribe((res:any) => {
+        // console.log('in constructor');
+        // console.log(result);
+       // this.date_search_source_count =res.count;
+        console.warn('user order data',res);
+
+    }, error => {
+        console.log('Oooops!');
+    });
+
+    this.http.httpViaPost(endpoint,dataa).subscribe((res:any) => {
+       
+        //this.orderDataList =res.results.res;
+        console.log('user order data count',res);
+    }, error => {
+        console.log('Oooops!');
+    });
   }
 }
