@@ -134,7 +134,7 @@ upcoming_UpcomingAutolist_skip: any = ['_id','transactiontype','card_cc','transa
     if(this.cookieUserallData.type=='admin')
     {
       this.jwttoken=this.cookieService.get('jwtToken');
-      this.meta.setTitle('Admin Dashboard');
+      // this.meta.setTitle('Admin Dashboard');
       this.fetchAdminDashboardData();
     }else{
       this.meta.setTitle('Dashboard');
