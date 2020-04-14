@@ -198,6 +198,7 @@ height: auto;display: flex;align-items: center;flex-wrap: wrap;}
 .listingnewstyle .mat-card .mat-card{padding: 10px 16px 16px !important;text-align: center;border-left: 0 !important;color: #e91e63;text-transform: uppercase;border-right: 0 !important;font-family: var(--main-bold-font);line-height: 24px;}
 .listingnewstyle.userlist td.mat-column-Actions > span span.cursor:nth-child(1) {background-color: #00BCD4!important;display: none;}
 .listingnewstyle.orderlistdashboard td.mat-column-Actions > span span.cursor:nth-child(2) {display: none;}
+.listingnewstyle.myordersdashboard td.mat-column-Actions > span span.cursor:nth-child(2), .listingnewstyle.myordersdashboard td.mat-column-Actions > span span.cursor:nth-child(4) {display: none;}
 
 /* table css extra */
 

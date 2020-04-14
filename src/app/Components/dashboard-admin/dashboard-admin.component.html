@@ -272,13 +272,13 @@
 
           </mat-card>
           <!-- user section html start here -->
-          <h3 *ngIf="cookieUserallData.type=='user'">Welcome {{cookieUserallData.firstname}} {{cookieUserallData.lastname}}</h3>
+          <h2 *ngIf="cookieUserallData.type=='user'">Welcome {{cookieUserallData.firstname}} {{cookieUserallData.lastname}}</h2>
           
           <div class="content_header_wrapper">
             <h2 class="headerSpan" *ngIf="cookieUserallData.type=='user'">My Orders</h2>                     
           </div>
 
-          <div class="listingnewstyle">
+          <div class="listingnewstyle myordersdashboard">
             <lib-listing class="animated" *ngIf="userMyorder!=null && userMyorder.length>0" 
               [datasource]="userMyorder"
               [skip]="myorder_UpcomingAutolist_skip"
