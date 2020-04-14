@@ -34,7 +34,21 @@ export class ForgotPasswordComponent implements OnInit {
   public domainUrl: any = 'https://mask-landingpage-backend.influxiq.com/reset-password';
 
   constructor(public meta: MetaService,public httpServiceService:HttpServiceService) {
-    this.meta.setTitle('Mask - Forget Password');
+
+    this.meta.setTitle('Virus Medical Face Mask backend | Forget Password');
+    this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+    this.meta.setTag('twitter:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+
+    this.meta.setTag('og:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+    this.meta.setTag('twitter:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+
+    this.meta.setTag('og:title', 'Virus Medical Face Mask backend | Forget Password');
+    this.meta.setTag('twitter:title', 'Virus Medical Face Mask backend | Forget Password');
+    this.meta.setTag('og:type', 'website');
+    this.meta.setTag('og:url','https://mask-landingpage-backend.influxiq.com/');    
+    this.meta.setTag('og:image', '../../assets/images/logo-fb.jpg');
+    this.meta.setTag('twitter:image', '../../assets/images/logo-twitter.jpg');
+
   }
 
   ngOnInit() {

@@ -144,7 +144,22 @@ export class UserListingComponent implements OnInit {
 
   constructor(public apiService:ApiService,public router: Router, public route: ActivatedRoute, public _apiService: HttpServiceService,  public cookie: CookieService,
     public meta:MetaService) {
-      this.meta.setTitle('Admin User Management');
+
+      this.meta.setTitle('Virus Medical Face Mask backend | Admin User Management');
+      this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+      this.meta.setTag('twitter:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+  
+      this.meta.setTag('og:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+      this.meta.setTag('twitter:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+  
+      this.meta.setTag('og:title', 'Virus Medical Face Mask backend | Admin User Management');
+      this.meta.setTag('twitter:title', 'Virus Medical Face Mask backend | Admin User Management');
+      this.meta.setTag('og:type', 'website');
+      this.meta.setTag('og:url','https://mask-landingpage-backend.influxiq.com/');    
+      this.meta.setTag('og:image', '../../assets/images/logo-fb.jpg');
+      this.meta.setTag('twitter:image', '../../assets/images/logo-twitter.jpg');
+
+      
       // console.log('custom_link');
       // console.log(this.custom_link);
       this.datasource = '';

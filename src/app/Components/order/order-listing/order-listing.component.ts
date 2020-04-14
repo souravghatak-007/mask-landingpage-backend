@@ -5,6 +5,7 @@ import { matchpwd, nameValidator, phoneValidator } from '../../common/validators
 import { CookieService } from 'ngx-cookie-service';
 import { Router, ActivatedRoute} from '@angular/router'
 import {environment} from '../../../../environments/environment';
+import { MetaService } from '@ngx-meta/core';
 @Component({
   selector: 'app-order-listing',
   templateUrl: './order-listing.component.html',
@@ -118,7 +119,24 @@ sortdata:any={
  
 
 
- constructor(public activatedRoute:ActivatedRoute,public httpService:HttpServiceService,private cookieService: CookieService) {
+ constructor(public activatedRoute:ActivatedRoute,public httpService:HttpServiceService,private cookieService: CookieService,public meta: MetaService) {
+
+
+    this.meta.setTitle('Virus Medical Face Mask backend | Order Listing');
+    this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+    this.meta.setTag('twitter:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
+
+    this.meta.setTag('og:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+    this.meta.setTag('twitter:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
+
+    this.meta.setTag('og:title', 'Virus Medical Face Mask backend | Order Listing');
+    this.meta.setTag('twitter:title', 'Virus Medical Face Mask backend | Order Listing');
+    this.meta.setTag('og:type', 'website');
+    this.meta.setTag('og:url','https://mask-landingpage-backend.influxiq.com/');    
+    this.meta.setTag('og:image', '../../assets/images/logo-fb.jpg');
+    this.meta.setTag('twitter:image', '../../assets/images/logo-twitter.jpg');
+
+
 
      this.jwttoken=this.cookieService.get('jwtToken');
      // console.log( this.jwttoken)
