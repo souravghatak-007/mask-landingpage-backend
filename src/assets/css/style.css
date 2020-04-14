@@ -13,7 +13,7 @@
 .generalcls .singleButton{position:relative!important;font-size:14px!important;text-transform:uppercase!important;border:none!important;padding:6px 10px 10px!important;line-height:18px!important;color:var(--c-t-bg-w)!important;border-radius:0!important;margin:0 2px!important;font-family:'NunitoRegular',sans-serif}
 .generalcls .content_header_wrapper{display:flex;justify-content:space-between;align-items:center}
 .generalcls .myaccountwrapper .content_header_wrapper{display:flex;justify-content:center;align-items:center}
-.generalcls .content_header_wrapper .headerSpan{font-family:'NunitoLight';font-size:24px!important;text-transform:uppercase;color:#535353;margin:0;line-height:32px;margin-bottom:10px}
+.generalcls .content_header_wrapper .headerSpan{font-family:'NunitoLight';font-size:24px!important;text-transform:uppercase;color:#535353;margin:0;line-height:32px;margin-bottom:10px;margin-top: 10px;}
 .generalcls .content_header_wrapper .buttonsetToolbar{width:auto;padding:0;margin-bottom:10px;height:auto!important}
 .generalcls .content_header_wrapper .buttonsetToolbar .mat-raised-button.mat-primary:first-child{margin-left:0}
 .generalcls .content_header_wrapper .buttonsetToolbar .mat-raised-button.mat-primary:last-child{margin-right:0!important}

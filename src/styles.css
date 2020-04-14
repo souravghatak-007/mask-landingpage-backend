@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~animate.css/animate.min.css";
 
 
 @font-face {
@@ -151,6 +152,7 @@ body { margin: 0; font-family: "NunitoRegular"; }
 .mat-column-product_price{min-width: 118px !important;}
 .mat-column-autoship_data{min-width: 118px !important;}
 .mat-column-has_autoship{min-width: 118px !important;}
+.mat-column-shipping_name_search{min-width: 118px !important;}
 .mat-column-order_status{min-width: 118px !important;}
 .mat-column-ordered_date{min-width: 108px !important;}
 .mat-column-transactionid {min-width:146px !important;}

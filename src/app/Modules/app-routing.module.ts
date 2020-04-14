@@ -97,6 +97,11 @@ const routes: Routes = [
   {
     path: 'admin/order/list', component: OrderListingComponent, canActivate: [AuthService]
   },
+
+  // {
+  //   path: 'admin/autoshipmanagement/list', component: OrderListingComponent, canActivate: [AuthService]
+  // },
+
   {
     path: 'user/order/list', component: OrderListingComponent,
     resolve: { orderlist: ResolveService },
