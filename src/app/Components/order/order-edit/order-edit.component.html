@@ -11,25 +11,28 @@
           <span class="formspan">
           <mat-card-content class="example-container">
             <form class="formcls" novalidate [formGroup]="orderEditform">   
-            <mat-label>User</mat-label>
-            <mat-form-field >
+            <mat-label>Name</mat-label>
+            {{orderData[0].user_info.firstname}}{{orderData[0].user_info.lastname}}
+            <!-- <mat-form-field >
                 <input matInput placeholder="User" [formControl]="orderEditform.controls['username']">
                 <mat-error *ngIf="orderEditform.controls['username'].touched && !orderEditform.controls['username'].valid && orderEditform.controls['username'].errors.required">User name field can not be blank</mat-error>
-            </mat-form-field>
+            </mat-form-field> -->
             <mat-label>Order Id</mat-label>
-            <mat-form-field >
+            OD{{orderData[0]._id}}
+            <!-- <mat-form-field >
                 <input matInput placeholder="Order Id" [formControl]="orderEditform.controls['orderid']">
                 <mat-error *ngIf="orderEditform.controls['orderid'].touched && !orderEditform.controls['orderid'].valid && orderEditform.controls['orderid'].errors.required">Order ID field can not be blank</mat-error>
-            </mat-form-field>
+            </mat-form-field> -->
 
             <mat-label>Order Status</mat-label>
+            {{orderData[0].order_status}}
+            <!-- <mat-form-field >
+               
+            <input matInput placeholder="Order Status" [formControl]="orderEditform.controls['orderstatus']">
+         <mat-error *ngIf="orderEditform.controls['orderstatus'].touched && !orderEditform.controls['orderstatus'].valid && orderEditform.controls['orderstatus'].errors.required">Order status field can not be blank</mat-error> 
+            </mat-form-field> -->
 
-            <mat-form-field >
-                <input matInput placeholder="Order Status" [formControl]="orderEditform.controls['orderstatus']">
-                <mat-error *ngIf="orderEditform.controls['orderstatus'].touched && !orderEditform.controls['orderstatus'].valid && orderEditform.controls['orderstatus'].errors.required">Order status field can not be blank</mat-error>
-            </mat-form-field>
-
-            <mat-label>PAYMENT STATUS </mat-label>
+            <!-- <mat-label>PAYMENT STATUS </mat-label> -->
             <span class="paymentstatuswrapper">
                 <p>Authorized & Captured.</p>
                 <mat-list class="paymentstatus">

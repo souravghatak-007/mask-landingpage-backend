@@ -131,14 +131,14 @@ export class OrderEditComponent implements OnInit {
       total:[null, Validators.required]
     })
     this.orderEditform.patchValue({
-      orderid:this.orderData._id,
-      productname:this.orderData.product_name,
-      productquantity:this.orderData.product_qty,
-      productprice:this.orderData.product_price,
-      subtotal:this.orderData.product_subtotal,
-      shipping:this.orderData.shipping_charge,
-      tax:this.orderData.sale_tax,
-      total:this.orderData.product_total
+      orderid:this.orderData[0]._id,
+      productname:this.orderData[0].product_name,
+      productquantity:this.orderData[0].product_qty,
+      productprice:this.orderData[0].product_price,
+      subtotal:this.orderData[0].product_subtotal,
+      shipping:this.orderData[0].shipping_charge,
+      tax:this.orderData[0].sale_tax,
+      total:this.orderData[0].product_total
 })
   }
 
