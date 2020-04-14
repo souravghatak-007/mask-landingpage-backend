@@ -99,7 +99,7 @@
                     <ng-container matColumnDef="total">
                         <th mat-header-cell *matHeaderCellDef> Total </th>
                         <td mat-cell><mat-checkbox [formControl]="hideRequiredControl">Hide required marker</mat-checkbox></td>
-                        <td mat-cell *matCellDef="let element"> {{element.product_total}} </td>
+                        <td mat-cell *matCellDef="let element" data-label="Total"> {{element.product_total}} </td>
                          <td mat-footer-cell *matFooterCellDef data-label="Total">{{orderData[0].product_total}} </td>
                     </ng-container>
                     

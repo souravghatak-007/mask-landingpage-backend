@@ -549,18 +549,10 @@ table.mat-table {width: 100%;}
 .countdiv .mat-card {width: 49%;}
 .contentsblock .mat-table .mat-cell, .contentsblock .mat-table .mat-footer-cell{width: 96%;padding: 7px 10px !important;margin: 0 auto;}
 .contentsblock .mat-table .mat-cell:first-child, .contentsblock .mat-table .mat-footer-cell:first-child{width: 96%;padding: 7px 10px !important;margin: 0 auto !important;}
-
-.contentsblock .mat-table .mat-footer-cell::before {
-  content: attr(data-label);
-  float: left;
-  text-transform: uppercase;
-  font-weight: 400;
-  font-size: .85em;
-  text-align: left;
-  width: 48%;
-}
-.mat-column-emptyFooter{display: none !important;}
-
+.contentsblock .mat-table .mat-footer-cell::before{content:attr(data-label)!important;float:left!important;text-transform:uppercase!important;font-weight:400!important;font-size:.85em!important;text-align:left!important;width:48%!important}
+.contentsblock .mat-cell::before{content:attr(data-label)!important;float:left!important;text-transform:uppercase!important;font-weight:400!important;font-size:.85em!important;text-align:left!important;width:48%!important}
+.mat-column-emptyFooter,.mat-column-subtotalTitle,.mat-column-shippingandhandlingTitle,.mat-column-taxTitle,.mat-column-unitprice{display:none!important}
+.mat-footer-cell.mat-column-qty,.mat-footer-cell.mat-column-product,.mat-footer-cell.mat-column-productcode{display:none!important}
 
 }
 
