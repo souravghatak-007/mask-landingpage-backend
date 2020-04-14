@@ -52,7 +52,7 @@
             <a [routerLink]="['user/order/list']">my Order</a>
           </mat-list-item>
           <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
-            <a><span class="material-icons">account_circle</span> My Account</a>
+            <a [routerLink]="['/user/account-settings']" ><span class="material-icons">account_circle</span> My Account</a>
           </mat-list-item>
           <mat-list-item fxFlex class="nav-item" routerLinkActive="activemenu">
             <a (click)="logout()"><span class="material-icons">exit_to_app</span> Logout</a>

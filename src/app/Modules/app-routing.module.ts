@@ -17,6 +17,7 @@ import { ProductComponent } from '../Components/product/product.component';
 import { SuccessComponent } from '../Components/success/success.component';
 import {OrderEditComponent} from '../Components/order/order-edit/order-edit.component';
 import {AccountSettingsComponent} from '../Components/account-settings/account-settings.component'
+import { UserAccountSettingsComponent } from '../Components/user-account-settings/user-account-settings.component';
 
 
 
@@ -129,6 +130,7 @@ const routes: Routes = [
   {
     path: 'account-settings',component : AccountSettingsComponent,canActivate: [AuthService]
   },
+  {path:'user/account-settings',component:UserAccountSettingsComponent},
   {path:'**',component:LoginComponent}
 ];
 @NgModule({
