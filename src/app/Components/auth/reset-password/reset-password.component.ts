@@ -16,6 +16,13 @@ export class ResetPasswordComponent implements OnInit {
     endpoint:'resetpassword',
     source:'users'
   };
+  public loginRouteingUrl: any = {
+    // "path":"login",
+    "path":"",
+    "buttonName":"Login",
+    "customLink":"/login",
+    "customURl":""
+  };
   constructor(public httpServiceService:HttpServiceService,public meta: MetaService) {
 
     this.meta.setTitle('Virus Medical Face Mask backend | Reset Password');

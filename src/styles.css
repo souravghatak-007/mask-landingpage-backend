@@ -202,3 +202,11 @@ app-order-listing .mat-column-Actions span span.cursor:nth-child(2){display:none
 .listingnewstyle tr:nth-child(even) td.mat-column-select{position: inherit;left: 0;background:var(--c-t-bg-w) !important;}
 .mat-column-select {padding: 5px 5px !important;}
 }
+
+@media screen and (max-width: 767px) {
+  .files-view .mat-card {width: 49%!important;}
+}
+
+@media screen and (max-width: 560px) {
+.files-view .mat-card {margin: 0px auto 10px!important;width: 100%!important;}
+}

@@ -9,7 +9,7 @@ import { MetaService } from '@ngx-meta/core';
 })
 export class ForgotPasswordComponent implements OnInit {
   public logo: any = './assets/images/logo.png';
-  public fromTitle: any = 'FORGOTTEN PASSWORD'
+  public fromTitle: any = 'FORGOT PASSWORD'
     // public signUpRouteingUrl: any = 'sign-up';
   public serverUrl:any =this.httpServiceService.baseUrl;
   public addEndpoint: any = {
