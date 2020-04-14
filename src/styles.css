@@ -186,6 +186,7 @@ app-order-listing .mat-column-Actions span span.cursor:nth-child(2){display:none
 @media screen and (max-width: 1199px) {
   .listingnewstyle mat-toolbar-row.searchbar .mat-form-field {min-width: 257px;}
   .listingnewstyle mat-toolbar-row.searchbar span {flex: 1 1 100%;flex-wrap: wrap;display: inline-flex;}
+  .topmenulist .navigation-left .mat-list-item .mat-list-item-content{justify-content: center;padding: 0 0!important;height: 100%;}
 }
 
 
@@ -199,6 +200,5 @@ app-order-listing .mat-column-Actions span span.cursor:nth-child(2){display:none
 .listingnewstyle th.mat-header-cell.mat-column-select{display: none;}
 .listingnewstyle td.mat-column-select{position: inherit;left: 0;background: #f2f2f2 !important;}
 .listingnewstyle tr:nth-child(even) td.mat-column-select{position: inherit;left: 0;background:var(--c-t-bg-w) !important;}
-.topmenulist .navigation-left .mat-list-item .mat-list-item-content{justify-content: center;padding: 0 0!important;height: 100%;}
 .mat-column-select {padding: 5px 5px !important;}
 }

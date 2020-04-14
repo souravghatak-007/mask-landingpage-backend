@@ -5,6 +5,7 @@
 .admcls .header .toolbar-row .logo{width:auto;background:#222f3d;padding:16px 20px;display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center}
 .admcls .header .toolbar-row .logo img{max-width:100%}
 .admcls .header .toolbar-row .logo h2 span{margin:0 3px}
+.admcls .header .toolbar-row .logo h2 a{text-decoration: none;}
 .topmenulist .navigation-left a,.topmenulist .navigation-left a:hover{padding:7px 14px}
 .admcls .header .toolbar-row .topmenuicon{display:none;width:36px;background:#f9f9f9;padding:22px 8px;display:flex;align-items:center;box-shadow:7px 0 24px -11px rgba(50,50,50,0.44);flex-wrap:wrap;-webkit-flex-wrap:wrap;justify-content:center}
 .admcls .header .toolbar-row .topmenuicon.active .leftSidenav{left:0}
@@ -36,7 +37,7 @@
 .topmenulist .navigation-left a span{margin-right: 5px;}
 
 
-@media screen and (max-width:991px) {
+@media screen and (max-width:1199px) {
 .topmenulist{ position: initial;}
 .admcls .header .toolbar-row{padding:0!important;overflow:hidden;height:auto;flex-wrap:wrap}
 .admcls .header .toolbar-row .logo{width:150px;display:flex;flex:1 1 100%;justify-content:center;padding:10px}
@@ -44,12 +45,17 @@
 .topmenulist .navigation-left {flex-wrap: wrap;align-items: stretch;justify-content: center;width: 100%;}
 .topmenulist .navigation-left .mat-list-item {width: 22%;height: auto;padding: 8px 12px;border: 1px solid #363e48;margin-bottom: 0;}
 .topmenulist .navigation-left a, .topmenulist .navigation-left a:hover {padding: 0px;height: auto;}
+.topmenulist .navigation-left .mat-list-item .mat-list-item-content {justify-content: center;padding: 0 0!important;}
 }
 
 @media screen and (max-width:768px) {
 .topmenulist .navigation-left .mat-list-item {width: 26.33%;}
 }
 
-@media screen and (max-width:540px) {
+@media screen and (max-width:640px) {
 .topmenulist .navigation-left .mat-list-item {width: 42.33%;}
 }
+
+@media screen and (max-width:480px) {
+    .topmenulist .navigation-left .mat-list-item {width: 100%;}
+    }
