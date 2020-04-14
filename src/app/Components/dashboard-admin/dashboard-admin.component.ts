@@ -136,7 +136,7 @@ myorder_date_search_endpoint: any='datalist';
 myorder_UpcomingAutolist_detail_skip:any=['_id','user_info','shipping_name_search','ordered_on','autoship_data']
 myorder_search_settings:any={
   
-  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"billing_date_timestamp"}],   // this is use for  date search
+  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"ordered_on"}],   // this is use for  date search
 
   // selectsearch:[{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
 

@@ -15,6 +15,7 @@ export class UserAccountSettingsComponent implements OnInit {
   public countrylistarray: any = [];
   public statelistarray: any = [];
   public changePasswordFormGroup: FormGroup;
+  isPasswordVisible: Boolean = true;
 
   constructor(public fb: FormBuilder, public apiService: ApiService, public cook: CookieService,public snackBar :MatSnackBar) {
     let allcookies: any;
