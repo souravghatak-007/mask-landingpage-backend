@@ -274,6 +274,34 @@
           <!-- user section html start here -->
           <h3 *ngIf="cookieUserallData.type=='user'">Welcome {{cookieUserallData.firstname}} {{cookieUserallData.lastname}}</h3>
           
+          <div class="content_header_wrapper">
+            <h2 class="headerSpan" *ngIf="cookieUserallData.type=='user'">My Orders</h2>                     
+          </div>
+
+          <div class="listingnewstyle">
+            <lib-listing class="animated" *ngIf="userMyorder!=null && userMyorder.length>0" 
+              [datasource]="userMyorder"
+              [skip]="myorder_UpcomingAutolist_skip"
+              [modify_header_array]="myorder_modify_header_array"
+              [apiurl]="apiurl"
+              [updateendpoint]="updateendpoint"
+              [deleteendpoint]="deleteEndpoint"
+              [date_search_source]="date_search_source"
+              [date_search_endpoint]="date_search_endpoint"
+              [sourcedata]="tablename"
+              [detail_datatype]="orderDataList_detail_datatype"
+              [editroute]="editroute"
+              [statusarr]="upcoming_orderStatus"
+              [detail_skip_array]="upcoming_UpcomingAutolist_detail_skip"
+              [url]="custom_link"
+              [jwttoken]="jwttoken"
+              [search_settings]="upcoming_search_settings"
+              [searchendpoint]="searchendpoint"
+              [sortdata]="myorder_sortdata"
+              [datacollection]="my_datacollection"
+              [date_search_source_count]="myorder_search_source_count"
+              [limitcond]="my_limitcond"></lib-listing>
+              </div>
       </div>
     </div>    
 </div>
