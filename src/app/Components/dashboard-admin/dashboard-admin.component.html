@@ -5,12 +5,23 @@
     </div> -->
     <mat-card class="breadcrumbs-top">
       <h3 class="page-header-title" *ngIf="cookieUserallData.type=='admin'">Welcome <span>{{cookieUserallData.firstname}} {{cookieUserallData.lastname}}</span></h3>
+      <h3 class="page-header-title" *ngIf="cookieUserallData.type=='user'">Welcome <span>{{cookieUserallData.firstname}} {{cookieUserallData.lastname}}</span></h3>
       <mat-card-content class="breadcrumb-wrapper" *ngIf="cookieUserallData.type=='admin'">
         <mat-list class="breadcrumb">
           <mat-list-item class="breadcrumb-item"><span class="material-icons">home</span></mat-list-item>
         </mat-list>
       </mat-card-content>
+      <mat-card-content class="breadcrumb-wrapper" *ngIf="cookieUserallData.type=='user'">
+        <mat-list class="breadcrumb">
+          <mat-list-item class="breadcrumb-item"><span class="material-icons">home</span></mat-list-item>
+        </mat-list>
+      </mat-card-content>
     </mat-card>
+
+
+    
+
+
     <div id="maincontent">
       <div class="main-content-wrap generalcls dashboardcountersection">
         
@@ -281,7 +292,7 @@
 
           </mat-card>
           <!-- user section html start here -->
-          <h2 *ngIf="cookieUserallData.type=='user'">Welcome {{cookieUserallData.firstname}} {{cookieUserallData.lastname}}</h2>
+          
           
           <div class="content_header_wrapper">
             <h2 class="headerSpan" *ngIf="cookieUserallData.type=='user'">My Orders</h2>                     
