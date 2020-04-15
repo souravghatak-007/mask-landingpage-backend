@@ -146,7 +146,8 @@ refundOrder(){
 }
   openDialog() {
     const dialogRef = this.dialog.open(RefundDailog, {
-      width: '250px',
+      panelClass: 'cdk-overlay-pane custom-modalbox'
+      // width: '250px',
       // data: {}
     });
 
