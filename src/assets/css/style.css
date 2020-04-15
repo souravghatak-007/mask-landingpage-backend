@@ -392,7 +392,7 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
 .AddEditBlog ck-editor {margin-bottom: 15px !important;display: block;}
 
 .paymentstatuswrapper{margin-bottom: 16px;display: block;}
-.paymentstatus{display: flex;align-items: center;justify-content: flex-start;}
+.paymentstatus{display: flex !important;align-items: center;justify-content: flex-start;}
 .paymentstatus .mat-list-item {display: flex!important;align-items: stretch!important;flex-wrap: wrap!important;justify-content: flex-start!important;height: auto !important;margin-bottom: 8px;margin-right: 30px;}
 .paymentstatus .mat-list-item:last-child{margin-bottom: 0px;}
 .paymentstatus .mat-list-item .mat-list-item-content{width: 100%;padding: 0 !important;}
