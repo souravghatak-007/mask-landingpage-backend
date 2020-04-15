@@ -7,7 +7,7 @@ import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
-
+import {MatSnackBar} from '@angular/material/snack-bar';
 export interface DialogData {
  alldata:any;
 }
@@ -57,6 +57,7 @@ const OrdAssVolume_DATA: OrdAssVolumeElement[] = [
   styleUrls: ['./order-edit.component.css']
 })
 export class OrderEditComponent implements OnInit {
+  public cookieUserallData:any=JSON.parse(this.cookieService.get('user_details'))
 
   displayedcontentsColumns = ['productcode','product', 'qty', 'unitprice', 'total'];
 
@@ -79,7 +80,7 @@ export class OrderEditComponent implements OnInit {
 
   public header_text:any="Add Order";
 
-  constructor(public activatedRoute:ActivatedRoute,public fb: FormBuilder,public meta: MetaService,public dialog: MatDialog) { 
+  constructor(public matSnackBar:MatSnackBar,public cookieService:CookieService,public activatedRoute:ActivatedRoute,public fb: FormBuilder,public meta: MetaService,public dialog: MatDialog) { 
 
     this.meta.setTitle('Virus Medical Face Mask backend | Edit Order');
     this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
@@ -134,6 +135,15 @@ export class OrderEditComponent implements OnInit {
 
   ngOnInit() {
   }
+  /**Void Trensection */
+  voidtransaction(){
+    console.warn("Void Transection here");
+  }
+/**refund function */
+refundOrder(){
+  console.warn("Refund Order");
+  this.openDialog();
+}
   openDialog() {
     const dialogRef = this.dialog.open(RefundDailog, {
       width: '250px',
@@ -153,7 +163,7 @@ export class OrderEditComponent implements OnInit {
   templateUrl: 'refund.html',
 })
 export class RefundDailog {
-
+public checked = false;
   constructor(
     public dialogRef: MatDialogRef<RefundDailog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {}

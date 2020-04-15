@@ -3,16 +3,17 @@
     <!-- <div id="beadcamb">
 
     </div> -->
-    <mat-card class="breadcrumbs-top">
+    <mat-card class="breadcrumbs-top" *ngIf="cookieUserallData.type=='admin'">
         <h3 class="page-header-title">Welcome <span>Sourav Ghatak</span></h3>
         <mat-card-content class="breadcrumb-wrapper">
           <mat-list class="breadcrumb">
             <mat-list-item class="breadcrumb-item"><a [routerLink]="['/dashboard']"><span class="material-icons">home</span></a></mat-list-item>
             <mat-list-item class="breadcrumb-item"><a [routerLink]="['/admin/order/list']">Order List</a></mat-list-item>
-            <mat-list-item class="breadcrumb-item active">{{header_text}}</mat-list-item>
+            <!-- <mat-list-item class="breadcrumb-item active">{{header_text}}</mat-list-item> -->
           </mat-list>
         </mat-card-content>
       </mat-card>
+
     <div id="maincontent">
       <div class="main-content-wrap">
         <mat-card class="generalcls" style="padding: 0 !important;">
@@ -53,8 +54,11 @@
             <!-- <mat-label>PAYMENT STATUS </mat-label> -->
             <span class="paymentstatuswrapper">
                 <mat-list class="paymentstatus">
-                    <mat-list-item> <span>Void</span> <button class="singleButton btnred" mat-raised-button>Void Order</button> </mat-list-item>
-                    <mat-list-item> <span>Refund</span> <button class="singleButton btnblue" mat-raised-button>Refund Order</button> </mat-list-item>
+                    <mat-list-item> <span>Void</span> <button type="button" class="singleButton btnred" mat-raised-button (click)="voidtransaction();">Void Order</button> </mat-list-item>
+
+                    <mat-list-item> <span>Refund</span> <button class="singleButton btnblue" mat-raised-button type="button" (click)="refundOrder();">Refund Order</button> </mat-list-item>
+
+                    <mat-list-item> <span>Resend Order Receipt</span> <button class="singleButton btnblue" mat-raised-button type="button">Send</button> </mat-list-item>
                 </mat-list>            
             </span>
 
