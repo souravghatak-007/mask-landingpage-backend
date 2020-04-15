@@ -159,7 +159,7 @@
            <!-- Total Transaction Amount of Test Orders -->
            <mat-card class="box-shadow oas cdmember" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">              
-              <mat-card-subtitle>{{adminCount.transaction_total_test}}</mat-card-subtitle>
+              <mat-card-subtitle>${{adminCount.transaction_total_test}}</mat-card-subtitle>
               <mat-card-title>Total Transaction Amount of Test Orders</mat-card-title>
               <span class="detailbtn">
                 <button class="singleButton">View Detail</button>
@@ -207,7 +207,7 @@
           <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Total Transaction Amount of Live Orders </mat-card-title>
-            <mat-card-subtitle>{{adminCount.transaction_total_live}}</mat-card-subtitle>
+            <mat-card-subtitle>${{adminCount.transaction_total_live}}</mat-card-subtitle>
             </span>
             <span class="icon">
               <i class="material-icons">card_membership</i>

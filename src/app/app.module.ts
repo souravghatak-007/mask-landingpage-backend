@@ -41,7 +41,7 @@ import { UserAddEditComponent } from './Components/user/user-add-edit/user-add-e
 import { OrderListingComponent } from './Components/order/order-listing/order-listing.component';
 import  {ProductComponent} from './Components/product/product.component';
 import {SuccessComponent} from './Components/success/success.component';
-import { OrderEditComponent } from './Components/order/order-edit/order-edit.component';
+import { OrderEditComponent ,RefundDailog} from './Components/order/order-edit/order-edit.component';
 import { AccountSettingsComponent } from './Components/account-settings/account-settings.component';
 import { UserAccountSettingsComponent } from './Components/user-account-settings/user-account-settings.component';
 
@@ -70,7 +70,8 @@ import { UserAccountSettingsComponent } from './Components/user-account-settings
     SuccessComponent,
     OrderEditComponent,
     AccountSettingsComponent,
-    UserAccountSettingsComponent
+    UserAccountSettingsComponent,
+    RefundDailog
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -94,7 +95,7 @@ import { UserAccountSettingsComponent } from './Components/user-account-settings
   providers: [CookieService,DatePipe,LoaderService],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
-  entryComponents: [ DialogBoxComponent]
+  entryComponents: [ DialogBoxComponent,RefundDailog]
 })
 export class AppModule {
   constructor(public http: HttpClient, matIconRegistry: MatIconRegistry) {
