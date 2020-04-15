@@ -472,7 +472,8 @@ table.mat-table {width: 100%;}
 
 .countdiv .column4 {display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important}
 .countdiv .column4 .mat-card{width:24%}
-.countdiv .column4 .mat-card .content {width: 60%;}
+.countdiv .column4 .mat-card .content {width: 70%;}
+.countdiv .column4 .mat-card .icon{width: 173px;}
 
 /* .emailModal{width:700px}
 .email_wrapper .mat-card-title{font-family:'NunitoRegular';font-size:30px;color:var(--c-t-bg-w);text-align:center;text-transform:uppercase;background:var(--c-t-primary);padding:10px;margin-bottom:16px}
