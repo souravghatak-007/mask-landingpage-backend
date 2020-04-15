@@ -200,16 +200,49 @@ refundOrder(){
 })
 export class RefundDailog {
 public checked = false;
+public refundamount:any=null;
 public dta:any=[];
   constructor(
     public dialogRef: MatDialogRef<RefundDailog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,public apiService: ApiService,public matSnackBar:MatSnackBar) {
       this.dta=data;
-      console.warn(this.dta.data[0]);
+      //console.warn(this.dta.data[0]);
     }
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  refundFunction(){
+// if(this.refundamount==null && this.checked == true){
+//   console.warn(this.refundamount);
+// }else{
+//   console.warn(this.refundamount);
+// }
+    let data:any={
+      "data": {
+          "order_id":'OD'+this.dta.data[0]._id,
+          "order_amount": this.dta.data[0].product_total,
+          "transactionid": this.dta.data[0].transactionid,
+          "transactiontype": this.dta.data[0].transactiontype
+      }
+  }
+    // console.warn(data);
+    this.apiService.CustomRequest(data,'refund-transaction').subscribe((res:any)=>{
+      //console.log(res);
+      if(res.resc.UAPIResponse.processorResponse=="Approved"){
+        this.matSnackBar.open(res.resc.UAPIResponse.processorResponse, '', {
+          duration: 3000
+        });
+      this.dialogRef.close();
+      }else{
+        this.matSnackBar.open(res.resc.UAPIResponse.statusMessage, '', {
+          duration: 3000
+        });
+      this.dialogRef.close();
+      }
+     
+    });
   }
 
 }
