@@ -140,11 +140,21 @@ export class OrderEditComponent implements OnInit {
   /**Void Trensection */
   voidtransaction(){
     console.warn("Void Transection here");
-    // let data:any={}
-    // this.apiService.CustomRequest(data,'addorupdatedata').subscribe((res:any)=>{
-    //   console.log(res)
-    //
-    // });
+    let data:any={
+      data:{
+      order_amount:this.orderData[0].product_total,
+      transactiontype:this.orderData[0].transactiontype,
+      transactionid:this.orderData[0].transactionid
+      }
+    }
+    
+    this.apiService.CustomRequest(data,'void-transaction').subscribe((res:any)=>{
+      console.log(res.resc.UAPIResponse.processorResponse);
+      this.matSnackBar.open(res.resc.UAPIResponse.processorResponse, '', {
+        duration: 3000
+      });
+    
+    });
   }
 /**refund function */
 refundOrder(){
