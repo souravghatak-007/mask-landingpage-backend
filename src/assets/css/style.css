@@ -653,6 +653,7 @@ table.mat-table {width: 100%;}
 
 
 @media screen and (max-width: 480px) {
+  .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount {flex-wrap: wrap;}
   .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element {width: 92%;}
   .breadcrumbs-top {justify-content: center;padding: 10px 16px 3px 16px !important;flex-wrap: wrap;}
   .generalcls .content_header_wrapper {flex-wrap: wrap;justify-content: center;} 
