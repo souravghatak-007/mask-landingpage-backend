@@ -255,7 +255,7 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
 .myaccount .myaccountwrapper .title_wrapper{font-family:'NunitoRegular';font-size:24px!important;margin-bottom:0!important;background:linear-gradient(45deg,#363636,#08b1e7);text-align:center;padding:14px 18px 18px;color:var(--c-t-bg);text-transform:uppercase}
 .myaccount .singleButton {font-size: 26px!important;line-height: 40px!important;    padding: 6px 30px 10px!important;}
 .myaccount .mat-tab-group.mat-primary .mat-ink-bar, .myaccount .mat-tab-nav-bar.mat-primary .mat-ink-bar {background-color: #56adc9;}
-.singleButton .mat-button-wrapper{margin-right: 0px;}
+.singleButton .mat-button-wrapper{margin-right: 0px !important;}
 /* modal css */
 .success-modal{min-width:450px;max-width:96%;margin:0 auto;width:600px!important}
 .cdk-overlay-pane.commonVideoDialogCls .mat-dialog-container{min-width:450px;max-width:96%;margin:0 auto;width:900px!important}
