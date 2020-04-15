@@ -200,10 +200,12 @@ refundOrder(){
 })
 export class RefundDailog {
 public checked = false;
+public dta:any=[];
   constructor(
     public dialogRef: MatDialogRef<RefundDailog>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
-      console.warn(data);
+      this.dta=data;
+      console.warn(this.dta.data[0]);
     }
 
   onNoClick(): void {
