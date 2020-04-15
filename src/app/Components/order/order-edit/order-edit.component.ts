@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Inject} from '@angular/core';
 import { HttpServiceService } from 'src/app/services/http-service.service';
 import * as moment from 'moment';
 import { from } from 'rxjs';
@@ -8,6 +8,9 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
 
+export interface DialogData {
+ alldata:any;
+}
 
 export interface PeriodicElement {
  
@@ -81,7 +84,7 @@ export class OrderEditComponent implements OnInit {
 
   public header_text:any="Add Order";
 
-  constructor(public activatedRoute:ActivatedRoute,public fb: FormBuilder,public meta: MetaService) { 
+  constructor(public activatedRoute:ActivatedRoute,public fb: FormBuilder,public meta: MetaService,public dialog: MatDialog) { 
 
     this.meta.setTitle('Virus Medical Face Mask backend | Edit Order');
     this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
@@ -135,10 +138,33 @@ export class OrderEditComponent implements OnInit {
 
 
   ngOnInit() {
-
-  
   }
+  openDialog() {
+    const dialogRef = this.dialog.open(RefundDailog, {
+      width: '250px',
+      // data: {}
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
  
+
+}
+//refend Modal
+@Component({
+  selector: 'refund',
+  templateUrl: 'refund.html',
+})
+export class RefundDailog {
+
+  constructor(
+    public dialogRef: MatDialogRef<RefundDailog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
 }
