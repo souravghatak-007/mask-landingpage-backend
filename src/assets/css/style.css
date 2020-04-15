@@ -623,7 +623,7 @@ table.mat-table {width: 100%;}
 .cdk-overlay-pane.custom-modalbox confirmdialog .mat-dialog-content .mat-card .mat-card-header .mat-card-title {font-size: 14px;white-space: normal;word-break: break-word;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck {flex-wrap: wrap;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount {margin-top:5px}
-.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element {margin-top:2px}
+.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element {margin-top:8px}
 }
 
 @media screen and (max-width: 620px) {
