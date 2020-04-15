@@ -308,7 +308,8 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
 .cdk-overlay-pane.custom-modalbox confirmdialog, .cdk-overlay-pane.custom-modalbox refund{display:block;background:#f9f9f9;position:relative;z-index:20;border-radius:0;color:#000;box-shadow:none;position:relative;padding:15px;-moz-box-shadow: inset 0 0 10px #000;-webkit-box-shadow: inset 0 0 5px #000;box-shadow: inset 0 0 5px #000;border: 3px solid var(--c-t-bg-w);}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck {display: flex;align-items: center;justify-content: flex-start;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck mat-checkbox{margin-right: 10px;}
-.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck span .mat-input-element{padding: 10px !important;line-height: 21px !important;border: 1px solid #d9d9d9;}
+.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount{display: flex;align-items: center;justify-content: flex-start;}
+.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element{padding: 10px !important;line-height: 21px !important;border: 1px solid #d9d9d9;}
 
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content{margin:0!important;padding:0!important}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-title{background-color:#151519;padding:15px;margin-bottom:15px;text-align:center;color:var(--c-t-bg-w);font-size:24px}
@@ -621,9 +622,7 @@ table.mat-table {width: 100%;}
 .login_lib_wrapper .example-container button {line-height: 24px;font-size: 22px;}
 .countdiv .mat-card {width: 49%;}
 .cdk-overlay-pane.custom-modalbox confirmdialog .mat-dialog-content .mat-card .mat-card-header .mat-card-title {font-size: 14px;white-space: normal;word-break: break-word;}
-.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck {flex-wrap: wrap;}
-.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount {margin-top:5px}
-.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element {margin-top:8px}
+
 }
 
 @media screen and (max-width: 620px) {
@@ -635,6 +634,12 @@ table.mat-table {width: 100%;}
 .countdiv .mat-card .icon i {font-size: 54px;}
 .AddEditBlog .mat-form-field-flex {align-items: center;flex-wrap: wrap;}
 .addressblock .addressingle {flex: 1 1 100%!important;margin-top: 20px!important;}
+}
+
+@media screen and (max-width: 600px) {
+.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck {flex-wrap: wrap;}
+.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount {margin-top:5px}
+.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element {margin-top:8px}
 }
 @media screen and (max-width: 576px) {
 .profile-area {display: block;text-align: center;}
@@ -648,6 +653,7 @@ table.mat-table {width: 100%;}
 
 
 @media screen and (max-width: 480px) {
+  .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element {width: 92%;}
   .breadcrumbs-top {justify-content: center;padding: 10px 16px 3px 16px !important;flex-wrap: wrap;}
   .generalcls .content_header_wrapper {flex-wrap: wrap;justify-content: center;} 
   .myaccount .mat-tab-labels {display: flex;flex-direction: column;}
