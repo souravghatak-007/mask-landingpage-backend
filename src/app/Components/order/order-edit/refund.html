@@ -1,5 +1,10 @@
-<h3>Refund</h3>
-<mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
-<span *ngIf="checked==true">
-    Refund Amount : <input matInput placeholder="Refund Amount" value="">
-</span>
+
+
+    <h1 class="mat-dialog-title">Refund</h1>
+   
+    <mat-dialog-content class="refundcheck">
+        <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
+        <span class="refundamount" *ngIf="checked==true">
+            Refund Amount : <input matInput placeholder="Refund Amount" value="">
+        </span>
+    </mat-dialog-content>

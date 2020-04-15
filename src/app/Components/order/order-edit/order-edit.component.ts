@@ -163,7 +163,8 @@ refundOrder(){
 }
   openDialog() {
     const dialogRef = this.dialog.open(RefundDailog, {
-      width: '250px',
+      panelClass: 'custom-modalbox'
+      // width: '250px',
       // data: {}
     });
 
