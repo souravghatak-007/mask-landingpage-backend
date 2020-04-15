@@ -146,15 +146,15 @@ myorder_search_settings:any={
 myorder_UpcomingAutolist_skip: any = ['_id','userid','user_info','shipping_name_search','ordered_on','autoship_data']
   constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService,public apiService:ApiService,public meta:MetaService){
 
-    this.meta.setTitle('Virus Medical Face Mask backend | Admin Dashboard');
+    this.meta.setTitle('Virus Medical Face Mask backend | Dashboard');
     this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
     this.meta.setTag('twitter:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
 
     this.meta.setTag('og:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
     this.meta.setTag('twitter:keyword', 'Virus Medical Face Mask backend, Medical Face Mask backend, Medical Face Mask backend for Virus');
 
-    this.meta.setTag('og:title', 'Virus Medical Face Mask backend | Admin Dashboard');
-    this.meta.setTag('twitter:title', 'Virus Medical Face Mask backend | Admin Dashboard');
+    this.meta.setTag('og:title', 'Virus Medical Face Mask backend | Dashboard');
+    this.meta.setTag('twitter:title', 'Virus Medical Face Mask backend | Dashboard');
     this.meta.setTag('og:type', 'website');
     this.meta.setTag('og:url','https://mask-landingpage-backend.influxiq.com/');    
     this.meta.setTag('og:image', '../../assets/images/logo-fb.jpg');
@@ -167,7 +167,7 @@ myorder_UpcomingAutolist_skip: any = ['_id','userid','user_info','shipping_name_
       // this.meta.setTitle('Admin Dashboard');
       this.fetchAdminDashboardData();
     }else{
-      this.meta.setTitle('Dashboard');
+      // this.meta.setTitle('Dashboard');
       this.fetchUserDashboardData();
     }
   }

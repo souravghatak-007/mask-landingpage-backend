@@ -97,7 +97,7 @@ export class OrderEditComponent implements OnInit {
 
 
     this.activatedRoute.params.subscribe(params => {
-      this.header_text = "Edit Order";
+      this.header_text = "Order View";
       if (params['_id'] != null) {
         this.condition = { id: params._id };
         this.activatedRoute.data.subscribe(resolveData => {

@@ -12,6 +12,7 @@ import { MetaService } from '@ngx-meta/core';
 export class UserAddEditComponent implements OnInit {
   @ViewChild(FormGroupDirective, {static: false}) formDirective: FormGroupDirective;
   public myForm: FormGroup;
+  public header_text:any="Add User";
 
   constructor(public formbuilder: FormBuilder,public _apiService: HttpServiceService,public router:Router,public ActivatedRoute:ActivatedRoute,public meta:MetaService) { 
 
@@ -32,6 +33,7 @@ export class UserAddEditComponent implements OnInit {
 
     //console.log(this.ActivatedRoute.snapshot.params.id);
     if(this.ActivatedRoute.snapshot.params.id){
+      this.header_text = "Edit User";
       let data:any={
         "source":"users",
         "condition":{
