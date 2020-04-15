@@ -55,7 +55,7 @@ export class HttpServiceService {
 
   /* Resolve service */
   ResolveViaPost(requestdata: any, endpoint: any): Observable<any> {
-    console.log(endpoint,requestdata);
+    //console.log(endpoint,requestdata);
     /* set common header */
     const returnedTarget = Object.assign(requestdata,{'secret':this.CookieService.get('secret')});
     const httpOptions = {
