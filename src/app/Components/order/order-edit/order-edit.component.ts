@@ -21,12 +21,7 @@ export interface PeriodicElement {
   total: number;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {productcode: 1, product: 'Hydrogen', qty: 1.0079, unitprice: 112, total: 112},
-  {productcode: 1, product: 'Hydrogen', qty: 1.0079, unitprice: 112, total: 112},
-  {productcode: 1, product: 'Hydrogen', qty: 1.0079, unitprice: 112, total: 112},
-  {productcode: 1, product: 'Hydrogen', qty: 1.0079, unitprice: 112, total: 112},
-];
+
 
 
 export interface TrElement { 
@@ -64,7 +59,7 @@ const OrdAssVolume_DATA: OrdAssVolumeElement[] = [
 export class OrderEditComponent implements OnInit {
 
   displayedcontentsColumns = ['productcode','product', 'qty', 'unitprice', 'total'];
-  contentsdataSource = ELEMENT_DATA;
+
 
   transactiondisplayedColumns = ['trid', 'marcntID', 'type', 'datetime', 'approval', 'authorizationsode'];
   transactiondataSource = TR_DATA;
