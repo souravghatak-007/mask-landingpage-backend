@@ -50,15 +50,8 @@ background: -webkit-linear-gradient(270deg,rgba(25,198,254,1) 0%,rgba(2,168,222,
 
 /* bredcram css*/
 #beadcamb {width: 100%;background: #49cced;position: relative;clear: both;display: block;padding: 2px 0;}
-.page-header-title{    font-size: 16px;
-  font-family: var(--main-bold-font);
-  color: #535353;
-  text-transform: uppercase;
-  padding-bottom: 0;
-  text-align: left;
-  margin-top: 0px!important;
-  margin-bottom: 0;}
-  .page-header-title span{color:#03aae0;}
+.page-header-title{font-size: 16px;font-family: var(--main-bold-font);color: #535353;text-transform: uppercase;padding-bottom: 0;text-align: left;margin-top: 0px!important;margin-bottom: 0;}
+.page-header-title span{color:#03aae0;}
 .breadcrumbs-top{display:flex!important;align-items: center;justify-content: space-between;background: #dde3e5 !important;padding: 0px 16px 3px 16px !important;}
 .breadcrumb-wrapper{max-width:100%}
 .breadcrumbs-top .breadcrumb{margin:0;padding:0}
