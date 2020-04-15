@@ -51,7 +51,7 @@
          <mat-error *ngIf="orderEditform.controls['orderstatus'].touched && !orderEditform.controls['orderstatus'].valid && orderEditform.controls['orderstatus'].errors.required">Order status field can not be blank</mat-error> 
             </mat-form-field> -->
 
-            <!-- <mat-label>PAYMENT STATUS </mat-label> -->
+            <mat-label>PAYMENT STATUS </mat-label>
             <span class="paymentstatuswrapper">
                 <mat-list class="paymentstatus">
                     <mat-list-item> <span>Void</span> <button type="button" class="singleButton btnred" mat-raised-button (click)="voidtransaction();">Void Order</button> </mat-list-item>
