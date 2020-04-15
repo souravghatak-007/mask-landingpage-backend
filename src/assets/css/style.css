@@ -397,7 +397,7 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
 .paymentstatus .mat-list-item:last-child{margin-right: 0px;}
 .paymentstatus .mat-list-item:last-child{margin-bottom: 0px;}
 .paymentstatus .mat-list-item .mat-list-item-content{width: 100%;padding: 0 !important;}
-.paymentstatus .mat-list-item .mat-list-item-content span{font-family: var(--main-bold-font);margin-right: 10px;font-size: 18px; width: 70px;}
+.paymentstatus .mat-list-item .mat-list-item-content span{font-family: var(--main-bold-font);margin-right: 0px;font-size: 18px; width: auto;}
 
 table.mat-table {width: 100%;}
 .AddEditBlog table{margin-bottom:20px;}
