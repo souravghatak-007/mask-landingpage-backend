@@ -8,6 +8,8 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { ApiService } from '../../../api.service';
+
 export interface DialogData {
  alldata:any;
 }
@@ -80,7 +82,7 @@ export class OrderEditComponent implements OnInit {
 
   public header_text:any="Add Order";
 
-  constructor(public matSnackBar:MatSnackBar,public cookieService:CookieService,public activatedRoute:ActivatedRoute,public fb: FormBuilder,public meta: MetaService,public dialog: MatDialog) { 
+  constructor( public apiService: ApiService,public matSnackBar:MatSnackBar,public cookieService:CookieService,public activatedRoute:ActivatedRoute,public fb: FormBuilder,public meta: MetaService,public dialog: MatDialog) { 
 
     this.meta.setTitle('Virus Medical Face Mask backend | Edit Order');
     this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
@@ -138,6 +140,11 @@ export class OrderEditComponent implements OnInit {
   /**Void Trensection */
   voidtransaction(){
     console.warn("Void Transection here");
+    // let data:any={}
+    // this.apiService.CustomRequest(data,'addorupdatedata').subscribe((res:any)=>{
+    //   console.log(res)
+    //
+    // });
   }
 /**refund function */
 refundOrder(){

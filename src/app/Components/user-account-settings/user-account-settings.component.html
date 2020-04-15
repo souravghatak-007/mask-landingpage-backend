@@ -4,7 +4,7 @@
 ​
 
     <mat-card class="breadcrumbs-top">
-      <h3 class="page-header-title">Welcome <span>Sourav Ghatak</span></h3>
+      <h3 class="page-header-title">Welcome <span>{{userData.firstname }} {{userData.lastname }}</span></h3>
       <mat-card-content class="breadcrumb-wrapper">
         <mat-list class="breadcrumb">
           <mat-list-item class="breadcrumb-item"><a [routerLink]="['/dashboard']"><span class="material-icons">home</span></a></mat-list-item>
