@@ -3,15 +3,25 @@
     <!-- <div id="beadcamb">
       
     </div> -->
+    <mat-card class="breadcrumbs-top">
+      <h3 class="page-header-title">Welcome <span>Sourav Ghatak</span></h3>
+      <mat-card-content class="breadcrumb-wrapper">
+        <mat-list class="breadcrumb">
+          <mat-list-item class="breadcrumb-item"><a [routerLink]="['/dashboard']"><span class="material-icons">home</span></a>
+          </mat-list-item>
+          <mat-list-item class="breadcrumb-item active">Admin List
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
     <div id="maincontent">
       <div class="main-content-wrap">
-        <mat-card class="generalcls" style="padding: 0 !important;">
+        <mat-card class="generalcls" style="padding: 0 !important;">          
           <div class="content_header_wrapper">
               <h2 class="headerSpan">Admin List</h2>
               <div class="buttonsetToolbar">
                   <button class="singleButton btnblue" mat-raised-button color="primary" [routerLink]="['/admin/add']">Add Admin</button>
-                </div>
-            
+              </div>            
           </div>
             
             <div class="listingnewstyle">
