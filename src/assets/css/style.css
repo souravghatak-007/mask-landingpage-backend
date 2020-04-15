@@ -641,6 +641,7 @@ table.mat-table {width: 100%;}
 
 
 @media screen and (max-width: 480px) {
+  .breadcrumbs-top {justify-content: center;padding: 10px 16px 3px 16px !important;flex-wrap: wrap;}
   .generalcls .content_header_wrapper {flex-wrap: wrap;justify-content: center;} 
   .myaccount .mat-tab-labels {display: flex;flex-direction: column;}
   .listingnewstyle mat-toolbar-row.searchbar .mat-raised-button.mat-primary {margin: 2px!important;}
