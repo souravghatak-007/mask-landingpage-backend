@@ -99,16 +99,7 @@ export class OrderEditComponent implements OnInit {
     this.meta.setTag('twitter:image', '../../assets/images/logo-twitter.jpg');
 
 
-    this.activatedRoute.params.subscribe(params => {
-      this.header_text = "Order View";
-      if (params['_id'] != null) {
-        this.condition = { id: params._id };
-        this.activatedRoute.data.subscribe(resolveData => {
-          this.orderData = resolveData.orderData.res;
-          console.log(this.orderData);
-        });
-      }
-    })
+
     // this.orderEditform = this.fb.group({
     //   id:null,
     //   username: [null, Validators.required],      
@@ -136,6 +127,19 @@ export class OrderEditComponent implements OnInit {
 
 
   ngOnInit() {
+    this.activatedRoute.params.subscribe(params => {
+      this.header_text = "Order View";
+      if (params['_id'] != null) {
+        this.condition = { id: params._id };
+        this.activatedRoute.data.subscribe(resolveData => {
+          setTimeout(()=>{    
+            this.orderData = resolveData.orderData.res;
+            console.log(this.orderData);
+       }, 500);
+         
+        });
+      }
+    })
   }
   /**Void Trensection */
   voidtransaction(){
@@ -163,16 +167,30 @@ refundOrder(){
 }
   openDialog() {
     const dialogRef = this.dialog.open(RefundDailog, {
-      panelClass: 'custom-modalbox'
+      panelClass: 'custom-modalbox',
       // width: '250px',
-      // data: {}
+       data: {data:this.orderData}
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
   }
- 
+  /**send email to oder id */
+  resendOrderReceipt(){
+    console.log("resendOrderReceipt");
+    let data:any={
+      orderid:this.orderData[0]._id
+    }
+    
+    this.apiService.CustomRequest(data,'resend-order-mail').subscribe((res:any)=>{
+      console.log(res);
+      this.matSnackBar.open(res.msg, '', {
+        duration: 3000
+      });
+    
+    });
+  }
 
 }
 //refend Modal
@@ -184,7 +202,9 @@ export class RefundDailog {
 public checked = false;
   constructor(
     public dialogRef: MatDialogRef<RefundDailog>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+      console.warn(data);
+    }
 
   onNoClick(): void {
     this.dialogRef.close();
