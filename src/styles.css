@@ -140,7 +140,9 @@ body { margin: 0; font-family: "NunitoRegular"; }
 .mat-column-_id{min-width: 200px !important;}
 .mat-column-order_id{min-width: 210px !important;}
 .mat-column-shipping_address{min-width: 215px !important;}
+.mat-column-shipping_address span{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:20px}
 .mat-column-billing_address{min-width: 215px !important;}
+.mat-column-billing_address span{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:20px}
 .mat-column-shipping_name{min-width: 140px !important;}
 .mat-column-shipping_name{min-width: 140px !important;}
 .mat-column-shipping_phone{min-width: 118px !important;}
