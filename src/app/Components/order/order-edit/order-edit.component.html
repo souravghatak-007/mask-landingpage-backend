@@ -62,15 +62,15 @@
             <span class="paymentstatuswrapper">
                 <mat-list class="paymentstatus">
 
-                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|1'"> <span>Autoship</span>1 Box - Pack of 10 | Every 2 Weeks</mat-list-item>
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|1'"> <span>Autoship</span>1 Box - Pack of 10 | Every 2 Weeks <span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</mat-list-item>
 
-                    <mat-list-item *ngIf="orderData[0].autoship_data=='30|1'"> <span>Autoship</span>1 Box - Pack of 10 | Every 1 Month</mat-list-item>
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='30|1'"> <span>Autoship</span>1 Box - Pack of 10 | Every 1 Month <span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</mat-list-item>
 
-                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|2'"> <span>Autoship</span>2 Box - Pack of 10 | Every 2 Weeks</mat-list-item>
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|2'"> <span>Autoship</span>2 Box - Pack of 10 | Every 2 Weeks <span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</mat-list-item>
                    
-                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|3'"> <span>Autoship</span>3 Box - Pack of 10 | Every 2 Weeks</mat-list-item>
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|3'"> <span>Autoship</span>3 Box - Pack of 10 | Every 2 Weeks <span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</mat-list-item>
 
-                    <mat-list-item *ngIf="orderData[0].autoship_data=='30|3'"> <span>Autoship</span>3 Box - Pack of 10 | Every 1 Month</mat-list-item>
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='30|3'"> <span>Autoship</span>3 Box - Pack of 10 | Every 1 Month <span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</mat-list-item>
                    
                 </mat-list>            
             </span>
