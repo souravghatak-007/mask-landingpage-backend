@@ -481,7 +481,7 @@ table.mat-table {width: 100%;}
 .autoship .mat-card{width:24%}
 
 .countdiv .column4 {display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important}
-.countdiv .column4 .mat-card{width:24%}
+.countdiv .column4 .mat-card{width:19%}
 .countdiv .column4 .mat-card .content {width: 70%;}
 .countdiv .column4 .mat-card .icon{width: 173px;}
 
@@ -532,6 +532,7 @@ table.mat-table {width: 100%;}
 
 @media screen and (max-width: 1560px) {
 .dashboardcontainer{width:90%}
+.countdiv .column4 .mat-card{width:32.33%}
 }
 
 @media screen and (max-width: 1360px) {
@@ -647,6 +648,7 @@ table.mat-table {width: 100%;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck {flex-wrap: wrap;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount {margin-top:5px}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element {margin-top:8px}
+.countdiv .column4 .mat-card {width: 100%;}
 }
 @media screen and (max-width: 576px) {
 .profile-area {display: block;text-align: center;}
@@ -687,5 +689,4 @@ table.mat-table {width: 100%;}
 .paymentstatus .mat-list-item .mat-list-item-content span {font-size: 16px;}
 .cdk-overlay-pane.custom-modalbox confirmdialog .mat-dialog-content .mat-card {flex-wrap: wrap;}
 .cdk-overlay-pane.custom-modalbox confirmdialog .mat-dialog-content .mat-card .mat-card-header {width: 100%;padding: 5px;margin-top: 7px;}
-
 }
