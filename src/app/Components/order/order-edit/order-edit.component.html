@@ -239,34 +239,34 @@
                     <!-- Txn ID column-->
                     <ng-container matColumnDef="trid">
                         <th mat-header-cell *matHeaderCellDef> Txn ID </th>
-                         <td mat-cell *matCellDef="let element" data-label="Txn ID"> {{element.trid}} </td>
+                         <td mat-cell *matCellDef="let element" data-label="Txn ID"> {{element.transactionId}} </td>
                     </ng-container>
 
                     <!-- Merchant ID column-->
-                    <ng-container matColumnDef="marcntID">
+                    <!-- <ng-container matColumnDef="marcntID">
                         <th mat-header-cell *matHeaderCellDef> Merchant ID </th>
                         <td mat-cell *matCellDef="let element" data-label="Merchant ID"> {{element.marcntID}} </td>
-                    </ng-container>
+                    </ng-container> -->
 
                     <!-- Type column-->
                     <ng-container matColumnDef="type">
                         <th mat-header-cell *matHeaderCellDef> Type </th>
-                        <td mat-cell *matCellDef="let element" data-label="Type"> {{element.type}} </td>
+                        <td mat-cell *matCellDef="let element" data-label="Type"> {{element.transactiontype}} </td>
                     </ng-container>
                     <!-- Date/Time column-->
-                    <ng-container matColumnDef="datetime">
+                    <!-- <ng-container matColumnDef="datetime">
                         <th mat-header-cell *matHeaderCellDef> Date/Time </th>
                         <td mat-cell *matCellDef="let element" data-label="Date/Time"> {{element.datetime}} </td>
-                    </ng-container>
+                    </ng-container> -->
                     <!-- Approval column-->
-                    <ng-container matColumnDef="approval">
+                    <!-- <ng-container matColumnDef="approval">
                         <th mat-header-cell *matHeaderCellDef> Approval </th>
                         <td mat-cell *matCellDef="let element" data-label="Approval"> {{element.approval}} </td>
-                    </ng-container>
+                    </ng-container> -->
                     <!-- Authorization Code column-->
                     <ng-container matColumnDef="authorizationsode">
                         <th mat-header-cell *matHeaderCellDef> Authorization Code </th>
-                        <td mat-cell *matCellDef="let element" data-label="Authorization Code"> {{element.authorizationsode}} </td>
+                        <td mat-cell *matCellDef="let element" data-label="Authorization Code"> {{element.statusCode}} </td>
                     </ng-container>
 
                     <tr mat-header-row *matHeaderRowDef="transactiondisplayedColumns"></tr>

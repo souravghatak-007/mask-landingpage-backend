@@ -64,7 +64,8 @@ export class OrderEditComponent implements OnInit {
   displayedcontentsColumns = ['productcode', 'product', 'qty', 'unitprice', 'total'];
 
 
-  transactiondisplayedColumns = ['trid', 'marcntID', 'type', 'datetime', 'approval', 'authorizationsode'];
+  transactiondisplayedColumns = ['trid', 'type', 'authorizationsode'];
+  // transactiondisplayedColumns = ['trid', 'marcntID', 'type', 'datetime', 'approval', 'authorizationsode'];
   transactiondataSource = TR_DATA;
 
   orderassociateddisplayedColumns = ['id', 'type', 'userID', 'date', 'amount', 'voided'];
