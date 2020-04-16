@@ -547,6 +547,7 @@ table.mat-table {width: 100%;}
 .profile-area .profileimg {display:inline-block;margin: 0;}
 .profile-area .profileinfo {margin-left: 20px;}
 .profile-area .profileinfo h2 {text-align: left;font-size: 30px;}
+.addressblock .addressingle mat-list .mat-list-item .mat-list-item-content {justify-content: space-between;}
 }
 
 @media screen and (max-width: 1199px) {
@@ -562,8 +563,8 @@ table.mat-table {width: 100%;}
 .listingnewstyle tr.mat-header-row {height: 3px;}
 .countdiv .column4 .mat-card {width: 49%;}
 .countdiv .mat-card {width: 49%;}
-.contentsblock .mat-table .mat-cell, .contentsblock .mat-table .mat-footer-cell{width: 96%;padding: 7px 6px !important;margin: 0 auto;}
-.contentsblock .mat-table .mat-cell:first-child, .contentsblock .mat-table .mat-footer-cell:first-child{width: 96%;padding: 7px 6px !important;margin: 0 auto !important;}
+.contentsblock .mat-table .mat-cell, .contentsblock .mat-table .mat-footer-cell{width: 95%;padding: 7px 6px !important;margin: 0 auto;}
+.contentsblock .mat-table .mat-cell:first-child, .contentsblock .mat-table .mat-footer-cell:first-child{width: 95%;padding: 7px 6px !important;margin: 0 auto !important;}
 .contentsblock .mat-table .mat-footer-cell::before{content:attr(data-label)!important;float:left!important;text-transform:uppercase!important;font-weight:400!important;font-size:.85em!important;text-align:left!important;width:48%!important}
 .contentsblock .mat-cell::before{content:attr(data-label)!important;float:left!important;text-transform:uppercase!important;font-weight:400!important;font-size:.85em!important;text-align:left!important;width:48%!important}
 .mat-column-emptyFooter,.mat-column-subtotalTitle,.mat-column-shippingandhandlingTitle,.mat-column-taxTitle,.mat-column-unitprice{display:none!important}
@@ -669,10 +670,15 @@ table.mat-table {width: 100%;}
   .cdk-overlay-pane bottom-sheet .mat-nav-list a.mat-list-item:nth-child(3) {margin: 5px auto 0!important;}
   .cdk-overlay-pane bottom-sheet .mat-nav-list a.mat-list-item:nth-child(4) {margin: 5px auto 0!important;}
   .cdk-overlay-pane bottom-sheet .mat-nav-list a.mat-list-item:nth-child(5) {margin: 5px auto 0!important;}
+  .paymentstatus .mat-list-item{width: 100% !important;margin-right: 0;}
+.paymentstatus .mat-list-item .mat-list-item-content {width: 100%;padding: 0 !important;flex-direction: column !important;justify-content: flex-start;align-items: inherit !important;}
+.paymentstatus .mat-list-item .mat-list-item-content span {margin-right: auto;width: auto;margin-top: 0;margin-bottom: 10px;}
+.paymentstatus .mat-list-item .mat-list-item-content .singleButton {width: 100%;}
 }
 
 @media screen and (max-width: 370px) {
 .paymentstatus .mat-list-item .mat-list-item-content span {font-size: 16px;}
 .cdk-overlay-pane.custom-modalbox confirmdialog .mat-dialog-content .mat-card {flex-wrap: wrap;}
 .cdk-overlay-pane.custom-modalbox confirmdialog .mat-dialog-content .mat-card .mat-card-header {width: 100%;padding: 5px;margin-top: 7px;}
+
 }
