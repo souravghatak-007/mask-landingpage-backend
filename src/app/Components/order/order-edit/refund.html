@@ -3,17 +3,25 @@
     <h1 class="mat-dialog-title">Refund</h1>
    
     <mat-dialog-content class="refundcheck">
+
+      <span class="rowcls checkedblock">
         <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
         <span class="refundamount" *ngIf="checked==true">
             Refund Amount : <input matInput placeholder="Refund Amount" value="" [(ngModel)]="refundamount">
         </span>
+      </span>
+
+      <span class="rowcls refundamount">
         <span class="refundamount" *ngIf="checked==false">
           Full Refund Amount :{{dta.data[0].product_total}}
-          
-       
-        </span>
+        </span>        
+      </span>
+      
+      <span class="rowcls btnblock">
         <span class="btncls">
           <button mat-button (click)="refundFunction()">Refund</button>
           <button mat-button [mat-dialog-close]>Close</button>
         </span>
+      </span>
+        
     </mat-dialog-content>
