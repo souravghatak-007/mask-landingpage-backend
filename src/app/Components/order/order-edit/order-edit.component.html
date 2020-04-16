@@ -45,12 +45,7 @@
             <span class="mat-form-field spanpadding">
                 {{orderData[0].order_status}}
             </span>
-            <!-- <mat-form-field >
-               
-            <input matInput placeholder="Order Status" [formControl]="orderEditform.controls['orderstatus']">
-         <mat-error *ngIf="orderEditform.controls['orderstatus'].touched && !orderEditform.controls['orderstatus'].valid && orderEditform.controls['orderstatus'].errors.required">Order status field can not be blank</mat-error> 
-            </mat-form-field> -->
-
+          
             <mat-label>PAYMENT STATUS </mat-label>
             <span class="paymentstatuswrapper">
                 <mat-list class="paymentstatus">
@@ -61,18 +56,26 @@
                     <mat-list-item> <span>Resend Order Receipt</span> <button class="singleButton btngreen" mat-raised-button type="button" (click)="resendOrderReceipt()">Send mail</button> </mat-list-item>
                 </mat-list>            
             </span>
+             <!-- Autoship details -->
+            <ng-container *ngIf="orderData[0].has_autoship==true">
+            <mat-label>AutoShip Details </mat-label>
+            <span class="paymentstatuswrapper">
+                <mat-list class="paymentstatus">
 
-            <!-- <mat-label>Date Added </mat-label>
-            <mat-form-field >
-                <input matInput placeholder="Date Added" [formControl]="orderEditform.controls['dateadded']">
-                <mat-error *ngIf="orderEditform.controls['dateadded'].touched && !orderEditform.controls['dateadded'].valid && orderEditform.controls['dateadded'].errors.required">Date added field can not be blank</mat-error>
-            </mat-form-field>
-            <mat-label>Order Source </mat-label>
-            <mat-form-field >
-                <input matInput placeholder="Order Source" [formControl]="orderEditform.controls['ordersource']">
-                <mat-error *ngIf="orderEditform.controls['ordersource'].touched && !orderEditform.controls['ordersource'].valid && orderEditform.controls['ordersource'].errors.required">Order source field can not be blank</mat-error>
-            </mat-form-field> -->
-            
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|1'"> <span>Autoship</span>1 Box - Pack of 10 | Every 2 Weeks</mat-list-item>
+
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='30|1'"> <span>Autoship</span>1 Box - Pack of 10 | Every 1 Month</mat-list-item>
+
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|2'"> <span>Autoship</span>2 Box - Pack of 10 | Every 2 Weeks</mat-list-item>
+                   
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|3'"> <span>Autoship</span>3 Box - Pack of 10 | Every 2 Weeks</mat-list-item>
+
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='30|3'"> <span>Autoship</span>3 Box - Pack of 10 | Every 1 Month</mat-list-item>
+                   
+                </mat-list>            
+            </span>
+        </ng-container>
+        <!-- order details -->
             <mat-label>Contents </mat-label>
             <span class="contentsblock"> 
                 <table mat-table [dataSource]="orderData" class="mat-elevation-z8">  
