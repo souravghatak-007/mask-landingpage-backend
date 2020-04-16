@@ -57,7 +57,7 @@
                 </mat-list>            
             </span>
              <!-- Autoship details -->
-            <ng-container *ngIf="orderData[0].has_autoship==true">
+            <ng-container *ngIf="orderData[0].has_autoship==true && orderData!=null && orderData!=''">
             <mat-label>AutoShip Details </mat-label>
             <span class="paymentstatuswrapper">
                 <mat-list class="paymentstatus">
@@ -234,7 +234,7 @@
 
             <mat-label>TRANSACTIONS </mat-label>
             <span class="contentsblock"> 
-                <table mat-table [dataSource]="transactiondataSource" class="mat-elevation-z8">
+                <table mat-table [dataSource]="orderData[0].transaction" class="mat-elevation-z8">
 
                     <!-- Txn ID column-->
                     <ng-container matColumnDef="trid">

@@ -131,11 +131,13 @@ export class OrderEditComponent implements OnInit {
       this.header_text = "Order View";
       if (params['_id'] != null) {
         this.condition = { id: params._id };
-        this.activatedRoute.data.subscribe(resolveData => {
-          setTimeout(() => {
+        this.activatedRoute.data.subscribe((resolveData:any) => {
+         // console.log(resolveData);
+
+           setTimeout(() => {
             this.orderData = resolveData.orderData.res;
             console.log(this.orderData);
-          }, 500);
+           }, 500);
 
         });
       }
@@ -150,7 +152,8 @@ export class OrderEditComponent implements OnInit {
         order_amount: this.orderData[0].product_total,
         transactiontype: this.orderData[0].transactiontype,
         transactionid: this.orderData[0].transactionid
-      }
+      },
+      "orderid":this.orderData[0]._id
     }
 
     this.apiService.CustomRequest(data, 'void-transaction').subscribe((res: any) => {
@@ -228,7 +231,8 @@ export class RefundDailog {
           "order_amount":this.refundamount ,
           "transactionid": this.dta.data[0].transactionid,
           "transactiontype": this.dta.data[0].transactiontype
-        }
+        },
+        "orderid":this.dta.data[0]._id
       }
     } else {
       data = {
@@ -237,7 +241,8 @@ export class RefundDailog {
           "order_amount": this.dta.data[0].product_total,
           "transactionid": this.dta.data[0].transactionid,
           "transactiontype": this.dta.data[0].transactiontype
-        }
+        },
+        "orderid":this.dta.data[0]._id
       }
     }
 
