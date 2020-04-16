@@ -9,8 +9,11 @@
         </span> -->
         <span class="refundamount">
           Full Refund Amount :{{dta.data[0].product_total}}
-        <button mat-button (click)="refundFunction()">Refund</button>
-        <button mat-button [mat-dialog-close]>Close</button>
+          <span class="btncls">
+            <button mat-button (click)="refundFunction()">Refund</button>
+            <button mat-button [mat-dialog-close]>Close</button>
+          </span>
+       
         </span>
         
     </mat-dialog-content>
