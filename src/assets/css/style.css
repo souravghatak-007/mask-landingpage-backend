@@ -571,6 +571,7 @@ table.mat-table {width: 100%;}
 .mat-column-emptyFooter,.mat-column-subtotalTitle,.mat-column-shippingandhandlingTitle,.mat-column-taxTitle,.mat-column-unitprice{display:none!important}
 .mat-footer-cell.mat-column-qty,.mat-footer-cell.mat-column-product,.mat-footer-cell.mat-column-productcode{display:none!important}
 .contentsblock tr.mat-header-row {height: 5px;}
+.contentsblock tr.mat-footer-row, .contentsblock tr.mat-row {height: auto;}
 }
 
 
