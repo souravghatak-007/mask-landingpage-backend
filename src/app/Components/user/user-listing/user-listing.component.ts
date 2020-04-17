@@ -48,12 +48,12 @@ export class UserListingComponent implements OnInit {
 
 
   // use for Table Header Skip 
-  pendingmodelapplicationarray_skip: any = ['_id','video_thamnail','type', 'password','description','blogs_image','created_at'];
+  pendingmodelapplicationarray_skip: any = ['_id','video_thamnail','type','accesscode','password','description','blogs_image','created_at'];
 
 
 
     // use for Table Detail Field Skip 
-  pendingmodelapplicationarray_detail_skip: any = ['_id', 'email', 'name'];
+  pendingmodelapplicationarray_detail_skip: any = ['_id', 'email', 'name','accesscode','created_at','password','type'];
 
 
    // use for Table Detail inside the modal image path 
