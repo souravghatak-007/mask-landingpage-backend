@@ -77,6 +77,74 @@ orderDataList_skip: any = ['name','userid','shipping_charge','sale_tax','type', 
    "skip":0,
    "pagecount":1
 };
+
+libdata:any={
+    updateendpoint:'statusupdate',
+    // hideeditbutton:true,// all these button options are optional not mandatory
+    hidedeletebutton:true,
+    //hideviewbutton:false,
+    //hidestatustogglebutton:true,
+    // hideaction:true,
+    tableheaders:['order_id','shipping_name','shipping_address','billing_name','billing_address'], //not required
+    // custombuttons:[
+    //     {
+    //         label:"fb search with blog title",
+    //         link:"https://www.facebook.com/search/top/",
+    //         type:'externallink',
+    //         param:[{key:'blogtitle',q:'q'}],
+    //     },
+    //     {
+    //         label:"G search with blog title ACtive",
+    //         link:"https://www.google.com/search",
+    //         type:'externallink',
+    //         param:[{key:'blogtitle',q:'q'},{key:'author',q:'oq'}],
+    //         cond:'status',
+    //         condval: 1
+    //     },{
+    //         label:"mask blog",
+    //         link:"https://mask-blog1.influxiq.com/blog-details",
+    //         type:'externallink',
+    //         paramtype:'angular',
+    //         param:['blogtitle','_id'],
+    //         cond:'status',
+    //         condval: 0
+    //     },
+    //     {
+    //         label:" fb profile ",
+    //         link:"https://www.facebook.com/debasiskar007",
+    //         type:'externallink'
+    //     },
+    //     {
+    //         label:" fb profile for inactive",
+    //         link:"https://www.facebook.com/debasiskar007",
+    //         type:'externallink',
+    //         cond:'status',
+    //         condval:0
+    //     },
+    //     {
+    //         label:" fb profile for active",
+    //         link:"https://www.facebook.com/debasiskar007",
+    //         type:'externallink',
+    //         cond:'status',
+    //         condval:1
+    //     },
+    //     {
+    //         label:"see brand",
+    //         route:"brand",
+    //         type:'internallink',
+    //         cond:'status',
+    //         condval:0
+    //     },
+    //     {
+    //         label:"see brand with param",
+    //         route:"brand",
+    //         type:'internallink',
+    //         cond:'status',
+    //         condval:0,
+    //         param:['_id','blogtitle'],
+    //     }
+    // ]
+}
 // send basic sort data
 sortdata:any={
    "type":'desc',
