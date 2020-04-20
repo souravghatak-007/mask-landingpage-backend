@@ -106,7 +106,7 @@ upcoming_limitcond:any={
 upcoming_datacollection: any='getautoshiplistdata';
 
 upcoming_date_search_endpoint: any='datalist';
-upcoming_UpcomingAutolist_detail_skip:any=['_id','billing_date_timestamp']
+upcoming_UpcomingAutolist_detail_skip:any=['_id','billing_date_timestamp'];
 upcoming_search_settings:any={
   
   datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"billing_date_timestamp"}],   // this is use for  date search
@@ -120,6 +120,7 @@ upcoming_UpcomingAutolist_skip: any = ['_id','transactiontype','card_cc','transa
 //user My order
 myorder_modify_header_array:any={};
 myorder_orderStatus:any = [{val:0,name: "Processing"},{val:1,name:"Completed"}]
+myorder_detail_skip:any=['_id','user_info','shipping_name_search','ordered_on','autoship_data'];
 myorder_sortdata:any={
   "type":'desc',
   "field":'order_id',
@@ -130,10 +131,9 @@ my_limitcond:any={
   "skip":0,
   "pagecount":1
 };
-my_datacollection: any='getautoshiplistdata';
+my_datacollection: any='getorderlistdata';
 
 myorder_date_search_endpoint: any='datalist';
-myorder_UpcomingAutolist_detail_skip:any=['_id','user_info','shipping_name_search','ordered_on','autoship_data']
 myorder_search_settings:any={
   
   datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"ordered_on"}],   // this is use for  date search
@@ -241,7 +241,7 @@ myorder_UpcomingAutolist_skip: any = ['_id','userid','user_info','shipping_name_
  
    this.http.httpViaPost(upcoming_endpointc, upcoming_data).subscribe((res:any) => {
     
-     console.warn('upcoming autoship data count',res);
+     //console.warn('upcoming autoship data count',res);
      this.upcoming_search_source_count=res.count;
 
  }, error => {
@@ -250,7 +250,7 @@ myorder_UpcomingAutolist_skip: any = ['_id','userid','user_info','shipping_name_
 
  this.http.httpViaPost(upcoming_endpoint,upcoming_data).subscribe((res:any) => {
     this.UpcomingAutolist=res.results.res;
-     console.log('upcoming autoship data',res);
+     //console.log('upcoming autoship data',res);
  }, error => {
      console.log('Oooops!');
  });
@@ -273,7 +273,6 @@ myorder_UpcomingAutolist_skip: any = ['_id','userid','user_info','shipping_name_
     "userid":this.cookieUserallData._id
  
     }
-   
       this.http.httpViaPost(endpointc, dataa).subscribe((res:any) => {
         // console.log('in constructor');
         // console.log(result);

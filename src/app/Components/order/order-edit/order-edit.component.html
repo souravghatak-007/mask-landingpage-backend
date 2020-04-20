@@ -70,7 +70,8 @@
                    
                     <mat-list-item *ngIf="orderData[0].autoship_data=='14|3'"> <span class="oneitemcls"><span>Autoship</span>3 Box - Pack of 10 | Every 2 Weeks</span> <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span></mat-list-item>
 
-                    <mat-list-item *ngIf="orderData[0].autoship_data=='30|3'"> <span>Autoship</span>3 Box - Pack of 10 | Every 1 Month <span>Next Billing</span> <span class="oneitemcls">{{orderData[0].autoship[0].billing_date}}</span></mat-list-item>
+                   
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='30|3'"> <span class="oneitemcls"><span>Autoship</span>3 Box - Pack of 10 | Every 1 Month</span> <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span></mat-list-item>
                    
                 </mat-list>            
             </span>
