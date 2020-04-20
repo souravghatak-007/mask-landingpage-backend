@@ -85,7 +85,7 @@ libdata:any={
     //hideviewbutton:false,
     //hidestatustogglebutton:true,
     // hideaction:true,
-    tableheaders:['order_id','shipping_name','shipping_address','billing_name','billing_address'], //not required
+    tableheaders:['order_id','shipping_name','billing_name','shipping_address','billing_address'], //not required
     // custombuttons:[
     //     {
     //         label:"fb search with blog title",

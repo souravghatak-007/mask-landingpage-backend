@@ -46,7 +46,7 @@
 
           <mat-card class="bg-light-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
-              <mat-card-title>Successfull Orders</mat-card-title>
+              <mat-card-title>Successful Orders</mat-card-title>
               <mat-card-subtitle>{{adminCount.order_success_list}}</mat-card-subtitle>
             </span>
             <span class="icon">
@@ -307,12 +307,12 @@
               [updateendpoint]="updateendpoint"
               [deleteendpoint]="deleteEndpoint"
               [date_search_source]="date_search_source"
-              [date_search_endpoint]="date_search_endpoint"
+              [date_search_endpoint]="myorder_date_search_endpoint"
               [sourcedata]="tablename"
               [detail_datatype]="orderDataList_detail_datatype"
               [editroute]="editroute"
               [statusarr]="upcoming_orderStatus"
-              [detail_skip_array]="upcoming_UpcomingAutolist_detail_skip"
+              [detail_skip_array]="myorder_detail_skip"
               [url]="custom_link"
               [jwttoken]="jwttoken"
               [search_settings]="myorder_search_settings"
