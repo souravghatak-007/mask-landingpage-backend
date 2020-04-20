@@ -454,7 +454,7 @@ table.mat-table {width: 100%;}
 
 /* count css dashboard */
 .countdiv{height:auto!important;display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important}
-.countdiv .mat-card{width:32.33%;display:flex;justify-content:space-between;cursor:default;background-color:var(--c-t-bg-w);position:relative;overflow:hidden;margin:.5%!important;    align-items: stretch;}
+.countdiv .mat-card{flex:1 0 32%;display:flex;justify-content:space-between;cursor:default;background-color:var(--c-t-bg-w);position:relative;overflow:hidden;margin:.5%!important;    align-items: stretch;}
 .countdiv .mat-card .icon{display: flex;text-align: center;background-color: rgba(0,0,0,0.12);width: 150px;order: 1;justify-content: center;align-items: center;}
 .countdiv .mat-card .icon img{width: auto;height: 75px;}
 .countdiv .mat-card .icon i{color: var(--c-t-bg-w);font-size: 130px;align-items: center;justify-content: center;display: flex;justify-content: center;}
@@ -476,12 +476,12 @@ table.mat-table {width: 100%;}
 .countdiv .mat-card.oas .content{width:82%;display:flex;flex-direction:column;align-items:self-end;box-sizing:border-box}
 .countdiv .mat-card.oas .content .detailbtn{line-height:32px;margin-top:auto;width:auto;border-radius:5px;margin-left:auto}
 .genclscount{display:flex;flex-wrap:wrap;width:100%}
-.Userscls .mat-card{width:32.33%}
-.testcls .mat-card{width:32.33%}
-.autoship .mat-card{width:24%}
+.Userscls .mat-card{flex:1 0 32%}
+.testcls .mat-card{flex:1 0 32%}
+.autoship .mat-card{flex:1 0 24%}
 
 .countdiv .column4 {display:flex!important;align-items:stretch!important;flex-wrap:wrap!important;justify-content:center!important}
-.countdiv .column4 .mat-card{width:19%}
+.countdiv .column4 .mat-card{flex:1 0 24%;}
 .countdiv .column4 .mat-card .content {width: 70%;}
 .countdiv .column4 .mat-card .icon{width: 173px;}
 
@@ -514,6 +514,7 @@ table.mat-table {width: 100%;}
 .ipblock .mat-column-_id span {text-indent: -9999px !important;}
 .ipblock .mat-column-_id span::after {content: 'IP';text-indent: 0 !important;}
 .ipblock .td-cell-center.mat-column-_id span::after{display: none;}
+.ipblock .listingnewstyle td.mat-column-Actions > span span.cursor:nth-child(1), .ipblock .listingnewstyle td.mat-column-Actions > span span.cursor:nth-child(2), .ipblock .listingnewstyle td.mat-column-Actions > span span.cursor:nth-child(4) {display: none;}
 
 /* media css */
 
@@ -534,7 +535,7 @@ table.mat-table {width: 100%;}
 
 @media screen and (max-width: 1560px) {
 .dashboardcontainer{width:90%}
-.countdiv .column4 .mat-card{width:32.33%}
+.countdiv .column4 .mat-card{flex: 1 0 32%;}
 }
 
 @media screen and (max-width: 1360px) {
@@ -558,7 +559,7 @@ table.mat-table {width: 100%;}
 }
 
 @media screen and (max-width: 1199px) {
-.countdiv .mat-card {width: 32.333%;}
+.countdiv .mat-card {flex: 1 0 32%;}
 .userimage{display: none;}
 .login_wrapper .from{padding: 16px;}
 }
@@ -568,8 +569,8 @@ table.mat-table {width: 100%;}
 .mat-table .mat-cell:first-child {margin-top: 4px;padding-left: 0;}
 .block2content .mat-list-item-content{display:flex;flex-direction:column}
 .listingnewstyle tr.mat-header-row {height: 3px;}
-.countdiv .column4 .mat-card {width: 49%;}
-.countdiv .mat-card {width: 49%;}
+.countdiv .column4 .mat-card {flex: 1 0 48%;}
+.countdiv .mat-card {flex: 1 0 48%;}
 .contentsblock .mat-table .mat-cell, .contentsblock .mat-table .mat-footer-cell{width: 98%;padding: 1% !important;margin: 0 auto;}
 .contentsblock .mat-table .mat-cell:first-child, .contentsblock .mat-table .mat-footer-cell:first-child{width: 98%;padding: 1% !important;margin: 0 auto !important;}
 .contentsblock .mat-table .mat-footer-cell::before{content:attr(data-label)!important;float:left!important;text-transform:uppercase!important;font-weight:400!important;font-size:.85em!important;text-align:left!important;width:48%!important}
@@ -608,7 +609,7 @@ table.mat-table {width: 100%;}
 
 @media screen and (max-width: 800px) {
 .paymentstatus {flex-wrap: wrap;}
-.countdiv .mat-card {width: 48.333%;}
+.countdiv .mat-card {flex: 1 0 48%;}
 .countdiv .mat-card .icon i {font-size: 84px;}
 .myaccount .mat-tab-body-wrapper {padding: 18px;}
 }
@@ -632,14 +633,14 @@ table.mat-table {width: 100%;}
 .signupfooter {flex-wrap: wrap;}
 .login_wrapper .from {padding: 16px;width: 90% !important;display: block;}
 .login_lib_wrapper .example-container button {line-height: 24px;font-size: 22px;}
-.countdiv .mat-card {width: 49%;}
+.countdiv .mat-card {flex: 1 0 49%;}
 .cdk-overlay-pane.custom-modalbox confirmdialog .mat-dialog-content .mat-card .mat-card-header .mat-card-title {font-size: 14px;white-space: normal;word-break: break-word;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .rowcls {display: flex;align-items: center;justify-content: flex-start;flex-direction: column;margin: 2px;}
 }
 
 @media screen and (max-width: 620px) {
 .AddEditBlog .mat-form-field-flex {align-items: center;flex-wrap: wrap;}
-.countdiv .mat-card {width: 100%;}
+.countdiv .mat-card {flex: 1 0 100%;}
 .addlistingInventory_button_wrapper{display:flex;flex-wrap:wrap}
 .countdiv .mat-card .icon {width: 84px;}
 .countdiv .mat-card .icon img {height: 48px;}
@@ -652,7 +653,7 @@ table.mat-table {width: 100%;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck {flex-wrap: wrap;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount {margin-top:5px}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element {margin-top:8px}
-.countdiv .column4 .mat-card {width: 100%;}
+.countdiv .column4 .mat-card {flex:1 0 100%;}
 }
 @media screen and (max-width: 576px) {
 .profile-area {display: block;text-align: center;}
@@ -674,8 +675,8 @@ table.mat-table {width: 100%;}
   .listingnewstyle mat-toolbar-row.searchbar .mat-raised-button.mat-primary {margin: 2px!important;}
   .signupfooter a {text-align: left;}
   .login_lib_wrapper .from h2 {font-size: 32px;margin-bottom: 15px;}
-  .countdiv .mat-card {width: 99%;}
-  .countdiv .column4 .mat-card {width: 100%;}
+  .countdiv .mat-card {flex:1 0 100%;}
+  .countdiv .column4 .mat-card {flex: 1 0 100%;}
   .cdk-overlay-pane bottom-sheet .mat-nav-list {padding: 0 2px;flex-wrap: wrap;}
   .cdk-overlay-pane bottom-sheet .mat-nav-list a.mat-list-item{margin: 5px auto 0!important;}
   .cdk-overlay-pane bottom-sheet .mat-nav-list a.mat-list-item:nth-child(1) {margin: 5px auto 0!important;}
