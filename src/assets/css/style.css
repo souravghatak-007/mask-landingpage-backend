@@ -309,7 +309,8 @@ tr.mat-footer-row, tr.mat-row:nth-child(odd){background-color: #f2f2f2;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck mat-checkbox{margin-right: 10px;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .rowcls{display: flex;align-items: center;justify-content: flex-start;flex-direction: row;margin: 2px;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .rowcls .btncls{margin-top: 12px;}
-.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element{padding: 10px !important;line-height: 21px !important;border: 1px solid #d9d9d9;}
+.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element{padding: 10px !important;line-height: 21px !important;border: 1px solid #d9d9d9;width: inherit;}
+.cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount{display: flex;align-items: center;}
 
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content{margin:0!important;padding:0!important}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-title{background-color:#151519;padding:15px;margin-bottom:15px;text-align:center;color:var(--c-t-bg-w);font-size:24px}
