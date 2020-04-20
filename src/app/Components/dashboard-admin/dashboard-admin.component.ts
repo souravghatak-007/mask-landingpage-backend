@@ -167,6 +167,7 @@ myorder_UpcomingAutolist_skip: any = ['_id','userid','user_info','shipping_name_
       // this.meta.setTitle('Admin Dashboard');
       this.fetchAdminDashboardData();
     }else{
+      this.jwttoken=this.cookieService.get('jwtToken');
       // this.meta.setTitle('Dashboard');
       this.fetchUserDashboardData();
     }
