@@ -28,7 +28,7 @@
         <mat-card class="countdiv" style="padding: 0 !important;">
           
           <span class="genclscount Userscls">
-            <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Order Report</mat-card-title>
+            <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Users and Orders</mat-card-title>
           <mat-card class="bg-cyan box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Users</mat-card-title>
@@ -39,7 +39,7 @@
             </span>
 
             <span class="detailbtn">
-              <button class="singleButton">View Detail</button>
+              <button class="singleButton">View</button>
             </span>
             
           </mat-card>
@@ -53,7 +53,7 @@
               <i class="material-icons">playlist_add_check</i>
             </span>
             <span class="detailbtn">
-              <button class="singleButton">View Detail</button>
+              <button class="singleButton">View</button>
             </span>
           </mat-card>
 
@@ -66,7 +66,7 @@
               <i class="material-icons">eject</i>
             </span>
             <span class="detailbtn">
-              <button class="singleButton">View Detail</button>
+              <button class="singleButton">View</button>
             </span>
           </mat-card>
 
@@ -81,7 +81,7 @@
               <mat-card-subtitle>{{adminCount.transaction_test_withautoship}}</mat-card-subtitle>
               <mat-card-title>Test Successful Orders With AutoShip </mat-card-title>
               <span class="detailbtn">
-                <button class="singleButton">View Detail</button>
+                <button class="singleButton">View</button>
               </span>
             </span>
             <span class="icon">
@@ -95,7 +95,7 @@
               <mat-card-subtitle>{{adminCount.transaction_live_withautoship}}</mat-card-subtitle>
               <mat-card-title>Live Successful Orders With AutoShip </mat-card-title>
               <span class="detailbtn">
-                <button class="singleButton">View Detail</button>
+                <button class="singleButton">View</button>
               </span>   
             </span>
             <span class="icon">
@@ -109,7 +109,7 @@
               <mat-card-subtitle>{{adminCount.order_autoship}}</mat-card-subtitle>
               <mat-card-title>Test Successful Orders With AutoShip Completed</mat-card-title>
               <span class="detailbtn">
-                <button class="singleButton">View Detail</button>
+                <button class="singleButton">View</button>
               </span>
             </span>
             <span class="icon">
@@ -123,7 +123,7 @@
               <mat-card-subtitle>{{adminCount.order_autoship}}</mat-card-subtitle>
               <mat-card-title>Live Successful Orders With AutoShip Completed</mat-card-title>
               <span class="detailbtn">
-                <button class="singleButton">View Detail</button>
+                <button class="singleButton">View</button>
               </span>
             </span>
             <span class="icon">
@@ -143,7 +143,7 @@
               <mat-card-subtitle>{{adminCount.transaction_type_test}}</mat-card-subtitle>
               <mat-card-title *ngIf="cookieUserallData.type=='admin'">Test Orders</mat-card-title>
               <span class="detailbtn">
-                <button class="singleButton">View Detail</button>
+                <button class="singleButton">View</button>
               </span>  
             </span>
             <span class="icon">
@@ -158,7 +158,7 @@
               <mat-card-subtitle>{{adminCount.transaction_type_test}}</mat-card-subtitle>
               <mat-card-title>Successful Test Orders</mat-card-title>
               <span class="detailbtn">
-                <button class="singleButton">View Detail</button>
+                <button class="singleButton">View</button>
               </span>  
             </span>
             <span class="icon">
@@ -173,7 +173,7 @@
               <mat-card-subtitle>${{adminCount.transaction_total_test}}</mat-card-subtitle>
               <mat-card-title>Total Transaction Amount of Test Orders</mat-card-title>
               <span class="detailbtn">
-                <button class="singleButton">View Detail</button>
+                <button class="singleButton">View</button>
               </span> 
             </span>
             <span class="icon">
@@ -196,7 +196,7 @@
               <i class="material-icons">card_membership</i>
             </span>    
             <span class="detailbtn">
-              <button class="singleButton">View Detail</button>
+              <button class="singleButton">View</button>
             </span>        
           </mat-card>
           <!-- incomplete_live_order -->
@@ -209,7 +209,7 @@
               <i class="material-icons">card_membership</i>
             </span>    
             <span class="detailbtn">
-              <button class="singleButton">View Detail</button>
+              <button class="singleButton">View</button>
             </span>        
           </mat-card>
           
@@ -224,7 +224,7 @@
               <i class="material-icons">card_membership</i>
             </span>    
             <span class="detailbtn">
-              <button class="singleButton">View Detail</button>
+              <button class="singleButton">View</button>
             </span>        
           </mat-card>         
 
@@ -262,7 +262,7 @@
             </div>
             <!-- upcoming autoship list -->
             <div class="content_header_wrapper">
-              <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Upcoming AutoShip List</h2>                     
+              <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Upcoming AutoShips</h2>                     
             </div>
 
             <div class="listingnewstyle">

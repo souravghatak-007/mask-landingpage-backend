@@ -3,7 +3,7 @@ import { HttpServiceService } from 'src/app/services/http-service.service';
 import * as moment from 'moment';
 import { from } from 'rxjs';
 import { MetaService } from '@ngx-meta/core';
-import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
+// import { FormGroup, FormBuilder, Validators, FormGroupDirective } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
@@ -75,15 +75,13 @@ export class OrderEditComponent implements OnInit {
   displayedShippingandHandlingColumns = ['emptyFooter', 'emptyFooter', 'emptyFooter', 'shippingandhandlingTitle', 'shippingandhandlingAmount'];
   displayedTaxColumns = ['emptyFooter', 'emptyFooter', 'emptyFooter', 'taxTitle', 'taxAmount'];
 
-
-  public orderEditform: FormGroup;
   public orderData: any = [];
   public condition: any;
   public hideRequiredControl: any;
 
   public header_text: any = "Add Order";
 
-  constructor(public apiService: ApiService, public matSnackBar: MatSnackBar, public cookieService: CookieService, public activatedRoute: ActivatedRoute, public fb: FormBuilder, public meta: MetaService, public dialog: MatDialog) {
+  constructor(public apiService: ApiService, public matSnackBar: MatSnackBar, public cookieService: CookieService, public activatedRoute: ActivatedRoute, public meta: MetaService, public dialog: MatDialog) {
 
     this.meta.setTitle('Virus Medical Face Mask backend | Edit Order');
     this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
@@ -98,31 +96,6 @@ export class OrderEditComponent implements OnInit {
     this.meta.setTag('og:url', 'https://mask-landingpage-backend.influxiq.com/');
     this.meta.setTag('og:image', '../../assets/images/logo-fb.jpg');
     this.meta.setTag('twitter:image', '../../assets/images/logo-twitter.jpg');
-
-
-
-    // this.orderEditform = this.fb.group({
-    //   id:null,
-    //   username: [null, Validators.required],      
-    //   orderid: [null, Validators.required],
-    //   orderstatus: [null, Validators.required],
-    //   paymentstatus: [null, Validators.required],
-    //   dateadded: [null, Validators.required],
-    //   ordersource: [null, Validators.required],
-    //   billingprofile: [null, Validators.required],
-    //   shippinginstruction: [null, Validators.required],
-    //   fulfillmentnotes: [null, Validators.required],
-    //   usercomments: [null, Validators.required],
-    //   admincomments: [null, Validators.required],
-    //   systemlog: [null, Validators.required],
-    //   productname: [null, Validators.required],
-    //   productquantity: [null, Validators.required],
-    //   productprice: [null, Validators.required],
-    //   subtotal: [null, Validators.required],
-    //   shipping:[null, Validators.required],
-    //   tax:[null, Validators.required],
-    //   total:[null, Validators.required]
-    // });
   }
 
 
@@ -135,10 +108,10 @@ export class OrderEditComponent implements OnInit {
         this.activatedRoute.data.subscribe((resolveData:any) => {
          // console.log(resolveData);
 
-           setTimeout(() => {
+          //  setTimeout(() => {
             this.orderData = resolveData.orderData.res;
             console.log(this.orderData);
-           }, 500);
+          //  }, 500);
 
         });
       }
@@ -195,7 +168,25 @@ export class OrderEditComponent implements OnInit {
 
     });
   }
+/**function for cancel autoship */
+CancelAutoship(){
+  console.warn('CancelAutoship');
+  let data: any = {
+    orderid: this.orderData[0]._id,
+    billing_date:this.orderData[0].autoship[0].billing_date
+  }
 
+  this.apiService.CustomRequest(data, 'cancel-autoship').subscribe((res: any) => {
+    console.log(res);
+    if(res.status=="success"){
+      this.matSnackBar.open('Your AutoShip canceled', '', {
+        duration: 3000
+      });
+    }
+   
+
+  });
+}
 }
 //refend Modal
 @Component({

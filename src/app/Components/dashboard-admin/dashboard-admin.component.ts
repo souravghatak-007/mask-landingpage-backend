@@ -34,17 +34,11 @@ datasource: any;
 // Like Table head name is " firstname" => "First Name"
 deleteEndpoint: any = "deletesingledata";
 modify_header_array: any = {
-    'firstname': "First Name",
-    'email': 'Email Id',
-    'lastname': 'Last Name',
-    'name': "Full Name",
-    'phone':"Phone Number",
-    'state':'State',
-    'city':'City',
-    'zip':"Zip Code",
+  'product qty':"Quantity",
     'order_id' :"Order ID",
     'transactiontype':"Transaction Type",
-    'ordered_date':"Order Date"
+    'ordered_date':"Order Date",
+    'product total':"Total ",
 };
   // use for Table Detail Field Skip 
 orderDataList_skip: any = ['accesscode','_id','product_subtotal','shipping_phone','billing_phone','name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip','shipping_name_search','ordered_on','product_price','autoship_data'];
