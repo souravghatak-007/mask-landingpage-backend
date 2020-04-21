@@ -71,7 +71,7 @@
             </span>
         </ng-container>
         <!-- order details -->
-            <mat-label>Contents </mat-label>
+            <mat-label>Order details</mat-label>
             <span class="contentsblock"> 
                 <table mat-table [dataSource]="orderData" class="mat-elevation-z8">  
                     <!-- Product Code column-->
@@ -209,7 +209,7 @@
                     <mat-list>
                         <mat-list-item> <span>Card Number</span> ************{{orderData[0].card_cc}} </mat-list-item>
                         <!-- <mat-list-item> <span>Card Exp Mo</span> 01/2021  </mat-list-item> -->
-                        <mat-list-item> <span>Card Type</span> {{orderData[0].card_type}} </mat-list-item>
+                        <mat-list-item> <span>Card Type</span> {{orderData[0].card_type.toUpperCase()}} </mat-list-item>
                         <!-- <mat-list-item> <span>Card Name</span>  </mat-list-item>
                         <mat-list-item> <span>Currency Code</span>  </mat-list-item>
                         <mat-list-item> <span>Card Phone</span>  </mat-list-item>

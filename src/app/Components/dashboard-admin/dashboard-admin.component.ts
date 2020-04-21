@@ -65,7 +65,7 @@ limitcond:any={
 sortdata:any={
   "type":'desc',
   "field":'shipping_name',
-  "options":['shipping_name','shipping_address','billing_name','billing_address','order_id','product_total']
+  "options":['shipping_name','shipping_address','billing_name','billing_address','order_id','product_total','product_qty']
 };
 // ths is a database collection or view name
 date_search_source: any='admin_blog_list';
