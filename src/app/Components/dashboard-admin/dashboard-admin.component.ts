@@ -4,8 +4,8 @@ import { HttpServiceService } from '../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { MetaService } from '@ngx-meta/core';
-import {ApiService} from './../../api.service';
-import {environment} from '../../../environments/environment';
+import { ApiService } from './../../api.service';
+import { environment } from '../../../environments/environment';
 
 
 
@@ -15,130 +15,204 @@ import {environment} from '../../../environments/environment';
   styleUrls: ['./dashboard-admin.component.css']
 })
 export class DashboardAdminComponent implements OnInit {
- public cookieUserallData:any=JSON.parse(this.cookieService.get('user_details'))
- public adminCount:any=[];
- public orderDataList:any=[];
- public UpcomingAutolist:any=[];
- public userMyorder:any=[];
- public date_search_source_count: any=0;
- public upcoming_search_source_count: any=0;
- public myorder_search_source_count: any=0;
+  public cookieUserallData: any = JSON.parse(this.cookieService.get('user_details'))
+  public adminCount: any = [];
+  public orderDataList: any = [];
+  public UpcomingAutolist: any = [];
+  public userMyorder: any = [];
+  public date_search_source_count: any = 0;
+  public upcoming_search_source_count: any = 0;
+  public myorder_search_source_count: any = 0;
 
- public transaction: any =  [{val: "TEST", name: 'TEST'}, {val: 'LIVE', name: 'LIVE'}];
- public autoShipSearch:any=[{val:"Yes",name:'Yes'},{val:"No",name:'No'},];
- public orderStatus:any = [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancelled"}]
- // use for status search
- statusarray: any =  [{val:"Incomplete",name: "Incomplete"},{val:"Complete",name: "Complete"},{val:"Shipped",name: "Shipped"},{val:"Delivered",name: "Delivered"},{val:"Cancel",name: "Cancelled"}]; 
-editroute: any = 'admin/order/edit/';
-datasource: any; 
-// Like Table head name is " firstname" => "First Name"
-deleteEndpoint: any = "deletesingledata";
-modify_header_array: any = {
-  'product qty':"Quantity",
-    'order_id' :"Order ID",
-    'transactiontype':"Transaction Type",
-    'ordered_date':"Order Date",
-    'product total':"Total ",
-};
+  public transaction: any = [{ val: "TEST", name: 'TEST' }, { val: 'LIVE', name: 'LIVE' }];
+  public autoShipSearch: any = [{ val: "Yes", name: 'Yes' }, { val: "No", name: 'No' },];
+  public orderStatus: any = [{ val: "Incomplete", name: "Incomplete" }, { val: "Complete", name: "Complete" }, { val: "Shipped", name: "Shipped" }, { val: "Delivered", name: "Delivered" }, { val: "Cancel", name: "Cancelled" }]
+  // use for status search
+  statusarray: any = [{ val: "Incomplete", name: "Incomplete" }, { val: "Complete", name: "Complete" }, { val: "Shipped", name: "Shipped" }, { val: "Delivered", name: "Delivered" }, { val: "Cancel", name: "Cancelled" }];
+  editroute: any = 'admin/order/edit/';
+  datasource: any;
+  // Like Table head name is " firstname" => "First Name"
+  deleteEndpoint: any = "deletesingledata";
+  modify_header_array: any = {
+    'product qty': "Quantity",
+    'order_id': "Order ID",
+    'transactiontype': "Transaction Type",
+    'ordered_date': "Order Date",
+    'product total': "Total ",
+  };
   // use for Table Detail Field Skip 
-orderDataList_skip: any = ['accesscode','_id','product_subtotal','shipping_phone','billing_phone','name','userid','shipping_charge','sale_tax','type', 'password','created_at','updated_at','id','accesscode','businessphone','companyname','country','user_info','transaction_token','card_cc','shipping_country','shipping_state','shipping_city','shipping_zip','billing_country','billing_state','billing_city','billing_zip','shipping_name_search','ordered_on','product_price','autoship_data'];
-// updateendpoint is use for data update endpoint
-updateendpoint = 'addorupdatedata';
-// this is a database collection name
-tablename = 'data_order';
-// searchendpoint is use for data search endpoint
-searchendpoint = 'datalist';
-// use for click to another page routing path
-click_to_add_ananother_page = '/adminlist';
-custom_link:any;
-orderDataList_detail_datatype:any;
-orderDataList_detail_skip:any=['_id','password',"created_at",'shipping_name_search','user_info','ordered_on','userid','autoship_data']
-// date_search_endpoint is use for date search endpoint
-date_search_endpoint: any='datalist';
-// send basic limit data
-limitcond:any={
-  "limit":10,
-  "skip":0,
-  "pagecount":1
-};
-// send basic sort data
-sortdata:any={
-  "type":'desc',
-  "field":'shipping_name',
-  "options":['shipping_name','shipping_address','billing_name','billing_address','order_id','product_total','product_qty']
-};
-// ths is a database collection or view name
-date_search_source: any='admin_blog_list';
-// datacollection
-datacollection: any='getorderlistdata';
- //source count
- jwttoken:any;
- apiurl:any=environment.API_URL
-search_settings:any={
-  
-  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"ordered_on"}],   // this is use for  date search
+  orderDataList_skip: any = ['accesscode', '_id', 'product_subtotal', 'shipping_phone', 'billing_phone', 'name', 'userid', 'shipping_charge', 'sale_tax', 'type', 'password', 'created_at', 'updated_at', 'id', 'accesscode', 'businessphone', 'companyname', 'country', 'user_info', 'transaction_token', 'card_cc', 'shipping_country', 'shipping_state', 'shipping_city', 'shipping_zip', 'billing_country', 'billing_state', 'billing_city', 'billing_zip', 'shipping_name_search', 'ordered_on', 'product_price', 'autoship_data'];
+  // updateendpoint is use for data update endpoint
+  updateendpoint = 'addorupdatedata';
+  // this is a database collection name
+  tablename = 'data_order';
+  // searchendpoint is use for data search endpoint
+  searchendpoint = 'datalist';
+  // use for click to another page routing path
+  click_to_add_ananother_page = '/adminlist';
+  custom_link: any;
+  orderDataList_detail_datatype: any;
+  orderDataList_detail_skip: any = ['_id', 'password', "created_at", 'shipping_name_search', 'user_info', 'ordered_on', 'userid', 'autoship_data']
+  // date_search_endpoint is use for date search endpoint
+  date_search_endpoint: any = 'datalist';
+  // send basic limit data
+  limitcond: any = {
+    "limit": 10,
+    "skip": 0,
+    "pagecount": 1
+  };
+  // send basic sort data
+  sortdata: any = {
+    "type": 'desc',
+    "field": 'shipping_name',
+    "options": ['shipping_name', 'shipping_address', 'billing_name', 'billing_address', 'order_id', 'product_total', 'product_qty']
+  };
+  // ths is a database collection or view name
+  date_search_source: any = 'admin_blog_list';
+  // datacollection
+  datacollection: any = 'getorderlistdata';
+  //source count
+  jwttoken: any;
+  apiurl: any = environment.API_URL
+  search_settings: any = {
 
-  selectsearch:[{ label: 'Search By Transaction Type', field: 'transactiontype', values: this.transaction },{ label: 'Search By Order Status', field: 'order_status', values: this.orderStatus },{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
+    datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "ordered_on" }],   // this is use for  date search
 
-   textsearch:[{label:"Search By Shipping Name",field:'shipping_name_search'},{label:"Search By Shipping Address",field:'shipping_address'},
-   {label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
+    selectsearch: [{ label: 'Search By Transaction Type', field: 'transactiontype', values: this.transaction }, { label: 'Search By Order Status', field: 'order_status', values: this.orderStatus }, { label: 'Search By Autoship', field: 'has_autoship', values: this.autoShipSearch }], // this is use for  select search
 
-};
-//upcoming autoship list
-upcomig_modify_header_array:any={};
-upcoming_orderStatus:any = [{val:0,name: "Processing"},{val:1,name:"Completed"}]
-upcoming_sortdata:any={
-  "type":'desc',
-  "field":'billing_date',
-  "options":['billing_date']
-};
-upcoming_limitcond:any={
-  "limit":10,
-  "skip":0,
-  "pagecount":1
-};
-upcoming_datacollection: any='getautoshiplistdata';
+    textsearch: [{ label: "Search By Shipping Name", field: 'shipping_name_search' }, { label: "Search By Shipping Address", field: 'shipping_address' },
+    { label: "Search By OrderId", field: 'order_id' }, { label: "Search By TransactionID", field: 'transactionid' }]
 
-upcoming_date_search_endpoint: any='datalist';
-upcoming_UpcomingAutolist_detail_skip:any=['_id','billing_date_timestamp'];
-upcoming_search_settings:any={
-  
-  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"billing_date_timestamp"}],   // this is use for  date search
+  };
+  //upcoming autoship list
+  upcomig_modify_header_array: any = {
+    'product qty': "Quantity",
+    'product total': "Total",
+    'status name': "Status",
+    'billing date': "Next Billing date"
+  };
 
-  // selectsearch:[{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
+  libdata: any = {
+    updateendpoint: 'statusupdate',
+    // hideeditbutton:true,// all these button options are optional not mandatory
+    hidedeletebutton: true,
+    //hideviewbutton:false,
+    //hidestatustogglebutton:true,
+    // hideaction:true,
+    tableheaders:['product_qty','product_total','status_name','billing_date','order_id','shipping_name'], //not required
 
-  //  textsearch:[{label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
+    // custombuttons:[
+    //     {
+    //         label:"fb search with blog title",
+    //         link:"https://www.facebook.com/search/top/",
+    //         type:'externallink',
+    //         param:[{key:'blogtitle',q:'q'}],
+    //     },
+    //     {
+    //         label:"G search with blog title ACtive",
+    //         link:"https://www.google.com/search",
+    //         type:'externallink',
+    //         param:[{key:'blogtitle',q:'q'},{key:'author',q:'oq'}],
+    //         cond:'status',
+    //         condval: 1
+    //     },{
+    //         label:"mask blog",
+    //         link:"https://mask-blog1.influxiq.com/blog-details",
+    //         type:'externallink',
+    //         paramtype:'angular',
+    //         param:['blogtitle','_id'],
+    //         cond:'status',
+    //         condval: 0
+    //     },
+    //     {
+    //         label:" fb profile ",
+    //         link:"https://www.facebook.com/debasiskar007",
+    //         type:'externallink'
+    //     },
+    //     {
+    //         label:" fb profile for inactive",
+    //         link:"https://www.facebook.com/debasiskar007",
+    //         type:'externallink',
+    //         cond:'status',
+    //         condval:0
+    //     },
+    //     {
+    //         label:" fb profile for active",
+    //         link:"https://www.facebook.com/debasiskar007",
+    //         type:'externallink',
+    //         cond:'status',
+    //         condval:1
+    //     },
+    //     {
+    //         label:"see brand",
+    //         route:"brand",
+    //         type:'internallink',
+    //         cond:'status',
+    //         condval:0
+    //     },
+    //     {
+    //         label:"see brand with param",
+    //         route:"brand",
+    //         type:'internallink',
+    //         cond:'status',
+    //         condval:0,
+    //         param:['_id','blogtitle'],
+    //     }
+    // ]
+  }
+  upcoming_orderStatus: any = [{ val: 0, name: "Processing" }, { val: 1, name: "Completed" }]
+  upcoming_sortdata: any = {
+    "type": 'desc',
+    "field": 'billing_date',
+    "options": ['billing_date']
+  };
+  upcoming_limitcond: any = {
+    "limit": 10,
+    "skip": 0,
+    "pagecount": 1
+  };
+  upcoming_datacollection: any = 'getautoshiplistdata';
 
-};
-upcoming_UpcomingAutolist_skip: any = ['_id','transactiontype','card_cc','transactionid','shipping_address','billing_address','billing_date_timestamp']
-//user My order
-myorder_modify_header_array:any={};
-myorder_orderStatus:any = [{val:0,name: "Processing"},{val:1,name:"Completed"}]
-myorder_detail_skip:any=['_id','user_info','shipping_name_search','ordered_on','autoship_data'];
-myorder_sortdata:any={
-  "type":'desc',
-  "field":'order_id',
-  "options":['order_id']
-};
-my_limitcond:any={
-  "limit":10,
-  "skip":0,
-  "pagecount":1
-};
-my_datacollection: any='getorderlistdata';
+  upcoming_date_search_endpoint: any = 'datalist';
+  upcoming_UpcomingAutolist_detail_skip: any = ['_id', 'billing_date_timestamp'];
+  upcoming_search_settings: any = {
 
-myorder_date_search_endpoint: any='datalist';
-myorder_search_settings:any={
-  
-  datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"ordered_on"}],   // this is use for  date search
+    datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "billing_date_timestamp" }],   // this is use for  date search
 
-  // selectsearch:[{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
+    // selectsearch:[{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
 
-  //  textsearch:[{label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
+    //  textsearch:[{label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
 
-};
-myorder_UpcomingAutolist_skip: any = ['_id','userid','user_info','shipping_name_search','ordered_on','autoship_data']
-  constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService,public apiService:ApiService,public meta:MetaService){
+  };
+  upcoming_UpcomingAutolist_skip: any = ['_id', 'transactiontype', 'card_cc', 'transactionid', 'shipping_address', 'billing_address', 'billing_date_timestamp']
+  //user My order
+  myorder_modify_header_array: any = {};
+  myorder_orderStatus: any = [{ val: 0, name: "Processing" }, { val: 1, name: "Completed" }]
+  myorder_detail_skip: any = ['_id', 'user_info', 'shipping_name_search', 'ordered_on', 'autoship_data'];
+  myorder_sortdata: any = {
+    "type": 'desc',
+    "field": 'order_id',
+    "options": ['order_id']
+  };
+  my_limitcond: any = {
+    "limit": 10,
+    "skip": 0,
+    "pagecount": 1
+  };
+  my_datacollection: any = 'getorderlistdata';
+
+  myorder_date_search_endpoint: any = 'datalist';
+  myorder_search_settings: any = {
+
+    datesearch: [{ startdatelabel: "Start Date", enddatelabel: "End Date", submit: "Search", field: "ordered_on" }],   // this is use for  date search
+
+    // selectsearch:[{label:'Search By Autoship',field:'has_autoship',values:this.autoShipSearch}], // this is use for  select search
+
+    //  textsearch:[{label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
+
+  };
+  myorder_UpcomingAutolist_skip: any = ['_id', 'userid', 'user_info', 'shipping_name_search', 'ordered_on', 'autoship_data']
+  constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService, public apiService: ApiService, public meta: MetaService) {
 
     this.meta.setTitle('Virus Medical Face Mask backend | Dashboard');
     this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
@@ -150,140 +224,139 @@ myorder_UpcomingAutolist_skip: any = ['_id','userid','user_info','shipping_name_
     this.meta.setTag('og:title', 'Virus Medical Face Mask backend | Dashboard');
     this.meta.setTag('twitter:title', 'Virus Medical Face Mask backend | Dashboard');
     this.meta.setTag('og:type', 'website');
-    this.meta.setTag('og:url','https://mask-landingpage-backend.influxiq.com/');    
+    this.meta.setTag('og:url', 'https://mask-landingpage-backend.influxiq.com/');
     this.meta.setTag('og:image', '../../assets/images/logo-fb.jpg');
     this.meta.setTag('twitter:image', '../../assets/images/logo-twitter.jpg');
 
 
-    if(this.cookieUserallData.type=='admin')
-    {
-      this.jwttoken=this.cookieService.get('jwtToken');
+    if (this.cookieUserallData.type == 'admin') {
+      this.jwttoken = this.cookieService.get('jwtToken');
       // this.meta.setTitle('Admin Dashboard');
       this.fetchAdminDashboardData();
-    }else{
-      this.jwttoken=this.cookieService.get('jwtToken');
+    } else {
+      this.jwttoken = this.cookieService.get('jwtToken');
       // this.meta.setTitle('Dashboard');
       this.fetchUserDashboardData();
     }
   }
-   
+
 
   ngOnInit() {
   }
 
   /**admin dashboard data count */
-  fetchAdminDashboardData(){
-    let data:any={};
-    this.apiService.addDataWithoutToken(data, 'admin-dashboard').subscribe((res:any) => {
-      if(res.status=='success'){
-      // console.warn(res.results);
-      this.adminCount=res.results;
-      // console.warn(this.adminCount);
+  fetchAdminDashboardData() {
+    let data: any = {};
+    this.apiService.addDataWithoutToken(data, 'admin-dashboard').subscribe((res: any) => {
+      if (res.status == 'success') {
+        // console.warn(res.results);
+        this.adminCount = res.results;
+        // console.warn(this.adminCount);
 
       }
     });
 
     //this.datasource = '';
-    let endpoint='getorderlistdata';
-    let endpointc='getorderlistdata-count';
+    let endpoint = 'getorderlistdata';
+    let endpointc = 'getorderlistdata-count';
 
-    let dataa:any={
-        "condition":{
-            "limit":8,
-            "skip":0
-        },
-    sort:{
-        "type":'desc',
-        "field":'order_id'
-    }
- 
+    let dataa: any = {
+      "condition": {
+        "limit": 8,
+        "skip": 0
+      },
+      sort: {
+        "type": 'desc',
+        "field": 'order_id'
+      }
+
     }
     // setTimeout(()=>{    //<<<---    using ()=> syntax
-      this.http.httpViaPost(endpointc, dataa).subscribe((res:any) => {
-        // console.log('in constructor');
-        // console.log(result);
-        this.date_search_source_count =res.count;
-        //console.warn('blogData c',res);
+    this.http.httpViaPost(endpointc, dataa).subscribe((res: any) => {
+      // console.log('in constructor');
+      // console.log(result);
+      this.date_search_source_count = res.count;
+      //console.warn('blogData c',res);
 
     }, error => {
-        console.log('Oooops!');
+      console.log('Oooops!');
     });
 
-    this.http.httpViaPost(endpoint,dataa).subscribe((res:any) => {
-       
-        this.orderDataList =res.results.res;
-        //console.log('Oooops!',this.orderDataList);
+    this.http.httpViaPost(endpoint, dataa).subscribe((res: any) => {
+
+      this.orderDataList = res.results.res;
+      //console.log('Oooops!',this.orderDataList);
     }, error => {
-        console.log('Oooops!');
+      console.log('Oooops!');
     });
-//  }, 5000);
-       
- /**upcoming autoship list */
- let upcoming_endpoint='getautoshiplistdata';
- let upcoming_endpointc='getautoshiplistdata-count';
+    //  }, 5000);
 
- let upcoming_data:any={
-     "condition":{
-         "limit":8,
-         "skip":0
-     },
- sort:{
-     "type":'desc',
-     "field":'billing_date'
- }
+    /**upcoming autoship list */
+    let upcoming_endpoint = 'getautoshiplistdata';
+    let upcoming_endpointc = 'getautoshiplistdata-count';
 
- }
- 
-   this.http.httpViaPost(upcoming_endpointc, upcoming_data).subscribe((res:any) => {
-    
-     //console.warn('upcoming autoship data count',res);
-     this.upcoming_search_source_count=res.count;
+    let upcoming_data: any = {
+      "condition": {
+        "limit": 8,
+        "skip": 0
+      },
+      sort: {
+        "type": 'desc',
+        "field": 'billing_date'
+      }
 
- }, error => {
-     console.log('Oooops!');
- });
+    }
 
- this.http.httpViaPost(upcoming_endpoint,upcoming_data).subscribe((res:any) => {
-    this.UpcomingAutolist=res.results.res;
-     //console.log('upcoming autoship data',res);
- }, error => {
-     console.log('Oooops!');
- });
+    this.http.httpViaPost(upcoming_endpointc, upcoming_data).subscribe((res: any) => {
+
+      //console.warn('upcoming autoship data count',res);
+      this.upcoming_search_source_count = res.count;
+
+    }, error => {
+      console.log('Oooops!');
+    });
+
+    this.http.httpViaPost(upcoming_endpoint, upcoming_data).subscribe((res: any) => {
+      this.UpcomingAutolist = res.results.res;
+      //console.log('upcoming autoship data',res);
+    }, error => {
+      console.log('Oooops!');
+    });
 
   }
   // user Data section
-  fetchUserDashboardData(){
-    let endpoint='getorderlistdata';
-    let endpointc='getorderlistdata-count';
+  fetchUserDashboardData() {
+    let endpoint = 'getorderlistdata';
+    let endpointc = 'getorderlistdata-count';
 
-    let dataa:any={
-        "condition":{
-            "limit":8,
-            "skip":0
-        },
-    sort:{
-        "type":'desc',
-        "field":'order_id'
-    },
-    "userid":this.cookieUserallData._id
- 
+    let dataa: any = {
+      "condition": {
+        "limit": 8,
+        "skip": 0
+      },
+      sort: {
+        "type": 'desc',
+        "field": 'order_id'
+      },
+      "userid": this.cookieUserallData._id
+
     }
-      this.http.httpViaPost(endpointc, dataa).subscribe((res:any) => {
-        // console.log('in constructor');
-        // console.log(result);
-        //console.warn('user order data',res);
-        this.myorder_search_source_count=res.count;
+    this.http.httpViaPost(endpointc, dataa).subscribe((res: any) => {
+      // console.log('in constructor');
+      // console.log(result);
+      //console.warn('user order data',res);
+      this.myorder_search_source_count = res.count;
     }, error => {
-        console.log('Oooops!');
+      console.log('Oooops!');
     });
 
-    this.http.httpViaPost(endpoint,dataa).subscribe((res:any) => {
-       
-    
-        console.log('user order data count',res);
-        this.userMyorder=res.results.res;
+    this.http.httpViaPost(endpoint, dataa).subscribe((res: any) => {
+
+
+      console.log('user order data count', res);
+      this.userMyorder = res.results.res;
     }, error => {
-        console.log('Oooops!');
+      console.log('Oooops!');
     });
   }
 }

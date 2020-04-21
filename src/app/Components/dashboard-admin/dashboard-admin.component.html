@@ -269,7 +269,7 @@
               <lib-listing class="animated" *ngIf="UpcomingAutolist!=null && UpcomingAutolist.length>0" 
                 [datasource]="UpcomingAutolist"
                 [skip]="upcoming_UpcomingAutolist_skip"
-                [modify_header_array]="modify_header_array"
+                [modify_header_array]="upcomig_modify_header_array"
                 [apiurl]="apiurl"
                 [updateendpoint]="updateendpoint"
                 [deleteendpoint]="deleteEndpoint"
@@ -286,6 +286,7 @@
                 [searchendpoint]="searchendpoint"
                 [sortdata]="upcoming_sortdata"
                 [datacollection]="upcoming_datacollection"
+                [libdata]="libdata"
                 [date_search_source_count]="upcoming_search_source_count"
                 [limitcond]="upcoming_limitcond"></lib-listing>
                 </div>
