@@ -44,6 +44,7 @@ import {SuccessComponent} from './Components/success/success.component';
 import { OrderEditComponent ,RefundDailog} from './Components/order/order-edit/order-edit.component';
 import { AccountSettingsComponent } from './Components/account-settings/account-settings.component';
 import { UserAccountSettingsComponent } from './Components/user-account-settings/user-account-settings.component';
+import { AdminAutoshipmanagmentComponent } from './Components/admin-autoshipmanagment/admin-autoshipmanagment.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { UserAccountSettingsComponent } from './Components/user-account-settings
     OrderEditComponent,
     AccountSettingsComponent,
     UserAccountSettingsComponent,
-    RefundDailog
+    RefundDailog,
+    AdminAutoshipmanagmentComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

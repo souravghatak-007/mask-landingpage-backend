@@ -12,6 +12,7 @@ import { MetaService } from '@ngx-meta/core';
   styleUrls: ['./order-listing.component.css']
 })
 export class OrderListingComponent implements OnInit {
+public cookieUserallData:any=JSON.parse(this.cookieService.get('user_details'));
 
   public transaction: any =  [{val: "TEST", name: 'TEST'}, {val: 'LIVE', name: 'LIVE'}];
  public autoShipSearch:any=[{val:"Yes",name:'Yes'},{val:"No",name:'No'},];
