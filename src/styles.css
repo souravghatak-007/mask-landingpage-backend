@@ -156,6 +156,7 @@ body { margin: 0; font-family: "NunitoRegular"; }
 .mat-column-shipping_name_search{min-width: 118px !important;}
 .mat-column-order_status{min-width: 118px !important;}
 .mat-column-ordered_date{min-width: 108px !important;}
+.mat-column-visitor_added_date{min-width: 108px !important;}
 .mat-column-transactionid {min-width:146px !important;}
 .mat-column-transactiontype{min-width: 138px !important;}
 .mat-column-ordered_on{min-width: 110px !important;}
@@ -177,8 +178,6 @@ body { margin: 0; font-family: "NunitoRegular"; }
 .mat-column-tags {min-width: 200px !important;}
 .mat-column-tags span{overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:20px}
 .mat-column-timezone{min-width: 130px !important;}
-
-
 /*.mat-form-field-appearance-outline .mat-form-field-outline {color: white;}
 input.mat-input-element {color: white;}
 ::ng-deep .mat-focused .mat-form-field-label {color: green !important;}
@@ -189,6 +188,21 @@ app-order-listing .mat-column-Actions span span.cursor:nth-child(2){display:none
 
 /* media css */
 
+
+
+@media screen and (max-width: 1560px) {
+.listingnewstyle mat-toolbar-row.searchbar .mat-form-field {min-width: 353px;}
+}
+@media screen and (max-width: 1440px) {
+.listingnewstyle mat-toolbar-row.searchbar .mat-form-field {min-width: 334px;}
+}
+
+@media screen and (max-width: 1366px) {
+.listingnewstyle mat-toolbar-row.searchbar .mat-form-field {min-width: 307px;}
+}
+@media screen and (max-width: 1280px) {
+.listingnewstyle mat-toolbar-row.searchbar .mat-form-field {min-width: 292px;}
+}
 
 @media screen and (max-width: 1199px) {
 .listingnewstyle mat-toolbar-row.searchbar .mat-form-field {min-width: 257px;}
