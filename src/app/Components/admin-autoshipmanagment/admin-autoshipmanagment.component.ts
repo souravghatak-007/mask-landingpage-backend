@@ -27,6 +27,7 @@ deleteEndpoint: any = "deletesingledata";
 date_search_source: any='admin_blog_list';
 date_search_endpoint: any='datalist';
 tablename = 'data_order';
+searchendpoint = 'datalist';
 
 orderDataList_detail_datatype:any;
 editroute: any = 'admin/order/edit/';
