@@ -4,11 +4,16 @@
       
     </div> -->
     <mat-card class="breadcrumbs-top">
-      <h3 class="page-header-title">Welcome <span>Sourav Ghatak</span></h3>
-      <mat-card-content class="breadcrumb-wrapper">
+      <h3 class="page-header-title" *ngIf="cookieUserallData.type=='admin'">Welcome <span>{{cookieUserallData.firstname}} {{cookieUserallData.lastname}}</span></h3>
+      <h3 class="page-header-title" *ngIf="cookieUserallData.type=='user'">Welcome <span>{{cookieUserallData.firstname}} {{cookieUserallData.lastname}}</span></h3>
+      <mat-card-content class="breadcrumb-wrapper" *ngIf="cookieUserallData.type=='admin'">
         <mat-list class="breadcrumb">
-          <mat-list-item class="breadcrumb-item"><a [routerLink]="['/dashboard']"><span class="material-icons">home</span></a></mat-list-item>
-          <mat-list-item class="breadcrumb-item">Order List</mat-list-item>
+          <mat-list-item class="breadcrumb-item"><span class="material-icons">home</span></mat-list-item>
+        </mat-list>
+      </mat-card-content>
+      <mat-card-content class="breadcrumb-wrapper" *ngIf="cookieUserallData.type=='user'">
+        <mat-list class="breadcrumb">
+          <mat-list-item class="breadcrumb-item"><span class="material-icons">home</span></mat-list-item>
         </mat-list>
       </mat-card-content>
     </mat-card>
