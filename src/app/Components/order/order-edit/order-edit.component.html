@@ -45,8 +45,7 @@
                     <mat-list-item>  <button type="button" class="singleButton btnred" mat-raised-button (click)="voidtransaction();">Void Order</button> </mat-list-item>
 
                     <mat-list-item>  <button class="singleButton btnblue" mat-raised-button type="button" (click)="refundOrder();">Refund Order</button> </mat-list-item>
-
-                    <mat-list-item>  <button class="singleButton btngreen" mat-raised-button type="button" (click)="resendOrderReceipt()">Send mail</button> </mat-list-item>
+                    
                 </mat-list>            
             </span>
              <!-- Autoship details -->
@@ -71,7 +70,7 @@
             </span>
         </ng-container>
         <!-- order details -->
-            <mat-label>Order details</mat-label>
+            <mat-label class="ordheaderbtn">Order details <button class="singleButton btngreen" mat-raised-button type="button" (click)="resendOrderReceipt()">Send mail</button></mat-label>
             <span class="contentsblock"> 
                 <table mat-table [dataSource]="orderData" class="mat-elevation-z8">  
                     <!-- Product Code column-->
