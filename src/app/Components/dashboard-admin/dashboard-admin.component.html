@@ -110,7 +110,7 @@
 
           </mat-card>
             <!-- live -->
-          <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
+          <mat-card class="bg-red box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-subtitle>{{adminCount.no_of_cancelled_autoship_live}}</mat-card-subtitle>
               <mat-card-title>No. of Cancelled Autoships
@@ -125,7 +125,7 @@
 
           </mat-card>
           <!-- live -->
-          <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
+          <mat-card class="bg-red box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-subtitle>{{adminCount.incomplete_live_order}}</mat-card-subtitle>
               <mat-card-title>No. of Failed Transactions 
@@ -174,7 +174,7 @@
 
           </mat-card>
             <!-- test -->
-          <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
+          <mat-card class="bg-red box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-subtitle>{{adminCount.no_of_cancelled_autoship_test}}</mat-card-subtitle>
               <mat-card-title>No. of Cancelled Autoships
@@ -189,7 +189,7 @@
 
           </mat-card>
           <!-- test -->
-          <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
+          <mat-card class="bg-red box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-subtitle>{{adminCount.order_failed_list}}</mat-card-subtitle>
               <mat-card-title>No. of Failed Transactions 

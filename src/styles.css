@@ -2,6 +2,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "~animate.css/animate.min.css";
 
+
 @font-face {
   font-family: 'NunitoLight';
   src: url('assets/fonts/Nunito-Light.eot');
