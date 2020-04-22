@@ -18,11 +18,20 @@ export class DashboardAdminComponent implements OnInit {
   public cookieUserallData: any = JSON.parse(this.cookieService.get('user_details'))
   public adminCount: any = [];
   public orderDataList: any = [];
+  public successful_count:any=0;
+  public successfullOrderDataList: any = [];
+
+  public Incomplete_count:any=0;
+  public IncompleteOrderDataList: any = [];
+
   public UpcomingAutolist: any = [];
   public userMyorder: any = [];
   public date_search_source_count: any = 0;
   public upcoming_search_source_count: any = 0;
   public myorder_search_source_count: any = 0;
+  public usersflage:boolean=false;
+  public successfullflage:boolean=false;
+  public Incompleteflage:boolean=false;
 
   public transaction: any = [{ val: "TEST", name: 'TEST' }, { val: 'LIVE', name: 'LIVE' }];
   public autoShipSearch: any = [{ val: "Yes", name: 'Yes' }, { val: "No", name: 'No' },];
@@ -281,7 +290,60 @@ export class DashboardAdminComponent implements OnInit {
     //  textsearch:[{label:"Search By OrderId",field:'order_id'},{label:"Search By TransactionID",field:'transactionid'}]    
 
   };
-  myorder_UpcomingAutolist_skip: any = ['_id', 'userid', 'user_info', 'shipping_name_search', 'ordered_on', 'autoship_data']
+  myorder_UpcomingAutolist_skip: any = ['_id', 'userid', 'user_info', 'shipping_name_search', 'ordered_on', 'autoship_data'];
+  //user data populated****************
+
+  userDataarray: any = [];
+   public status: any = [{ val: 1, 'name': 'Active' }, { val: 0, 'name': 'Inactive' }];
+  user_editroute: any = 'user/edit';
+  user_modify_header_array: any = {
+      'firstname': "First Name",
+      'email': 'Email',
+      'lastname': 'Last Name',
+  };
+  pendingmodelapplicationarray_skip: any = ['_id','video_thamnail','type','accesscode','password','description','blogs_image','created_at'];
+  pendingmodelapplicationarray_detail_skip: any = ['_id', 'email', 'name','accesscode','created_at','password','type'];
+  pendingmodelapplicationarray_detail_datatype: any = [{
+      key: "images",
+      value: 'image',
+      fileurl: "http://18.222.26.198/upload/brandimages/"             // Image path 
+  }];
+  user_updateendpoint = 'addorupdatedata';
+  deleteendpoint = 'deletesingledata';
+  user_tablename = 'users';
+  user_searchendpoint = 'datalist';
+  user_date_search_endpoint: any='datalist';
+  user_limitcond:any={
+      "limit":10,
+      "skip":0,
+      "pagecount":1
+  };
+  user_sortdata:any={
+      "type":'desc',
+      "field":'email',
+      "options":['email','firstname','lastname','country']
+  };
+  user_date_search_source: any='admin_blog_list';
+  user_datacollection: any='getuserlistdata';
+  user_date_search_source_count: any=0;
+   authval:any= [
+      { val: 'YmattZ', 'name': 'YmattZ A' },
+      { val: 'YmattZ', 'name': 'YmattZ A' },
+      { val: 'Jessica', 'name': 'A Jessica' }
+      ];
+  user_search_settings:any={
+
+      // datesearch:[{startdatelabel:"Start Date",enddatelabel:"End Date",submit:"Search",  field:"created_at"}],   // this is use for  date search
+
+      // selectsearch:[{label: 'Search By Country', field: 'country', values: this.countryValueForsearch}], // this is use for  select search
+
+       textsearch:[{label:"Search By Firstname",field:'firstname_search'},{label:"Search by Email",field:"email"},{label:"Search by State",field:"state_search"}
+      ],  // this is use for  text search
+
+      //search:[{label:"Search By Author",field:'country_search',values:this.countryValueForsearch}]     // this is use for  Autocomplete search
+  };
+  successfull_datacollection='successfull-getorderlistdata';
+  incomplete_datacollection='incomplete-getorderlistdata';
   constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService, public apiService: ApiService, public meta: MetaService) {
 
     this.meta.setTitle('Virus Medical Face Mask backend | Dashboard');
@@ -428,5 +490,119 @@ export class DashboardAdminComponent implements OnInit {
     }, error => {
       console.log('Oooops!');
     });
+  }
+  /**Users data populated */
+  Users(){
+    console.log("Users");
+    this.usersflage=true;
+    let endpoint='getuserlistdata';
+    let endpointc='getuserlistdata-count';
+    let data:any={
+        "condition":{
+            "limit":10,
+            "skip":0
+        },
+    sort:{
+        "type":'desc',
+        "field":'email'
+    }
+    }
+    this.http.httpViaPost(endpointc, data).subscribe((res:any) => {
+        console.log('in constructor');
+        // console.log(result);
+        this.user_date_search_source_count =res.count.date_search_source_count;
+        console.warn('blogData c',res);
+
+    }, error => {
+        console.log('Oooops!');
+    });
+
+    this.http.httpViaPost(endpoint,data).subscribe((res:any) => {
+        console.log('in constructor');
+        // console.log(result);
+        this.userDataarray =res.results.res;
+        //console.warn('blogData',res);
+
+    }, error => {
+        console.log('Oooops!');
+    });
+  }
+  //Successful Orders
+  SuccessfulOrders(){
+    console.log("SuccessfulOrders");
+    this.usersflage=false;
+    this.successfullflage=true;
+
+   let endpoint = 'successfull-getorderlistdata';
+   let endpointc = 'successfull-getorderlistdata-count';
+
+   let dataa: any = {
+     "condition": {
+       "limit": 8,
+       "skip": 0
+     },
+     sort: {
+       "type": 'desc',
+       "field": 'order_id'
+     }
+
+   }
+   
+   this.http.httpViaPost(endpointc, dataa).subscribe((res: any) => {
+     // console.log('in constructor');
+     // console.log(result);
+     this.successful_count = res.count;
+     //console.warn('blogData c',res);
+   }, error => {
+     console.log('Oooops!');
+   });
+
+   this.http.httpViaPost(endpoint, dataa).subscribe((res: any) => {
+
+     this.successfullOrderDataList = res.results.res;
+     //console.log('Oooops!',this.orderDataList);
+   }, error => {
+     console.log('Oooops!');
+   });
+  }
+  //Incomplete Orders
+  IncompleteOrders(){
+    console.log("IncompleteOrders");
+    this.usersflage=false;
+    this.successfullflage=false;
+    this.Incompleteflage=true;
+
+   let endpoint = 'incomplete-getorderlistdata';
+   let endpointc = 'incomplete-getorderlistdata-count';
+
+   let dataa: any = {
+     "condition": {
+       "limit": 8,
+       "skip": 0
+     },
+     sort: {
+       "type": 'desc',
+       "field": 'order_id'
+     }
+
+   }
+   
+   this.http.httpViaPost(endpointc, dataa).subscribe((res: any) => {
+     // console.log('in constructor');
+     // console.log(result);
+     this.Incomplete_count = res.count;
+     //console.warn('blogData c',res);
+   }, error => {
+     console.log('Oooops!');
+   });
+   
+  
+   this.http.httpViaPost(endpoint, dataa).subscribe((res: any) => {
+
+     this.IncompleteOrderDataList = res.results.res;
+     //console.log('Oooops!',this.orderDataList);
+   }, error => {
+     console.log('Oooops!');
+   });
   }
 }
