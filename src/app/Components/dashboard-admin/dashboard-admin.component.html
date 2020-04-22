@@ -1,34 +1,37 @@
 <div class="adminwrappercls">
-    <app-adminheader></app-adminheader>
-    <!-- <div id="beadcamb">
+  <app-adminheader></app-adminheader>
+  <!-- <div id="beadcamb">
 
     </div> -->
-    <mat-card class="breadcrumbs-top">
-      <h3 class="page-header-title" *ngIf="cookieUserallData.type=='admin'">Welcome <span>{{cookieUserallData.firstname}} {{cookieUserallData.lastname}}</span></h3>
-      <h3 class="page-header-title" *ngIf="cookieUserallData.type=='user'">Welcome <span>{{cookieUserallData.firstname}} {{cookieUserallData.lastname}}</span></h3>
-      <mat-card-content class="breadcrumb-wrapper" *ngIf="cookieUserallData.type=='admin'">
-        <mat-list class="breadcrumb">
-          <mat-list-item class="breadcrumb-item"><span class="material-icons">home</span></mat-list-item>
-        </mat-list>
-      </mat-card-content>
-      <mat-card-content class="breadcrumb-wrapper" *ngIf="cookieUserallData.type=='user'">
-        <mat-list class="breadcrumb">
-          <mat-list-item class="breadcrumb-item"><span class="material-icons">home</span></mat-list-item>
-        </mat-list>
-      </mat-card-content>
-    </mat-card>
+  <mat-card class="breadcrumbs-top">
+    <h3 class="page-header-title" *ngIf="cookieUserallData.type=='admin'">Welcome <span>{{cookieUserallData.firstname}}
+        {{cookieUserallData.lastname}}</span></h3>
+    <h3 class="page-header-title" *ngIf="cookieUserallData.type=='user'">Welcome <span>{{cookieUserallData.firstname}}
+        {{cookieUserallData.lastname}}</span></h3>
+    <mat-card-content class="breadcrumb-wrapper" *ngIf="cookieUserallData.type=='admin'">
+      <mat-list class="breadcrumb">
+        <mat-list-item class="breadcrumb-item"><span class="material-icons">home</span></mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-content class="breadcrumb-wrapper" *ngIf="cookieUserallData.type=='user'">
+      <mat-list class="breadcrumb">
+        <mat-list-item class="breadcrumb-item"><span class="material-icons">home</span></mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
 
 
-    
 
 
-    <div id="maincontent">
-      <div class="main-content-wrap generalcls dashboardcountersection">
-        
-        <mat-card class="countdiv" style="padding: 0 !important;">
-          
-          <span class="genclscount Userscls">
-            <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Users and Orders</mat-card-title>
+
+  <div id="maincontent">
+    <div class="main-content-wrap generalcls dashboardcountersection">
+
+      <mat-card class="countdiv" style="padding: 0 !important;">
+
+        <span class="genclscount Userscls">
+          <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Users and Orders
+          </mat-card-title>
           <mat-card class="bg-cyan box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Users</mat-card-title>
@@ -41,7 +44,7 @@
             <span class="detailbtn">
               <button class="singleButton">View</button>
             </span>
-            
+
           </mat-card>
 
           <mat-card class="bg-light-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
@@ -72,70 +75,140 @@
 
         </span>
 
+        <!-- Autoship Live report -->
         <span class="genclscount autoship">
-          <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Orders With AutoShip</mat-card-title>
+          <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Autoship Live Report
+          </mat-card-title>
 
-         <!-- Test Successful Orders With AutoShip -->
+          <!-- transaction_live_withautoship -->
           <mat-card class="bg-deep-green box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
-              <mat-card-subtitle>{{adminCount.transaction_test_withautoship}}</mat-card-subtitle>
-              <mat-card-title>Test Successful Orders With AutoShip </mat-card-title>
+              <mat-card-subtitle>{{adminCount.transaction_live_withautoship}}</mat-card-subtitle>
+              <mat-card-title>AutoShips </mat-card-title>
               <span class="detailbtn">
                 <button class="singleButton">View</button>
               </span>
             </span>
             <span class="icon">
               <i class="material-icons">card_membership</i>
-            </span>    
-                    
-          </mat-card>          
-          <!-- transaction_live_withautoship -->
-          <mat-card class="bg-deep-green box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
-            <span class="content">
-              <mat-card-subtitle>{{adminCount.transaction_live_withautoship}}</mat-card-subtitle>
-              <mat-card-title>Live Successful Orders With AutoShip </mat-card-title>
-              <span class="detailbtn">
-                <button class="singleButton">View</button>
-              </span>   
             </span>
-            <span class="icon">
-              <i class="material-icons">card_membership</i>
-            </span>    
-                 
+
           </mat-card>
 
+          <!-- live -->
           <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
-            <span class="content">              
-              <mat-card-subtitle>{{adminCount.order_autoship}}</mat-card-subtitle>
-              <mat-card-title>Test Successful Orders With AutoShip Completed</mat-card-title>
+            <span class="content">
+              <mat-card-subtitle>0</mat-card-subtitle>
+              <mat-card-title>Number of Pending Autoships</mat-card-title>
               <span class="detailbtn">
                 <button class="singleButton">View</button>
               </span>
             </span>
             <span class="icon">
               <i class="material-icons">credit_card</i>
-            </span>     
-            
-          </mat-card>
+            </span>
 
+          </mat-card>
+            <!-- live -->
           <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
-            <span class="content">              
-              <mat-card-subtitle>{{adminCount.order_autoship}}</mat-card-subtitle>
-              <mat-card-title>Live Successful Orders With AutoShip Completed</mat-card-title>
+            <span class="content">
+              <mat-card-subtitle>0</mat-card-subtitle>
+              <mat-card-title>No. of Cancelled Autoships
+              </mat-card-title>
               <span class="detailbtn">
                 <button class="singleButton">View</button>
               </span>
             </span>
             <span class="icon">
-              <i class="material-icons">add_shopping_cart</i>
-            </span>     
-            
-          </mat-card>
+              <i class="material-icons">credit_card</i>
+            </span>
 
+          </mat-card>
+          <!-- live -->
+          <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
+              <mat-card-subtitle>0</mat-card-subtitle>
+              <mat-card-title>No. of Failed Transactions 
+              </mat-card-title>
+              <span class="detailbtn">
+                <button class="singleButton">View</button>
+              </span>
+            </span>
+            <span class="icon">
+              <i class="material-icons">credit_card</i>
+            </span>
+
+          </mat-card>
         </span>
 
+        <!-- Autoship test report -->
+        <span class="genclscount autoship">
+          <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Autoship Test Report
+          </mat-card-title>
+          <!-- Test AutoShip -->
+          <mat-card class="bg-deep-green box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
+              <mat-card-subtitle>{{adminCount.transaction_test_withautoship}}</mat-card-subtitle>
+              <mat-card-title>AutoShips</mat-card-title>
+              <span class="detailbtn">
+                <button class="singleButton">View</button>
+              </span>
+            </span>
+            <span class="icon">
+              <i class="material-icons">card_membership</i>
+            </span>
+
+          </mat-card>
+            <!-- test -->
+          <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
+              <mat-card-subtitle>0</mat-card-subtitle>
+              <mat-card-title>Number of Pending Autoships</mat-card-title>
+              <span class="detailbtn">
+                <button class="singleButton">View</button>
+              </span>
+            </span>
+            <span class="icon">
+              <i class="material-icons">credit_card</i>
+            </span>
+
+          </mat-card>
+            <!-- test -->
+          <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
+              <mat-card-subtitle>0</mat-card-subtitle>
+              <mat-card-title>No. of Cancelled Autoships
+              </mat-card-title>
+              <span class="detailbtn">
+                <button class="singleButton">View</button>
+              </span>
+            </span>
+            <span class="icon">
+              <i class="material-icons">credit_card</i>
+            </span>
+
+          </mat-card>
+          <!-- test -->
+          <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
+              <mat-card-subtitle>0</mat-card-subtitle>
+              <mat-card-title>No. of Failed Transactions 
+              </mat-card-title>
+              <span class="detailbtn">
+                <button class="singleButton">View</button>
+              </span>
+            </span>
+            <span class="icon">
+              <i class="material-icons">credit_card</i>
+            </span>
+
+          </mat-card>
+        </span>
+
+
         <span class="genclscount testcls">
-          <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Test orders</mat-card-title>
+          <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Test orders
+          </mat-card-title>
 
           <!-- Test orders -->
           <mat-card class="bg-deep-blue box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
@@ -144,12 +217,12 @@
               <mat-card-title *ngIf="cookieUserallData.type=='admin'">Test Orders</mat-card-title>
               <span class="detailbtn">
                 <button class="singleButton">View</button>
-              </span>  
+              </span>
             </span>
             <span class="icon">
               <i class="material-icons">credit_card</i>
-            </span>     
-                 
+            </span>
+
           </mat-card>
 
           <!-- Successful Test orders -->
@@ -159,173 +232,134 @@
               <mat-card-title>Successful Test Orders</mat-card-title>
               <span class="detailbtn">
                 <button class="singleButton">View</button>
-              </span>  
+              </span>
             </span>
             <span class="icon">
               <i class="material-icons">playlist_add_check</i>
-            </span>     
-                 
+            </span>
+
           </mat-card>
-          
-           <!-- Total Transaction Amount of Test Orders -->
-           <mat-card class="box-shadow oas cdmember" *ngIf="cookieUserallData.type=='admin'">
-            <span class="content">              
+
+          <!-- Total Transaction Amount of Test Orders -->
+          <mat-card class="box-shadow oas cdmember" *ngIf="cookieUserallData.type=='admin'">
+            <span class="content">
               <mat-card-subtitle>${{adminCount.transaction_total_test}}</mat-card-subtitle>
               <mat-card-title>Total Transaction Amount of Test Orders</mat-card-title>
               <span class="detailbtn">
                 <button class="singleButton">View</button>
-              </span> 
+              </span>
             </span>
             <span class="icon">
               <i class="material-icons">card_membership</i>
-            </span>    
-                  
+            </span>
+
           </mat-card>
         </span>
         <span class="genclscount livecls">
-          <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Live orders</mat-card-title>
+          <mat-card-title class="dashboardcounterheader" *ngIf="cookieUserallData.type=='admin'">Live orders
+          </mat-card-title>
 
 
-           <!-- Live orders -->
+          <!-- Live orders -->
           <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Live Orders</mat-card-title>
-            <mat-card-subtitle>{{adminCount.transaction_type_live}}</mat-card-subtitle>
+              <mat-card-subtitle>{{adminCount.transaction_type_live}}</mat-card-subtitle>
             </span>
             <span class="icon">
               <i class="material-icons">card_membership</i>
-            </span>    
+            </span>
             <span class="detailbtn">
               <button class="singleButton">View</button>
-            </span>        
+            </span>
           </mat-card>
           <!-- incomplete_live_order -->
           <mat-card class="bg-red box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Incomplete Live Order </mat-card-title>
-            <mat-card-subtitle>{{adminCount.incomplete_live_order}}</mat-card-subtitle>
+              <mat-card-subtitle>{{adminCount.incomplete_live_order}}</mat-card-subtitle>
             </span>
             <span class="icon">
               <i class="material-icons">card_membership</i>
-            </span>    
+            </span>
             <span class="detailbtn">
               <button class="singleButton">View</button>
-            </span>        
+            </span>
           </mat-card>
-          
-         
+
+
           <!-- Total Transaction Amount of Live Orders -->
           <mat-card class="bg-deep-green box-shadow" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
               <mat-card-title>Total Transaction Amount of Live Orders </mat-card-title>
-            <mat-card-subtitle>${{adminCount.transaction_total_live}}</mat-card-subtitle>
+              <mat-card-subtitle>${{adminCount.transaction_total_live}}</mat-card-subtitle>
             </span>
             <span class="icon">
               <i class="material-icons">card_membership</i>
-            </span>    
+            </span>
             <span class="detailbtn">
               <button class="singleButton">View</button>
-            </span>        
-          </mat-card>         
-
-         </span>
-
-        </mat-card>
-        <mat-card *ngIf="cookieUserallData.type=='admin'">
-          <div class="content_header_wrapper">
-            <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Order List</h2>                     
-          </div>
-         
-        <div class="listingnewstyle orderlistdashboard">
-          <lib-listing class="animated" *ngIf="orderDataList!=null && orderDataList.length>0" 
-            [datasource]="orderDataList"
-            [skip]="orderDataList_skip"
-            [modify_header_array]="modify_header_array"
-            [apiurl]="apiurl"
-            [updateendpoint]="updateendpoint"
-            [deleteendpoint]="deleteEndpoint"
-            [date_search_source]="date_search_source"
-            [date_search_endpoint]="date_search_endpoint"
-            [sourcedata]="tablename"
-            [detail_datatype]="orderDataList_detail_datatype"
-            [editroute]="editroute"
-            [statusarr]="statusarray"
-            [detail_skip_array]="orderDataList_detail_skip"
-            [url]="custom_link"
-            [jwttoken]="jwttoken"
-            [search_settings]="search_settings"
-            [searchendpoint]="searchendpoint"
-            [sortdata]="sortdata"
-            [datacollection]="datacollection"
-            [date_search_source_count]="date_search_source_count"
-            [limitcond]="limitcond"></lib-listing>
-            </div>
-            <!-- upcoming autoship list -->
-            <div class="content_header_wrapper">
-              <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Upcoming AutoShips</h2>                     
-            </div>
-
-            <div class="listingnewstyle">
-              <lib-listing class="animated" *ngIf="UpcomingAutolist!=null && UpcomingAutolist.length>0" 
-                [datasource]="UpcomingAutolist"
-                [skip]="upcoming_UpcomingAutolist_skip"
-                [modify_header_array]="upcomig_modify_header_array"
-                [apiurl]="apiurl"
-                [updateendpoint]="updateendpoint"
-                [deleteendpoint]="deleteEndpoint"
-                [date_search_source]="date_search_source"
-                [date_search_endpoint]="date_search_endpoint"
-                [sourcedata]="tablename"
-                [detail_datatype]="orderDataList_detail_datatype"
-                [editroute]="editroute"
-                [statusarr]="upcoming_orderStatus"
-                [detail_skip_array]="upcoming_UpcomingAutolist_detail_skip"
-                [url]="custom_link"
-                [jwttoken]="jwttoken"
-                [search_settings]="upcoming_search_settings"
-                [searchendpoint]="searchendpoint"
-                [sortdata]="upcoming_sortdata"
-                [datacollection]="upcoming_datacollection"
-                [libdata]="libdata"
-                [date_search_source_count]="upcoming_search_source_count"
-                [limitcond]="upcoming_limitcond"></lib-listing>
-                </div>
-
+            </span>
           </mat-card>
-          <!-- user section html start here -->
-          
-          
-          <div class="content_header_wrapper">
-            <h2 class="headerSpan" *ngIf="cookieUserallData.type=='user'">My Orders</h2>                     
-          </div>
 
-          <div class="listingnewstyle myordersdashboard">
-            <lib-listing class="animated" *ngIf="userMyorder!=null && userMyorder.length>0" 
-              [datasource]="userMyorder"
-              [skip]="myorder_UpcomingAutolist_skip"
-              [modify_header_array]="myorder_modify_header_array"
-              [apiurl]="apiurl"
-              [updateendpoint]="updateendpoint"
-              [deleteendpoint]="deleteEndpoint"
-              [date_search_source]="date_search_source"
-              [date_search_endpoint]="myorder_date_search_endpoint"
-              [sourcedata]="tablename"
-              [detail_datatype]="orderDataList_detail_datatype"
-              [editroute]="editroute"
-              [statusarr]="upcoming_orderStatus"
-              [detail_skip_array]="myorder_detail_skip"
-              [url]="custom_link"
-              [jwttoken]="jwttoken"
-              [search_settings]="myorder_search_settings"
-              [searchendpoint]="searchendpoint"
-              [sortdata]="myorder_sortdata"
-              [datacollection]="my_datacollection"
-              [libdata]="myorder_libdata"
-              [date_search_source_count]="myorder_search_source_count"
-              [limitcond]="my_limitcond"></lib-listing>
-          </div>
+        </span>
+
+      </mat-card>
+      <mat-card *ngIf="cookieUserallData.type=='admin'">
+        <div class="content_header_wrapper">
+          <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Order List</h2>
+        </div>
+
+        <div class="listingnewstyle orderlistdashboard">
+          <lib-listing class="animated" *ngIf="orderDataList!=null && orderDataList.length>0"
+            [datasource]="orderDataList" [skip]="orderDataList_skip" [modify_header_array]="modify_header_array"
+            [apiurl]="apiurl" [updateendpoint]="updateendpoint" [deleteendpoint]="deleteEndpoint"
+            [date_search_source]="date_search_source" [date_search_endpoint]="date_search_endpoint"
+            [sourcedata]="tablename" [detail_datatype]="orderDataList_detail_datatype" [editroute]="editroute"
+            [statusarr]="statusarray" [detail_skip_array]="orderDataList_detail_skip" [url]="custom_link"
+            [jwttoken]="jwttoken" [search_settings]="search_settings" [searchendpoint]="searchendpoint"
+            [sortdata]="sortdata" [datacollection]="datacollection"
+            [date_search_source_count]="date_search_source_count" [limitcond]="limitcond"></lib-listing>
+        </div>
+        <!-- upcoming autoship list -->
+        <div class="content_header_wrapper">
+          <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Upcoming AutoShips</h2>
+        </div>
+
+        <div class="listingnewstyle">
+          <lib-listing class="animated" *ngIf="UpcomingAutolist!=null && UpcomingAutolist.length>0"
+            [datasource]="UpcomingAutolist" [skip]="upcoming_UpcomingAutolist_skip"
+            [modify_header_array]="upcomig_modify_header_array" [apiurl]="apiurl" [updateendpoint]="updateendpoint"
+            [deleteendpoint]="deleteEndpoint" [date_search_source]="date_search_source"
+            [date_search_endpoint]="date_search_endpoint" [sourcedata]="tablename"
+            [detail_datatype]="orderDataList_detail_datatype" [editroute]="editroute" [statusarr]="upcoming_orderStatus"
+            [detail_skip_array]="upcoming_UpcomingAutolist_detail_skip" [url]="custom_link" [jwttoken]="jwttoken"
+            [search_settings]="upcoming_search_settings" [searchendpoint]="searchendpoint"
+            [sortdata]="upcoming_sortdata" [datacollection]="upcoming_datacollection" [libdata]="libdata"
+            [date_search_source_count]="upcoming_search_source_count" [limitcond]="upcoming_limitcond"></lib-listing>
+        </div>
+
+      </mat-card>
+      <!-- user section html start here -->
+
+
+      <div class="content_header_wrapper">
+        <h2 class="headerSpan" *ngIf="cookieUserallData.type=='user'">My Orders</h2>
       </div>
-    </div>    
+
+      <div class="listingnewstyle myordersdashboard">
+        <lib-listing class="animated" *ngIf="userMyorder!=null && userMyorder.length>0" [datasource]="userMyorder"
+          [skip]="myorder_UpcomingAutolist_skip" [modify_header_array]="myorder_modify_header_array" [apiurl]="apiurl"
+          [updateendpoint]="updateendpoint" [deleteendpoint]="deleteEndpoint" [date_search_source]="date_search_source"
+          [date_search_endpoint]="myorder_date_search_endpoint" [sourcedata]="tablename"
+          [detail_datatype]="orderDataList_detail_datatype" [editroute]="editroute" [statusarr]="upcoming_orderStatus"
+          [detail_skip_array]="myorder_detail_skip" [url]="custom_link" [jwttoken]="jwttoken"
+          [search_settings]="myorder_search_settings" [searchendpoint]="searchendpoint" [sortdata]="myorder_sortdata"
+          [datacollection]="my_datacollection" [libdata]="myorder_libdata"
+          [date_search_source_count]="myorder_search_source_count" [limitcond]="my_limitcond"></lib-listing>
+      </div>
+    </div>
+  </div>
 </div>
 
 <app-footer></app-footer>
