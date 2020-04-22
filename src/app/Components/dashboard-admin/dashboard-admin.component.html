@@ -98,7 +98,7 @@
           <!-- live -->
           <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
-              <mat-card-subtitle>0</mat-card-subtitle>
+              <mat-card-subtitle>{{adminCount.no_of_pending_autoship_live}}</mat-card-subtitle>
               <mat-card-title>Number of Pending Autoships</mat-card-title>
               <span class="detailbtn">
                 <button class="singleButton">View</button>
@@ -112,7 +112,7 @@
             <!-- live -->
           <mat-card class="bg-red box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
-              <mat-card-subtitle>0</mat-card-subtitle>
+              <mat-card-subtitle>{{adminCount.no_of_cancelled_autoship_live}}</mat-card-subtitle>
               <mat-card-title>No. of Cancelled Autoships
               </mat-card-title>
               <span class="detailbtn">
@@ -162,7 +162,7 @@
             <!-- test -->
           <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
-              <mat-card-subtitle>0</mat-card-subtitle>
+              <mat-card-subtitle>{{adminCount.no_of_pending_autoship_test}}</mat-card-subtitle>
               <mat-card-title>Number of Pending Autoships</mat-card-title>
               <span class="detailbtn">
                 <button class="singleButton">View</button>
@@ -176,7 +176,7 @@
             <!-- test -->
           <mat-card class="bg-red box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
-              <mat-card-subtitle>0</mat-card-subtitle>
+              <mat-card-subtitle>{{adminCount.no_of_cancelled_autoship_test}}</mat-card-subtitle>
               <mat-card-title>No. of Cancelled Autoships
               </mat-card-title>
               <span class="detailbtn">
