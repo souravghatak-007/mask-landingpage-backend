@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../services/http-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -344,7 +344,7 @@ export class DashboardAdminComponent implements OnInit {
   };
   successfull_datacollection='successfull-getorderlistdata';
   incomplete_datacollection='incomplete-getorderlistdata';
-  constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService, public apiService: ApiService, public meta: MetaService) {
+  constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService, public apiService: ApiService, public meta: MetaService, private myElement: ElementRef) {
 
     this.meta.setTitle('Virus Medical Face Mask backend | Dashboard');
     this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
@@ -493,6 +493,7 @@ export class DashboardAdminComponent implements OnInit {
   }
   /**Users data populated */
   Users(){
+    
     console.log("Users");
     this.usersflage=true;
     let endpoint='getuserlistdata';
@@ -507,7 +508,15 @@ export class DashboardAdminComponent implements OnInit {
         "field":'email'
     }
     }
+
+    var elmnt = document.getElementById("usersdiv");
+    elmnt.scrollIntoView({behavior: "smooth"});
+
+
     this.http.httpViaPost(endpointc, data).subscribe((res:any) => {
+
+      
+
         console.log('in constructor');
         // console.log(result);
         this.user_date_search_source_count =res.count.date_search_source_count;
@@ -526,6 +535,9 @@ export class DashboardAdminComponent implements OnInit {
     }, error => {
         console.log('Oooops!');
     });
+
+    // this.router.navigate([], { fragment: 'usersdiv' });
+    
   }
   //Successful Orders
   SuccessfulOrders(){
