@@ -46,7 +46,7 @@ custom_link:any;
  };
  upcoming_datacollection: any='getautoshiplistdata';
  libdata:any={
-  updateendpoint:'statusupdate',
+  updateendpoint:'cancel-autoship-liblist',
   // hideeditbutton:true,// all these button options are optional not mandatory
   hidedeletebutton:true,
   //hideviewbutton:false,

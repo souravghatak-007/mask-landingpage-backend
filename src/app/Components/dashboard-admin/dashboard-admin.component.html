@@ -127,7 +127,7 @@
           <!-- live -->
           <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
-              <mat-card-subtitle>0</mat-card-subtitle>
+              <mat-card-subtitle>{{adminCount.incomplete_live_order}}</mat-card-subtitle>
               <mat-card-title>No. of Failed Transactions 
               </mat-card-title>
               <span class="detailbtn">
@@ -191,7 +191,7 @@
           <!-- test -->
           <mat-card class="bg-orange box-shadow oas" *ngIf="cookieUserallData.type=='admin'">
             <span class="content">
-              <mat-card-subtitle>0</mat-card-subtitle>
+              <mat-card-subtitle>{{adminCount.order_failed_list}}</mat-card-subtitle>
               <mat-card-title>No. of Failed Transactions 
               </mat-card-title>
               <span class="detailbtn">

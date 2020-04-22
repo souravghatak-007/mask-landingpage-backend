@@ -93,7 +93,7 @@ export class DashboardAdminComponent implements OnInit {
   };
 
   libdata: any = {
-    updateendpoint: 'statusupdate',
+    updateendpoint: 'cancel-autoship-liblist',
     // hideeditbutton:true,// all these button options are optional not mandatory
     hidedeletebutton: true,
     //hideviewbutton:false,
@@ -160,7 +160,7 @@ export class DashboardAdminComponent implements OnInit {
     //     }
     // ]
   }
-  upcoming_orderStatus: any = [{ val: 0, name: "Processing" }, { val: 1, name: "Completed" }]
+  upcoming_orderStatus: any = [{val:0,name: "Pending"},{val:1,name:"Completed"},{val:2,name:'Cancelled'}]
   upcoming_sortdata: any = {
     "type": 'desc',
     "field": 'billing_date',
