@@ -42,7 +42,7 @@
             </span>
 
             <span class="detailbtn">
-              <button class="singleButton">View</button>
+              <button class="singleButton" (click)="Users();">View</button>
             </span>
 
           </mat-card>
@@ -56,7 +56,7 @@
               <i class="material-icons">playlist_add_check</i>
             </span>
             <span class="detailbtn">
-              <button class="singleButton">View</button>
+              <button class="singleButton" (click)="SuccessfulOrders();">View</button>
             </span>
           </mat-card>
 
@@ -69,7 +69,7 @@
               <i class="material-icons">eject</i>
             </span>
             <span class="detailbtn">
-              <button class="singleButton">View</button>
+              <button class="singleButton" (click)="IncompleteOrders();">View</button>
             </span>
           </mat-card>
 
@@ -339,7 +339,82 @@
             [date_search_source_count]="upcoming_search_source_count" [limitcond]="upcoming_limitcond"></lib-listing>
         </div>
 
+
+          <!-- users data populated table -->
+
+          <ng-container *ngIf="usersflage==true">
+            <div class="content_header_wrapper">
+              <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Users</h2>
+            </div>
+           
+            <div class="listingnewstyle">
+              <lib-listing *ngIf="userDataarray!=null && userDataarray.length>0" 
+                [datasource]="userDataarray"
+                [skip]="pendingmodelapplicationarray_skip" 
+                [modify_header_array]="user_modify_header_array" 
+                [apiurl]="apiurl" 
+                [deleteendpoint]="deleteendpoint" 
+                [updateendpoint]="user_updateendpoint" 
+                [jwttoken]="jwttoken" 
+                [date_search_source]="user_date_search_source"
+                [date_search_endpoint]="user_date_search_endpoint"
+                [sourcedata]="user_tablename"  
+                [statusarr]="status" 
+                [detail_datatype]="pendingmodelapplicationarray_detail_datatype"
+                [editroute]="user_editroute"
+                [detail_skip_array]="pendingmodelapplicationarray_detail_skip" 
+                [search_settings]="user_search_settings"
+                [searchendpoint]="user_searchendpoint"
+                [sortdata]="user_sortdata"
+                        [datacollection]="user_datacollection"
+                        [date_search_source_count]="user_date_search_source_count"
+                        [limitcond]="user_limitcond"></lib-listing>
+            </div>
+          </ng-container>
+           <!-- Successfull orders data populated table -->
+
+           <ng-container *ngIf="successfullflage==true">
+            <div class="content_header_wrapper">
+              <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Successfull orders</h2>
+            </div>
+           
+            <div class="listingnewstyle">
+              <lib-listing class="animated" *ngIf="successfullOrderDataList!=null && successfullOrderDataList.length>0"
+                [datasource]="successfullOrderDataList" [skip]="orderDataList_skip" [modify_header_array]="modify_header_array"
+                [apiurl]="apiurl" [updateendpoint]="updateendpoint" [deleteendpoint]="deleteEndpoint"
+                [date_search_source]="date_search_source" [date_search_endpoint]="date_search_endpoint"
+                [sourcedata]="tablename" [detail_datatype]="orderDataList_detail_datatype" [editroute]="editroute"
+                [statusarr]="statusarray" [detail_skip_array]="orderDataList_detail_skip" [url]="custom_link"
+                [jwttoken]="jwttoken" [search_settings]="search_settings" [searchendpoint]="searchendpoint"
+                [sortdata]="sortdata" [datacollection]="successfull_datacollection"
+                [date_search_source_count]="successful_count" [limitcond]="limitcond"></lib-listing>
+            </div>
+          </ng-container>
+
+           <!-- Incomplete orders data populated table -->
+
+           <ng-container *ngIf="Incompleteflage==true">
+            <div class="content_header_wrapper">
+              <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Incomplete orders</h2>
+            </div>
+           
+            <div class="listingnewstyle">
+              <lib-listing class="animated" *ngIf="IncompleteOrderDataList!=null && IncompleteOrderDataList.length>0"
+                [datasource]="IncompleteOrderDataList" [skip]="orderDataList_skip" [modify_header_array]="modify_header_array"
+                [apiurl]="apiurl" [updateendpoint]="updateendpoint" [deleteendpoint]="deleteEndpoint"
+                [date_search_source]="date_search_source" [date_search_endpoint]="date_search_endpoint"
+                [sourcedata]="tablename" [detail_datatype]="orderDataList_detail_datatype" [editroute]="editroute"
+                [statusarr]="statusarray" [detail_skip_array]="orderDataList_detail_skip" [url]="custom_link"
+                [jwttoken]="jwttoken" [search_settings]="search_settings" [searchendpoint]="searchendpoint"
+                [sortdata]="sortdata" [datacollection]="incomplete_datacollection"
+                [date_search_source_count]="Incomplete_count" [limitcond]="limitcond"></lib-listing>
+            </div>
+          </ng-container>
       </mat-card>
+
+
+
+
       <!-- user section html start here -->
 
 
