@@ -343,11 +343,11 @@
           <!-- users data populated table -->
 
           <ng-container *ngIf="usersflage==true">
-            <div class="content_header_wrapper">
+            <div class="content_header_wrapper" id="usersdiv">
               <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Users</h2>
             </div>
            
-            <div class="listingnewstyle" id="usersdiv">
+            <div class="listingnewstyle">
               <lib-listing *ngIf="userDataarray!=null && userDataarray.length>0" 
                 [datasource]="userDataarray"
                 [skip]="pendingmodelapplicationarray_skip" 
