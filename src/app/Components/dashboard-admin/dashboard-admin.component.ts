@@ -494,7 +494,7 @@ export class DashboardAdminComponent implements OnInit {
     });
   }
   /**Users data populated */
-  Users(){
+  Users(usersdiv: string): void {
     
     // console.log("Users");
     this.usersflage=true;

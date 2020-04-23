@@ -66,13 +66,41 @@ background: -webkit-linear-gradient(270deg,rgba(25,198,254,1) 0%,rgba(2,168,222,
 
 /* paginator css */
 
-.lib-pager-class{background:#59747d!important;color:var(--c-t-bg-w)!important;float: inherit !important;display: flex!important;align-items: center;justify-content: flex-end;}
+.lib-pager-class{background:#59747d!important;color:var(--c-t-bg-w)!important;float: inherit !important;display: flex!important;align-items: center;justify-content: center;    padding: 6px 5px 5px;}
+.lib-pager-class > span.cursor{margin-top:0px !important;font-size: 18px !important;}
+.lib-pager-class > mat-label{margin-top: -6px !important;font-size: 14px !important;font-family: var(--main-font);}
+.lib-pager-class > span{margin-top: -6px !important;margin-left: 5px;font-size: 16px !important;}
 .lib-pager-class .mat-form-field {display: flex;align-items: center;}
 .lib-pager-class .mat-form-field .mat-form-field-wrapper{display: flex;align-items: center;flex-direction: column; flex-wrap: nowrap;}
 .lib-pager-class .mat-form-field .mat-form-field-wrapper .mat-form-field-infix {border-top: 0 !important;display: flex;justify-content: space-between;align-items: center;padding: 0 !important;}
-.lib-pager-class .mat-form-field .mat-form-field-wrapper .mat-form-field-infix input.mat-input-element{order: 2 !important;}
-.lib-pager-class .mat-form-field .mat-form-field-wrapper .mat-form-field-infix .mat-form-field-label-wrapper{flex: 1 0 auto !important;order: 1 !important;top: 0;padding-top: 0 !important;}
-.lib-pager-class .mat-form-field .mat-form-field-wrapper .mat-form-field-infix .mat-form-field-label-wrapper .mat-form-field-label{color: #fff !important;display: flex !important;position: inherit !important;}
+.lib-pager-class .mat-form-field .mat-form-field-wrapper .mat-form-field-infix input.mat-input-element{font-size: 16px !important;
+  order: 2 !important;
+    background: #31545f;
+    min-width: 24px;
+    padding: 0;
+    border-bottom: 3px solid #03aae0;
+    text-align: center;
+    font-size: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 30px;
+    height: 34px;
+    padding: 0 16px;
+    text-align: left;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    outline: 0;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    box-sizing: border-box;
+    align-items: center;font-family: var(--main-font);
+}
+.lib-pager-class .mat-form-field .mat-form-field-wrapper .mat-form-field-infix .mat-form-field-label-wrapper{order: 1 !important;top: 0;padding-top: 0 !important;width: inherit;position: inherit;}
+.lib-pager-class .mat-form-field .mat-form-field-wrapper .mat-form-field-infix .mat-form-field-label-wrapper .mat-form-field-label{color: #fff !important;display: flex !important;position: inherit !important;line-height: 24px;font-size: 16px;font-family: var(--main-font);}
+/* .lib-pager-class .mat-form-field.mat-form-field-appearance-legacy .mat-form-field-underline {height: 1px;} */
 
 .mat-button.mat-accent[disabled],.mat-button.mat-primary[disabled],.mat-button.mat-warn[disabled],.mat-button[disabled][disabled],.mat-icon-button.mat-accent[disabled],.mat-icon-button.mat-primary[disabled],.mat-icon-button.mat-warn[disabled],.mat-icon-button[disabled][disabled],.mat-stroked-button.mat-accent[disabled],.mat-stroked-button.mat-primary[disabled],.mat-stroked-button.mat-warn[disabled],.mat-stroked-button[disabled][disabled]{color:var(--c-t-bg-w)!important}
 .priceMark .searchdiv:last-child,.priceMark .cursor:last-child,.priceMark .cursor:nth-of-type(3){display:none}
@@ -677,10 +705,12 @@ table.mat-table {width: 100%;}
 }
 
 @media screen and (max-width: 600px) {
+  .lib-pager-class {justify-content: center;flex-wrap: wrap;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck {flex-wrap: wrap;}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount {margin-top:5px}
 .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element {margin-top:8px}
 .countdiv .column4 .mat-card {flex:1 0 100%;}
+/* .lib-pager-class .mat-form-field {margin-top: 0px;width: 26%;} */
 }
 @media screen and (max-width: 576px) {
 .profile-area {display: block;text-align: center;}
@@ -691,8 +721,12 @@ table.mat-table {width: 100%;}
 .AddEditBlog .files-view {margin: 0 auto 10px !important;}
 .files-view .mat-card {margin: 0px auto 10px!important;width: 100% !important;}
 }
-
-
+@media screen and (max-width: 540px) {
+/* .lib-pager-class {justify-content: center;flex-wrap: wrap;} */
+.lib-pager-class .mat-form-field {margin-top: 10px;width: 50%;}
+.lib-pager-class > mat-label {margin-top: 0 !important;line-height: 24px;}
+.lib-pager-class > span {margin-top: 0 !important; margin-left: 5px;line-height: 24px;}
+}
 @media screen and (max-width: 480px) {
   .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount {flex-wrap: wrap;}
   .cdk-overlay-pane.custom-modalbox .mat-dialog-content.refundcheck .refundamount .mat-input-element {width: 92%;}
@@ -716,6 +750,11 @@ table.mat-table {width: 100%;}
 .paymentstatus .mat-list-item .mat-list-item-content span {margin-right: auto;width: auto;margin-top: 0;margin-bottom: 10px;}
 .paymentstatus .mat-list-item .mat-list-item-content .singleButton {width: 100%;}
 .mat-table .mat-cell, .mat-table .mat-footer-cell {width: 97%;}
+}
+@media screen and (max-width: 400px) {
+  .lib-pager-class > span.cursor {margin-top: 5px !important;}
+  .lib-pager-class .mat-form-field {margin-top: 5px;width: 100%;justify-content: center;}
+  /* .lib-pager-class .mat-form-field {width: 50%;} */
 }
 
 @media screen and (max-width: 370px) {
