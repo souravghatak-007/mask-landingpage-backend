@@ -1,7 +1,7 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpServiceService } from '../../services/http-service.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router} from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { MetaService } from '@ngx-meta/core';
 import { ApiService } from './../../api.service';
@@ -345,7 +345,7 @@ export class DashboardAdminComponent implements OnInit {
   };
   successfull_datacollection='successfull-getorderlistdata';
   incomplete_datacollection='incomplete-getorderlistdata';
-  constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService, public apiService: ApiService, public meta: MetaService, private myElement: ElementRef) {
+  constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService, public apiService: ApiService, public meta: MetaService) {
     // private vps: ViewportScroller
 
     this.meta.setTitle('Virus Medical Face Mask backend | Dashboard');
@@ -513,14 +513,18 @@ export class DashboardAdminComponent implements OnInit {
 
 
     //scroll to target div
-    var e = document.getElementById("usersdiv");
-    e.scrollIntoView({block: 'end', behavior: 'smooth', inline: 'center'});
-    //end scroll to target div
-    
+    var elmt: HTMLElement|null = document.getElementById("usersdiv");
+    if (elmt) {
+      setTimeout(() =>
+      elmt.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'}), 0);
+    }
+  //scroll to End target div
 
-    this.http.httpViaPost(endpointc, data).subscribe((res:any) => {
 
-      
+
+
+
+    this.http.httpViaPost(endpointc, data).subscribe((res:any) => {     
 
         console.log('in constructor');
         // console.log(result);
