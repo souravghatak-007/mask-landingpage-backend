@@ -15,6 +15,7 @@ import { environment } from '../../../environments/environment';
   styleUrls: ['./dashboard-admin.component.css']
 })
 export class DashboardAdminComponent implements OnInit {
+  public usersdiv:any;
   public cookieUserallData: any = JSON.parse(this.cookieService.get('user_details'))
   public adminCount: any = [];
   public orderDataList: any = [];
@@ -345,6 +346,7 @@ export class DashboardAdminComponent implements OnInit {
   successfull_datacollection='successfull-getorderlistdata';
   incomplete_datacollection='incomplete-getorderlistdata';
   constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService, public apiService: ApiService, public meta: MetaService, private myElement: ElementRef) {
+    // private vps: ViewportScroller
 
     this.meta.setTitle('Virus Medical Face Mask backend | Dashboard');
     this.meta.setTag('og:description', 'Virus Medical Face Mask backend to keep medical professionals safe and protected against harmful viruses, bacteria, and other critical circumstances, while also tending to their comfort.');
@@ -494,7 +496,7 @@ export class DashboardAdminComponent implements OnInit {
   /**Users data populated */
   Users(){
     
-    console.log("Users");
+    // console.log("Users");
     this.usersflage=true;
     let endpoint='getuserlistdata';
     let endpointc='getuserlistdata-count';
@@ -509,9 +511,12 @@ export class DashboardAdminComponent implements OnInit {
     }
     }
 
-    var elmnt = document.getElementById("usersdiv");
-    elmnt.scrollIntoView({behavior: "smooth"});
 
+    //scroll to target div
+    var e = document.getElementById("usersdiv");
+    e.scrollIntoView({block: 'end', behavior: 'smooth', inline: 'center'});
+    //end scroll to target div
+    
 
     this.http.httpViaPost(endpointc, data).subscribe((res:any) => {
 
@@ -535,8 +540,8 @@ export class DashboardAdminComponent implements OnInit {
     }, error => {
         console.log('Oooops!');
     });
-
-    // this.router.navigate([], { fragment: 'usersdiv' });
+    
+    // this.vps.scrollToAnchor(id);
     
   }
   //Successful Orders
