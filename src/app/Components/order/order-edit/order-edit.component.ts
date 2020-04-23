@@ -59,7 +59,9 @@ const OrdAssVolume_DATA: OrdAssVolumeElement[] = [
   styleUrls: ['./order-edit.component.css']
 })
 export class OrderEditComponent implements OnInit {
-  public cookieUserallData: any = JSON.parse(this.cookieService.get('user_details'))
+  public cookieUserallData: any = JSON.parse(this.cookieService.get('user_details'));
+  public notes:any=null;
+  public notesFlag:boolean=false;
 
   displayedcontentsColumns = ['productcode', 'product', 'qty', 'unitprice', 'total'];
 
@@ -110,7 +112,7 @@ export class OrderEditComponent implements OnInit {
 
           //  setTimeout(() => {
             this.orderData = resolveData.orderData.res;
-            console.log(this.orderData);
+            //console.log(this.orderData);
           //  }, 500);
 
         });
@@ -169,15 +171,30 @@ export class OrderEditComponent implements OnInit {
     });
   }
 /**function for cancel autoship */
+CancelAutoshipButton(){
+  //console.warn('CancelAutoshipButton');
+  this.notesFlag=true;
+}
 CancelAutoship(){
-  console.warn('CancelAutoship');
-  let data: any = {
-    orderid: this.orderData[0]._id,
-    billing_date:this.orderData[0].autoship[0].billing_date
+  //console.warn('CancelAutoship');
+  let data: any={};
+  //console.warn(this.notes);
+  if(this.notes!=null && this.notes!=''){
+    data= {
+      orderid: this.orderData[0]._id,
+      billing_date:this.orderData[0].autoship[0].billing_date,
+      notes:this.notes
+    }
+  }else{
+    this.matSnackBar.open('Please Give a cancel Notes', '', {
+      duration: 3000
+    });
   }
+ //console.warn(data);
 
   this.apiService.CustomRequest(data, 'cancel-autoship').subscribe((res: any) => {
-    console.log(res);
+    //console.log(res);
+  this.notesFlag=false;
     if(res.status=="success"){
       this.matSnackBar.open('Your AutoShip canceled', '', {
         duration: 3000

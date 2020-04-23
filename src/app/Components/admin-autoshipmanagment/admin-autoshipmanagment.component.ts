@@ -46,6 +46,7 @@ custom_link:any;
  };
  upcoming_datacollection: any='getautoshiplistdata';
  libdata:any={
+  basecondition:{_id:'5e8247d1d17bc715fc57bd8a'},
   updateendpoint:'cancel-autoship-liblist',
   // hideeditbutton:true,// all these button options are optional not mandatory
   hidedeletebutton:true,
@@ -53,64 +54,17 @@ custom_link:any;
   //hidestatustogglebutton:true,
   // hideaction:true,
   tableheaders:['product_qty','product_total','status_name','billing_date','order_id','shipping_name'], //not required
-  // custombuttons:[
-  //     {
-  //         label:"fb search with blog title",
-  //         link:"https://www.facebook.com/search/top/",
-  //         type:'externallink',
-  //         param:[{key:'blogtitle',q:'q'}],
-  //     },
-  //     {
-  //         label:"G search with blog title ACtive",
-  //         link:"https://www.google.com/search",
-  //         type:'externallink',
-  //         param:[{key:'blogtitle',q:'q'},{key:'author',q:'oq'}],
-  //         cond:'status',
-  //         condval: 1
-  //     },{
-  //         label:"mask blog",
-  //         link:"https://mask-blog1.influxiq.com/blog-details",
-  //         type:'externallink',
-  //         paramtype:'angular',
-  //         param:['blogtitle','_id'],
-  //         cond:'status',
-  //         condval: 0
-  //     },
-  //     {
-  //         label:" fb profile ",
-  //         link:"https://www.facebook.com/debasiskar007",
-  //         type:'externallink'
-  //     },
-  //     {
-  //         label:" fb profile for inactive",
-  //         link:"https://www.facebook.com/debasiskar007",
-  //         type:'externallink',
-  //         cond:'status',
-  //         condval:0
-  //     },
-  //     {
-  //         label:" fb profile for active",
-  //         link:"https://www.facebook.com/debasiskar007",
-  //         type:'externallink',
-  //         cond:'status',
-  //         condval:1
-  //     },
-  //     {
-  //         label:"see brand",
-  //         route:"brand",
-  //         type:'internallink',
-  //         cond:'status',
-  //         condval:0
-  //     },
-  //     {
-  //         label:"see brand with param",
-  //         route:"brand",
-  //         type:'internallink',
-  //         cond:'status',
-  //         condval:0,
-  //         param:['_id','blogtitle'],
-  //     }
-  // ]
+  custombuttons:[
+      {
+        label:"Proccess",
+        type:'action',
+        datatype:'api',
+        endpoint:'readyho6a',
+        param:'_id',
+        
+    }
+      
+  ]
 }
  upcoming_date_search_endpoint: any='datalist';
  upcoming_UpcomingAutolist_detail_skip:any=['_id','billing_date_timestamp'];
