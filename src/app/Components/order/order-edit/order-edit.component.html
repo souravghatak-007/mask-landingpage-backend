@@ -66,11 +66,11 @@
                     <mat-list-item *ngIf="orderData[0].autoship_data=='30|3'"> <span class="oneitemcls"><span>Autoship</span>3 Box - Pack of 10 | Every 1 Month</span> <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span></mat-list-item>
                    
                 </mat-list> 
-                <button class="singleButton btnblue" mat-raised-button type="button" (click)="CancelAutoshipButton();">Cancel Autoship</button>
+                <button class="singleButton btnred" mat-raised-button type="button" (click)="CancelAutoshipButton();">Cancel Autoship</button>
                
                 <ng-container *ngIf="notesFlag==true">
                     <textarea type="textarea" [(ngModel)]="notes">Cancel Notes</textarea>
-                    <button class="singleButton btnblue" mat-raised-button type="button" (click)="CancelAutoship();">Cancel</button>
+                    <button class="singleButton btnred" mat-raised-button type="button" (click)="CancelAutoship();">Cancel</button>
                 </ng-container>
                 
             </span>

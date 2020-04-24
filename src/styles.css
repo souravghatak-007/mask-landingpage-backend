@@ -187,10 +187,10 @@ input.mat-input-element {color: white;}
 
 app-order-listing .mat-column-Actions span span.cursor:nth-child(2){display:none}
 
+.paymentstatuswrapper textarea[type="textarea"]{margin-left: 5px; width: 280px;}
+
+
 /* media css */
-
-
-
 @media screen and (max-width: 1560px) {
 .listingnewstyle mat-toolbar-row.searchbar .mat-form-field {min-width: 353px;}
 }
@@ -227,6 +227,10 @@ app-order-listing .mat-column-Actions span span.cursor:nth-child(2){display:none
 
 @media screen and (max-width: 767px) {
 .files-view .mat-card {width: 49%!important;}
+}
+
+@media screen and (max-width: 600px) {
+.paymentstatuswrapper textarea[type="textarea"] {margin-left: 0;width: 100%;margin-top: 10px;margin-bottom: 10px;}
 }
 
 @media screen and (max-width: 560px) {
