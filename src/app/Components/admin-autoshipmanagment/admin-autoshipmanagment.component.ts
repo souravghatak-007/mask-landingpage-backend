@@ -46,7 +46,7 @@ custom_link:any;
  };
  upcoming_datacollection: any='getautoshiplistdata';
  libdata:any={
-  basecondition:{_id:'5e8247d1d17bc715fc57bd8a'},
+  //basecondition:{_id:'5e8247d1d17bc715fc57bd8a'},
   updateendpoint:'cancel-autoship-liblist',
   // hideeditbutton:true,// all these button options are optional not mandatory
   hidedeletebutton:true,
@@ -59,8 +59,8 @@ custom_link:any;
         label:"Proccess",
         type:'action',
         datatype:'api',
-        endpoint:'readyho6a',
-        param:'_id',
+        endpoint:'token',
+        param:'order_id',
         
     }
       
