@@ -54,22 +54,132 @@
             <span class="paymentstatuswrapper">
                 <mat-list class="paymentstatus">
 
-                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|1'"> <span class="oneitemcls"><span>Autoship</span>1 Box - Pack of 10 | Every 2 Weeks</span>  <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span></mat-list-item>
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|1'"> <span class="oneitemcls"><span>Autoship</span>1 Box - Pack of 10 | Every 2 Weeks</span>  <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span>
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==0">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Pending
+                                </span>
+                        </ng-container>
 
-                    <mat-list-item *ngIf="orderData[0].autoship_data=='30|1'"> <span class="oneitemcls"><span>Autoship</span>1 Box - Pack of 10 | Every 1 Month</span> <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span></mat-list-item>
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==1">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Complete
+                                </span>
+                        </ng-container>
 
-                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|2'"> <span class="oneitemcls"><span>Autoship</span>2 Box - Pack of 10 | Every 2 Weeks</span> <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span></mat-list-item>
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==2">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Cancel
+                                </span>
+                        </ng-container>
+                    </mat-list-item>
+
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='30|1'"> <span class="oneitemcls"><span>Autoship</span>1 Box - Pack of 10 | Every 1 Month</span> <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span>
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==0">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Pending
+                                </span>
+                        </ng-container>
+
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==1">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Complete
+                                </span>
+                        </ng-container>
+
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==2">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Cancel
+                                </span>
+                        </ng-container>
+                    </mat-list-item>
+
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|2'"> <span class="oneitemcls"><span>Autoship</span>2 Box - Pack of 10 | Every 2 Weeks</span> <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span>
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==0">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Pending
+                                </span>
+                        </ng-container>
+
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==1">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Complete
+                                </span>
+                        </ng-container>
+
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==2">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Cancel
+                                </span>
+                        </ng-container>
+                    </mat-list-item>
                    
-                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|3'"> <span class="oneitemcls"><span>Autoship</span>3 Box - Pack of 10 | Every 2 Weeks</span> <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span></mat-list-item>
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='14|3'"> <span class="oneitemcls"><span>Autoship</span>3 Box - Pack of 10 | Every 2 Weeks</span> <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span>
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==0">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Pending
+                                </span>
+                        </ng-container>
+
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==1">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Complete
+                                </span>
+                        </ng-container>
+
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==2">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Cancel
+                                </span>
+                        </ng-container>
+                    </mat-list-item>
 
                    
-                    <mat-list-item *ngIf="orderData[0].autoship_data=='30|3'"> <span class="oneitemcls"><span>Autoship</span>3 Box - Pack of 10 | Every 1 Month</span> <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span></mat-list-item>
+                    <mat-list-item *ngIf="orderData[0].autoship_data=='30|3'"> <span class="oneitemcls"><span>Autoship</span>3 Box - Pack of 10 | Every 1 Month</span> <span class="oneitemcls"><span>Next Billing</span> {{orderData[0].autoship[0].billing_date}}</span>
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==0">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Pending
+                                </span>
+                        </ng-container>
+
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==1">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Complete
+                                </span>
+                        </ng-container>
+
+                        <ng-container *ngIf="orderData[0].autoship[0].order_status==2">
+                            <span class="oneitemcls">
+                                <span>Status</span>
+                                Cancel
+                                </span>
+                        </ng-container>
+                        
+                    </mat-list-item>
                    
                 </mat-list> 
-                <button class="singleButton btnred" mat-raised-button type="button" (click)="CancelAutoshipButton();">Cancel Autoship</button>
+                <!-- checking for autoship status -->
+                <ng-container *ngIf="orderData[0].autoship[0].order_status==0">
+                    <button class="singleButton btnred" mat-raised-button type="button" (click)="CancelAutoshipButton();">Cancel Autoship</button>
+                </ng-container>
+                
                
                 <ng-container *ngIf="notesFlag==true">
-                    <textarea type="textarea" [(ngModel)]="notes">Cancel Notes</textarea>
+                    <textarea type="textarea" [(ngModel)]="notes" placeholder="Cancellation Notes"></textarea>
                     <button class="singleButton btnred" mat-raised-button type="button" (click)="CancelAutoship();">Cancel</button>
                 </ng-container>
                 
