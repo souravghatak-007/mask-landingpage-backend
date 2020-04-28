@@ -464,21 +464,11 @@ export class DashboardAdminComponent implements OnInit {
     }
 
 
-    //scroll to target div
-    var elmt: HTMLElement|null = document.getElementById("usersdiv");
-    if (elmt) {
-      setTimeout(() =>
-      elmt.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'}), 0);
-    }
-  //scroll to End target div
-
-
-
+ 
 
 
     this.http.httpViaPost(endpointc, data).subscribe((res:any) => {     
 
-        console.log('in constructor');
         // console.log(result);
         this.user_date_search_source_count =res.count.date_search_source_count;
         console.warn('blogData c',res);
@@ -488,11 +478,16 @@ export class DashboardAdminComponent implements OnInit {
     });
 
     this.http.httpViaPost(endpoint,data).subscribe((res:any) => {
-        console.log('in constructor');
+       
         // console.log(result);
         this.userDataarray =res.results.res;
-        //console.warn('blogData',res);
-
+         //scroll to target div
+    var elmt: HTMLElement|null = document.getElementById("usersdiv");
+    if (elmt) {
+      setTimeout(() =>
+      elmt.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'}), 0);
+    }
+  //scroll to End target div
     }, error => {
         console.log('Oooops!');
     });
