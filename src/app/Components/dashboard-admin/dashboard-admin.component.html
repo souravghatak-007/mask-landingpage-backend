@@ -317,6 +317,7 @@
             [date_search_source]="date_search_source" [date_search_endpoint]="date_search_endpoint"
             [sourcedata]="tablename" [detail_datatype]="orderDataList_detail_datatype" [editroute]="editroute"
             [statusarr]="statusarray" [detail_skip_array]="orderDataList_detail_skip" [url]="custom_link"
+            [libdata]="orderder_libdata"
             [jwttoken]="jwttoken" [search_settings]="search_settings" [searchendpoint]="searchendpoint"
             [sortdata]="sortdata" [datacollection]="datacollection"
             [date_search_source_count]="date_search_source_count" [limitcond]="limitcond"></lib-listing>
@@ -374,7 +375,7 @@
            <!-- Successfull orders data populated table -->
 
            <ng-container *ngIf="successfullflage==true">
-            <div class="content_header_wrapper">
+            <div class="content_header_wrapper" id="usersdiv">
               <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Successfull orders</h2>
             </div>
            
@@ -394,7 +395,7 @@
            <!-- Incomplete orders data populated table -->
 
            <ng-container *ngIf="Incompleteflage==true">
-            <div class="content_header_wrapper">
+            <div class="content_header_wrapper" id="usersdiv">
               <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Incomplete orders</h2>
             </div>
            

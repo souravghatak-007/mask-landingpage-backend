@@ -41,6 +41,9 @@ export class DashboardAdminComponent implements OnInit {
   statusarray: any = [{ val: "Incomplete", name: "Incomplete" }, { val: "Complete", name: "Complete" }, { val: "Shipped", name: "Shipped" }, { val: "Delivered", name: "Delivered" }, { val: "Cancel", name: "Cancelled" }];
   editroute: any = 'admin/order/edit/';
   datasource: any;
+  orderder_libdata:any={
+    updateendpoint: 'orderstatus',
+  }
   // Like Table head name is " firstname" => "First Name"
   deleteEndpoint: any = "deletesingledata";
   modify_header_array: any = {
@@ -528,7 +531,13 @@ export class DashboardAdminComponent implements OnInit {
    this.http.httpViaPost(endpoint, dataa).subscribe((res: any) => {
 
      this.successfullOrderDataList = res.results.res;
-     //console.log('Oooops!',this.orderDataList);
+      //scroll to target div
+    var elmt: HTMLElement|null = document.getElementById("usersdiv");
+    if (elmt) {
+      setTimeout(() =>
+      elmt.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'}), 0);
+    }
+  //scroll to End target div
    }, error => {
      console.log('Oooops!');
    });
@@ -559,7 +568,13 @@ export class DashboardAdminComponent implements OnInit {
      // console.log('in constructor');
      // console.log(result);
      this.Incomplete_count = res.count;
-     //console.warn('blogData c',res);
+      //scroll to target div
+    var elmt: HTMLElement|null = document.getElementById("usersdiv");
+    if (elmt) {
+      setTimeout(() =>
+      elmt.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'}), 0);
+    }
+  //scroll to End target div
    }, error => {
      console.log('Oooops!');
    });

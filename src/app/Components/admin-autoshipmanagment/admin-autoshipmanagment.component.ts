@@ -80,8 +80,8 @@ custom_link:any;
  upcoming_UpcomingAutolist_skip: any = ['_id','transactiontype','card_cc','transactionid','shipping_address','billing_address','billing_date_timestamp']
   
  constructor(public cookieService:CookieService,public http: HttpServiceService) { 
-    let upcoming_endpoint='getautoshiplistdata';
-    let upcoming_endpointc='getautoshiplistdata-count';
+    let upcoming_endpoint='getautoshipmanagmentlistdata';
+    let upcoming_endpointc='getautoshipmanagmentlistdata-count';
    
     let upcoming_data:any={
         "condition":{
