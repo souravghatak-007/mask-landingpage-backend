@@ -33,15 +33,7 @@ const routes: Routes = [
   {
     path: 'admin/user-management',
     component: UserListingComponent,
-    // canActivate: [AuthguardService], 
-    resolve: { userManagementData: ResolveService },
-    data: {
-      requestcondition: {
-        source: 'users',
-        condition: { type: "user" }
-      },
-      endpoint: "datalist"
-    }, canActivate: [AuthService],
+    canActivate: [AuthService],
   },
   { path: 'header', component: AdminheaderComponent },
   { path: 'footer', component: FooterComponent },
