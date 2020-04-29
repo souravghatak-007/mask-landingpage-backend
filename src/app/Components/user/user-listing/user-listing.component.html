@@ -1,78 +1,51 @@
 <div class="adminwrappercls">
-    <app-adminheader></app-adminheader>
-    <!-- <div id="beadcamb">
+  <app-adminheader></app-adminheader>
+  <!-- <div id="beadcamb">
       
     </div> -->
-    
-    <mat-card class="breadcrumbs-top">
-      <h3 class="page-header-title">Welcome <span>Sourav Ghatak</span></h3>
-      <mat-card-content class="breadcrumb-wrapper">
-        <mat-list class="breadcrumb">
-          <mat-list-item class="breadcrumb-item"><a [routerLink]="['/dashboard']"><span class="material-icons">home</span></a></mat-list-item>
-          <mat-list-item class="breadcrumb-item active">User List</mat-list-item>
-        </mat-list>
-      </mat-card-content>
-    </mat-card>
-    <div id="maincontent">
-      <div class="main-content-wrap">
-        <mat-card class="generalcls" style="padding: 0 !important;">
 
-          
-        
+  <mat-card class="breadcrumbs-top">
+    <h3 class="page-header-title">Welcome <span>Sourav Ghatak</span></h3>
+    <mat-card-content class="breadcrumb-wrapper">
+      <mat-list class="breadcrumb">
+        <mat-list-item class="breadcrumb-item"><a [routerLink]="['/dashboard']"><span
+              class="material-icons">home</span></a></mat-list-item>
+        <mat-list-item class="breadcrumb-item active">User List</mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+  <div id="maincontent">
+    <div class="main-content-wrap">
+      <mat-card class="generalcls" style="padding: 0 !important;">
+
+
+
         <!-- <button [routerLink]="['/user/add']">ADD User</button> -->
 
-          <div class="content_header_wrapper">
-              <h2 class="headerSpan">User List</h2>
-              <!-- <div class="buttonsetToolbar">              
+        <div class="content_header_wrapper">
+          <h2 class="headerSpan">User List</h2>
+          <!-- <div class="buttonsetToolbar">              
                   <button class="singleButton btnblue" mat-raised-button color="primary" [routerLink]="['/user/add']">Add User</button>
               </div>             -->
-          </div>
-            
-            <div class="listingnewstyle userlist">
-                <lib-listing *ngIf="userDataarray!=null && userDataarray.length>0" 
-  [datasource]="userDataarray"
-  [skip]="pendingmodelapplicationarray_skip" 
-  [modify_header_array]="modify_header_array" 
-  [apiurl]="apiUrl" 
-  [deleteendpoint]="deleteendpoint" 
-  [updateendpoint]="updateendpoint" 
-  [jwttoken]="user_cookie" 
-  [date_search_source]="date_search_source"
-  [date_search_endpoint]="date_search_endpoint"
-  [sourcedata]="tablename"  
-  [statusarr]="status" 
-  [detail_datatype]="pendingmodelapplicationarray_detail_datatype"
-  [editroute]="editroute"
-  [detail_skip_array]="pendingmodelapplicationarray_detail_skip" 
-  [search_settings]="search_settings"
-  [searchendpoint]="searchendpoint"
-  [sortdata]="sortdata"
-          [datacollection]="datacollection"
-          [date_search_source_count]="date_search_source_count"
-          [limitcond]="limitcond"></lib-listing>
-<h2 *ngIf="userDataarray.length == 0">No record found.</h2>
-            
-            </div>
+        </div>
 
-        </mat-card>
-      </div>
-    </div>    
+        <div class="listingnewstyle userlist">
+          <lib-listing *ngIf="userDataarray!=null && userDataarray.length>0" [datasource]="userDataarray"
+            [skip]="pendingmodelapplicationarray_skip" [modify_header_array]="modify_header_array" [apiurl]="apiUrl"
+            [deleteendpoint]="deleteendpoint" [updateendpoint]="updateendpoint" [jwttoken]="user_cookie"
+            [date_search_source]="date_search_source" [date_search_endpoint]="date_search_endpoint"
+            [sourcedata]="tablename" [statusarr]="status"
+            [libdata]="libdata"
+            [detail_datatype]="pendingmodelapplicationarray_detail_datatype" [editroute]="editroute"
+            [detail_skip_array]="pendingmodelapplicationarray_detail_skip" [search_settings]="search_settings"
+            [searchendpoint]="searchendpoint" [sortdata]="sortdata" [datacollection]="datacollection"
+            [date_search_source_count]="date_search_source_count" [limitcond]="limitcond"></lib-listing>
+          <h2 *ngIf="userDataarray.length == 0">No record found.</h2>
+
+        </div>
+
+      </mat-card>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

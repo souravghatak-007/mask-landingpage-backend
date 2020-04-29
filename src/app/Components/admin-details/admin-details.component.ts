@@ -94,7 +94,9 @@ sortdata:any={
     "field":'firstname',
     "options":['firstname','email','lastname','email','state','city']
 };
-
+libdata:any={
+  updateendpoint: 'statusupdate',
+}
   // this is a database collection or view name
   date_search_source: any='admin_blog_list';
   // datacollection

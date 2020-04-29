@@ -88,6 +88,9 @@ export class UserListingComponent implements OnInit {
       "skip":0,
       "pagecount":1
   };
+  libdata:any={
+    updateendpoint: 'statusupdate',
+  }
 // send basic sort data
   sortdata:any={
       "type":'desc',
