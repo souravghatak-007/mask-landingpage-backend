@@ -25,6 +25,10 @@ export class DashboardAdminComponent implements OnInit {
   public Incomplete_count:any=0;
   public IncompleteOrderDataList: any = [];
 
+  public CompleteAutolist: any = [];
+  public CompleteAutoship_count:any=0;
+
+
   public UpcomingAutolist: any = [];
   public userMyorder: any = [];
   public date_search_source_count: any = 0;
@@ -300,6 +304,17 @@ export class DashboardAdminComponent implements OnInit {
   };
   successfull_datacollection='successfull-getorderlistdata';
   incomplete_datacollection='incomplete-getorderlistdata';
+  //Complete autoship in admin
+  Complete_libdata: any = {
+    updateendpoint: 'cancel-autoship-liblist',
+    // hideeditbutton:true,// all these button options are optional not mandatory
+    //hidedeletebutton: true,
+    //hideviewbutton:false,
+    //hidestatustogglebutton:true,
+    hideaction:true,
+    tableheaders:['product_qty','product_total','status_name','billing_date','order_id','shipping_name'], //not required
+  }
+  
   constructor(public router: Router, public cookieService: CookieService, public http: HttpServiceService, public apiService: ApiService, public meta: MetaService) {
     // private vps: ViewportScroller
 
@@ -411,6 +426,37 @@ export class DashboardAdminComponent implements OnInit {
     }, error => {
       console.log('Oooops!');
     });
+ /**Complete autoship list */
+ let Complete_endpoint = 'getautoshipcompletedata';
+ let Complete_endpointc = 'getautoshipcompletedata-count';
+
+ let Complete_data: any = {
+   "condition": {
+     "limit": 8,
+     "skip": 0
+   },
+   sort: {
+     "type": 'desc',
+     "field": 'billing_date'
+   }
+
+ }
+
+ this.http.httpViaPost(Complete_endpointc, Complete_data).subscribe((res: any) => {
+
+   //console.warn('upcoming autoship data count',res);
+   this.CompleteAutoship_count = res.count;
+
+ }, error => {
+   console.log('Oooops!');
+ });
+
+ this.http.httpViaPost(Complete_endpoint, Complete_data).subscribe((res: any) => {
+   this.CompleteAutolist = res.results.res;
+   //console.log('upcoming autoship data',res);
+ }, error => {
+   console.log('Oooops!');
+ });
 
   }
   // user Data section

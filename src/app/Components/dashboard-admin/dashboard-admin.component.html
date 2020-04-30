@@ -340,6 +340,24 @@
             [date_search_source_count]="upcoming_search_source_count" [limitcond]="upcoming_limitcond"></lib-listing>
         </div>
 
+        <!-- Complete autoship list -->
+        <div class="content_header_wrapper">
+          <h2 class="headerSpan" *ngIf="cookieUserallData.type=='admin'">Complete AutoShips</h2>
+        </div>
+
+         <div class="listingnewstyle">
+          <lib-listing class="animated" *ngIf="CompleteAutolist!=null && CompleteAutolist.length>0"
+            [datasource]="CompleteAutolist" [skip]="upcoming_UpcomingAutolist_skip"
+            [modify_header_array]="upcomig_modify_header_array" [apiurl]="apiurl" [updateendpoint]="updateendpoint"
+            [deleteendpoint]="deleteEndpoint" [date_search_source]="date_search_source"
+            [date_search_endpoint]="date_search_endpoint" [sourcedata]="tablename"
+            [detail_datatype]="orderDataList_detail_datatype" [editroute]="editroute" [statusarr]="upcoming_orderStatus"
+            [detail_skip_array]="upcoming_UpcomingAutolist_detail_skip" [url]="custom_link" [jwttoken]="jwttoken"
+            [search_settings]="upcoming_search_settings" [searchendpoint]="searchendpoint"
+            [sortdata]="upcoming_sortdata" [datacollection]="upcoming_datacollection" [libdata]="Complete_libdata"
+            [date_search_source_count]="CompleteAutoship_count" [limitcond]="upcoming_limitcond"></lib-listing>
+        </div>
+
 
           <!-- users data populated table -->
 
